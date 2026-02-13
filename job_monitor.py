@@ -12,8 +12,10 @@ Usage:
 
 import json
 import hashlib
+import html as html_module
 import logging
 import argparse
+import os
 import smtplib
 import sys
 import re
@@ -26,7 +28,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -68,13 +70,15 @@ LOCATION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+_log_handlers = [logging.StreamHandler(sys.stdout)]
+# Only write log file when running locally (not in CI)
+if not os.environ.get("CI"):
+    _log_handlers.append(logging.FileHandler(LOG_FILE))
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_FILE),
-        logging.StreamHandler(sys.stdout),
-    ],
+    handlers=_log_handlers,
 )
 log = logging.getLogger("job_monitor")
 
@@ -217,6 +221,19 @@ def clean_soup(soup: BeautifulSoup) -> BeautifulSoup:
     return soup
 
 
+def normalize_text_for_hash(text: str) -> str:
+    """Remove dynamic content (timestamps, counters) before hashing to reduce
+    false 'page changed' alerts."""
+    # Remove timestamps like "13.02.2026 18:22" or "2026-02-13T18:22:00"
+    text = re.sub(r"\d{2}\.\d{2}\.\d{4}\s*\d{2}:\d{2}", "", text)
+    text = re.sub(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}", "", text)
+    # Remove cookie banner IDs, session tokens, nonces
+    text = re.sub(r"[a-f0-9]{32,}", "", text)
+    # Collapse whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
 # ---------------------------------------------------------------------------
 # Job extraction — Main function with multiple strategies
 # ---------------------------------------------------------------------------
@@ -241,7 +258,8 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
     if not body:
         body = soup
     body_text = body.get_text(separator="\n", strip=True)
-    page_hash = hashlib.sha256(body_text.encode()).hexdigest()
+    normalized = normalize_text_for_hash(body_text)
+    page_hash = hashlib.sha256(normalized.encode()).hexdigest()
 
     result = SiteResult(name=name, url=url, page_hash=page_hash)
 
@@ -268,7 +286,11 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
             return
         if not looks_like_job_title(title):
             return
-        job = JobEntry(title=title, url=link, location=location, detail=detail[:300])
+        # Sanitize all text fields to prevent HTML injection in emails
+        title = html_module.escape(title)
+        location = html_module.escape(location)
+        detail = html_module.escape(detail[:300])
+        job = JobEntry(title=title, url=link, location=location, detail=detail)
         if job.key not in jobs_found:
             jobs_found[job.key] = job
 
@@ -576,7 +598,6 @@ def send_email(config: dict, subject: str, html_body: str):
     Email credentials can come from environment variables (for GitHub Actions)
     or from config.json (for local runs). Env vars take priority.
     """
-    import os
     email_cfg = config.get("email", {})
 
     smtp_server = os.environ.get("SMTP_SERVER", email_cfg.get("smtp_server", "smtp.gmail.com"))
