@@ -481,8 +481,83 @@ def update_state(state: dict, result: SiteResult):
 # Email notification
 # ---------------------------------------------------------------------------
 
+def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
+    """Render a single site section. Returns (html, has_job_changes, change_summary)."""
+    section = f'<div class="site-section">'
+    section += f'<h2><a href="{diff.url}">{diff.name}</a></h2>'
+
+    if diff.error:
+        section += f'<div class="error">Error checking this site: {diff.error}</div>'
+        section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
+        section += '</div>'
+        return section, False, None
+
+    if diff.is_first_run:
+        section += '<p><span class="badge badge-first">FIRST SCAN</span> Baseline established.</p>'
+        if diff.new_jobs:
+            section += f"<p>Found {len(diff.new_jobs)} existing position(s):</p>"
+            for job in diff.new_jobs:
+                section += '<div class="new-job">'
+                if job.url:
+                    section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
+                else:
+                    section += f'<div class="job-title">{job.title}</div>'
+                if job.location:
+                    section += f'<div class="job-detail">Location: {job.location}</div>'
+                section += '</div>'
+        elif diff.has_no_jobs_indicator:
+            section += '<p class="no-change">No open positions currently listed.</p>'
+        else:
+            section += '<p class="no-change">No job listings found. Page will be monitored for changes.</p>'
+        section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
+        section += '</div>'
+        return section, bool(diff.new_jobs), f"{diff.name}: {len(diff.new_jobs)} initial" if diff.new_jobs else None
+
+    site_has_changes = False
+    change_summary = None
+
+    if diff.new_jobs:
+        site_has_changes = True
+        change_summary = f"{diff.name}: {len(diff.new_jobs)} new"
+        section += f'<p><span class="badge badge-new">NEW</span> {len(diff.new_jobs)} new position(s):</p>'
+        for job in diff.new_jobs:
+            section += '<div class="new-job">'
+            if job.url:
+                section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
+            else:
+                section += f'<div class="job-title">{job.title}</div>'
+            if job.location:
+                section += f'<div class="job-detail">Location: {job.location}</div>'
+            if job.detail and job.detail != job.title:
+                section += f'<div class="job-detail">{job.detail[:200]}</div>'
+            section += '</div>'
+
+    if diff.removed_jobs:
+        site_has_changes = True
+        section += f'<p><span class="badge badge-removed">REMOVED</span> {len(diff.removed_jobs)} position(s) no longer listed:</p>'
+        for job in diff.removed_jobs:
+            section += '<div class="removed-job">'
+            section += f'<div class="job-title">{job.title}</div>'
+            section += '</div>'
+
+    if diff.page_changed and not site_has_changes:
+        section += '<div class="page-changed">Page content changed (but no specific new job listings detected).</div>'
+
+    if not site_has_changes and not diff.page_changed:
+        section += '<p class="no-change">No changes detected.</p>'
+
+    section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
+    section += '</div>'
+
+    return section, site_has_changes, change_summary
+
+
 def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
-    """Build a nicely formatted HTML email summarizing all changes."""
+    """Build a nicely formatted HTML email. Sites are sorted:
+    1. Sites with new/removed jobs (top)
+    2. Sites with page changes (middle)
+    3. Sites with no changes (bottom)
+    """
     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M")
 
     html = f"""
@@ -513,73 +588,39 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
         <p>Scan completed: {timestamp}</p>
     """
 
+    # Render all sections and categorize them
+    sections_with_jobs = []     # new/removed jobs detected
+    sections_page_changed = []  # page changed but no specific jobs
+    sections_no_change = []     # nothing changed
+    sections_error = []         # errors
+    sections_first_run = []     # first scan
+
     has_changes = False
     changes_summary = []
 
     for diff in diffs:
-        html += f'<div class="site-section">'
-        html += f'<h2><a href="{diff.url}">{diff.name}</a></h2>'
+        section_html, has_job_changes, summary = _render_site_section(diff)
 
         if diff.error:
-            html += f'<div class="error">Error checking this site: {diff.error}</div>'
-            html += '</div>'
-            continue
-
-        if diff.is_first_run:
-            html += '<p><span class="badge badge-first">FIRST SCAN</span> Baseline established.</p>'
-            if diff.new_jobs:
-                html += f"<p>Found {len(diff.new_jobs)} existing position(s):</p>"
-                for job in diff.new_jobs:
-                    html += '<div class="new-job">'
-                    if job.url:
-                        html += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-                    else:
-                        html += f'<div class="job-title">{job.title}</div>'
-                    if job.location:
-                        html += f'<div class="job-detail">Location: {job.location}</div>'
-                    html += '</div>'
-            elif diff.has_no_jobs_indicator:
-                html += '<p class="no-change">No open positions currently listed.</p>'
-            else:
-                html += '<p class="no-change">No job listings found. Page will be monitored for changes.</p>'
-            html += '</div>'
-            continue
-
-        site_has_changes = False
-
-        if diff.new_jobs:
+            sections_error.append(section_html)
+        elif diff.is_first_run:
+            sections_first_run.append(section_html)
+            if summary:
+                changes_summary.append(summary)
+        elif has_job_changes:
             has_changes = True
-            site_has_changes = True
-            changes_summary.append(f"{diff.name}: {len(diff.new_jobs)} new")
-            html += f'<p><span class="badge badge-new">NEW</span> {len(diff.new_jobs)} new position(s):</p>'
-            for job in diff.new_jobs:
-                html += '<div class="new-job">'
-                if job.url:
-                    html += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-                else:
-                    html += f'<div class="job-title">{job.title}</div>'
-                if job.location:
-                    html += f'<div class="job-detail">Location: {job.location}</div>'
-                if job.detail and job.detail != job.title:
-                    html += f'<div class="job-detail">{job.detail[:200]}</div>'
-                html += '</div>'
-
-        if diff.removed_jobs:
+            sections_with_jobs.append(section_html)
+            if summary:
+                changes_summary.append(summary)
+        elif diff.page_changed:
             has_changes = True
-            site_has_changes = True
-            html += f'<p><span class="badge badge-removed">REMOVED</span> {len(diff.removed_jobs)} position(s) no longer listed:</p>'
-            for job in diff.removed_jobs:
-                html += '<div class="removed-job">'
-                html += f'<div class="job-title">{job.title}</div>'
-                html += '</div>'
+            sections_page_changed.append(section_html)
+        else:
+            sections_no_change.append(section_html)
 
-        if diff.page_changed and not site_has_changes:
-            has_changes = True
-            html += '<div class="page-changed">Page content changed (but no specific new job listings detected). <a href="' + diff.url + '">Check manually &rarr;</a></div>'
-        elif not site_has_changes:
-            html += '<p class="no-change">No changes detected.</p>'
-
-        html += '</div>'
+    # Output in priority order: jobs → page changes → first runs → no changes → errors
+    for section in sections_with_jobs + sections_page_changed + sections_first_run + sections_no_change + sections_error:
+        html += section
 
     html += f"""
         <div class="footer">
