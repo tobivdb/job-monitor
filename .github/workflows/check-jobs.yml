@@ -1,0 +1,48 @@
+name: Check Job Postings
+
+on:
+  schedule:
+    # Runs at 7:00 UTC = 8:00 CET every day
+    - cron: '0 7 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write  # Needed to commit state.json back
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Run job monitor
+        env:
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          SMTP_SERVER: smtp.gmail.com
+          SMTP_PORT: 587
+        run: |
+          python job_monitor.py --config config.github.json
+
+      - name: Save state
+        run: |
+          git config user.name "Job Monitor Bot"
+          git config user.email "bot@job-monitor"
+          git add state.json
+          git diff --cached --quiet || git commit -m "Update state.json [skip ci]"
+          git push

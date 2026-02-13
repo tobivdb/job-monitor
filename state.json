@@ -1,0 +1,98 @@
+{
+  "sites": {
+    "CGS Management": {
+      "url": "https://www.cgs-management.com/karriere",
+      "page_hash": "521aa343b1648e5d66fbaedf7c25b19ef41ffbfec91ff8c28a2b027f160f5f9c",
+      "job_keys": {},
+      "last_checked": "2026-02-13T18:22:27.814079",
+      "has_no_jobs_indicator": true
+    },
+    "Evocope": {
+      "url": "https://evocope.com/de/people",
+      "page_hash": "9933380364cbad459229823e34c73412cc4ab32ed1f4bcad8ffc35445da925fb",
+      "job_keys": {},
+      "last_checked": "2026-02-13T18:22:31.097703",
+      "has_no_jobs_indicator": false
+    },
+    "BU Partners": {
+      "url": "https://www.bu-partners.ch/karriere/",
+      "page_hash": "66c5e912ff607e3eebdb29f4ca6e870e765831b3b8c39b9fa76d7f792db3ba72",
+      "job_keys": {
+        "158e87f96e5ca3e5b7abad3f12224313": {
+          "title": "Senior Financial Accountant (w/m/d)",
+          "url": "https://www.bu-partners.ch/senior-financial-accountant-w-m-d/",
+          "location": "München",
+          "detail": "Senior Financial Accountant (w/m/d) München | Festanstellung | Vollzeit Jetzt bewerben HR Specialist (w/m/d) München | Festanstellung | Vollzeit Jetzt bewerben Werkstudent in Corporate Finance (Accounts Payable) (w/m/d) Zug | Werkstudent | Teilzeit Jetzt bewerben Initiativbewerbung (w/m/d) Alle Stan"
+        },
+        "b45178a0b48184717ff1c9b80c8e84ac": {
+          "title": "HR Specialist (w/m/d)",
+          "url": "https://www.bu-partners.ch/hr-specialist-w-m-d/",
+          "location": "München",
+          "detail": "HR Specialist (w/m/d) München | Festanstellung | Vollzeit Jetzt bewerben"
+        },
+        "e136388b890663edb5571bc23f84286a": {
+          "title": "Werkstudent in Corporate Finance (Accounts Payable) (w/m/d)",
+          "url": "https://www.bu-partners.ch/werkstudent-in-corporate-finance-accounts-payable-w-m-d/",
+          "location": "Zug",
+          "detail": "Werkstudent in Corporate Finance (Accounts Payable) (w/m/d) Zug | Werkstudent | Teilzeit Jetzt bewerben"
+        }
+      },
+      "last_checked": "2026-02-13T18:22:34.919147",
+      "has_no_jobs_indicator": false
+    },
+    "Patrimonium": {
+      "url": "https://www.patrimonium.ch/de/careers",
+      "page_hash": "9dfd80b68a9969c82ec23944f8bc7c4055620cd98c50e998e79377318585005b",
+      "job_keys": {
+        "7d030106ec2627044668fbd89ef52e06": {
+          "title": "Investment Analyst Private Credit",
+          "url": "",
+          "location": "",
+          "detail": "Investment Analyst Private Credit"
+        },
+        "f60dffd804a5e30df2e6f4c33c246e4b": {
+          "title": "(Senior) Portfolio Manager Real Estate",
+          "url": "https://www.patrimonium.ch/de/careers/senior-portfolio-manager-real-estate",
+          "location": "Zurich",
+          "detail": "(Senior) Portfolio Manager Real Estate - Zurich or Crissier Investment Manager Hypotheken Schweiz - Zurich IT Applications Specialist (50%) - Crissier (Lausanne) Spontanbewerbung - Crissier (Lausanne) / Zürich"
+        },
+        "263b44a836ff00a0392e4eb9a16461bd": {
+          "title": "Investment Manager Hypotheken Schweiz",
+          "url": "https://www.patrimonium.ch/de/careers/investment-manager-real-estate-debt",
+          "location": "Schweiz",
+          "detail": "Investment Manager Hypotheken Schweiz - Zurich"
+        },
+        "fa199e5983d4251fc77f4277cb196993": {
+          "title": "IT Applications Specialist (50%)",
+          "url": "https://www.patrimonium.ch/de/careers/it-applications-specialist",
+          "location": "Crissier",
+          "detail": "IT Applications Specialist (50%) - Crissier (Lausanne)"
+        }
+      },
+      "last_checked": "2026-02-13T18:22:39.446154",
+      "has_no_jobs_indicator": false
+    },
+    "Helvetica Capital": {
+      "url": "https://www.helvetica-capital.ch/karriere/",
+      "page_hash": "42ca79a38800f20c5be9ed627133dfa79c035298620549eca4994e2e22345653",
+      "job_keys": {},
+      "last_checked": "2026-02-13T18:22:42.683490",
+      "has_no_jobs_indicator": true
+    },
+    "Argos Fund": {
+      "url": "https://argos.fund/de/karriere-schweiz/",
+      "page_hash": "c79060b5d9d212751e864223fb575ce3f09e1a9ab1b3e6fd1239f11dc2851afe",
+      "job_keys": {},
+      "last_checked": "2026-02-13T18:23:20.259861",
+      "has_no_jobs_indicator": false
+    },
+    "Wineus": {
+      "url": "https://www.wineus.ch/ueber-wineus/karriere",
+      "page_hash": "9742e11becd0578778cb8cb595c8af37c426cab956f720a80bc361968af9d72f",
+      "job_keys": {},
+      "last_checked": "2026-02-13T18:23:23.939152",
+      "has_no_jobs_indicator": false
+    }
+  },
+  "last_run": "2026-02-13T18:23:23.966600"
+}

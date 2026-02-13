@@ -1,0 +1,40 @@
+{
+  "check_interval_hours": 24,
+  "sites": [
+    {
+      "name": "CGS Management",
+      "url": "https://www.cgs-management.com/karriere",
+      "no_jobs_indicators": ["keine offenen Stellen", "Derzeit haben wir keine"]
+    },
+    {
+      "name": "Evocope",
+      "url": "https://evocope.com/de/people",
+      "notes": "Team page - monitors for job/career sections appearing"
+    },
+    {
+      "name": "BU Partners",
+      "url": "https://www.bu-partners.ch/karriere/",
+      "exclude_patterns": ["Initiativbewerbung"]
+    },
+    {
+      "name": "Patrimonium",
+      "url": "https://www.patrimonium.ch/de/careers",
+      "exclude_patterns": ["Spontanbewerbung"]
+    },
+    {
+      "name": "Helvetica Capital",
+      "url": "https://www.helvetica-capital.ch/karriere/",
+      "no_jobs_indicators": ["keine offenen Stellen", "Momentan verfügen wir"]
+    },
+    {
+      "name": "Argos Fund",
+      "url": "https://argos.fund/de/karriere-schweiz/",
+      "no_jobs_indicators": ["keine Stellen verfügbar", "Zurzeit sind keine"]
+    },
+    {
+      "name": "Wineus",
+      "url": "https://www.wineus.ch/ueber-wineus/karriere",
+      "notes": "JS-heavy page, uses full page content comparison"
+    }
+  ]
+}

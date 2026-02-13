@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+config.json
+*.log
+last_report.html
+com.jobmonitor.daily.plist
