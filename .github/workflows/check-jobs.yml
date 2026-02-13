@@ -37,7 +37,12 @@ jobs:
           SMTP_SERVER: smtp.gmail.com
           SMTP_PORT: 587
         run: |
-          python job_monitor.py --config config.github.json
+          # Always send email until 2026-02-16 so Tobias can verify it works
+          if [ "$(date -u +%Y%m%d)" -le "20260216" ]; then
+            python job_monitor.py --config config.github.json --always-email
+          else
+            python job_monitor.py --config config.github.json
+          fi
 
       - name: Save state
         run: |
