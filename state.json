@@ -4,19 +4,19 @@
       "url": "https://www.cgs-management.com/karriere",
       "page_hash": "521aa343b1648e5d66fbaedf7c25b19ef41ffbfec91ff8c28a2b027f160f5f9c",
       "job_keys": {},
-      "last_checked": "2026-02-13T17:59:08.806119",
+      "last_checked": "2026-02-13T18:05:11.164067",
       "has_no_jobs_indicator": true
     },
     "Evocope": {
       "url": "https://evocope.com/de/people",
       "page_hash": "9933380364cbad459229823e34c73412cc4ab32ed1f4bcad8ffc35445da925fb",
       "job_keys": {},
-      "last_checked": "2026-02-13T17:59:14.216891",
+      "last_checked": "2026-02-13T18:05:15.480961",
       "has_no_jobs_indicator": false
     },
     "BU Partners": {
       "url": "https://www.bu-partners.ch/karriere/",
-      "page_hash": "57e5dd365f14578c286a7c0177776e406ed800494baec205fee8a5a6e802f4f0",
+      "page_hash": "52b95f94486e578be0e93a2b9eafc8bc024cb7681dcde73f5971944ac92254d5",
       "job_keys": {
         "158e87f96e5ca3e5b7abad3f12224313": {
           "title": "Senior Financial Accountant (w/m/d)",
@@ -37,7 +37,7 @@
           "detail": "Werkstudent in Corporate Finance (Accounts Payable) (w/m/d) Zug | Werkstudent | Teilzeit Jetzt bewerben"
         }
       },
-      "last_checked": "2026-02-13T17:59:19.815578",
+      "last_checked": "2026-02-13T18:05:20.417648",
       "has_no_jobs_indicator": false
     },
     "Patrimonium": {
@@ -69,30 +69,30 @@
           "detail": "IT Applications Specialist (50%) - Crissier (Lausanne)"
         }
       },
-      "last_checked": "2026-02-13T17:59:25.979449",
+      "last_checked": "2026-02-13T18:05:26.061055",
       "has_no_jobs_indicator": false
     },
     "Helvetica Capital": {
       "url": "https://www.helvetica-capital.ch/karriere/",
       "page_hash": "42ca79a38800f20c5be9ed627133dfa79c035298620549eca4994e2e22345653",
       "job_keys": {},
-      "last_checked": "2026-02-13T17:59:30.330750",
+      "last_checked": "2026-02-13T18:05:30.145697",
       "has_no_jobs_indicator": true
     },
     "Argos Fund": {
       "url": "https://argos.fund/de/karriere-schweiz/",
-      "page_hash": "f6f1139abee32c57e086416827faa9a80dc602d585b69870a2123ef9e59eb083",
+      "page_hash": "298c76828b873ce6e90859f4eb25a297cf325eb7f5665bf07dcbb512b663f8c0",
       "job_keys": {},
-      "last_checked": "2026-02-13T18:00:07.437141",
+      "last_checked": "2026-02-13T18:06:07.258065",
       "has_no_jobs_indicator": false
     },
     "Wineus": {
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
       "page_hash": "9742e11becd0578778cb8cb595c8af37c426cab956f720a80bc361968af9d72f",
       "job_keys": {},
-      "last_checked": "2026-02-13T18:00:16.200163",
+      "last_checked": "2026-02-13T18:06:12.017650",
       "has_no_jobs_indicator": false
     }
   },
-  "last_run": "2026-02-13T18:00:16.248611"
+  "last_run": "2026-02-13T18:06:12.069540"
 }
