@@ -4,14 +4,14 @@
       "url": "https://www.cgs-management.com/karriere",
       "page_hash": "22ea0c19ec02bd3fa1df55abbb867c48fbc178b2d9e54468310367b34aa42dce",
       "job_keys": {},
-      "last_checked": "2026-02-17T07:55:00.954454",
+      "last_checked": "2026-02-18T07:56:03.712783",
       "has_no_jobs_indicator": true
     },
     "Evocope": {
       "url": "https://evocope.com/de/people",
       "page_hash": "7a1f2ba6922a703a7ff630f6f35ef557ef7af5c98a1d80fbee538b83f29477ea",
       "job_keys": {},
-      "last_checked": "2026-02-17T07:55:05.634525",
+      "last_checked": "2026-02-18T07:56:08.367817",
       "has_no_jobs_indicator": false
     },
     "BU Partners": {
@@ -69,30 +69,30 @@
           "detail": "IT Applications Specialist (50%) - Crissier (Lausanne)"
         }
       },
-      "last_checked": "2026-02-17T07:55:17.468826",
+      "last_checked": "2026-02-18T07:56:15.714854",
       "has_no_jobs_indicator": false
     },
     "Helvetica Capital": {
       "url": "https://www.helvetica-capital.ch/karriere/",
       "page_hash": "a2d1fc7928539a95a3c3084861fc84b0ba4ca12dd5e29a2b3f2b0ac68fac2396",
       "job_keys": {},
-      "last_checked": "2026-02-17T07:55:21.910893",
+      "last_checked": "2026-02-18T07:56:20.402131",
       "has_no_jobs_indicator": true
     },
     "Argos Fund": {
       "url": "https://argos.fund/de/karriere-schweiz/",
-      "page_hash": "600bac5c6dd0d4750422c2d7e69804f06f0f4faea57be6ec243d1417f641d1bf",
+      "page_hash": "6cf2b3117c92de4804596be4af96dc8cdb71306d537eefc5c2aae5c987849c76",
       "job_keys": {},
-      "last_checked": "2026-02-17T07:55:59.022231",
+      "last_checked": "2026-02-18T07:56:57.502435",
       "has_no_jobs_indicator": false
     },
     "Wineus": {
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
       "page_hash": "8c259f78109adec75edfa1ddb91cd2247d6b4dc1e9efc8ef4735939bcd6e5a8f",
       "job_keys": {},
-      "last_checked": "2026-02-17T07:56:04.425993",
+      "last_checked": "2026-02-18T07:57:02.550068",
       "has_no_jobs_indicator": false
     }
   },
-  "last_run": "2026-02-17T07:56:04.467866"
+  "last_run": "2026-02-18T07:57:02.597098"
 }
