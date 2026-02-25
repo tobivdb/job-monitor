@@ -61,6 +61,16 @@ NOISE_TITLES = {
 # Pattern to detect date-like strings (events, not jobs)
 DATE_PATTERN = re.compile(r"^\d{2}\.\d{2}\.\d{4}")
 
+# PE-relevant keywords — only LinkedIn jobs matching these are included
+PE_RELEVANT_KEYWORDS = re.compile(
+    r"(private\s+equity|direct\s+investm|associate|investment\s+manager|"
+    r"portfolio|fund|venture|buyout|m&a|mergers|acquisitions|"
+    r"due\s+diligence|deal|transaction|lbo|leveraged|"
+    r"principal|vice\s+president|managing\s+director|"
+    r"investor\s+relations|fundrais|co-invest|coinvest)",
+    re.IGNORECASE,
+)
+
 # Location keywords for Swiss/DACH job postings
 LOCATION_PATTERN = re.compile(
     r"(Zürich|Zurich|Zug|Basel|Bern|Geneva|Genf|Genève|Lausanne|Crissier|"
@@ -118,6 +128,12 @@ class SiteResult:
 def is_linkedin_url(url: str) -> bool:
     """Check if a URL is a LinkedIn page."""
     return "linkedin.com" in url.lower()
+
+
+def is_pe_relevant(title: str, detail: str = "") -> bool:
+    """Check if a job title/detail is relevant to Private Equity roles."""
+    text = f"{title} {detail}"
+    return bool(PE_RELEVANT_KEYWORDS.search(text))
 
 
 def load_linkedin_cookies(context) -> bool:
@@ -808,6 +824,15 @@ def main():
             try:
                 html = fetch_page(site_url, context)
                 result = extract_jobs_from_page(html, site_cfg)
+
+                # Filter LinkedIn jobs to PE-relevant roles only
+                if is_linkedin_url(site_url) and result.jobs:
+                    before = len(result.jobs)
+                    result.jobs = [j for j in result.jobs if is_pe_relevant(j.title, j.detail)]
+                    filtered = before - len(result.jobs)
+                    if filtered:
+                        log.info(f"  [{name}] Filtered out {filtered} non-PE jobs, kept {len(result.jobs)}")
+
                 log.info(f"  [{name}] Found {len(result.jobs)} job(s), no_jobs_indicator={result.has_no_jobs_indicator}")
                 for j in result.jobs:
                     log.info(f"    -> {j.title}")
