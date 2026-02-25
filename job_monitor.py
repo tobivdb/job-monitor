@@ -133,20 +133,28 @@ def linkedin_login(context, config: dict) -> bool:
     page = context.new_page()
     try:
         log.info("Logging into LinkedIn...")
-        page.goto("https://www.linkedin.com/login", wait_until="networkidle", timeout=30000)
+        page.goto("https://www.linkedin.com/login", wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_selector('input#username', timeout=10000)
         page.fill('input#username', email)
         page.fill('input#password', password)
         page.click('button[type="submit"]')
-        page.wait_for_timeout(5000)
 
-        # Check if login succeeded by looking for the feed or nav
+        # Wait for navigation after login
+        try:
+            page.wait_for_url("**/feed**", timeout=15000)
+            log.info("LinkedIn login successful (redirected to feed).")
+            return True
+        except Exception:
+            pass
+
+        # Check where we ended up
+        page.wait_for_timeout(3000)
         current_url = page.url
         if "feed" in current_url or "mynetwork" in current_url or "/in/" in current_url:
             log.info("LinkedIn login successful.")
             return True
 
         # Check if we hit a challenge/verification page
-        page_text = page.content()
         if "checkpoint" in current_url or "challenge" in current_url:
             log.warning("LinkedIn requires verification (CAPTCHA or 2FA). Skipping LinkedIn pages.")
             return False
