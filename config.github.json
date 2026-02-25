@@ -61,14 +61,14 @@
       "notes": "Team page - monitors for career section appearing"
     },
     {
-      "name": "Gyrus Capital (LinkedIn)",
-      "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Gyrus Capital",
+      "url": "https://www.gyruscapital.com/",
+      "notes": "No career page - monitors homepage for changes"
     },
     {
-      "name": "HBM Partners (LinkedIn)",
-      "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "HBM Partners",
+      "url": "https://www.hbmpartners.com/en/about-us/team/",
+      "notes": "Team page - monitors for career section appearing"
     },
     {
       "name": "Mill Reef Capital",
@@ -102,9 +102,9 @@
       "notes": "Contact page - monitors for career section appearing"
     },
     {
-      "name": "Calibrium (LinkedIn)",
-      "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Calibrium",
+      "url": "https://www.clbrm.com/",
+      "notes": "No career page - monitors homepage for changes"
     },
     {
       "name": "Verium",
@@ -125,9 +125,9 @@
       "notes": "Team page - monitors for career section appearing"
     },
     {
-      "name": "Rianta Capital (LinkedIn)",
-      "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Rianta Capital",
+      "url": "https://www.riantacapital.com/",
+      "notes": "No career page - monitors homepage for changes"
     },
     {
       "name": "Preon Capital",
@@ -147,18 +147,18 @@
       "notes": "Workday job board"
     },
     {
-      "name": "Equistone Partners (LinkedIn)",
-      "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Equistone Partners",
+      "url": "https://www.equistonepe.com/team",
+      "notes": "Team page - monitors for career section appearing"
     },
     {
       "name": "Rivean Capital",
       "url": "https://riveancapital.com/working-with-us/"
     },
     {
-      "name": "Genui (LinkedIn)",
-      "url": "https://www.linkedin.com/company/genui/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Genui",
+      "url": "https://www.genui.de/",
+      "notes": "No career page - monitors homepage for changes"
     },
     {
       "name": "LGT Capital Partners",
@@ -214,9 +214,9 @@
       "url": "https://www.bcpartners.com/about/life-at-bc/"
     },
     {
-      "name": "Inflexion (LinkedIn)",
-      "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
-      "notes": "LinkedIn - may be blocked by login wall"
+      "name": "Inflexion",
+      "url": "https://www.inflexion.com/people/",
+      "notes": "People page - monitors for career section appearing"
     },
     {
       "name": "Capiton",
