@@ -120,55 +120,47 @@ def is_linkedin_url(url: str) -> bool:
     return "linkedin.com" in url.lower()
 
 
-def linkedin_login(context, config: dict) -> bool:
-    """Log into LinkedIn using credentials from env vars or config.
-    Returns True if login was successful."""
-    email = os.environ.get("LINKEDIN_EMAIL", config.get("linkedin", {}).get("email", ""))
-    password = os.environ.get("LINKEDIN_PASSWORD", config.get("linkedin", {}).get("password", ""))
+def load_linkedin_cookies(context) -> bool:
+    """Load LinkedIn session cookies into the browser context.
+    Cookies come from LINKEDIN_COOKIES env var (JSON string) or linkedin_cookies.json file.
+    Returns True if cookies were loaded successfully."""
+    cookies_json = os.environ.get("LINKEDIN_COOKIES", "")
 
-    if not email or not password:
-        log.warning("LinkedIn credentials not configured. LinkedIn pages will be fetched without login.")
+    if not cookies_json:
+        cookies_file = BASE_DIR / "linkedin_cookies.json"
+        if cookies_file.exists():
+            cookies_json = cookies_file.read_text()
+        else:
+            log.warning("No LinkedIn cookies found. Run export_linkedin_cookies.py first.")
+            return False
+
+    try:
+        cookies = json.loads(cookies_json)
+        if not cookies:
+            log.warning("LinkedIn cookies are empty.")
+            return False
+        context.add_cookies(cookies)
+        log.info(f"Loaded {len(cookies)} LinkedIn cookies.")
+        return True
+    except (json.JSONDecodeError, Exception) as e:
+        log.warning(f"Failed to load LinkedIn cookies: {e}")
         return False
 
+
+def verify_linkedin_session(context) -> bool:
+    """Verify that the loaded cookies give us an authenticated LinkedIn session."""
     page = context.new_page()
     try:
-        log.info("Logging into LinkedIn...")
-        page.goto("https://www.linkedin.com/login", wait_until="domcontentloaded", timeout=45000)
-        page.wait_for_selector('input#username', timeout=10000)
-        page.fill('input#username', email)
-        page.fill('input#password', password)
-        page.click('button[type="submit"]')
-
-        # Wait for navigation after login
-        try:
-            page.wait_for_url("**/feed**", timeout=15000)
-            log.info("LinkedIn login successful (redirected to feed).")
-            return True
-        except Exception:
-            pass
-
-        # Check where we ended up
+        page.goto("https://www.linkedin.com/feed/", wait_until="domcontentloaded", timeout=30000)
         page.wait_for_timeout(3000)
         current_url = page.url
-        if "feed" in current_url or "mynetwork" in current_url or "/in/" in current_url:
-            log.info("LinkedIn login successful.")
-            return True
-
-        # Check if we hit a challenge/verification page
-        if "checkpoint" in current_url or "challenge" in current_url:
-            log.warning("LinkedIn requires verification (CAPTCHA or 2FA). Skipping LinkedIn pages.")
+        if "login" in current_url or "authwall" in current_url:
+            log.warning("LinkedIn cookies expired or invalid — redirected to login.")
             return False
-
-        # Check if we're still on login page (wrong credentials)
-        if "login" in current_url or "session" in current_url:
-            log.warning("LinkedIn login failed - possibly wrong credentials.")
-            return False
-
-        # If we ended up somewhere else, assume success
-        log.info(f"LinkedIn login - redirected to: {current_url}")
+        log.info(f"LinkedIn session verified (at: {current_url})")
         return True
     except Exception as e:
-        log.warning(f"LinkedIn login failed: {e}")
+        log.warning(f"LinkedIn session verification failed: {e}")
         return False
     finally:
         page.close()
@@ -799,13 +791,14 @@ def main():
             locale="de-CH",
         )
 
-        # Log into LinkedIn if any sites use LinkedIn URLs
+        # Load LinkedIn cookies if any sites use LinkedIn URLs
         has_linkedin_sites = any(is_linkedin_url(s["url"]) for s in config["sites"])
         linkedin_ok = False
         if has_linkedin_sites:
-            linkedin_ok = linkedin_login(context, config)
+            if load_linkedin_cookies(context):
+                linkedin_ok = verify_linkedin_session(context)
             if not linkedin_ok:
-                log.warning("LinkedIn login failed — LinkedIn pages will likely show login walls.")
+                log.warning("LinkedIn auth failed — LinkedIn pages may show limited content.")
 
         for site_cfg in config["sites"]:
             name = site_cfg["name"]

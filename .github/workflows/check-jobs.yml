@@ -36,8 +36,7 @@ jobs:
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
           SMTP_SERVER: smtp.gmail.com
           SMTP_PORT: 587
-          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
-          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+          LINKEDIN_COOKIES: ${{ secrets.LINKEDIN_COOKIES }}
         run: |
           # Always send email until 2026-02-16 so Tobias can verify it works
           if [ "$(date -u +%Y%m%d)" -le "20260216" ]; then
