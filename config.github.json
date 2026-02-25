@@ -35,6 +35,201 @@
       "name": "Wineus",
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
       "notes": "JS-heavy page, uses full page content comparison"
+    },
+    {
+      "name": "Eevolve Partners",
+      "url": "https://www.eevolve.partners/en/contact",
+      "notes": "Contact page - monitors for career section appearing"
+    },
+    {
+      "name": "Ufenau Capital Partners",
+      "url": "https://ufenau-capital-partners.jobs.personio.com/?language=en&display=undefined",
+      "notes": "Personio job board"
+    },
+    {
+      "name": "Invision",
+      "url": "https://www.invision.ch/uber-uns/arbeiten-mit-invision/"
+    },
+    {
+      "name": "Kowema",
+      "url": "https://join.com/companies/kowema",
+      "notes": "join.com job board"
+    },
+    {
+      "name": "Kharis Capital",
+      "url": "https://khariscapital.com/team",
+      "notes": "Team page - monitors for career section appearing"
+    },
+    {
+      "name": "Gyrus Capital (LinkedIn)",
+      "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "HBM Partners (LinkedIn)",
+      "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "Mill Reef Capital",
+      "url": "https://www.millreefcap.com/careers"
+    },
+    {
+      "name": "Rosedge Capital",
+      "url": "https://rosedgecapital.com/de/kontakt/",
+      "notes": "Contact page - monitors for career section appearing"
+    },
+    {
+      "name": "Soleal",
+      "url": "https://soleal.ch/stellenangebote/"
+    },
+    {
+      "name": "Artemon",
+      "url": "https://www.artemon.ch/karriere"
+    },
+    {
+      "name": "Jacobs Foundation",
+      "url": "https://jacobsfoundation.org/work-with-us/"
+    },
+    {
+      "name": "Armada",
+      "url": "https://www.armada.com/#contact",
+      "notes": "Contact page - monitors for career section appearing"
+    },
+    {
+      "name": "Gaydoul Group",
+      "url": "https://www.gaydoul-group.ch/de/kontakt/",
+      "notes": "Contact page - monitors for career section appearing"
+    },
+    {
+      "name": "Calibrium (LinkedIn)",
+      "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "Verium",
+      "url": "https://verium.ch/jobs/"
+    },
+    {
+      "name": "Petiole Asset Management",
+      "url": "https://petiole.com/de/contact-us",
+      "notes": "Contact page - monitors for career section appearing"
+    },
+    {
+      "name": "Quilvest",
+      "url": "https://quilvest.ch/career/"
+    },
+    {
+      "name": "EGS Beteiligungen",
+      "url": "https://www.egs-beteiligungen.ch/team",
+      "notes": "Team page - monitors for career section appearing"
+    },
+    {
+      "name": "Rianta Capital (LinkedIn)",
+      "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "Preon Capital",
+      "url": "https://www.preoncapital.com/jobs/"
+    },
+    {
+      "name": "EQT Group",
+      "url": "https://eqtgroup.com/about/careers"
+    },
+    {
+      "name": "Ardian",
+      "url": "https://www.ardian.com/join-us?field_department_term_eref%5B466%5D=466&&start_date=&end_date=&op=Search&form_build_id=form-54kox35ERvlUhJTugL5eINOpTJvlpNkMVkduHTX1qNE&form_id=opening_paragraphs_filter"
+    },
+    {
+      "name": "ICG",
+      "url": "https://icg.wd3.myworkdayjobs.com/external_careers",
+      "notes": "Workday job board"
+    },
+    {
+      "name": "Equistone Partners (LinkedIn)",
+      "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "Rivean Capital",
+      "url": "https://riveancapital.com/working-with-us/"
+    },
+    {
+      "name": "Genui (LinkedIn)",
+      "url": "https://www.linkedin.com/company/genui/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "LGT Capital Partners",
+      "url": "https://lgtcp.wd502.myworkdayjobs.com/lgtcpcurrentvacancies?workerSubType=8e79cea3a59c01010c834ff8eac70002",
+      "notes": "Workday job board"
+    },
+    {
+      "name": "Capital Dynamics",
+      "url": "https://www.capdyn.com/about-us/careers/"
+    },
+    {
+      "name": "Montana Capital Partners",
+      "url": "https://montana-capital-partners.jobs.personio.com/",
+      "notes": "Personio job board"
+    },
+    {
+      "name": "Partners Group",
+      "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
+      "notes": "Oracle HCM job board"
+    },
+    {
+      "name": "Alpha Associates",
+      "url": "https://alpha-associates.ch/en/about-us/career"
+    },
+    {
+      "name": "Flexstone Partners",
+      "url": "https://www.flexstonepartners.com/careers/"
+    },
+    {
+      "name": "Unigestion",
+      "url": "https://unigestion.intranet.digital/external/en/companies/9e7138ed-f512-4a5f-b7ea-58944b508bce/jobs"
+    },
+    {
+      "name": "Banque Pictet",
+      "url": "https://career012.successfactors.eu/career?company=banquepict&career%5fns=job%5flisting%5fsummary&navBarLevel=JOB%5fSEARCH&_s.crb=goWcBV6ydpoUR8QXwrTYwBURPdodsHnsugNByRmQ73w%3d",
+      "notes": "SuccessFactors job board"
+    },
+    {
+      "name": "Permira",
+      "url": "https://www.permira.com/people/life-at-permira"
+    },
+    {
+      "name": "Coller Capital",
+      "url": "https://collercapital-1660725598.teamtailor.com/jobs",
+      "notes": "Teamtailor job board"
+    },
+    {
+      "name": "Maven Capital Partners",
+      "url": "https://www.mavencp.com/maven-careers"
+    },
+    {
+      "name": "BC Partners",
+      "url": "https://www.bcpartners.com/about/life-at-bc/"
+    },
+    {
+      "name": "Inflexion (LinkedIn)",
+      "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
+      "notes": "LinkedIn - may be blocked by login wall"
+    },
+    {
+      "name": "Capiton",
+      "url": "https://capiton.de/karriere/"
+    },
+    {
+      "name": "Triton Partners",
+      "url": "https://tritonpartners.wd3.myworkdayjobs.com/External",
+      "notes": "Workday job board"
+    },
+    {
+      "name": "Montagu",
+      "url": "https://montagu.com/investment-team-opportunities/"
     }
   ]
 }
