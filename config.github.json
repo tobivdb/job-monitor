@@ -230,6 +230,41 @@
     {
       "name": "Montagu",
       "url": "https://montagu.com/investment-team-opportunities/"
+    },
+    {
+      "name": "Calibrium (LinkedIn)",
+      "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "Equistone Partners (LinkedIn)",
+      "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "Genui (LinkedIn)",
+      "url": "https://www.linkedin.com/company/genui/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "Gyrus Capital (LinkedIn)",
+      "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "HBM Partners (LinkedIn)",
+      "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "Inflexion (LinkedIn)",
+      "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "Rianta Capital (LinkedIn)",
+      "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
+      "notes": "LinkedIn job board - requires authentication"
     }
   ]
 }

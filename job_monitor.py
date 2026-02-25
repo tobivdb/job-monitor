@@ -115,6 +115,57 @@ class SiteResult:
 # Page fetching (Playwright - handles JS-rendered pages)
 # ---------------------------------------------------------------------------
 
+def is_linkedin_url(url: str) -> bool:
+    """Check if a URL is a LinkedIn page."""
+    return "linkedin.com" in url.lower()
+
+
+def linkedin_login(context, config: dict) -> bool:
+    """Log into LinkedIn using credentials from env vars or config.
+    Returns True if login was successful."""
+    email = os.environ.get("LINKEDIN_EMAIL", config.get("linkedin", {}).get("email", ""))
+    password = os.environ.get("LINKEDIN_PASSWORD", config.get("linkedin", {}).get("password", ""))
+
+    if not email or not password:
+        log.warning("LinkedIn credentials not configured. LinkedIn pages will be fetched without login.")
+        return False
+
+    page = context.new_page()
+    try:
+        log.info("Logging into LinkedIn...")
+        page.goto("https://www.linkedin.com/login", wait_until="networkidle", timeout=30000)
+        page.fill('input#username', email)
+        page.fill('input#password', password)
+        page.click('button[type="submit"]')
+        page.wait_for_timeout(5000)
+
+        # Check if login succeeded by looking for the feed or nav
+        current_url = page.url
+        if "feed" in current_url or "mynetwork" in current_url or "/in/" in current_url:
+            log.info("LinkedIn login successful.")
+            return True
+
+        # Check if we hit a challenge/verification page
+        page_text = page.content()
+        if "checkpoint" in current_url or "challenge" in current_url:
+            log.warning("LinkedIn requires verification (CAPTCHA or 2FA). Skipping LinkedIn pages.")
+            return False
+
+        # Check if we're still on login page (wrong credentials)
+        if "login" in current_url or "session" in current_url:
+            log.warning("LinkedIn login failed - possibly wrong credentials.")
+            return False
+
+        # If we ended up somewhere else, assume success
+        log.info(f"LinkedIn login - redirected to: {current_url}")
+        return True
+    except Exception as e:
+        log.warning(f"LinkedIn login failed: {e}")
+        return False
+    finally:
+        page.close()
+
+
 def fetch_page(url: str, playwright_context, timeout: int = 30000) -> str:
     """Fetch a page using Playwright (headless Chromium). Returns rendered HTML."""
     page = playwright_context.new_page()
@@ -129,6 +180,12 @@ def fetch_page(url: str, playwright_context, timeout: int = 30000) -> str:
 
         # Extra wait for lazy-loaded content
         page.wait_for_timeout(2000)
+
+        # Check if LinkedIn redirected to login wall
+        if is_linkedin_url(url) and "login" in page.url.lower():
+            log.warning(f"  LinkedIn login wall hit for {url}")
+            raise Exception("LinkedIn login wall - not authenticated")
+
         html = page.content()
         return html
     except Exception as e:
@@ -733,6 +790,14 @@ def main():
             user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             locale="de-CH",
         )
+
+        # Log into LinkedIn if any sites use LinkedIn URLs
+        has_linkedin_sites = any(is_linkedin_url(s["url"]) for s in config["sites"])
+        linkedin_ok = False
+        if has_linkedin_sites:
+            linkedin_ok = linkedin_login(context, config)
+            if not linkedin_ok:
+                log.warning("LinkedIn login failed — LinkedIn pages will likely show login walls.")
 
         for site_cfg in config["sites"]:
             name = site_cfg["name"]
