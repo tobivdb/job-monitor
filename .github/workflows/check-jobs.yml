@@ -38,8 +38,8 @@ jobs:
           SMTP_PORT: 587
           LINKEDIN_COOKIES: ${{ secrets.LINKEDIN_COOKIES }}
         run: |
-          # Always send email until 2026-02-16 so Tobias can verify it works
-          if [ "$(date -u +%Y%m%d)" -le "20260216" ]; then
+          # Always send email until 2026-02-28 so Tobias can verify it works
+          if [ "$(date -u +%Y%m%d)" -le "20260228" ]; then
             python job_monitor.py --config config.github.json --always-email
           else
             python job_monitor.py --config config.github.json
