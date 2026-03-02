@@ -61,6 +61,12 @@ NOISE_TITLES = {
 # Pattern to detect date-like strings (events, not jobs)
 DATE_PATTERN = re.compile(r"^\d{2}\.\d{2}\.\d{4}")
 
+# Keywords that trigger the per-company summary in email notifications
+EMAIL_SUMMARY_KEYWORDS = re.compile(
+    r"(private\s+equity|associate|investment\s+manager)",
+    re.IGNORECASE,
+)
+
 # PE-relevant keywords — only LinkedIn jobs matching these are included
 PE_RELEVANT_KEYWORDS = re.compile(
     r"(private\s+equity|direct\s+investm|associate|investment\s+manager|"
@@ -654,12 +660,44 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
             .badge-new {{ background: #27ae60; color: white; }}
             .badge-removed {{ background: #e74c3c; color: white; }}
             .badge-first {{ background: #3498db; color: white; }}
+            .summary-section {{ background: #fffde7; border-left: 4px solid #f9a825; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }}
+            .summary-section h2 {{ color: #e65100; margin-top: 0; }}
+            .summary-section h3 {{ color: #2c3e50; margin: 12px 0 4px; }}
+            .summary-section ul {{ margin: 4px 0 12px 18px; padding: 0; }}
+            .summary-section li {{ margin: 4px 0; }}
         </style>
     </head>
     <body>
         <h1>Job Monitor Report</h1>
         <p>Scan completed: {timestamp}</p>
     """
+
+    # --- Summary: per-company relevant new jobs (not first-run) ---
+    relevant_by_company = []
+    for diff in diffs:
+        if diff.is_first_run or diff.error:
+            continue
+        relevant_new = [
+            j for j in diff.new_jobs
+            if EMAIL_SUMMARY_KEYWORDS.search(f"{j.title} {j.detail}")
+        ]
+        if relevant_new:
+            relevant_by_company.append((diff, relevant_new))
+
+    if relevant_by_company:
+        html += '<div class="summary-section"><h2>New Relevant Positions</h2>'
+        for diff, jobs in relevant_by_company:
+            html += f'<h3><a href="{diff.url}">{diff.name}</a></h3><ul>'
+            for job in jobs:
+                if job.url:
+                    html += f'<li><a href="{job.url}">{job.title}</a>'
+                else:
+                    html += f'<li>{job.title}'
+                if job.location:
+                    html += f' &mdash; {job.location}'
+                html += '</li>'
+            html += '</ul>'
+        html += '</div>'
 
     # Render all sections and categorize them
     sections_with_jobs = []     # new/removed jobs detected
