@@ -264,6 +264,48 @@
       "name": "Rianta Capital (LinkedIn)",
       "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
       "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "ACE & Company",
+      "url": "https://aceandcompany.breezy.hr/",
+      "notes": "Breezy HR job board"
+    },
+    {
+      "name": "Alpina Partners",
+      "url": "https://alpinapartners.com/career/"
+    },
+    {
+      "name": "Beyond Capital Partners",
+      "url": "https://beyondcapital-partners.com/karriere/"
+    },
+    {
+      "name": "Mutares",
+      "url": "https://career.mutares.de/"
+    },
+    {
+      "name": "Cinven",
+      "url": "https://cinven.pinpointhq.com/en#js-careers-jobs-block",
+      "notes": "Pinpoint HQ job board"
+    },
+    {
+      "name": "DUB AG",
+      "url": "https://dubag.eu/careers/"
+    },
+    {
+      "name": "Gilde Healthcare",
+      "url": "https://gildehealthcare.com/career-opportunities/"
+    },
+    {
+      "name": "BlueOrchard",
+      "url": "https://www.blueorchard.com/careers/"
+    },
+    {
+      "name": "HPE Growth",
+      "url": "https://www.hpegrowth.com/careers"
+    },
+    {
+      "name": "Nord Holding",
+      "url": "https://www.nordholding.de/stellenangebote"
     }
   ]
 }
