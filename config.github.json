@@ -13,12 +13,12 @@
     },
     {
       "name": "BU Partners",
-      "url": "https://www.bu-partners.ch/karriere/",
+      "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
       "exclude_patterns": ["Initiativbewerbung"]
     },
     {
       "name": "Patrimonium",
-      "url": "https://www.patrimonium.ch/de/careers",
+      "url": "https://www.patrimonium.ch/careers2",
       "exclude_patterns": ["Spontanbewerbung"]
     },
     {
@@ -383,6 +383,10 @@
       "url": "https://egeriagroup.com/career/"
     },
     {
+      "name": "Avedon Capital",
+      "url": "https://avedoncapital.com/career/internship-amsterdam/"
+    },
+    {
       "name": "Bolster Investments",
       "url": "https://bolsterinvestments.nl/werken-bij/"
     },
@@ -601,7 +605,7 @@
     },
     {
       "name": "Sofina Group",
-      "url": "https://www.sofinagroup.com/the-team/careers"
+      "url": "https://www.sofinagroup.com/the-team/careers/"
     },
     {
       "name": "Cobepa",
@@ -638,7 +642,7 @@
     },
     {
       "name": "Callista PE",
-      "url": "https://www.callista-pe.de/karriere"
+      "url": "https://www.callista-pe.de/karriere/"
     },
     {
       "name": "Emeram",
