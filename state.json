@@ -4,53 +4,53 @@
       "url": "https://www.cgs-management.com/karriere",
       "page_hash": "22ea0c19ec02bd3fa1df55abbb867c48fbc178b2d9e54468310367b34aa42dce",
       "job_keys": {},
-      "last_checked": "2026-05-10T08:59:48.842536",
+      "last_checked": "2026-05-11T10:36:33.721460",
       "has_no_jobs_indicator": true
     },
     "Evocope": {
       "url": "https://evocope.com/de/people",
       "page_hash": "c740c7b28c67f12ab944020de9de98e3914dc8d1ee29f1cb27ac3c830583b7c9",
       "job_keys": {},
-      "last_checked": "2026-05-10T08:59:53.301694",
+      "last_checked": "2026-05-11T10:36:38.038382",
       "has_no_jobs_indicator": false
     },
     "BU Partners": {
-      "url": "https://www.bu-partners.ch/karriere/",
-      "page_hash": "2830926800f760e4659e03a577c981637344d9c0961f890032d4f2371c17adfb",
+      "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
+      "page_hash": "17b55ecfba5326b9d1e0d9c4d2b821cf415fbd6b76c3764e18690d5d0d345daf",
       "job_keys": {},
-      "last_checked": "2026-05-10T08:59:59.499043",
+      "last_checked": "2026-05-11T10:36:44.062839",
       "has_no_jobs_indicator": false
     },
     "Patrimonium": {
-      "url": "https://www.patrimonium.ch/de/careers",
-      "page_hash": "2ffb9a8553888b472437d7f3b55685e3e1c82c787aabc324a7b422a6f5a6d973",
+      "url": "https://www.patrimonium.ch/careers2",
+      "page_hash": "1043f426ba82a49548fe42b17ec1a1589cd1a4ebd5c9861b1fa6dfdce653982f",
       "job_keys": {
-        "7d030106ec2627044668fbd89ef52e06": {
-          "title": "Investment Analyst Private Credit",
-          "url": "",
-          "location": "",
-          "detail": "Investment Analyst Private Credit"
-        },
-        "f60dffd804a5e30df2e6f4c33c246e4b": {
+        "3f6aa56d3aabaef05b154d55180d5e23": {
           "title": "(Senior) Portfolio Manager Real Estate",
-          "url": "https://www.patrimonium.ch/de/careers/senior-portfolio-manager-real-estate",
+          "url": "https://www.patrimonium.ch/careers/senior-portfolio-manager-real-estate",
           "location": "Zurich",
-          "detail": "(Senior) Portfolio Manager Real Estate - Zurich or Crissier Investment Manager Hypotheken Schweiz - Zurich Director Investor Relations - Zürich Spontanbewerbung - Crissier (Lausanne) / Zürich"
+          "detail": "(Senior) Portfolio Manager Real Estate - Zurich or Crissier Investment Manager Mortgages Switzerland - Zurich Director Investor Relations - Zürich Spontaneous application - Crissier (Lausanne) / Zürich"
         },
-        "263b44a836ff00a0392e4eb9a16461bd": {
-          "title": "Investment Manager Hypotheken Schweiz",
-          "url": "https://www.patrimonium.ch/de/careers/investment-manager-real-estate-debt",
-          "location": "Schweiz",
-          "detail": "Investment Manager Hypotheken Schweiz - Zurich"
+        "754fb39e9a0b879c7986270c2ee46f74": {
+          "title": "Investment Manager Mortgages Switzerland",
+          "url": "https://www.patrimonium.ch/careers/investment-manager-real-estate-debt",
+          "location": "Switzerland",
+          "detail": "Investment Manager Mortgages Switzerland - Zurich"
         },
-        "8d61f78df50a4c5a032cf50df8e93147": {
+        "c025e7c2036636e2f0f4537c598126bb": {
           "title": "Director Investor Relations",
-          "url": "https://www.patrimonium.ch/de/careers/30004-2",
+          "url": "https://www.patrimonium.ch/careers/director-investor-relations",
           "location": "Zürich",
           "detail": "Director Investor Relations - Zürich"
+        },
+        "706b49d35ed2f2075c8aedf7f4598c0a": {
+          "title": "Transaction Manager Real Estate Acquisitions, Sales &amp; Letting",
+          "url": "",
+          "location": "",
+          "detail": "Transaction Manager Real Estate Acquisitions, Sales &amp; Letting"
         }
       },
-      "last_checked": "2026-05-10T09:00:05.912527",
+      "last_checked": "2026-05-11T10:36:49.810583",
       "has_no_jobs_indicator": false
     },
     "Helvetica Capital": {
@@ -70,28 +70,28 @@
           "detail": "Helvetica Capital setzt sich professionell für Vielfalt und Chancengleichheit ein. Wir sind bestrebt, ein diverses Team aufzubauen, d.h. Individuen mit unterschiedlichen Werdegängen, Perspektiven und Fähigkeiten einzubinden. Unser Unternehmen bietet seinen Mitarbeitenden eine einzigartige Plattform,"
         }
       },
-      "last_checked": "2026-05-10T09:00:10.296222",
+      "last_checked": "2026-05-11T10:36:54.079847",
       "has_no_jobs_indicator": false
     },
     "Argos Fund": {
       "url": "https://argos.fund/de/karriere-schweiz/",
-      "page_hash": "ab51a5e0c4e7a38ba5e7e350c0cc2e15aa6d5feba81753985427f72f211da38e",
+      "page_hash": "be329cfd6312b5cbfa9c70f1d1b64272888d5586df63688bd64b46f79967d34d",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:00:47.396494",
+      "last_checked": "2026-05-11T10:37:31.191343",
       "has_no_jobs_indicator": false
     },
     "Wineus": {
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
       "page_hash": "8c259f78109adec75edfa1ddb91cd2247d6b4dc1e9efc8ef4735939bcd6e5a8f",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:00:53.001326",
+      "last_checked": "2026-05-11T10:37:36.411636",
       "has_no_jobs_indicator": false
     },
     "Eevolve Partners": {
       "url": "https://www.eevolve.partners/en/contact",
       "page_hash": "e17e88408cd273e49eb3cd253a5cc5715dd17b980e0c4bd2d4dade9dbfd06813",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:01:13.753234",
+      "last_checked": "2026-05-11T10:37:56.567044",
       "has_no_jobs_indicator": false
     },
     "Ufenau Capital Partners": {
@@ -147,7 +147,7 @@
           "detail": "Private Equity Stage Benelux (m/f/d) – start in september 2026 Amsterdam Fulltime Stagiair/student"
         }
       },
-      "last_checked": "2026-05-10T09:01:19.211555",
+      "last_checked": "2026-05-11T10:38:01.425977",
       "has_no_jobs_indicator": false
     },
     "Invision": {
@@ -161,49 +161,49 @@
           "detail": "GDPR Cookie-Einstellungen schließen Datenschutz-Übersicht Unbedingt notwendige Cookies Cookie Policy Powered by GDPR Cookie Compliance Datenschutz-Übersicht Diese Website verwendet Cookies, damit wir dir die bestmögliche Benutzererfahrung bieten können. Cookie-Informationen werden in deinem Browser "
         }
       },
-      "last_checked": "2026-05-10T09:01:36.669867",
+      "last_checked": "2026-05-11T10:38:07.415393",
       "has_no_jobs_indicator": false
     },
     "Kowema": {
       "url": "https://join.com/companies/kowema",
       "page_hash": "d61a88a8fc2021122fe38f6d399b1bdeaf19d82335a0ad266ef763b26fa64125",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:01:40.277024",
+      "last_checked": "2026-05-11T10:38:11.734835",
       "has_no_jobs_indicator": false
     },
     "Kharis Capital": {
       "url": "https://khariscapital.com/team",
       "page_hash": "6fec57fe878b951d9a3d56ad126e6fdaad51b8a2d436ef1a93a7292032758be0",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:02:17.535136",
+      "last_checked": "2026-05-11T10:38:48.963987",
       "has_no_jobs_indicator": false
     },
     "Gyrus Capital (LinkedIn)": {
       "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
-      "page_hash": "6759de511af31ae19eca388dabcc2d06d299e6574acba3cf8d89d7193264a79d",
+      "page_hash": "c2d5dace02c06aa3168fccf292a4594d9fc01126376bd856a025f3a4914be6b0",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:09:03.488833",
+      "last_checked": "2026-05-11T10:44:48.380109",
       "has_no_jobs_indicator": false
     },
     "HBM Partners (LinkedIn)": {
       "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
-      "page_hash": "f125fe9ebc8023e42e55291bffc0e3b29b7bfe325cdbd1e2f273bdd27cbabc3f",
+      "page_hash": "69983b6b68ab409c833d00893e33e55fc575799637b88c8e4e106bebf05921ca",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:09:43.595374",
+      "last_checked": "2026-05-11T10:45:28.218859",
       "has_no_jobs_indicator": false
     },
     "Mill Reef Capital": {
       "url": "https://www.millreefcap.com/careers",
       "page_hash": "1861b7f7d9804242515dd0a766c95adfc947553e8f6c7997f4286da9f798639b",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:02:31.269743",
+      "last_checked": "2026-05-11T10:39:03.769244",
       "has_no_jobs_indicator": false
     },
     "Rosedge Capital": {
       "url": "https://rosedgecapital.com/de/kontakt/",
       "page_hash": "d1695999c5effd231ca50107a1dc9105987a7529d56a4643feb894980392649e",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:02:41.321453",
+      "last_checked": "2026-05-11T10:39:15.912467",
       "has_no_jobs_indicator": false
     },
     "Soleal": {
@@ -259,12 +259,12 @@
           "detail": "Operations Director m/w (100%) Zürich Weitere Details"
         }
       },
-      "last_checked": "2026-05-10T09:02:47.508469",
+      "last_checked": "2026-05-11T10:39:21.911627",
       "has_no_jobs_indicator": false
     },
     "Artemon": {
       "url": "https://www.artemon.ch/karriere",
-      "page_hash": "2d10a84df07383bdd6884cd54fa9ddab2940306ffbc02de093a9416381664d9c",
+      "page_hash": "831298c9a35174b154a69f41f2d7e3a95ff5d6a3dba6ab06bf66bd9774320d0a",
       "job_keys": {
         "fa4652be99d6376c5664c37aa143e379": {
           "title": "×Wir verwenden Cookies zur Unterstützung der Benutzerfreundlichkeit. Wenn Sie auf der Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.Mehr Infos",
@@ -291,14 +291,14 @@
           "detail": "Karriere Wir sind eine unternehmergeführte Investment und Advisory Boutique, die auf Vertrauen, Expertise und langfristigen Partnerschaften aufbaut. Unser Team spielt bei allem, was wir tun, eine zentrale Rolle. Wir freuen uns immer, mit motivierten Menschen in Kontakt zu treten, die unsere Werte te"
         }
       },
-      "last_checked": "2026-05-10T09:02:54.601260",
+      "last_checked": "2026-05-11T10:39:27.404211",
       "has_no_jobs_indicator": false
     },
     "Jacobs Foundation": {
       "url": "https://jacobsfoundation.org/work-with-us/",
       "page_hash": "43af92d02656c0d474f0f5090729e5c7889838db32a33c16bb3130854ec53a0b",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:03:00.541468",
+      "last_checked": "2026-05-11T10:39:33.086708",
       "has_no_jobs_indicator": false
     },
     "Armada": {
@@ -312,33 +312,33 @@
           "detail": "x Marketing / Third Party Marketing / Third Party Cookies originate from external advertising companies (among others) and are used to gather information about the websites visited by you, in order to e.g. create targeted advertising for you."
         }
       },
-      "last_checked": "2026-05-10T09:03:05.537247",
+      "last_checked": "2026-05-11T10:39:37.962090",
       "has_no_jobs_indicator": false
     },
     "Gaydoul Group": {
       "url": "https://www.gaydoul-group.ch/de/kontakt/",
       "page_hash": "7999a8c40706971672e06adc2737c108c86938e01e2bf634713a5d9ebc76955b",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:03:10.574535",
+      "last_checked": "2026-05-11T10:39:42.632781",
       "has_no_jobs_indicator": false
     },
     "Calibrium (LinkedIn)": {
       "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
-      "page_hash": "099db50621ed3a1aa75e296ef2214e9cd649560ee6e9310ad80f09cb655065dc",
+      "page_hash": "5de6af366a91559dbd75bf9a405834fab2c0bbdbd6a7c4977ea5ce8c49c77ff5",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:07:02.961250",
+      "last_checked": "2026-05-11T10:42:48.310269",
       "has_no_jobs_indicator": false
     },
     "Verium": {
       "url": "https://verium.ch/jobs/",
       "page_hash": "adb3011977d87f109519f6a22d25815785aa981453411ab94297f52c7fe5c92e",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:03:20.294276",
+      "last_checked": "2026-05-11T10:39:51.056575",
       "has_no_jobs_indicator": false
     },
     "Petiole Asset Management": {
       "url": "https://petiole.com/de/contact-us",
-      "page_hash": "e79f5c472009262fd932080b2772087be3fbbb52fe32ae102281a87006802b7e",
+      "page_hash": "a39f72dc59a9ab5c1915e87149a6e0ebf7e4d563b319498b6f1f310329fce3b3",
       "job_keys": {
         "ed425a18fe0dc53e116378f5003eef2f": {
           "title": "Womit können wir Ihnen helfen?",
@@ -347,14 +347,14 @@
           "detail": "Womit können wir Ihnen helfen? First Name * Last Name * Email * Phone * United States + 1 United Kingdom + 44 Afghanistan (‫افغانستان‬‎) + 93 Albania (Shqipëri) + 355 Algeria (‫الجزائر‬‎) + 213 American Samoa + 1684 Andorra + 376 Angola + 244 Anguilla + 1264 Antigua and Barbuda + 1268 Argentina + 54"
         }
       },
-      "last_checked": "2026-05-10T09:03:24.905024",
+      "last_checked": "2026-05-11T10:40:28.564680",
       "has_no_jobs_indicator": false
     },
     "Quilvest": {
       "url": "https://quilvest.ch/career/",
       "page_hash": "7381999ab99b46b270d3fd0918bad4c543d7ce36a5a806347345169dca7d465d",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:03:32.096091",
+      "last_checked": "2026-05-11T10:40:35.151086",
       "has_no_jobs_indicator": false
     },
     "EGS Beteiligungen": {
@@ -374,14 +374,14 @@
           "detail": "Accusantium fugit"
         }
       },
-      "last_checked": "2026-05-10T09:03:35.561177",
+      "last_checked": "2026-05-11T10:40:38.630246",
       "has_no_jobs_indicator": false
     },
     "Rianta Capital (LinkedIn)": {
       "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
-      "page_hash": "f31bc24e7a278a14aec0f3fe35bac70a700308bc680ef7677a41c2a08f5d37c0",
+      "page_hash": "45717dc5f3c032fb529c13ee340c70807adbbe9d3d638d17fc017cbad477802b",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:11:03.940593",
+      "last_checked": "2026-05-11T10:46:48.262030",
       "has_no_jobs_indicator": false
     },
     "Preon Capital": {
@@ -395,7 +395,7 @@
           "detail": "Internship – Junior M&amp;A Analyst In order to support our growth we are looking to recruit a junior analyst for a 6 month internship. Missions et Responsibilities You will be part of our corporate advisory team, specializing in M&amp;A and capital raising. Your main tasks will be to assist our team in the"
         }
       },
-      "last_checked": "2026-05-10T09:03:41.378342",
+      "last_checked": "2026-05-11T10:40:43.916744",
       "has_no_jobs_indicator": false
     },
     "EQT Group": {
@@ -439,12 +439,12 @@
           "detail": "Senior Platform Engineer Data, Process Digitalization &amp; Architecture"
         }
       },
-      "last_checked": "2026-05-10T09:03:48.881895",
+      "last_checked": "2026-05-11T10:40:51.090609",
       "has_no_jobs_indicator": false
     },
     "Ardian": {
       "url": "https://www.ardian.com/join-us?field_department_term_eref%5B466%5D=466&&start_date=&end_date=&op=Search&form_build_id=form-54kox35ERvlUhJTugL5eINOpTJvlpNkMVkduHTX1qNE&form_id=opening_paragraphs_filter",
-      "page_hash": "6c685ccc7090557ac9d8b7562ff0da8695b403449500ac5dbaeb6464cb1ddd77",
+      "page_hash": "1558c37bce0f8bd36ef78f0af5294520c155474b649d54fc35e10bde105f7d68",
       "job_keys": {
         "d8e33e6c3ac8f067af4832dc65785d7c": {
           "title": "BuyoutBuyout Intern - May 2026 I Milan (M/F)MilanViewBuyoutBuyout Stage - Septembre 2026 I Paris (M/F)ParisView",
@@ -471,12 +471,12 @@
           "detail": "Buyout Intern - May 2026 I Milan (M/F)"
         }
       },
-      "last_checked": "2026-05-10T09:03:55.993232",
+      "last_checked": "2026-05-11T10:40:57.739745",
       "has_no_jobs_indicator": false
     },
     "ICG": {
       "url": "https://icg.wd3.myworkdayjobs.com/external_careers",
-      "page_hash": "bc7cc0138d55187e63435ba6e576ca04f718d3d338f43f2758c38164793e7ced",
+      "page_hash": "a010ee1da299386e5da64c16e128ccd43365f20b11a63f3512eaf4a6690e57f0",
       "job_keys": {
         "8f591e7f8b11bf8e171dd8d54ec123bd": {
           "title": "Treasury Associate",
@@ -503,33 +503,33 @@
           "detail": "Fund Finance Manager (Real Estate Debt)"
         }
       },
-      "last_checked": "2026-05-10T09:04:03.644537",
+      "last_checked": "2026-05-11T10:41:04.447762",
       "has_no_jobs_indicator": false
     },
     "Equistone Partners (LinkedIn)": {
       "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
-      "page_hash": "1efc12aed7e348247fc69ca8ca472f4ebc04af01446be4f5c73b8b3b756c47f4",
+      "page_hash": "aa607ddb8486a0a3942c4ba83f9b6f52fcf25fde3745e26fcf02869337e54e6d",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:07:43.235468",
+      "last_checked": "2026-05-11T10:43:28.436490",
       "has_no_jobs_indicator": false
     },
     "Rivean Capital": {
       "url": "https://riveancapital.com/working-with-us/",
       "page_hash": "59e2e310657faa354305e9b1e857744fffa90eab689ad8a66c43fa1f3c0dbe93",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:04:17.092464",
+      "last_checked": "2026-05-11T10:41:16.170707",
       "has_no_jobs_indicator": false
     },
     "Genui (LinkedIn)": {
       "url": "https://www.linkedin.com/company/genui/jobs/",
-      "page_hash": "6268e370a9fc107c90ee9a43cb162ac4ff3a7c1a9890b5b3390ac1da0032c79a",
+      "page_hash": "417cf42a764081449a7d35d6252ca2d2355009da9f23c7061aa96ef571014ced",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:08:23.482033",
+      "last_checked": "2026-05-11T10:44:08.236094",
       "has_no_jobs_indicator": false
     },
     "LGT Capital Partners": {
       "url": "https://lgtcp.wd502.myworkdayjobs.com/lgtcpcurrentvacancies?workerSubType=8e79cea3a59c01010c834ff8eac70002",
-      "page_hash": "51d5b58189fda831a7961ed637cb8217e245a6d0fd87cc6f513432d9db74d6eb",
+      "page_hash": "1941ec0728f39ea1da7a06e79b7c146ca741d592fe3515aca5340ee4913bfa01",
       "job_keys": {
         "54d9f2ece7ea8641ce453eca4cafa48a": {
           "title": "AI &amp; Data Solutions Analyst",
@@ -580,7 +580,7 @@
           "detail": "Fund Accountant - Private Equity"
         }
       },
-      "last_checked": "2026-05-10T09:04:30.733345",
+      "last_checked": "2026-05-11T10:41:27.863776",
       "has_no_jobs_indicator": false
     },
     "Capital Dynamics": {
@@ -648,19 +648,19 @@
           "detail": "Senior Legal Counsel – Secondaries Transactions (Private Equity) London Senior Product Specialist, Clean Energy (Product Development &amp; Investor Relations) London Investment Associate, Clean Energy London Intern, Private Equity - Secondaries New York Intern, Co-Investments (German Speaker) London Int"
         }
       },
-      "last_checked": "2026-05-10T09:04:34.966607",
+      "last_checked": "2026-05-11T10:41:31.486666",
       "has_no_jobs_indicator": false
     },
     "Montana Capital Partners": {
       "url": "https://montana-capital-partners.jobs.personio.com/",
       "page_hash": "d2d5ae7643f6ee2ebf4c1ab763b580054c9570667ae909c2e2ec664745111d6c",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:04:39.982002",
+      "last_checked": "2026-05-11T10:41:36.006644",
       "has_no_jobs_indicator": false
     },
     "Partners Group": {
       "url": "https://www.partnersgroup.com/en/careers/open-positions",
-      "page_hash": "3299c5c2752392e49d5e5af22ef9444c3eced6fcee58d8a476253967b88de5ce",
+      "page_hash": "b6d5df92c6034de6be55ecb9e44490dc5aa65ab9abbc1a49b8833361064bde6e",
       "job_keys": {
         "74c864507069a6abee30392713e21e8a": {
           "title": "Search by Job TitleFunctional AreaSelect Functional AreaAccounting and FinanceBusiness ServicesCapital MarketsClient SolutionsESG &amp; SustainabilityHuma",
@@ -668,11 +668,23 @@
           "location": "Munich",
           "detail": "Search by Job Title Functional Area Select Functional Area Accounting and Finance Business Services Capital Markets Client Solutions ESG &amp; Sustainability Human Resources Investments Legal, Compliance and Tax Marketing and Communications Office Management Platform Services Portfolio Solutions Product"
         },
-        "a4acf3f88eef32e0362204533dcf39fb": {
-          "title": "TitleLocationDate(Senior) Legal Counsel, 100%Zug, Switzerland08.05.2026Junior Risk ManagerSingapore, Singapore08.05.2026Client Solutions Professional,",
-          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16374",
+        "6a28b209fe16888f697f5118d6146edf": {
+          "title": "TitleLocationDateSenior IT Infrastructure EngineerManila, Philippines11.05.2026(Senior) Legal Counsel, 100%Zug, Switzerland08.05.2026Internship - CSOL",
+          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16376",
           "location": "Zug",
-          "detail": "Title Location Date (Senior) Legal Counsel, 100% Zug, Switzerland 08.05.2026 Junior Risk Manager Singapore, Singapore 08.05.2026 Client Solutions Professional, Institutional Sales, Tokyo Tokyo, Japan 08.05.2026 Platform Operations Professional Manila, Philippines 06.05.2026 Senior Risk Manager Zug, "
+          "detail": "Title Location Date Senior IT Infrastructure Engineer Manila, Philippines 11.05.2026 (Senior) Legal Counsel, 100% Zug, Switzerland 08.05.2026 Internship - CSOL Asia, Southeast Asia &amp; China team (8 weeks) Singapore, Singapore 08.05.2026 Junior Risk Manager Singapore, Singapore 08.05.2026 Client Solut"
+        },
+        "e0bb5f3f8cc0030a0cbb8206df923185": {
+          "title": "Senior IT Infrastructure EngineerManila, Philippines11.05.2026",
+          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16376",
+          "location": "",
+          "detail": "Senior IT Infrastructure Engineer Manila, Philippines 11.05.2026"
+        },
+        "9fac6a46411d8770f1127671ab424f30": {
+          "title": "Senior IT Infrastructure Engineer",
+          "url": "",
+          "location": "",
+          "detail": "Senior IT Infrastructure Engineer"
         },
         "564762e8e4a54b8284c82efd1a630217": {
           "title": "(Senior) Legal Counsel, 100%Zug, Switzerland08.05.2026",
@@ -710,30 +722,6 @@
           "location": "",
           "detail": "Client Solutions Professional, Institutional Sales, Tokyo"
         },
-        "e62f26f3e52692967d983243df3f6d6e": {
-          "title": "Platform Operations ProfessionalManila, Philippines06.05.2026",
-          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16366",
-          "location": "",
-          "detail": "Platform Operations Professional Manila, Philippines 06.05.2026"
-        },
-        "c8d4f7bf6639f379c11753cd68c8d9b1": {
-          "title": "Platform Operations Professional",
-          "url": "",
-          "location": "",
-          "detail": "Platform Operations Professional"
-        },
-        "22f958cf1be4c8f3e9a6fb59d587c601": {
-          "title": "Senior Risk ManagerZug, Switzerland05.05.2026",
-          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16365",
-          "location": "Zug",
-          "detail": "Senior Risk Manager Zug, Switzerland 05.05.2026"
-        },
-        "ba7e11b586039a794b41926e059ec135": {
-          "title": "Senior Risk Manager",
-          "url": "",
-          "location": "",
-          "detail": "Senior Risk Manager"
-        },
         "29673ac845b1735d3231ff4078c351e7": {
           "title": "Operations &amp; Corporate",
           "url": "https://www.partnersgroup.com/en/careers/career-opportunities/operations-and-corporate",
@@ -745,6 +733,12 @@
           "url": "https://www.partnersgroup.com/en/careers/financial-analyst-program",
           "location": "",
           "detail": "Financial Analyst Program"
+        },
+        "2db2daeef9043d6055ab54d4b916beb1": {
+          "title": "Senior IT Infrastructure Engineer",
+          "url": "https://www.partnersgroup.com/en/careers/open-positions/job-details/16376",
+          "location": "",
+          "detail": "Senior IT Infrastructure Engineer"
         },
         "9b0139e94761e4e5f6111a854656bd4e": {
           "title": "(Senior) Legal Counsel, 100%",
@@ -1161,21 +1155,21 @@
           "detail": "Senior Product Controller (Accounting Data Analytics)"
         }
       },
-      "last_checked": "2026-05-10T09:04:45.855130",
+      "last_checked": "2026-05-11T10:41:40.831057",
       "has_no_jobs_indicator": false
     },
     "Alpha Associates": {
       "url": "https://alpha-associates.ch/en/about-us/career",
       "page_hash": "0e318f72fee9ec07f5fe6058ba08389692af1a36c29adadfba0a3402530a3b26",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:04:50.607212",
+      "last_checked": "2026-05-11T10:41:45.491882",
       "has_no_jobs_indicator": false
     },
     "Flexstone Partners": {
       "url": "https://www.flexstonepartners.com/careers/",
       "page_hash": "398a935bbca1e7a5d4666379f153fa3259057007aec5971c96eec172ce894a1b",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:04:54.115024",
+      "last_checked": "2026-05-11T10:41:48.639829",
       "has_no_jobs_indicator": false
     },
     "Unigestion": {
@@ -1189,12 +1183,12 @@
           "detail": "Fund Controller - Maximum duration contract (100%)"
         }
       },
-      "last_checked": "2026-05-10T09:05:01.614421",
+      "last_checked": "2026-05-11T10:41:56.257894",
       "has_no_jobs_indicator": false
     },
     "Banque Pictet": {
       "url": "https://career012.successfactors.eu/career?company=banquepict&career%5fns=job%5flisting%5fsummary&navBarLevel=JOB%5fSEARCH&_s.crb=goWcBV6ydpoUR8QXwrTYwBURPdodsHnsugNByRmQ73w%3d",
-      "page_hash": "0d6b1d694e48607ec19f77b7bcd7539e2a28ffbe3bd6328c1715d205dac717fc",
+      "page_hash": "48cae8a58a2296c6bff90106fc45dd77040443ae40b06b3cd79d7bfec780bf62",
       "job_keys": {
         "2363a56159f5389c2dd2c39ea0b1f4f8": {
           "title": "Show help, How does keyword search work?\nEnter a list of words, and we will search for them in the job title, or you can choose to search for them wit",
@@ -1202,21 +1196,21 @@
           "location": "",
           "detail": "Show help, How does keyword search work?\nEnter a list of words, and we will search for them in the job title, or you can choose to search for them within the job description as well.\nTips:\n\nWe will find results for any words listed in the search\nResults beginning with words searched will also be ret"
         },
-        "c9038d966ccd8d00785f0487b84c8d33": {
-          "title": "Fund Distribution Commissions SpecialistRequisition ID:124319-Posted on 08/05/2026-Switzerland-Geneva-Activity area (1)Experienced ProfessionalsSelect",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124319&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+        "d52fcf16743f7ae8055db7d98c8c4791": {
+          "title": "Fund Distribution Commissions Specialist (12 months fixed term contract)Requisition ID:124319-Posted on 08/05/2026-Switzerland-Geneva-Activity area (1",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124319&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "Switzerland",
-          "detail": "Fund Distribution Commissions Specialist Requisition ID: 124319 - Posted on 08/05/2026 - Switzerland - Geneva - Activity area (1) Experienced Professionals Select Action "
+          "detail": "Fund Distribution Commissions Specialist (12 months fixed term contract) Requisition ID: 124319 - Posted on 08/05/2026 - Switzerland - Geneva - Activity area (1) Experienced Professionals Select Action "
         },
-        "ec21cc7ba340b38dffa5891969112fde": {
-          "title": "Fund Distribution Commissions Specialist",
+        "a97614e30d4e87d3c05452e0c42730db": {
+          "title": "Fund Distribution Commissions Specialist (12 months fixed term contract)",
           "url": "",
           "location": "",
-          "detail": "Fund Distribution Commissions Specialist"
+          "detail": "Fund Distribution Commissions Specialist (12 months fixed term contract)"
         },
-        "f8408c4812a33ada8403cb0ca584af44": {
+        "829b62d5b3af42418a0907937d7b957d": {
           "title": "Event ManagerRequisition ID:124231-Posted on 08/05/2026-Switzerland-Geneva-Activity area (1)Experienced ProfessionalsSelect Action",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124231&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124231&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "Switzerland",
           "detail": "Event Manager Requisition ID: 124231 - Posted on 08/05/2026 - Switzerland - Geneva - Activity area (1) Experienced Professionals Select Action "
         },
@@ -1226,9 +1220,9 @@
           "location": "",
           "detail": "Event Manager"
         },
-        "2231520cb091abfee87ffbda0c15e4c6": {
+        "bf77ebc496ebaa8bcf18fa29ca5e5858": {
           "title": "Client Relationship OfficerRequisition ID:124305-Posted on 08/05/2026-France-Paris-Activity area (1)Experienced ProfessionalsSelect Action",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124305&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124305&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Client Relationship Officer Requisition ID: 124305 - Posted on 08/05/2026 - France - Paris - Activity area (1) Experienced Professionals Select Action "
         },
@@ -1238,9 +1232,9 @@
           "location": "",
           "detail": "Client Relationship Officer"
         },
-        "37b87b3e1d265c725ddcec11995aef4f": {
+        "eb56cd44bfc12a5aed02a8a9ad43d24f": {
           "title": "Senior Product Specialist - Private Asset &amp; Multi AssetRequisition ID:124143-Posted on 08/05/2026-Japan-Tokyo-Activity area (1)Experienced Professiona",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124143&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124143&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Senior Product Specialist - Private Asset &amp; Multi Asset Requisition ID: 124143 - Posted on 08/05/2026 - Japan - Tokyo - Activity area (1) Experienced Professionals Select Action "
         },
@@ -1250,9 +1244,9 @@
           "location": "",
           "detail": "Senior Product Specialist - Private Asset &amp; Multi Asset"
         },
-        "c44fc50dbd22e41136e54095b1333230": {
+        "1e69d4bc27b7f25e7aec5703b447deb4": {
           "title": "Cyber Risk &amp; Compliance ManagerRequisition ID:124299-Posted on 06/05/2026-Switzerland-Geneva-Activity area (3)Experienced ProfessionalsSelect Action",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124299&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124299&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "Switzerland",
           "detail": "Cyber Risk &amp; Compliance Manager Requisition ID: 124299 - Posted on 06/05/2026 - Switzerland - Geneva - Activity area (3) Experienced Professionals Select Action "
         },
@@ -1262,9 +1256,9 @@
           "location": "",
           "detail": "Cyber Risk &amp; Compliance Manager"
         },
-        "440886c8f9ab3094f91bd37b7932afb5": {
+        "190bbe1aed42113a80c83a2c06d260b0": {
           "title": "Data &amp; Process Analyst - Financial Counterparties (18 months - fixed-term contract)Requisition ID:124293-Posted on 06/05/2026-Switzerland-Geneva-Activ",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124293&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124293&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "Switzerland",
           "detail": "Data &amp; Process Analyst - Financial Counterparties (18 months - fixed-term contract) Requisition ID: 124293 - Posted on 06/05/2026 - Switzerland - Geneva - Activity area (1) Experienced Professionals Select Action "
         },
@@ -1274,9 +1268,9 @@
           "location": "",
           "detail": "Data &amp; Process Analyst - Financial Counterparties (18 months - fixed-term contract)"
         },
-        "2c0f1a619585a52fb1fa75186057d485": {
+        "9c57b7456b70452a421f70da68dacec4": {
           "title": "Junior Ops HEGRequisition ID:123549-Posted on 05/05/2026-Switzerland-Geneva-Activity area (1)Students &amp; GraduatesSelect Action",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123549&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123549&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "Switzerland",
           "detail": "Junior Ops HEG Requisition ID: 123549 - Posted on 05/05/2026 - Switzerland - Geneva - Activity area (1) Students &amp; Graduates Select Action "
         },
@@ -1286,9 +1280,9 @@
           "location": "",
           "detail": "Junior Ops HEG"
         },
-        "dc5c7642e2ff713abf883a1ab18264d8": {
+        "4c3a5143e1b767b3b02e040f74a3f78f": {
           "title": "Trade Operations SpecialistRequisition ID:123644-Posted on 04/05/2026-Canada-Montreal-Activity area (3)Experienced ProfessionalsSelect Action",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123644&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123644&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Trade Operations Specialist Requisition ID: 123644 - Posted on 04/05/2026 - Canada - Montreal - Activity area (3) Experienced Professionals Select Action "
         },
@@ -1298,9 +1292,9 @@
           "location": "",
           "detail": "Trade Operations Specialist"
         },
-        "fa9ba7f5526624493096c2106c8ae97f": {
+        "6b1fe664669947068638185b37bfdd13": {
           "title": "Internal Auditor (Part-time basis - 2 days a week)Requisition ID:124279-Posted on 04/05/2026-Taiwan-Taipei-Activity area (1)Experienced ProfessionalsS",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124279&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124279&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Internal Auditor (Part-time basis - 2 days a week) Requisition ID: 124279 - Posted on 04/05/2026 - Taiwan - Taipei - Activity area (1) Experienced Professionals Select Action "
         },
@@ -1310,82 +1304,94 @@
           "location": "",
           "detail": "Internal Auditor (Part-time basis - 2 days a week)"
         },
-        "5fd54a39127af13b7103c81207514454": {
-          "title": "Fund Distribution Commissions Specialist",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124319&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+        "2b978ff1ebfc4f5b27b47d786ef645ba": {
+          "title": "Fund Distribution Commissions Specialist (12 months fixed term contract)",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124319&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
-          "detail": "Fund Distribution Commissions Specialist"
+          "detail": "Fund Distribution Commissions Specialist (12 months fixed term contract)"
         },
-        "06895612c763528e4bb8db08cfe3f73f": {
+        "b5d16aaf2b717b678462517bbabe95e4": {
           "title": "Event Manager",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124231&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124231&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Event Manager"
         },
-        "24d110b65bc4e723848d40ab0f13dda5": {
+        "36991ebcaec23a15594586ef44c90d84": {
           "title": "Client Relationship Officer",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124305&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124305&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Client Relationship Officer"
         },
-        "e756ca928b07dad18610d107e8d138f6": {
+        "6cf65a03d37e8d2c98d35a36f569524f": {
           "title": "Senior Product Specialist - Private Asset &amp; Multi Asset",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124143&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124143&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Senior Product Specialist - Private Asset &amp; Multi Asset"
         },
-        "fd80247b4254dae4d4f17aa3075ae684": {
+        "76efe8688ab2924f2a528fbcc54b3581": {
           "title": "Cyber Risk &amp; Compliance Manager",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124299&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124299&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Cyber Risk &amp; Compliance Manager"
         },
-        "f41aa449687e796d75fc4d5c86d6a12f": {
+        "2771118470deca7f90f0cddb43a4efeb": {
           "title": "Data &amp; Process Analyst - Financial Counterparties (18 months - fixed-term contract)",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124293&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124293&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Data &amp; Process Analyst - Financial Counterparties (18 months - fixed-term contract)"
         },
-        "f5da9ff48168d405b43995991e3d1ac7": {
+        "e7786c0ba58130ea82604954e89e100d": {
           "title": "Junior Ops HEG",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123549&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123549&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Junior Ops HEG"
         },
-        "bb562291292e1cfa6625ba7413bcc8b9": {
+        "bd663fe55daf358ffb4a874a6fd4d989": {
           "title": "Trade Operations Specialist",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123644&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=123644&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Trade Operations Specialist"
         },
-        "9e4f416a4658c38cafc2dcb6317a5593": {
+        "0b38bc676a1941fa7b1a831dea9d74ed": {
           "title": "Internal Auditor (Part-time basis - 2 days a week)",
-          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124279&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dElJCkUAk7tasqpcqQreM5UW8rUdTWnE3ZWk%2faIItfE%3d",
+          "url": "https://career012.successfactors.eu/career?career%5fns=job%5flisting&company=banquepict&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=124279&selected_lang=en_GB&jobAlertController_jobAlertId=&jobAlertController_jobAlertName=&browserTimeZone=UTC&_s.crb=dW3%2bKmT27XcNZr7ogoNInu%2bK9TSUJ3dksx7d98Zj9js%3d",
           "location": "",
           "detail": "Internal Auditor (Part-time basis - 2 days a week)"
         }
       },
-      "last_checked": "2026-05-10T09:05:08.704012",
+      "last_checked": "2026-05-11T10:42:02.787632",
       "has_no_jobs_indicator": false
     },
     "Permira": {
       "url": "https://www.permira.com/people/life-at-permira",
-      "page_hash": "52bfa6124b536305104426ff819df6e89533bf0ee8169f1ed5a0c8e405684099",
+      "page_hash": "fc9bde439b9e40c67cc77cc281af70e8479c74c23274fa84d9b387803d4960c3",
       "job_keys": {
-        "06ff0e13fe203472312f85a800127baa": {
-          "title": "Vice President, Head of Sustainability",
+        "aa6d83df4961383572dbd050bb1453f4": {
+          "title": "Managing Director, Global Head of Equity Capital Markets &amp; Head of Capital Markets, Americas",
           "url": "",
           "location": "",
-          "detail": "Vice President, Head of Sustainability"
+          "detail": "Managing Director, Global Head of Equity Capital Markets &amp; Head of Capital Markets, Americas"
+        },
+        "2e4238bcbdb33556c814baa5607972d7": {
+          "title": "Partner, Chief Financial Officer &amp; Chief Operating Officer",
+          "url": "",
+          "location": "",
+          "detail": "Partner, Chief Financial Officer &amp; Chief Operating Officer"
         },
         "735b76b559b9131984c463f05057d715": {
           "title": "Managing Director",
           "url": "",
           "location": "",
           "detail": "Managing Director"
+        },
+        "f6aff69ebecb6b13df3f571a015e5a8b": {
+          "title": "Partner, Chief Human Resources Officer",
+          "url": "",
+          "location": "",
+          "detail": "Partner, Chief Human Resources Officer"
         }
       },
-      "last_checked": "2026-05-10T09:05:12.099747",
+      "last_checked": "2026-05-11T10:42:08.143422",
       "has_no_jobs_indicator": false
     },
     "Coller Capital": {
@@ -1441,7 +1447,7 @@
           "detail": "Credit Associate, New York (R0126) Investments · New York"
         }
       },
-      "last_checked": "2026-05-10T09:05:16.204701",
+      "last_checked": "2026-05-11T10:42:12.225873",
       "has_no_jobs_indicator": false
     },
     "Maven Capital Partners": {
@@ -1479,7 +1485,7 @@
           "detail": "Investment Manager (Real Estate) Glasgow Discover more"
         }
       },
-      "last_checked": "2026-05-10T09:05:20.962238",
+      "last_checked": "2026-05-11T10:42:17.003613",
       "has_no_jobs_indicator": false
     },
     "BC Partners": {
@@ -1493,14 +1499,14 @@
           "detail": "Associate to Partner Marco’s story is an illustration of how BC’s differentiated culture, global reach, and focus on professional development supports progression and creates an environment where ambitious young professionals can thrive. View story"
         }
       },
-      "last_checked": "2026-05-09T08:52:03.108622",
+      "last_checked": "2026-05-11T10:42:21.277944",
       "has_no_jobs_indicator": false
     },
     "Inflexion (LinkedIn)": {
       "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
-      "page_hash": "1179ad133edeaa4dcfe7b627b57f18531b552f960632d20d2b07f9200f5bc632",
+      "page_hash": "6d0b9f4ff67f5f3b3ce7e4c437956c46dc267087dc892549c2ce65a1533f00a7",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:10:23.814842",
+      "last_checked": "2026-05-11T10:46:08.186234",
       "has_no_jobs_indicator": false
     },
     "Capiton": {
@@ -1532,12 +1538,12 @@
           "detail": "-&gt; Private Equity Research Werkstudent/in (w/m/d)"
         }
       },
-      "last_checked": "2026-05-10T09:06:44.337738",
+      "last_checked": "2026-05-11T10:42:31.266946",
       "has_no_jobs_indicator": false
     },
     "Triton Partners": {
       "url": "https://tritonpartners.wd3.myworkdayjobs.com/External",
-      "page_hash": "1980467a24365a7f03655434c6fb17cd1dd8f37117242f46e9e5cb4636ffd02e",
+      "page_hash": "6412db056b4e02f76758bf7c729479c69df55276d96fa6660837ac7c00925ef3",
       "job_keys": {
         "a97810470192e8d98a09dd5d8a6e53da": {
           "title": "Vendor Management Intern",
@@ -1558,7 +1564,7 @@
           "detail": "Private Equity Intern Q1 2027"
         }
       },
-      "last_checked": "2026-05-10T09:06:52.165813",
+      "last_checked": "2026-05-11T10:42:37.241131",
       "has_no_jobs_indicator": false
     },
     "Montagu": {
@@ -1578,14 +1584,14 @@
           "detail": "We are always on the lookout for the best people to join our Investment teams. Skills and Experience An excellent academic background is essential for those interested in joining the Investment Team. Successful candidates are likely to have had experience in private equity, strategy consulting or in"
         }
       },
-      "last_checked": "2026-05-10T09:06:57.407058",
+      "last_checked": "2026-05-11T10:42:42.620038",
       "has_no_jobs_indicator": false
     },
     "HBM Partners": {
       "url": "https://www.hbmpartners.com/en/about-us/team/",
       "page_hash": "25c9da42ff44ca2c552b528865484a35817b38c4705231e4ead7a0c088cd76aa",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:02:27.025229",
+      "last_checked": "2026-05-11T10:38:57.922729",
       "has_no_jobs_indicator": false
     },
     "Rianta Capital": {
@@ -1660,21 +1666,21 @@
           "detail": "Sep 2016 - Exit Nov 2020"
         }
       },
-      "last_checked": "2026-05-10T09:04:09.842920",
+      "last_checked": "2026-05-11T10:41:09.862773",
       "has_no_jobs_indicator": false
     },
     "Genui": {
       "url": "https://www.genui.de/",
       "page_hash": "5a68e061c193e5249d9d47f0c5b23aec4900f0b9e9af00a73e603da4080b4df4",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:04:22.639597",
+      "last_checked": "2026-05-11T10:41:21.725189",
       "has_no_jobs_indicator": false
     },
     "Inflexion": {
       "url": "https://www.inflexion.com/people/",
       "page_hash": "7eb8d38a13fdee4e83f8d10332abca2421f263da472d5f419368c9697a4b13d3",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:06:38.498115",
+      "last_checked": "2026-05-11T10:42:25.877079",
       "has_no_jobs_indicator": false
     },
     "Gyrus Capital": {
@@ -1688,16 +1694,2348 @@
           "detail": "Case studies Discover Gyrus investments"
         }
       },
-      "last_checked": "2026-05-10T09:02:22.858504",
+      "last_checked": "2026-05-11T10:38:54.125866",
       "has_no_jobs_indicator": false
     },
     "Calibrium": {
       "url": "https://www.clbrm.com/",
       "page_hash": "46ce6402cdb4a40b167527eb4236eafb98f28dc4db376a5a21682f728c74fec6",
       "job_keys": {},
-      "last_checked": "2026-05-10T09:03:14.475199",
+      "last_checked": "2026-05-11T10:39:46.362358",
+      "has_no_jobs_indicator": false
+    },
+    "ACE & Company": {
+      "url": "https://aceandcompany.breezy.hr/",
+      "page_hash": "813af3fa1b807c66f58b8fe6df6c7cd9a15ddc22c87cef356d0d61cfa32b4273",
+      "job_keys": {
+        "39d8559cdf542a07f28e96c4fd7994ec": {
+          "title": "Legal and Compliance Intern",
+          "url": "https://aceandcompany.breezy.hr/p/be438b56e7c601-legal-and-compliance-intern",
+          "location": "",
+          "detail": "Legal and Compliance Intern Geneve, CH Befristet Bewerben Bewerben"
+        },
+        "f3d1b0a5326e3dc709bcbc9d3449d621": {
+          "title": "Legal and Compliance Intern",
+          "url": "",
+          "location": "",
+          "detail": "Legal and Compliance Intern Geneve, CH Befristet Bewerben"
+        },
+        "de0efae4650b1c85f40bffb621801c2c": {
+          "title": "Senior Legal &amp; Compliance Manager",
+          "url": "",
+          "location": "",
+          "detail": "Luciana Faccio Senior Legal &amp; Compliance Manager “ At ACE, we place a high value on diversity and meritocracy, fostering an inclusive workplace where every individual is empowered to contribute their unique perspectives and talents. ”"
+        },
+        "4ff0f38d428cd6418f2ac0c7096dca3d": {
+          "title": "Director",
+          "url": "",
+          "location": "",
+          "detail": "Alessandra Agnello Director “ Our entrepreneurial spirit fuels innovation and fosters a culture of continuous learning, creating an environment where success is a shared journey. ”"
+        }
+      },
+      "last_checked": "2026-05-11T10:46:52.671001",
+      "has_no_jobs_indicator": false
+    },
+    "Alpina Partners": {
+      "url": "https://alpinapartners.com/career/",
+      "page_hash": "06a8f5b0c87c545b57e806e0f8668e6fdf2e9ce4bd8064fa28a9852db56d8c0e",
+      "job_keys": {
+        "94e98c872d8ff5cf24e40e5700130548": {
+          "title": "Private Equity Working Student (m/f/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Private Equity Working Student (m/f/d) Munich, Germany Part-time (10-20 hrs/week) Working Student Alpina Partners Alpina Partners is a Munich based European technology growth investment firm that is independently managed and owned by its partners. Alpina currently manages two fund generations. Our d"
+        }
+      },
+      "last_checked": "2026-05-11T10:46:57.692523",
+      "has_no_jobs_indicator": false
+    },
+    "Beyond Capital Partners": {
+      "url": "https://beyondcapital-partners.com/karriere/",
+      "page_hash": "0a045a6e2874734031c34e6b7d87f6ada0667287bf727f586be60a38e5dcc9f1",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:47:08.215776",
+      "has_no_jobs_indicator": false
+    },
+    "Mutares": {
+      "url": "https://career.mutares.de/",
+      "page_hash": "60ac172ab5f204c93ed799f73c234476ba7e52d40a5f59918301a89c348f6595",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:47:11.710724",
+      "has_no_jobs_indicator": false
+    },
+    "Cinven": {
+      "url": "https://cinven.pinpointhq.com/en#js-careers-jobs-block",
+      "page_hash": "7d06054cd397d430af7b2e4e6d7bd87538984a995646448a2c55dd5ba6f96052",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:47:15.734616",
+      "has_no_jobs_indicator": false
+    },
+    "DUB AG": {
+      "url": "https://dubag.eu/careers/",
+      "page_hash": "ca7cdaea4773ad5d3403c5ba00397110a053b6d1418e2ef40baecb3137f05b0e",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:47:23.484160",
+      "has_no_jobs_indicator": false
+    },
+    "Gilde Healthcare": {
+      "url": "https://gildehealthcare.com/career-opportunities/",
+      "page_hash": "8858d28b6cf9c686fecdd153f6322c2edc53111a7f7bbd2faa0a9fcc89292e7d",
+      "job_keys": {
+        "d3dbea3beb8be39d8dbcf347b52d2cf8": {
+          "title": "NLDEDASVMenuMenuHomehomestrategiesVenture&amp;GrowthPrivate EquityClimate SolutionsteamportfolioESG/impactnewscareersNLDEDASVhomestrategiesVenture&amp;GrowthP",
+          "url": "https://gildehealthcare.com",
+          "location": "",
+          "detail": "NL DE DA SV Menu Menu Home home strategies Venture&amp;Growth Private Equity Climate Solutions team portfolio ESG/impact news careers NL DE DA SV home strategies Venture&amp;Growth Private Equity Climate Solutions team portfolio ESG/impact news careers Careers"
+        }
+      },
+      "last_checked": "2026-05-11T10:47:27.596004",
+      "has_no_jobs_indicator": false
+    },
+    "BlueOrchard": {
+      "url": "https://www.blueorchard.com/careers/",
+      "page_hash": "eaff293d605611fa417cdd6017f1b4a67c81031c4008bba1ea520910e13c95e7",
+      "job_keys": {
+        "a228396d815faf836293d3a1d6d652da": {
+          "title": "Associate Impact Manager",
+          "url": "https://blueorchard.bamboohr.com/careers/285",
+          "location": "",
+          "detail": "Associate Impact Manager"
+        },
+        "24696d8a4f60e16770eac9eee4b65d9f": {
+          "title": "Senior Investment Officer",
+          "url": "https://blueorchard.bamboohr.com/careers/286",
+          "location": "",
+          "detail": "Senior Investment Officer"
+        },
+        "2485bf3a8f91a4fda11f25c1653852e4": {
+          "title": "Intern - Investment Team (6 months)",
+          "url": "https://blueorchard.bamboohr.com/careers/287",
+          "location": "",
+          "detail": "Intern - Investment Team (6 months)"
+        }
+      },
+      "last_checked": "2026-05-11T10:47:33.173256",
+      "has_no_jobs_indicator": false
+    },
+    "HPE Growth": {
+      "url": "https://www.hpegrowth.com/careers",
+      "page_hash": "4289f2bb400dda22bf9a89e42890a11e1362bef0698a1581a1a91e3a041afa59",
+      "job_keys": {
+        "09f657bfbe2b53bdc42bce2c8a6c9db7": {
+          "title": "Investment Intern",
+          "url": "",
+          "location": "",
+          "detail": "Investments Netherlands Investment Intern"
+        },
+        "699cd69707f90f7f6dadc65d7a2a0f7d": {
+          "title": "Investment Intern",
+          "url": "mailto:adbuyser@hpegrowth.com",
+          "location": "",
+          "detail": "Investments Netherlands Investment Intern On-site Apply now"
+        },
+        "3b729d2a8db86cebe5a85c4a35950e5c": {
+          "title": "Interested in our portfolio&#x27;s work?",
+          "url": "https://egym.com/us/jobs",
+          "location": "",
+          "detail": "Careers Interested in our portfolio&#x27;s work? Discover more job opportunities from our portfolio companies."
+        }
+      },
+      "last_checked": "2026-05-11T10:47:36.935732",
+      "has_no_jobs_indicator": false
+    },
+    "Nord Holding": {
+      "url": "https://www.nordholding.de/stellenangebote",
+      "page_hash": "23838ec935debb60b9b0ec8fff3c17bf62a360a4e0ab8fcac55222f33a4c7b0e",
+      "job_keys": {
+        "f664d7d3be9f0b914d1a9b15a125cfe4": {
+          "title": "Praktikant – Primary, Secondary und Co-Investments",
+          "url": "https://www.nordholding.de/stellenangebote",
+          "location": "Berlin",
+          "detail": "Unternehmen Portfoliogesellschaft NORD Holding Abteilung Investment Investor Relations Human Capital Account &amp; Controlling Office Management Investment Strategie Mid Cap Small Cap Co-Invest Secondary Primary Standort Berlin Frankfurt Hannover München Karrierestufe Students Young Professionals Experi"
+        },
+        "8084bd6a9e04e4d74c4c83e574a4bf3d": {
+          "title": "UnternehmenPortfoliogesellschaftNORD HoldingAbteilungInvestmentInvestor RelationsHuman CapitalAccount &amp; ControllingOffice ManagementInvestment Strateg",
+          "url": "https://www.nordholding.de/stellenangebote",
+          "location": "Berlin",
+          "detail": "Unternehmen Portfoliogesellschaft NORD Holding Abteilung Investment Investor Relations Human Capital Account &amp; Controlling Office Management Investment Strategie Mid Cap Small Cap Co-Invest Secondary Primary Standort Berlin Frankfurt Hannover München Karrierestufe Students Young Professionals Experi"
+        },
+        "99784277b65d415d213bba9a9321e660": {
+          "title": "UnternehmenPortfoliogesellschaftNORD HoldingAbteilungInvestmentInvestor RelationsHuman CapitalAccount &amp; ControllingOffice ManagementInvestment Strateg",
+          "url": "",
+          "location": "Berlin",
+          "detail": "Unternehmen Portfoliogesellschaft NORD Holding Abteilung Investment Investor Relations Human Capital Account &amp; Controlling Office Management Investment Strategie Mid Cap Small Cap Co-Invest Secondary Primary Standort Berlin Frankfurt Hannover München Karrierestufe Students Young Professionals Experi"
+        },
+        "34528d46608905efe5ad3eaff71d1bda": {
+          "title": "UnternehmenPortfoliogesellschaftNORD HoldingAbteilungInvestmentInvestor RelationsHuman CapitalAccount &amp; ControllingOffice Management",
+          "url": "",
+          "location": "",
+          "detail": "Unternehmen Portfoliogesellschaft NORD Holding Abteilung Investment Investor Relations Human Capital Account &amp; Controlling Office Management"
+        },
+        "87b71ad31b8c320838843e97662018b7": {
+          "title": "Investment StrategieMid CapSmall CapCo-InvestSecondaryPrimaryStandortBerlinFrankfurtHannoverMünchenKarrierestufeStudentsYoung ProfessionalsExperienced",
+          "url": "",
+          "location": "Berlin",
+          "detail": "Investment Strategie Mid Cap Small Cap Co-Invest Secondary Primary Standort Berlin Frankfurt Hannover München Karrierestufe Students Young Professionals Experienced Professionals"
+        },
+        "a25a94de2e08ebc63df3b59b3aeb88c0": {
+          "title": "Praktikant – Primary, Secondary und Co-Investments",
+          "url": "https://www.nordholding.de/stellenangebote/praktikant-primary-secondary-co-investments",
+          "location": "Berlin",
+          "detail": "Primary Secondary Co-Invest Praktikant – Primary, Secondary und Co-Investments Investment NORD Holding Berlin Full-time Students all genders welcome Zum stellenangebot Primary Secondary Co-Invest Analyst – Primary, Secondary und Co-Investments Investment NORD Holding Berlin Full-time Young Professio"
+        },
+        "db7bfd3c46ba4aa627636d3a22194256": {
+          "title": "Praktikant – Primary, Secondary und Co-Investments",
+          "url": "",
+          "location": "Berlin",
+          "detail": "Praktikant – Primary, Secondary und Co-Investments Investment NORD Holding Berlin Full-time Students all genders welcome Zum stellenangebot"
+        },
+        "eacef4efd18194731678705d6fb872ce": {
+          "title": "Analyst – Primary, Secondary und Co-Investments",
+          "url": "https://www.nordholding.de/stellenangebote/analyst-primary-secondary-co-investments",
+          "location": "Berlin",
+          "detail": "Primary Secondary Co-Invest Analyst – Primary, Secondary und Co-Investments Investment NORD Holding Berlin Full-time Young Professionals all genders welcome Zum stellenangebot"
+        },
+        "4e5ef7401b8e8ac035f8b30019ef8826": {
+          "title": "Analyst – Primary, Secondary und Co-Investments",
+          "url": "",
+          "location": "Berlin",
+          "detail": "Analyst – Primary, Secondary und Co-Investments Investment NORD Holding Berlin Full-time Young Professionals all genders welcome Zum stellenangebot"
+        },
+        "981298d70e153f18d5af6b8989b9fbda": {
+          "title": "Praktikant – Direct Investments Mid Cap",
+          "url": "https://www.nordholding.de/stellenangebote/praktikant-direct-investments-mid-cap",
+          "location": "",
+          "detail": "Mid Cap Praktikant – Direct Investments Mid Cap Investment NORD Holding Hannover Full-time Students all genders welcome Zum stellenangebot"
+        },
+        "bddfa2dad1fdab81398f34819ad7901e": {
+          "title": "Praktikant – Direct Investments Mid Cap",
+          "url": "",
+          "location": "",
+          "detail": "Praktikant – Direct Investments Mid Cap Investment NORD Holding Hannover Full-time Students all genders welcome Zum stellenangebot"
+        },
+        "b65a6a22da48cb5f2a32f977884a979b": {
+          "title": "Analyst – Direct Investments Mid Cap",
+          "url": "https://www.nordholding.de/stellenangebote/analyst-direct-investments-mid-cap",
+          "location": "",
+          "detail": "Mid Cap Analyst – Direct Investments Mid Cap Investment NORD Holding Hannover Full-time Young Professionals all genders welcome Zum stellenangebot"
+        },
+        "17fe82f17a64f6dd8ef51a38e22a91ac": {
+          "title": "Analyst – Direct Investments Mid Cap",
+          "url": "",
+          "location": "",
+          "detail": "Analyst – Direct Investments Mid Cap Investment NORD Holding Hannover Full-time Young Professionals all genders welcome Zum stellenangebot"
+        },
+        "924d773c9d969ad6808f35b2a95c2283": {
+          "title": "Entdecke welche Positionen zur Zeit gesucht werden. Wir freuen uns über Deine Bewerbung!",
+          "url": "",
+          "location": "",
+          "detail": "Unsere aktuellen Jobangebote Entdecke welche Positionen zur Zeit gesucht werden. Wir freuen uns über Deine Bewerbung!"
+        },
+        "75eecc09bddec872d263ed409d996fb2": {
+          "title": "Alina WittManager, Ansprechpartnerin für, Ansprechpartnerin fürBerufseinsteigerBerufserfahreneWerkstudentenPraktikantenKontakt aufnehmen",
+          "url": "mailto:a.witt@nordholding.de",
+          "location": "",
+          "detail": "Alina Witt Manager , Ansprechpartnerin für , Ansprechpartnerin für Berufseinsteiger Berufserfahrene Werkstudenten Praktikanten Kontakt aufnehmen"
+        },
+        "23e403f005cc3531ae7822e2b28cf68c": {
+          "title": "Stefanie BartoschDirector, Ansprechpartnerin für, Ansprechpartnerin fürBerufseinsteigerBerufserfahreneWerkstudentenPraktikantenKontakt aufnehmen",
+          "url": "mailto:bartosch@nordholding.de",
+          "location": "",
+          "detail": "Stefanie Bartosch Director , Ansprechpartnerin für , Ansprechpartnerin für Berufseinsteiger Berufserfahrene Werkstudenten Praktikanten Kontakt aufnehmen"
+        }
+      },
+      "last_checked": "2026-05-11T10:47:41.154391",
+      "has_no_jobs_indicator": false
+    },
+    "Gimv": {
+      "url": "https://www.gimv.com/en/vacancies-gimv",
+      "page_hash": "348b035e1900eed6c3004774f8a386378a2a7e2bd39d8affe3e4bbfd89964c0e",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:47:45.455791",
+      "has_no_jobs_indicator": false
+    },
+    "EKBQ Careers": {
+      "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
+      "page_hash": "46cf09775ab3a626fb4428e29917048c93e656493fd92360cc5e3dbef77ecedc",
+      "job_keys": {
+        "905711fe04c853d06cc95604e2500a2c": {
+          "title": "Associate / Investment Manager – Private Equity SecondariesLocationsZurich, SwitzerlandPosting Date04/23/2026Trending",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1087/?keyword=private+equity&mode=job-location",
+          "location": "Zurich",
+          "detail": "Associate / Investment Manager – Private Equity Secondaries Locations Zurich, Switzerland Posting Date 04/23/2026 Trending"
+        },
+        "345c876fff5b40321444a8331766bbfa": {
+          "title": "Associate / Investment Manager – Private Equity SecondariesLocationsZurich, SwitzerlandPosting Date04/23/2026Trending",
+          "url": "",
+          "location": "Zurich",
+          "detail": "Associate / Investment Manager – Private Equity Secondaries Locations Zurich, Switzerland Posting Date 04/23/2026 Trending"
+        },
+        "d8863ebe0c1d843b763b312fe92498d3": {
+          "title": "Associate / Investment Manager – Private Equity Secondaries",
+          "url": "",
+          "location": "",
+          "detail": "Associate / Investment Manager – Private Equity Secondaries"
+        },
+        "23a30160dc75f98de235ee76cf1dfee1": {
+          "title": "Compliance AnalystLocationsZurich, SwitzerlandPosting Date05/05/2026",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1406/?keyword=private+equity&mode=job-location",
+          "location": "Zurich",
+          "detail": "Compliance Analyst Locations Zurich, Switzerland Posting Date 05/05/2026"
+        },
+        "0aa175f58c5b55b8ee0eb1b3afe011d1": {
+          "title": "Compliance AnalystLocationsZurich, SwitzerlandPosting Date05/05/2026",
+          "url": "",
+          "location": "Zurich",
+          "detail": "Compliance Analyst Locations Zurich, Switzerland Posting Date 05/05/2026"
+        },
+        "251bde09cc143a0959c8ef0c9760fff9": {
+          "title": "Compliance Analyst",
+          "url": "",
+          "location": "",
+          "detail": "Compliance Analyst"
+        },
+        "32d43502849bc45067adc9eb2553d190": {
+          "title": "Brand Manager - Contract RoleLocationsLondon, United KingdomPosting Date05/01/2026",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1252/?keyword=private+equity&mode=job-location",
+          "location": "",
+          "detail": "Brand Manager - Contract Role Locations London, United Kingdom Posting Date 05/01/2026"
+        },
+        "2e80643c9cecbd4b82d9c4dfb207399d": {
+          "title": "Brand Manager - Contract RoleLocationsLondon, United KingdomPosting Date05/01/2026",
+          "url": "",
+          "location": "",
+          "detail": "Brand Manager - Contract Role Locations London, United Kingdom Posting Date 05/01/2026"
+        },
+        "8e748a707eedd0cf1092919a966cb6c6": {
+          "title": "Brand Manager - Contract Role",
+          "url": "",
+          "location": "",
+          "detail": "Brand Manager - Contract Role"
+        },
+        "e0cd3dc6be6128f183bb79a93eff246b": {
+          "title": "Internship - Real Estate Investment: Hotels - 6 months (July - December)LocationsParis, Ile-de-France, FrancePosting Date02/06/2026Trending",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1111/?keyword=private+equity&mode=job-location",
+          "location": "",
+          "detail": "Internship - Real Estate Investment: Hotels - 6 months (July - December) Locations Paris, Ile-de-France, France Posting Date 02/06/2026 Trending"
+        },
+        "dd76649c6dd2007fb923df15febb85e8": {
+          "title": "Internship - Real Estate Investment: Hotels - 6 months (July - December)LocationsParis, Ile-de-France, FrancePosting Date02/06/2026Trending",
+          "url": "",
+          "location": "",
+          "detail": "Internship - Real Estate Investment: Hotels - 6 months (July - December) Locations Paris, Ile-de-France, France Posting Date 02/06/2026 Trending"
+        },
+        "2055a927806e92f3755f299710e321bf": {
+          "title": "Internship - Real Estate Investment: Hotels - 6 months (July - December)",
+          "url": "",
+          "location": "",
+          "detail": "Internship - Real Estate Investment: Hotels - 6 months (July - December)"
+        },
+        "9299234a5dada1af0e0365d9b279dabc": {
+          "title": "Internship - Real Estate Investment - 6 months (July - December)LocationsParis, Ile-de-France, FrancePosting Date02/06/2026Trending",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1110/?keyword=private+equity&mode=job-location",
+          "location": "",
+          "detail": "Internship - Real Estate Investment - 6 months (July - December) Locations Paris, Ile-de-France, France Posting Date 02/06/2026 Trending"
+        },
+        "a3a9af51effda16479acb4b3f574d2b8": {
+          "title": "Internship - Real Estate Investment - 6 months (July - December)LocationsParis, Ile-de-France, FrancePosting Date02/06/2026Trending",
+          "url": "",
+          "location": "",
+          "detail": "Internship - Real Estate Investment - 6 months (July - December) Locations Paris, Ile-de-France, France Posting Date 02/06/2026 Trending"
+        },
+        "3f36a8fb080a4c0e598f5812fb213dcb": {
+          "title": "Internship - Real Estate Investment - 6 months (July - December)",
+          "url": "",
+          "location": "",
+          "detail": "Internship - Real Estate Investment - 6 months (July - December)"
+        }
+      },
+      "last_checked": "2026-05-11T10:47:51.760193",
+      "has_no_jobs_indicator": false
+    },
+    "SUSI Partners": {
+      "url": "https://www.susi-partners.com/en/careers/",
+      "page_hash": "186d30f6517fad51747d5a938ffc47a526f31988652efda35a0a76473507b127",
+      "job_keys": {
+        "2070d40e4998c384e25772ce3af6fbd7": {
+          "title": "ESG &amp; Sustainability SpecialistZurichInvestment AnalystSingapore",
+          "url": "https://susipartners.my.salesforce-sites.com/recruit/fRecruit__ApplyJob?vacancyNo=VN058",
+          "location": "Zurich",
+          "detail": "ESG &amp; Sustainability Specialist Zurich Investment Analyst Singapore"
+        },
+        "e14523d6b1c959ba5989b31314b217cf": {
+          "title": "ESG &amp; Sustainability SpecialistZurich",
+          "url": "",
+          "location": "Zurich",
+          "detail": "ESG &amp; Sustainability Specialist Zurich"
+        },
+        "818fd288317fde4088760b169cc071e5": {
+          "title": "ESG &amp; Sustainability Specialist",
+          "url": "",
+          "location": "",
+          "detail": "ESG &amp; Sustainability Specialist"
+        },
+        "e22b94f126212124885f5a0a425592b0": {
+          "title": "Investment AnalystSingapore",
+          "url": "",
+          "location": "",
+          "detail": "Investment Analyst Singapore"
+        },
+        "c38d70d08dc37d5e12acba21789091d9": {
+          "title": "Investment Analyst",
+          "url": "",
+          "location": "",
+          "detail": "Investment Analyst"
+        }
+      },
+      "last_checked": "2026-05-11T10:47:56.758896",
+      "has_no_jobs_indicator": false
+    },
+    "UCP": {
+      "url": "https://ucp.ch/en/career/",
+      "page_hash": "042ff31c87a489f79172a06d646ad943f71c8792c4766702e4208ba23cb6a0f8",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:48:05.514225",
+      "has_no_jobs_indicator": false
+    },
+    "Wille Finance": {
+      "url": "https://www.willefinance.com/careers/",
+      "page_hash": "f8442d6e147c91e63f27e4bba4fa5799c9c96eb98569f00b259b028cace7d830",
+      "job_keys": {
+        "d68a34972acf71bc6a7b2b8d0eaaa366": {
+          "title": "Private Equity Investment Manager (IT)",
+          "url": "",
+          "location": "",
+          "detail": "Private Equity Investment Manager (IT) The Private Equity team is looking for an Investment Manager with a background in IT.​"
+        },
+        "97eaa0c0e6668ffc3f3cc8ea363d607f": {
+          "title": "Real Estate Asset Manager / Developer",
+          "url": "",
+          "location": "",
+          "detail": "Real Estate Asset Manager / Developer The Real Estate team is looking for an Asset Manager / Developer with international experience."
+        },
+        "2474470d5cdefff7fb6c0a16fe707005": {
+          "title": "Private Equity Investment Manager (IT)",
+          "url": "https://www.willefinance.com/careers/private-equity-investment-manger-it/",
+          "location": "",
+          "detail": "Private Equity Investment Manager (IT) The Private Equity team is looking for an Investment Manager with a background in IT.​ Learn More"
+        },
+        "c3349cc6837d4845fa24fbaeb3b11d35": {
+          "title": "Real Estate Asset Manager / Developer",
+          "url": "https://www.willefinance.com/careers/real-estate-asset-manager-developer/",
+          "location": "",
+          "detail": "Real Estate Asset Manager / Developer The Real Estate team is looking for an Asset Manager / Developer with international experience. Learn More"
+        }
+      },
+      "last_checked": "2026-05-11T10:48:09.563759",
+      "has_no_jobs_indicator": false
+    },
+    "Invision AG": {
+      "url": "https://invision-ag.jobs.personio.de/",
+      "page_hash": "f7197963b5c695aaa13b9f87aa37f38872b7d7f2c38626cb38c78db8cdb6aeb1",
+      "job_keys": {
+        "81b6ea9f2137a5bff01a7483a3923a0c": {
+          "title": "CFO - Buy and Build Case mit PE-Backing (m/w/d)",
+          "url": "https://invision-ag.jobs.personio.de/job/2514836",
+          "location": "Wien",
+          "detail": "CFO - Buy and Build Case mit PE-Backing (m/w/d) Nürnberg Vollzeit Festanstellung Controller/in (m/w/d) Wien Vollzeit Festanstellung Corporate Strategy Manager (m/w/d) Aachen Vollzeit Festanstellung Group Accountant (m/w/d) Heillbronn Vollzeit Festanstellung"
+        },
+        "2518e105765d9aa2bfa6a3d3a074c04e": {
+          "title": "CFO - Buy and Build Case mit PE-Backing (m/w/d)",
+          "url": "",
+          "location": "",
+          "detail": "CFO - Buy and Build Case mit PE-Backing (m/w/d) Nürnberg Vollzeit Festanstellung"
+        },
+        "8108c0607924b960c1fe9751dfc8fd17": {
+          "title": "Controller/in (m/w/d)",
+          "url": "",
+          "location": "Wien",
+          "detail": "Controller/in (m/w/d) Wien Vollzeit Festanstellung"
+        },
+        "e458607c91e335e591a20b7a81acf792": {
+          "title": "Corporate Strategy Manager (m/w/d)",
+          "url": "",
+          "location": "",
+          "detail": "Corporate Strategy Manager (m/w/d) Aachen Vollzeit Festanstellung"
+        },
+        "88ecfe7783a80ed651a3b8c2c8f97383": {
+          "title": "Group Accountant (m/w/d)",
+          "url": "",
+          "location": "",
+          "detail": "Group Accountant (m/w/d) Heillbronn Vollzeit Festanstellung"
+        },
+        "0ae437ca6fd158f3e4e4170538ac5466": {
+          "title": "Controller/in (m/w/d)",
+          "url": "https://invision-ag.jobs.personio.de/job/2560783",
+          "location": "Wien",
+          "detail": "Controller/in (m/w/d) Wien Vollzeit Festanstellung"
+        },
+        "42c03d27256c2f7266adf64b5e0810c5": {
+          "title": "Corporate Strategy Manager (m/w/d)",
+          "url": "https://invision-ag.jobs.personio.de/job/2545770",
+          "location": "",
+          "detail": "Corporate Strategy Manager (m/w/d) Aachen Vollzeit Festanstellung"
+        },
+        "4de33bc38b22fb4a604d3f5c2754d19a": {
+          "title": "Group Accountant (m/w/d)",
+          "url": "https://invision-ag.jobs.personio.de/job/2556717",
+          "location": "",
+          "detail": "Group Accountant (m/w/d) Heillbronn Vollzeit Festanstellung"
+        }
+      },
+      "last_checked": "2026-05-11T10:48:13.902307",
+      "has_no_jobs_indicator": false
+    },
+    "Capvis": {
+      "url": "https://www.capvis.com/en/en/jobs.html",
+      "page_hash": "7a869e24a080ec820055cf01c0b73076a98510ac6fa3b7034aaa4e604ebfd3ec",
+      "job_keys": {
+        "50cf1ac978287c0181390d99feda2b2f": {
+          "title": "Our investment focus",
+          "url": "",
+          "location": "",
+          "detail": "Our investment focus"
+        },
+        "4164d02611c1c0e74f124e9bf90276cd": {
+          "title": "A selection of our investments",
+          "url": "",
+          "location": "",
+          "detail": "A selection of our investments Capvis has invested in well positioned companies with promising strategic opportunities."
+        }
+      },
+      "last_checked": "2026-05-11T10:48:19.170133",
+      "has_no_jobs_indicator": false
+    },
+    "Novastone": {
+      "url": "https://novastone-ca.careers/",
+      "page_hash": "c338d3702ccba4d5e46f955006891567f2e92aca4344943919a742fd05aecf7b",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:48:23.818358",
+      "has_no_jobs_indicator": false
+    },
+    "Blue Earth Capital": {
+      "url": "https://blueearthcapitalag.recruitee.com/",
+      "page_hash": "db820fff381aea48d61544ccfa16616f4115a82e14ccb20fd4b647eddc08688d",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:48:27.638713",
+      "has_no_jobs_indicator": false
+    },
+    "BM|T": {
+      "url": "https://www.bm-t.de/careers/",
+      "page_hash": "a13eea0e1bbfe245a0d380738002a2290f0c85f62d766fbdf4e6fe5d6d847485",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:48:33.195456",
+      "has_no_jobs_indicator": false
+    },
+    "41 Group": {
+      "url": "https://41group.ch/en/careers",
+      "page_hash": "89f776266f02ff2ac8bb26a7934badfdc1645138c66fdbd911ebb506dd60712d",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:48:38.990660",
+      "has_no_jobs_indicator": false
+    },
+    "Main Capital Partners": {
+      "url": "https://main.nl/vacancies/",
+      "page_hash": "a2392592d5427f9d1fd72402ce330867a8b9776133b59fdd1e691fd1055640c4",
+      "job_keys": {
+        "4c803a5be8bdf41bdfb25f7a103e2993": {
+          "title": "AI Associate",
+          "url": "",
+          "location": "",
+          "detail": "AI Associate"
+        },
+        "95d64e723761fe3f6d39688222be7fad": {
+          "title": "Business Analyst Private Equity",
+          "url": "",
+          "location": "",
+          "detail": "Business Analyst Private Equity"
+        },
+        "a1ebc61d843113f94ec26b87aab05b36": {
+          "title": "Business Analyst Private Equity – London (UK)",
+          "url": "",
+          "location": "",
+          "detail": "Business Analyst Private Equity – London (UK)"
+        },
+        "91cdae7bf4515447f5a00b3f1df1fca5": {
+          "title": "Go-to-Market (GTM) Analyst",
+          "url": "",
+          "location": "",
+          "detail": "Go-to-Market (GTM) Analyst"
+        },
+        "45e6779f324e624241aad3f6c0369f13": {
+          "title": "AI Associate",
+          "url": "https://main.nl/vacancy/ai-associate/",
+          "location": "",
+          "detail": "Read more"
+        },
+        "6217cf9d9dbd81e13ae10fc0c4acacb3": {
+          "title": "Business Analyst Private Equity",
+          "url": "https://main.nl/vacancy/business-analyst-private-equity-paris/",
+          "location": "",
+          "detail": "Read more"
+        },
+        "e6feeb8f22dc0a124202cbbfb5382a24": {
+          "title": "Business Analyst Private Equity – London (UK)",
+          "url": "https://main.nl/vacancy/business-analyst-uk/",
+          "location": "",
+          "detail": "Read more"
+        },
+        "d0b1b74915378053b45d5dfee67b6d71": {
+          "title": "Business Analyst Private Equity",
+          "url": "https://main.nl/vacancy/business-analyst-antwerp/",
+          "location": "",
+          "detail": "Read more"
+        },
+        "06107f937c0ec6faf85a5192f5367318": {
+          "title": "Go-to-Market (GTM) Analyst",
+          "url": "https://main.nl/vacancy/go-to-market-gtm-analyst/",
+          "location": "",
+          "detail": "Read more"
+        },
+        "1c14eaacd6ca3a5614d4ef178a290cf9": {
+          "title": "Business Analyst Private Equity",
+          "url": "https://main.nl/vacancy/business-analyst-stockholm/",
+          "location": "",
+          "detail": "Read more"
+        }
+      },
+      "last_checked": "2026-05-11T10:49:16.740089",
+      "has_no_jobs_indicator": false
+    },
+    "CVC DIF": {
+      "url": "https://www.cvcdif.com/careers",
+      "page_hash": "40d3d5e060bf4b67bb1a9e6953731419af9152a2cdd5162c9108bc546bd6a7fa",
+      "job_keys": {
+        "52e429ef0aacad048e984dbf228bbe6b": {
+          "title": "What it&#x27;s like to work at CVC DIF",
+          "url": "",
+          "location": "",
+          "detail": "What it&#x27;s like to work at CVC DIF"
+        }
+      },
+      "last_checked": "2026-05-11T10:49:21.368014",
+      "has_no_jobs_indicator": false
+    },
+    "Waterland PE": {
+      "url": "https://www.waterlandpe.com/careers/",
+      "page_hash": "d3666ffcd312359aa74a3ea456c0436e3477dc145000ffb078f7679feeb2ed3c",
+      "job_keys": {
+        "8ec27cc1525b3e481c043a2d9fb98b19": {
+          "title": "All departmentsCentral ServicesInternshipsInvestment teamOffice ManagementAll countriesFranceGermanyThe Netherlands",
+          "url": "",
+          "location": "Germany",
+          "detail": "All departments Central Services Internships Investment team Office Management All countries France Germany The Netherlands"
+        },
+        "a968459a854dfda641ed9409c166df53": {
+          "title": "Team spirit",
+          "url": "",
+          "location": "",
+          "detail": "Team spirit We value connection, from daily team lunches to engaging team-building events. Collaboration keeps our workplace vibrant and fun."
+        },
+        "1615113fee83262ec4b43cd9bd9151f8": {
+          "title": "(Senior) Investment Manager (m/w/d) DACH",
+          "url": "https://www.waterlandpe.com/career/senior-investment-manager-m-w-d-hamburg/",
+          "location": "Germany",
+          "detail": "Germany (Senior) Investment Manager (m/w/d) DACH Was Dich erwartet In der Region DACH investieren wir aus 2 Standorten (Hamburg, München), verstehen uns aber als ein gemeinsames… Read more"
+        },
+        "ce92e5cd3a621007c644ac0fa2ad3bf8": {
+          "title": "AI Engineer – Bussum",
+          "url": "https://www.waterlandpe.com/career/ai-engineer-bussum/",
+          "location": "",
+          "detail": "The Netherlands AI Engineer – Bussum The AI Engineer will operate as a horizontal AI specialist across all Central Services teams, identifying where artificial intelligence can… Read more"
+        },
+        "1f29522177d356c92a2fd0827ba20510": {
+          "title": "Business Application Support Specialist – Bussum",
+          "url": "https://www.waterlandpe.com/career/business-application-support-specialist-bussum/",
+          "location": "",
+          "detail": "The Netherlands Business Application Support Specialist – Bussum Application &amp; End-User Support Act as the first point of contact for end users across: Microsoft Dynamics SharePoint Portfolio monitoring… Read more"
+        },
+        "7c8b07768ed4c37cd3998204be3e5521": {
+          "title": "Empfangs- &amp; Teamassistenz (m/w/d) München",
+          "url": "https://www.waterlandpe.com/career/empfangs-teamassistenz-m-w-d-muenchen/",
+          "location": "Germany",
+          "detail": "Germany Empfangs- &amp; Teamassistenz (m/w/d) München Was wir suchen Für die Position als Empfangs- und Teamassistenz suchen wir dich – eine souveräne Persönlichkeit mit ausgeprägten Fähigkeiten:… Read more"
+        },
+        "7244c815db6fa9b7c3da269a9c09ba3f": {
+          "title": "Praktikant (m/w/d) 3+3 Investment und Performance Improvement Team (PIT)",
+          "url": "https://www.waterlandpe.com/career/3-3-private-equity-internship/",
+          "location": "Germany",
+          "detail": "Germany Praktikant (m/w/d) 3+3 Investment und Performance Improvement Team (PIT) Was Dich erwartet Als Praktikant (m/w/d) bist Du für drei Monate ein vollwertiges Mitglied unseres Performance Improvement Teams. In einem… Read more"
+        },
+        "f8c2bff14805c46ff9653e06130dfcf9": {
+          "title": "Praktikant (m/w/d) Investment Team Hamburg",
+          "url": "https://www.waterlandpe.com/career/praktikant-m-w-d-hamburg/",
+          "location": "Germany",
+          "detail": "Germany Praktikant (m/w/d) Investment Team Hamburg Was Dich erwartet Zu Deinen Aufgaben gehören unter anderem Unterstützung des Deal Teams bei laufenden Transaktionen, Durchführung von Markt-, Branchen-… Read more"
+        },
+        "5d30a7b7bb178c0975d5e51473edf0cc": {
+          "title": "Praktikant (m/w/d) Investment Team München",
+          "url": "https://www.waterlandpe.com/career/praktikant-m-w-d-muenchen/",
+          "location": "Germany",
+          "detail": "Germany Praktikant (m/w/d) Investment Team München Was Dich erwartet Zu Deinen Aufgaben gehören unter anderem Unterstützung des Deal Teams bei laufenden Transaktionen, Durchführung von Markt-, Branchen-… Read more"
+        },
+        "fb838eb5b217c37b7f36b61cddaf33fe": {
+          "title": "Praktikant (m/w/d) Performance Improvement Team (PIT)",
+          "url": "https://www.waterlandpe.com/career/portfolio-management-praktikant-m-w-d/",
+          "location": "Germany",
+          "detail": "Germany Praktikant (m/w/d) Performance Improvement Team (PIT) Was Dich erwartet Als Praktikant (m/w/d) bist Du ein vollwertiges Mitglied unseres Performance Improvement Teams. In einem unserer Portfoliounternehmen arbeitest… Read more"
+        },
+        "5ce501f92c44ffc5e90468945c9d8d47": {
+          "title": "Treasury Associate – Bussum",
+          "url": "https://www.waterlandpe.com/career/treasury-associate-bussum/",
+          "location": "",
+          "detail": "The Netherlands Treasury Associate – Bussum As a Treasury Associate you will be working on operational tasks within the treasury department related to processing invoices and… Read more"
+        }
+      },
+      "last_checked": "2026-05-11T10:49:27.554783",
+      "has_no_jobs_indicator": false
+    },
+    "Karmijn Kapitaal": {
+      "url": "https://jobs.karmijnkapitaal.nl/jobs",
+      "page_hash": "4dd49eb38d7bbba9f16a05d38ad49be9600762dee2d39d0efd6b170b624d9270",
+      "job_keys": {
+        "42f6a64dec48e1c68c28a32a7113c875": {
+          "title": "Intern Sales",
+          "url": "https://jobs.karmijnkapitaal.nl/companies/polspotten-2#content",
+          "location": "",
+          "detail": "Intern Sales polspotten 6 days Other Consumer Read more about Intern Sales at polspotten"
+        },
+        "39224a4bfd667875ab7abdea030ac7f1": {
+          "title": "Intern Sales",
+          "url": "https://www.polspotten.com/en/Stagiair-Sales.html?utm_source=Karmijn+Kapitaal+job+board&utm_medium=getro.com&gh_src=Karmijn+Kapitaal+job+board",
+          "location": "",
+          "detail": "Intern Sales polspotten 6 days Other Consumer"
+        },
+        "430ec8b6ccdd8b5b64f3f7494a70aa83": {
+          "title": "Key Account Manager",
+          "url": "https://jobs.karmijnkapitaal.nl/companies/polspotten-2#content",
+          "location": "",
+          "detail": "Key Account Manager polspotten 6 days Other Consumer Read more about Key Account Manager at polspotten"
+        },
+        "8b0dcab47f0d487b606c4416aaf995ae": {
+          "title": "Key Account Manager",
+          "url": "https://www.polspotten.com/en/careers-key-account-manager.html?utm_source=Karmijn+Kapitaal+job+board&utm_medium=getro.com&gh_src=Karmijn+Kapitaal+job+board",
+          "location": "",
+          "detail": "Key Account Manager polspotten 6 days Other Consumer"
+        }
+      },
+      "last_checked": "2026-05-11T10:49:32.671992",
+      "has_no_jobs_indicator": false
+    },
+    "Vortex Capital Partners": {
+      "url": "https://vortexcp.com/careers/",
+      "page_hash": "fa557cc132c4701f9c8ed4b06f71bb534f559ad0c47f21d197b2855d3fc8391e",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:49:37.240875",
+      "has_no_jobs_indicator": false
+    },
+    "Pride Capital": {
+      "url": "https://www.pridecapital.nl/vacancies",
+      "page_hash": "4a8287856684d636e38b9c32180fc9f241a3423806340b6966615cf0fa61fe9c",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:49:42.117464",
+      "has_no_jobs_indicator": false
+    },
+    "Egeria Group": {
+      "url": "https://egeriagroup.com/career/",
+      "page_hash": "3c94d870bb178dd9306820d2c4b62f12c2406fcee84ee5852b77a994a8af606d",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:49:49.740895",
+      "has_no_jobs_indicator": false
+    },
+    "Avedon Capital": {
+      "url": "https://avedoncapital.com/career/internship-amsterdam/",
+      "page_hash": "d5ab62df4632776ffca41ea6f04d07c3a0e1d6ac09372b6ce94b00dd04f97aa8",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:49:53.225667",
+      "has_no_jobs_indicator": false
+    },
+    "Bolster Investments": {
+      "url": "https://bolsterinvestments.nl/werken-bij/",
+      "page_hash": "f2e240082b12ad9db525ac63151cb42fdf3009f6e4057ac4d47e38cf7c6aac24",
+      "job_keys": {
+        "afb7eaf1feb3af864c6b67cea263df99": {
+          "title": "Ontmoet het team en werk een case uit",
+          "url": "",
+          "location": "",
+          "detail": "Ontmoet het team en werk een case uit Als we beiden enthousiast zijn na het eerste gesprek, nodigen wij je uit om meer Bolster-collega’s te ontmoeten. Je krijgt ook de kans om je analytische en probleemoplossende vaardigheden te laten zien door een business case uit te werken. Zo kunnen we samen ont"
+        }
+      },
+      "last_checked": "2026-05-11T10:49:58.163319",
+      "has_no_jobs_indicator": false
+    },
+    "Holland Capital": {
+      "url": "https://hollandcapital.nl/vacatures-investeringsmaatschappij/",
+      "page_hash": "2781486c8dea4fc4c659f6a4ff5e7eabc4410a8fa946c4d13e3f094b172ee520",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:50:02.793690",
+      "has_no_jobs_indicator": false
+    },
+    "Goodwell": {
+      "url": "https://goodwell.nl/careers/",
+      "page_hash": "babc6cf489010dfd930e56bc45690c5f26b8d9e4ae62b730c94d225665d1a2c1",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:50:09.145261",
+      "has_no_jobs_indicator": false
+    },
+    "TMF Group": {
+      "url": "https://www.tmf-group.com/en/careers/",
+      "page_hash": "63bd4829f3f499376fbafdc965b9392cd6bd1ecbadf114225e6d657c92bf8100",
+      "job_keys": {
+        "e3ebed8a93ef7ebbafe6c800bdd3cd1c": {
+          "title": "Cookies für Marketingzwecke",
+          "url": "",
+          "location": "",
+          "detail": "Cookies für Marketingzwecke Cookies für Marketingzwecke"
+        }
+      },
+      "last_checked": "2026-05-11T10:50:14.397497",
+      "has_no_jobs_indicator": false
+    },
+    "Committed Capital": {
+      "url": "https://committedcapital.nl/over-ons/werken-bij/",
+      "page_hash": "f944d70d7ece6340f5ed021ddec59667e08b481738abfe50dcde079148e0e1a5",
+      "job_keys": {
+        "86d1d05d3f383ba1a32b46e7eff00f1b": {
+          "title": "Sluit AVG/GDPR cookie instellingenPrivacyoverzichtStrikt noodzakelijke cookiesPrivacyoverzichtDeze site maakt gebruik van cookies, zodat wij je de bes",
+          "url": "",
+          "location": "",
+          "detail": "Sluit AVG/GDPR cookie instellingen Privacyoverzicht Strikt noodzakelijke cookies Privacyoverzicht Deze site maakt gebruik van cookies, zodat wij je de best mogelijke gebruikerservaring kunnen bieden. Cookie-informatie wordt opgeslagen in je browser en voert functies uit zoals het herkennen wanneer j"
+        }
+      },
+      "last_checked": "2026-05-11T10:50:20.582613",
+      "has_no_jobs_indicator": false
+    },
+    "HF Opportunities": {
+      "url": "https://hf-opportunities.de/karriere/",
+      "page_hash": "93f75a6d751d07ead334667f2f87cd4a62e1cd348c22dcd27319995dde718299",
+      "job_keys": {
+        "45201ddf9868741e1e89764ccc01fc14": {
+          "title": "Praktikant (Mensch*)",
+          "url": "https://hf-opportunities.de/jobs/praktikant-mensch/",
+          "location": "",
+          "detail": "Praktikant (Mensch*)"
+        }
+      },
+      "last_checked": "2026-05-11T10:50:24.385485",
+      "has_no_jobs_indicator": false
+    },
+    "DBAG": {
+      "url": "https://dbag.careers.hibob.com/jobs",
+      "page_hash": "26b36121a36dbc257741aca52de3484cc751207117fee25921c36859cf9b8164",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:50:32.293289",
+      "has_no_jobs_indicator": false
+    },
+    "MRH Trowe": {
+      "url": "https://www.mrh-trowe.com/service/jobs/",
+      "page_hash": "5cdff14f2e561133cbf978b80e2be9051cc98262c1e305baa22616fc8708a659",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:50:37.611702",
+      "has_no_jobs_indicator": false
+    },
+    "VREP": {
+      "url": "https://www.vrep.de/ueber-uns/karriere/",
+      "page_hash": "d424f6f3eb8a8bbfc188e000f5c2e51542577be2ee068f8ca4ad3ec24cc9a451",
+      "job_keys": {
+        "cee501e4a751f660d50a85f246e1acfb": {
+          "title": "Investmentmanager Team Süd",
+          "url": "",
+          "location": "",
+          "detail": "Investmentmanager Team Süd"
+        },
+        "67f26cffdf5e96347014cc486b722d43": {
+          "title": "Direktorin Recht und Compliance / General Counsel",
+          "url": "",
+          "location": "",
+          "detail": "Direktorin Recht und Compliance / General Counsel"
+        },
+        "945ac0816c7d7d6d4ec473edacca3906": {
+          "title": "Unsere Arbeit bei VREP. Mitarbeiterstimmen.",
+          "url": "",
+          "location": "",
+          "detail": "Unsere Arbeit bei VREP. Mitarbeiterstimmen. Wie denken unsere Mitarbeiter über uns? In diesen Interviews berichten sie direkt von ihrer Tätigkeit und warum sie gerne für VR Equitypartner arbeiten."
+        }
+      },
+      "last_checked": "2026-05-11T10:50:43.474932",
+      "has_no_jobs_indicator": false
+    },
+    "Halder": {
+      "url": "https://www.halder.eu/job-opportunities",
+      "page_hash": "9ba54734f6b1fa294e4a21378b218ddeda901f2b10898dcf62dedd29b0232da6",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:50:46.807899",
+      "has_no_jobs_indicator": false
+    },
+    "Yttrium": {
+      "url": "https://yttrium.com/careers/",
+      "page_hash": "8c64882fd43ae2cc0238629f86ee19eb26d709b01b0d30eeecc100fa29804222",
+      "job_keys": {
+        "e08293d2f79f58ebf1e17b358c280ff4": {
+          "title": "Junior Data &amp; AI Engineer (f/m/x) – Growth Equity Frankfurt",
+          "url": "https://yttrium.com/career/junior-data-ai-engineer-f-m-x-growth-equity-frankfurt/",
+          "location": "Frankfurt",
+          "detail": "Junior Data &amp; AI Engineer (f/m/x) – Growth Equity Frankfurt Join Yttrium as Junior Data &amp; AI Engineer in Frankfurt. Build data pipelines, agentic workflows and full-stack apps for a leading growth equity firm. View details Associate Intern (f/m/x) – Data Science in Growth Equity Frankfurt or Munich "
+        },
+        "b4cb692d3e1cd064ebb6ad8773a8d238": {
+          "title": "Associate Intern (f/m/x) – Data Science in Growth Equity Frankfurt or Munich",
+          "url": "https://yttrium.com/career/associate-intern-m-f-x-growth-equity-frankfurt-or-munich/",
+          "location": "Frankfurt",
+          "detail": "Associate Intern (f/m/x) – Data Science in Growth Equity Frankfurt or Munich We offer year-round internship opportunities, at both of our office locations. The internship experience provides opportunities for graduate students to work on real, meaningful projects that directly support Yttrium busine"
+        },
+        "f0cd4aa34feefe56b407e3fa8d4afa96": {
+          "title": "FormerlyyttriumOur companiesScale with usInvestment approachESGOur firmAbout usTeamCareersInvestorsInvested in technologyOur companiesScale with usInv",
+          "url": "https://yttrium.com",
+          "location": "",
+          "detail": "Formerly yttrium Our companies Scale with us Investment approach ESG Our firm About us Team Careers Investors Invested in technology Our companies Scale with us Investment approach ESG Our firm About us Team Careers Investors Careers Be part of something unique. Our mission is to support the stronge"
+        },
+        "a086b2caf7a03775def943d68041b1e3": {
+          "title": "yttriumOur companiesScale with usInvestment approachESGOur firmAbout usTeamCareersInvestorsInvested in technologyOur companiesScale with usInvestment",
+          "url": "https://yttrium.com",
+          "location": "",
+          "detail": "yttrium Our companies Scale with us Investment approach ESG Our firm About us Team Careers Investors Invested in technology Our companies Scale with us Investment approach ESG Our firm About us Team Careers Investors"
+        },
+        "c2c14ff2988ebd50cad8b5ad56bdcdd5": {
+          "title": "Junior Data &amp; AI Engineer (f/m/x) – Growth Equity Frankfurt",
+          "url": "",
+          "location": "Frankfurt",
+          "detail": "Junior Data &amp; AI Engineer (f/m/x) – Growth Equity Frankfurt Join Yttrium as Junior Data &amp; AI Engineer in Frankfurt. Build data pipelines, agentic workflows and full-stack apps for a leading growth equity firm."
+        },
+        "ed658f9fd2ea94ca23929507bc442006": {
+          "title": "Associate Intern (f/m/x) – Data Science in Growth Equity Frankfurt or Munich",
+          "url": "",
+          "location": "Frankfurt",
+          "detail": "Associate Intern (f/m/x) – Data Science in Growth Equity Frankfurt or Munich We offer year-round internship opportunities, at both of our office locations. The internship experience provides opportunities for graduate students to work on real, meaningful projects that directly support Yttrium busine"
+        }
+      },
+      "last_checked": "2026-05-11T10:50:52.997109",
+      "has_no_jobs_indicator": false
+    },
+    "DTCP": {
+      "url": "https://www.dtcp.capital/about-us/careers/",
+      "page_hash": "93cc06bce5bd8031bcf8e114f53d5ae65ddc6f89a639a422fb509735bf3b1c9b",
+      "job_keys": {
+        "d6a0511bde082b98bf08343906c26430": {
+          "title": "ESG Intern (m/f/d)",
+          "url": "https://www.dtcp.capital/about-us/careers/",
+          "location": "Frankfurt",
+          "detail": "Apply ESG Intern (m/f/d) London, GB Full-Time ESG Apply Intern | Growth Equity (m/f/d) San Francisco, CA Full-Time Apply Investment Intern | Digital Infrastructure (m/f/d) London, GB Temporary DTCP Infra Apply Investment Intern | Digital Infrastructure (m/f/d) Frankfurt am Main, DE Temporary DTCP In"
+        },
+        "f0ac10db830d12bf8b52eba9bf7bdf11": {
+          "title": "ESG Intern (m/f/d)",
+          "url": "",
+          "location": "",
+          "detail": "Apply ESG Intern (m/f/d) London, GB Full-Time ESG"
+        }
+      },
+      "last_checked": "2026-05-11T10:50:57.511642",
+      "has_no_jobs_indicator": false
+    },
+    "Zeno Partners": {
+      "url": "https://www.zenopartners.com/careers/",
+      "page_hash": "17b40094824f8ffc0bcedb653b4d96bb4d1c7cf27c1cc88fa8a7a71e8869aae0",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:51:03.275201",
+      "has_no_jobs_indicator": false
+    },
+    "Vendis Capital": {
+      "url": "https://www.vendiscapital.com/careers/",
+      "page_hash": "872afde537ac4de7dad24868b1fca55ee650a8f848cf630fc5c922b50cfdc516",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:51:08.347030",
+      "has_no_jobs_indicator": false
+    },
+    "Saffelberg": {
+      "url": "https://www.saffelberg.com/careers",
+      "page_hash": "20d25249f91f95fc14ced489f28cd9b00dd5d3fef08143ad24d76c5e4fd6f478",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:51:45.571501",
+      "has_no_jobs_indicator": false
+    },
+    "D2E": {
+      "url": "https://www.d2e.be/jobs/",
+      "page_hash": "0f253d626712e9e64d7312e37731a94fbc15490f356a649bd8ab2603bfbdb567",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:51:49.116248",
+      "has_no_jobs_indicator": false
+    },
+    "Luxempart": {
+      "url": "https://www.luxempart.lu/our-people/careers/",
+      "page_hash": "362e37677369fda3513b4d3c7f4ff0ccb47b41265d8c6398b74c06a3660467bc",
+      "job_keys": {
+        "477c91027197bd817abb533f2570b6c0": {
+          "title": "Submit your spontaneous application for a position you are looking for! We will definitely review it and come back to you should your skills and exper",
+          "url": "",
+          "location": "",
+          "detail": "Submit your spontaneous application for a position you are looking for! We will definitely review it and come back to you should your skills and experience match an available position. Young graduate or a more experienced PE professional, don’t hesitate to apply."
+        }
+      },
+      "last_checked": "2026-05-11T10:51:53.728852",
+      "has_no_jobs_indicator": false
+    },
+    "Apax": {
+      "url": "https://www.apax.com/people/careers/",
+      "page_hash": "e0586508ac439d4ca83ff46c04300bd24f15d24205b8312eb9727544ae374335",
+      "job_keys": {
+        "a85e5fbe10ad63cdb07e84fee4a828d8": {
+          "title": "From Associate to Partner",
+          "url": "https://www.apax.com/news-views/from-associate-to-partner/",
+          "location": "",
+          "detail": "From Associate to Partner Hear from Frank Ehmer, Partner in the Services team, on his career progression joining Apax as an Associate and rising to Partner, and why he believes in this model. Learn more"
+        }
+      },
+      "last_checked": "2026-05-11T10:51:58.960031",
+      "has_no_jobs_indicator": false
+    },
+    "LDC": {
+      "url": "https://ldc.co.uk/careers",
+      "page_hash": "df05f329987cee0ee935acbb5b7beccf9d80ceb1c244582c193bd775c8b24a4b",
+      "job_keys": {
+        "ec41e17cfef827565c170846837f2fc2": {
+          "title": "LDC strengthens portfolio team with new Partner",
+          "url": "",
+          "location": "",
+          "detail": "2 October 2025 LDC strengthens portfolio team with new Partner"
+        },
+        "508ef6abd9d20c43f59ced51829a4da0": {
+          "title": "LDC strengthens London team with two senior hires",
+          "url": "",
+          "location": "",
+          "detail": "14 July 2025 LDC strengthens London team with two senior hires"
+        }
+      },
+      "last_checked": "2026-05-11T10:52:07.585226",
+      "has_no_jobs_indicator": false
+    },
+    "IK Partners": {
+      "url": "https://ikpartners.com/careers/",
+      "page_hash": "e862a624b4f8d62c1716ff9452148c402e2d1a5fe3d05c4bdc1d677c4ffc75a6",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:52:12.092116",
+      "has_no_jobs_indicator": false
+    },
+    "Vespa Capital": {
+      "url": "http://vespacapital.com/careers",
+      "page_hash": "3804b4ddc5736c4df033e3257f47cc7ec05ca0e6ae4f036be86727d8ca9169d2",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:52:14.797901",
+      "has_no_jobs_indicator": false
+    },
+    "Aurelius Group": {
+      "url": "https://career.aurelius-group.com/",
+      "page_hash": "7ab3c2f90a8d9384f898354debda0c19306b305457f75e37e1ff062d61ea3170",
+      "job_keys": {
+        "3ea3b281372a8deb8e14078d3dd0789c": {
+          "title": "AURELIUS is driven by a spirit of entrepreneurship, with a collegiate hands-on approach to complex projects. We are motivated, open, and fun, and operate as a team of equals.",
+          "url": "",
+          "location": "",
+          "detail": "AURELIUS is driven by a spirit of entrepreneurship, with a collegiate hands-on approach to complex projects. We are motivated, open, and fun, and operate as a team of equals."
+        }
+      },
+      "last_checked": "2026-05-11T10:52:19.576370",
+      "has_no_jobs_indicator": false
+    },
+    "Metric Capital": {
+      "url": "https://metric-capital.com/careers",
+      "page_hash": "747dfa78362b0b37fedc2e843eb7f6ceaa36a01e10fda020135bd1a0c3ed37f4",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:52:22.624242",
+      "has_no_jobs_indicator": false
+    },
+    "Platina Partners": {
+      "url": "https://www.platinapartners.com/work-with-us/",
+      "page_hash": "0be5e24c29ba9f1515002be950d7fb905be4b157b6fb90abf446f41cd822e1d7",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:52:26.932154",
+      "has_no_jobs_indicator": false
+    },
+    "Hayfin": {
+      "url": "https://www.hayfin.com/people/working-at-hayfin/",
+      "page_hash": "586a32bdf32ceee364e36b0b31bc61ff7481a9a12ab0e72bca6fe1b7aec96e12",
+      "job_keys": {
+        "8d66e4f62027ff9e21aba8892d5fd8cf": {
+          "title": "When Hayfin was founded, we knew that to build a business that would endure we had to recruit the best people for each role and invest in their development.",
+          "url": "https://www.hayfin.com/about-hayfin/values-culture/",
+          "location": "",
+          "detail": "When Hayfin was founded, we knew that to build a business that would endure we had to recruit the best people for each role and invest in their development. We employ people who will embrace our values and culture. To keep them at the firm in a highly competitive market we give them fulfilling work "
+        }
+      },
+      "last_checked": "2026-05-11T10:52:31.286916",
+      "has_no_jobs_indicator": false
+    },
+    "Limerston Capital": {
+      "url": "https://www.limerstoncap.com/careers",
+      "page_hash": "0b8df37679aeb3238bb297ac9178615f3cd3bcd3bb5fc7d64ce349db7a27403c",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:53:09.583902",
+      "has_no_jobs_indicator": false
+    },
+    "Connection Capital": {
+      "url": "https://www.connectioncapital.co.uk/careers/",
+      "page_hash": "8d9f8446558f4108c7489ff0017abeb857deb4160835dbe7a07771178c766001",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:53:15.542596",
+      "has_no_jobs_indicator": false
+    },
+    "Trispan": {
+      "url": "https://www.trispanllp.com/career/",
+      "page_hash": "d614d3d65793935cd5c441314e125f389772ad66ffc2a9702480c664acdaafa9",
+      "job_keys": {
+        "053c7c9e7b5ad6390b691a41957515b4": {
+          "title": "Intern (UK)London, Greater LondonIntern (US)New York, NY",
+          "url": "https://trispan.bamboohr.com/careers/25",
+          "location": "",
+          "detail": "Intern (UK) London, Greater London Intern (US) New York, NY"
+        },
+        "804c9473c3411079d206790970b58caf": {
+          "title": "Intern (UK)London, Greater London",
+          "url": "https://trispan.bamboohr.com/careers/25",
+          "location": "",
+          "detail": "Intern (UK) London, Greater London"
+        },
+        "b5b247fc57f272fa21f8244867f1a0f9": {
+          "title": "Intern (US)New York, NY",
+          "url": "https://trispan.bamboohr.com/careers/26",
+          "location": "",
+          "detail": "Intern (US) New York, NY"
+        },
+        "a0610204b432487dfa974945f3695b84": {
+          "title": "Close GDPR Cookie SettingsPrivacy OverviewStrictly Necessary CookiesPowered byGDPR Cookie CompliancePrivacy OverviewThis website uses cookies so that",
+          "url": "https://wordpress.org/plugins/gdpr-cookie-compliance/",
+          "location": "",
+          "detail": "Close GDPR Cookie Settings Privacy Overview Strictly Necessary Cookies Powered by GDPR Cookie Compliance Privacy Overview This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognisi"
+        },
+        "ba91cd0394a4deaaaaf0be1714bd110c": {
+          "title": "Intern (UK)",
+          "url": "https://trispan.bamboohr.com/careers/25",
+          "location": "",
+          "detail": "Intern (UK) London, Greater London"
+        },
+        "7c3f99c45f6c8adb2c75ee3991a312c2": {
+          "title": "Intern (US)",
+          "url": "https://trispan.bamboohr.com/careers/26",
+          "location": "",
+          "detail": "Intern (US) New York, NY"
+        }
+      },
+      "last_checked": "2026-05-11T10:53:20.444364",
+      "has_no_jobs_indicator": false
+    },
+    "CAIN International": {
+      "url": "https://cainint.com/career-oportunities/",
+      "page_hash": "db76701ed64348cc26af6c431e502a267d4def55a30b78ba781f72b81792c900",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:53:24.038831",
+      "has_no_jobs_indicator": false
+    },
+    "Bridgepoint": {
+      "url": "https://www.bridgepointgroup.com/careers",
+      "page_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:53:28.478816",
+      "has_no_jobs_indicator": false
+    },
+    "Freshstream": {
+      "url": "https://freshstream.com/career/",
+      "page_hash": "befab2963506c3ffb24df9c3fce15600b5f1b56cdd98290d840e2ce544ecf747",
+      "job_keys": {
+        "f90d8a2598f09b296338069d025c26ff": {
+          "title": "Intern Summer 2023",
+          "url": "",
+          "location": "",
+          "detail": "Intern Summer 2023"
+        },
+        "597890a37d4a6be8a52738f00ff5ccc3": {
+          "title": "Our hybrid set-up allows associates to be involved with the dealmaking and the related initial trajectory",
+          "url": "",
+          "location": "",
+          "detail": "Our hybrid set-up allows associates to be involved with the dealmaking and the related initial trajectory"
+        },
+        "7c9756901be359f5b8b7f2263f3a0f47": {
+          "title": "“I’ve found Freshstream’s culture a great environment to work in,as I got a lot of responsibility early on, but was always able to ask for help whenever I felt like I needed it.”",
+          "url": "",
+          "location": "Hamburg",
+          "detail": "“I’ve found Freshstream’s culture a great environment to work in, as I got a lot of responsibility early on, but was always able to ask for help whenever I felt like I needed it.” Tijn Hamburger — Intern Summer 2023"
+        }
+      },
+      "last_checked": "2026-05-11T10:53:33.028913",
+      "has_no_jobs_indicator": false
+    },
+    "Columna Capital": {
+      "url": "https://www.columnacapital.com/careers",
+      "page_hash": "e6982fb738ffa276d9d3e7d0fb088432116b107577f62f17bd7925b89eebfc11",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:10.297736",
+      "has_no_jobs_indicator": false
+    },
+    "Tenzing PE": {
+      "url": "https://tenzing.pe/careers/",
+      "page_hash": "aab1de83968b1e4464350ad33ec1a6f0ad70a841632e5413e90f3f20fd005b8f",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:13.697334",
+      "has_no_jobs_indicator": false
+    },
+    "Scaleup Capital": {
+      "url": "https://careershub.scaleupcapital.com/jobs",
+      "page_hash": "818c039c1edf34f82c12d0d0a929174e4a7420243ecf0608499472b2e5ba6b3b",
+      "job_keys": {
+        "034f14d99461c3aae192f5a49d1e1e44": {
+          "title": "How we supportPortfolioCompanyAbout UsNewsScaleUpXWhy We Do ItCareersESGContactHow we supportPortfolioCompanyAbout UsNewsScaleUpXWhy We Do ItCareersES",
+          "url": "https://scaleupcapital.com/",
+          "location": "",
+          "detail": "How we support Portfolio Company About Us News ScaleUpX Why We Do It Careers ESG Contact How we support Portfolio Company About Us News ScaleUpX Why We Do It Careers ESG Contact Our Scalers are hiring. Begin your scale-up journey today. Jobs Companies Talent Network"
+        },
+        "3bb2bfad94f974d14f37444bb6859828": {
+          "title": "Enterprise Software, Professional Training &amp; Coaching",
+          "url": "",
+          "location": "",
+          "detail": "Enterprise Software, Professional Training &amp; Coaching"
+        },
+        "d40e5b2f76a5aaca5b19a5379b38fa3c": {
+          "title": "Professional ServicesHubSpotLinkedInMarketing StrategyDriving ResultsAttention to DetailMentorshipSDRCRMHuman Resources",
+          "url": "",
+          "location": "",
+          "detail": "Professional Services HubSpot LinkedIn Marketing Strategy Driving Results Attention to Detail Mentorship SDR CRM Human Resources"
+        },
+        "c8fc2592e8a7a9b62e1f9d37e34b6d70": {
+          "title": "Clinical Coordinator (Wellbeing Services) - 32 Hours Per Week",
+          "url": "https://careershub.scaleupcapital.com/jobs/zevo-health",
+          "location": "",
+          "detail": "Zevo Health Clinical Coordinator (Wellbeing Services) - 32 Hours Per Week Dublin, Dublin 2, IE Posted 30+ days ago Health, Wellness and Fitness 100–1000 employees Incident Management Case Management Trust and Safety Data Visualization Classification Algorithms Service Service Delivery Escalation Onb"
+        },
+        "ad5991e6782961ad9cf491aca9130023": {
+          "title": "Clinical Coordinator (Wellbeing Services) - 32 Hours Per Week",
+          "url": "https://careers.zevohealth.com/en/postings/d9d9635f-6fd7-4bc4-b0ef-7686099cd8bd",
+          "location": "",
+          "detail": "Clinical Coordinator (Wellbeing Services) - 32 Hours Per Week"
+        },
+        "1269db7733d26f0ef53713dfc27f5a8d": {
+          "title": "Incident ManagementCase ManagementTrust and SafetyData VisualizationClassification AlgorithmsServiceService DeliveryEscalationOnboardingClinical Psych",
+          "url": "",
+          "location": "",
+          "detail": "Incident Management Case Management Trust and Safety Data Visualization Classification Algorithms Service Service Delivery Escalation Onboarding Clinical Psychology"
+        },
+        "c9f9b85348b22012a5fb5b1f7d9ab7c3": {
+          "title": "Senior Journalist",
+          "url": "https://careershub.scaleupcapital.com/jobs/real-deals-media",
+          "location": "",
+          "detail": "Real Deals Media Senior Journalist London, Greater London, United Kingdom Posted 30+ days ago Publishing 10–100 employees Finance Podcasting Research Interviewing Webinars Apply I&#x27;m interested in Real Deals Media Track companies you are interested in. Used to improve your job match recommendations. "
+        },
+        "334d8003f44f6482e1d9ae2e3f5d6c71": {
+          "title": "Senior Journalist",
+          "url": "https://realdealsmedia.com/?/vacancies/spec/senior-journalist",
+          "location": "",
+          "detail": "Senior Journalist"
+        },
+        "ad891663ae07195c44a8211fe4330322": {
+          "title": "Management Accountant",
+          "url": "https://careershub.scaleupcapital.com/jobs/zevo-health",
+          "location": "",
+          "detail": "Zevo Health Management Accountant Remote Philippines, Philippines, PH Posted 30+ days ago Health, Wellness and Fitness 100–1000 employees Invoicing Classification Algorithms Financial Statements Finance Month End Close B2B Treatment VAT Financial Reporting Apply I&#x27;m interested in Zevo Health Track c"
+        },
+        "90fe9e23dc7f12a070df81424cad8981": {
+          "title": "Management Accountant",
+          "url": "https://careers.zevohealth.com/en/postings/e76f7904-2ae7-463a-9058-791f371a3c72",
+          "location": "",
+          "detail": "Management Accountant"
+        },
+        "a80420fd9184523a856ee2cc4da15211": {
+          "title": "InvoicingClassification AlgorithmsFinancial StatementsFinanceMonth End CloseB2BTreatmentVATFinancial Reporting",
+          "url": "",
+          "location": "",
+          "detail": "Invoicing Classification Algorithms Financial Statements Finance Month End Close B2B Treatment VAT Financial Reporting"
+        },
+        "066e7987280aeb07e2d17828f578fcb9": {
+          "title": "Private EquityMarketingServiceCAttention to DetailKPI DashboardsCRMSchedulingSalesforceWritten Communication Skills",
+          "url": "",
+          "location": "",
+          "detail": "Private Equity Marketing Service C Attention to Detail KPI Dashboards CRM Scheduling Salesforce Written Communication Skills"
+        }
+      },
+      "last_checked": "2026-05-11T10:54:18.146829",
+      "has_no_jobs_indicator": false
+    },
+    "Sun European Partners": {
+      "url": "https://suneuropeanpartners.com/careers/",
+      "page_hash": "88b15670365371976f4f0b5c8e7f50565840ecc4673545e11931a8ea4eb5949a",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:22.479708",
+      "has_no_jobs_indicator": false
+    },
+    "Henley Investment Management": {
+      "url": "https://www.henleyim.com/careers",
+      "page_hash": "10fc60c39a646b7571ac3ce016f907c16f7cfdbdcc6313850c75e6dcd8bb8c84",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:29.282906",
+      "has_no_jobs_indicator": false
+    },
+    "DPI": {
+      "url": "https://www.dpi-llp.com/our-firm/careers/",
+      "page_hash": "9a68b0374dd843a63290cc40a133cb5fa36ab7f6a5d2e987e8c5dad11f74927e",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:34.144484",
+      "has_no_jobs_indicator": false
+    },
+    "Foresight Group": {
+      "url": "https://foresight.group/other-information/careers/",
+      "page_hash": "bfebdaa1bd4b9dad0d2a7866714a73df2a07db6338315723890cc3f531020bc5",
+      "job_keys": {
+        "df361a86c680091c113283e61478574e": {
+          "title": "Bethany Dudley - Head of Strategic Partnerships",
+          "url": "",
+          "location": "",
+          "detail": "Bethany Dudley - Head of Strategic Partnerships “I was delighted to be offered the opportunity to work at Foresight after temping during my university holidays in 2006. After a year on reception, I moved into the retail sales team division and held various roles until I was appointed Head of Strateg"
+        },
+        "b3a9ba492095ea5bc08523d0def994b3": {
+          "title": "Disclaimer for Financial Intermediaries",
+          "url": "https://foresight.group/legal/risk-summary",
+          "location": "",
+          "detail": "I&#x27;m not a Financial Intermediary Disclaimer for Financial Intermediaries By clicking ‘I Agree’ and providing your FCA firm reference number (“FRN”) or individual\n                                          reference number (“IRN”) below, you confirm that you are an FCA authorised person under\n        "
+        }
+      },
+      "last_checked": "2026-05-11T10:54:39.664197",
+      "has_no_jobs_indicator": false
+    },
+    "Henderson Park": {
+      "url": "https://hendersonpark.com/careers",
+      "page_hash": "b97ff98167cc539773270e287332577d6fdc6b36054ee557cb7aafab5433c8fa",
+      "job_keys": {
+        "a0610204b432487dfa974945f3695b84": {
+          "title": "Close GDPR Cookie SettingsPrivacy OverviewStrictly Necessary CookiesPowered byGDPR Cookie CompliancePrivacy OverviewThis website uses cookies so that",
+          "url": "https://wordpress.org/plugins/gdpr-cookie-compliance/",
+          "location": "",
+          "detail": "Close GDPR Cookie Settings Privacy Overview Strictly Necessary Cookies Powered by GDPR Cookie Compliance Privacy Overview This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognisi"
+        },
+        "37f3bc4d6b9dd1a9a1ed688568ac54eb": {
+          "title": "At Henderson Park, we are always on the lookout for talented people who are passionate about real estate investment.",
+          "url": "mailto:hr@hendersonpark.com",
+          "location": "",
+          "detail": "Careers At Henderson Park, we are always on the lookout for talented people who are passionate about real estate investment. We recruit exceptional candidates looking to build a long term career within real estate and as part of our team. Our culture is built on entrepreneurship, initiative, motivat"
+        }
+      },
+      "last_checked": "2026-05-11T10:54:42.784939",
+      "has_no_jobs_indicator": false
+    },
+    "Bridges Fund Management": {
+      "url": "https://www.bridgesfundmanagement.com/about-us/careers/",
+      "page_hash": "537d1311656f5a81cf908bbe11a8bea3167def56a9387b73e016da615d7a89d5",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:47.150237",
+      "has_no_jobs_indicator": false
+    },
+    "True Global": {
+      "url": "https://www.true.global/careers/",
+      "page_hash": "214dbee220321fa3842f89c3576f231ac964133fbbdc39546acf3d24b1fb6f3b",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:50.823458",
+      "has_no_jobs_indicator": false
+    },
+    "Claret Capital": {
+      "url": "https://www.claret-capital.com/join-us/",
+      "page_hash": "528fa2f9092b40b77b062e36d606c0a8fa30f365dba1ce31cfa4446d03014457",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:54:54.402739",
+      "has_no_jobs_indicator": false
+    },
+    "Zouk Capital": {
+      "url": "https://zouk.com/careers",
+      "page_hash": "3ed4ece9117397d8c49ad889ddc3ea4d054e39805095db691db91931ed5a86fe",
+      "job_keys": {
+        "3106730834eb7568b5885efdd0578733": {
+          "title": "Believ earns ISO certifications as it continues to commit to quality, safety and environmental best practice",
+          "url": "https://zouk.com/news/38-infrastructure/326-believ-earns-iso-certifications-as-it-continues-to-commit-to-quality-safety-and-environmental-best-practice",
+          "location": "",
+          "detail": "Believ earns ISO certifications as it continues to commit to quality, safety and environmental best practice Area: London, UK"
+        }
+      },
+      "last_checked": "2026-05-11T10:54:58.523308",
+      "has_no_jobs_indicator": false
+    },
+    "PIDG": {
+      "url": "https://pidg.org/about-us/careers/",
+      "page_hash": "eafdcb9ff7fe0119a0ff9fc6848a83065f52d92a701780b4a0a69b7917e3a9ee",
+      "job_keys": {
+        "38f4e086ac3c28832155b10b03a60aa6": {
+          "title": "Assistant Projects and Investment Finance ManagerPIDGAll PIDG locations21 May 2026 00:00 UTC+0",
+          "url": "https://pidg.org/job/assistant-projects-and-investment-finance-manager/",
+          "location": "",
+          "detail": "Assistant Projects and Investment Finance Manager PIDG All PIDG locations 21 May 2026 00:00 UTC+0"
+        }
+      },
+      "last_checked": "2026-05-11T10:55:03.097410",
+      "has_no_jobs_indicator": false
+    },
+    "Everfield": {
+      "url": "https://everfield.com/careers",
+      "page_hash": "7eeeda232b405a0fac21d69432a7f3f3f1be540155af91c1d9d43b2b968d6468",
+      "job_keys": {
+        "26da16b441c7b26b9732f646f5205609": {
+          "title": "Sales andmarketing",
+          "url": "",
+          "location": "",
+          "detail": "Sales and marketing Join one of our growing portfolio companies and make an impact by helping them scale, driving sales or improving marketing."
+        },
+        "8a8688494f8a8dfd37adb125a7a74e60": {
+          "title": "Unlocking opportunities for Europe’s software ecosystem",
+          "url": "",
+          "location": "",
+          "detail": "Our companies Unlocking opportunities for Europe’s software ecosystem Everfield is a constantly growing ecosystem of specialised tech companies. We acquire independently managed companies with mission-critical products. Check out our most recent acquisitions and explore the whole portfolio."
+        }
+      },
+      "last_checked": "2026-05-11T10:55:08.832666",
+      "has_no_jobs_indicator": false
+    },
+    "Quinbrook": {
+      "url": "https://www.quinbrook.com/careers/",
+      "page_hash": "259a592d79f456120a6b09b7d2e1ba412ede7fab753118eaac9056cb0d447bea",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:13.088080",
+      "has_no_jobs_indicator": false
+    },
+    "AgDevCo": {
+      "url": "http://agdevco.com/about-us/careers/",
+      "page_hash": "2b7b79d94463a6c22788ee66c0fd857a2b094bd527e57b02636d178fe0670b6c",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:17.686716",
+      "has_no_jobs_indicator": false
+    },
+    "Northstar VC": {
+      "url": "https://northstar.vc/careers",
+      "page_hash": "7d10591e314e8d9471ecc27dfae1a4582a4d2442fab058641f85ae5ea8b6bafa",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:21.845039",
+      "has_no_jobs_indicator": false
+    },
+    "IRCP": {
+      "url": "https://www.ircp.com/talent/job-vacancies/",
+      "page_hash": "759868d8412ab4d356e1eccf2356d9a266d93f03c905dd8ee30d8d57434ac176",
+      "job_keys": {
+        "41b5cf6ddb6ddb3a41ced15d8a306456": {
+          "title": "Analyst/ Associate, InvestmentsLondon, London, City of",
+          "url": "https://ircp.bamboohr.com/careers/350",
+          "location": "",
+          "detail": "Analyst/ Associate, Investments London, London, City of"
+        },
+        "8354339367c6e004b6b14679eb54b756": {
+          "title": "Vice President, InvestmentsNew York, NYVice President, Investments (Value Add)London, London, City of",
+          "url": "https://ircp.bamboohr.com/careers/353",
+          "location": "",
+          "detail": "Vice President, Investments New York, NY Vice President, Investments (Value Add) London, London, City of"
+        },
+        "8b2768947eb62119e3393364d80676bd": {
+          "title": "Vice President, InvestmentsNew York, NY",
+          "url": "https://ircp.bamboohr.com/careers/353",
+          "location": "",
+          "detail": "Vice President, Investments New York, NY"
+        },
+        "3831481aab0d38d45e82353412a803ea": {
+          "title": "Vice President, Investments (Value Add)London, London, City of",
+          "url": "https://ircp.bamboohr.com/careers/355",
+          "location": "",
+          "detail": "Vice President, Investments (Value Add) London, London, City of"
+        },
+        "be5547d5cb7ee28ba0ed201b943b1735": {
+          "title": "Director of Portfolio Management (Energy Transition Fund)New York, NY",
+          "url": "https://ircp.bamboohr.com/careers/351",
+          "location": "",
+          "detail": "Director of Portfolio Management (Energy Transition Fund) New York, NY"
+        },
+        "b2d1aa6291c45e33b0fc5053cec001fd": {
+          "title": "Close GDPR Cookie SettingsCookies ManagerStrictly Necessary CookiesAnalytical CookiesTargeting CookiesCookies ManagerSome cookies are essential to mak",
+          "url": "https://www.ircp.com/cookies-policy/",
+          "location": "",
+          "detail": "Close GDPR Cookie Settings Cookies Manager Strictly Necessary Cookies Analytical Cookies Targeting Cookies Cookies Manager Some cookies are essential to make our website work as intended. Others are not essential but help to improve our website and your experience. You can choose which optional cook"
+        },
+        "acb233379c33151db64db32dc77b66d6": {
+          "title": "Analyst/ Associate, Investments",
+          "url": "https://ircp.bamboohr.com/careers/350",
+          "location": "",
+          "detail": "Analyst/ Associate, Investments London, London, City of"
+        },
+        "d36e1ff43f3d3e3a1062894cc9fd46ce": {
+          "title": "Vice President, Investments",
+          "url": "https://ircp.bamboohr.com/careers/353",
+          "location": "",
+          "detail": "Vice President, Investments New York, NY"
+        },
+        "b0ad70f16953616c66c5f0281e5e0111": {
+          "title": "Vice President, Investments (Value Add)",
+          "url": "https://ircp.bamboohr.com/careers/355",
+          "location": "",
+          "detail": "Vice President, Investments (Value Add) London, London, City of"
+        },
+        "94f52dd68f8703990920d88fe44711b7": {
+          "title": "Director of Portfolio Management (Energy Transition Fund)",
+          "url": "https://ircp.bamboohr.com/careers/351",
+          "location": "",
+          "detail": "Director of Portfolio Management (Energy Transition Fund) New York, NY"
+        }
+      },
+      "last_checked": "2026-05-11T10:55:28.491931",
+      "has_no_jobs_indicator": false
+    },
+    "ACT": {
+      "url": "https://www.act.is/people/careers/",
+      "page_hash": "86ef1453a95576d6d513c34971b0fbcc0ad483a350b0dbf94efd5f4524345e70",
+      "job_keys": {
+        "60c0a5244998ed916bed9f7c01851c1b": {
+          "title": "A career as an investment professional",
+          "url": "",
+          "location": "",
+          "detail": "A career as an investment professional"
+        },
+        "8d35db3d89cc91c7de5cdf493e51f324": {
+          "title": "Our associate programme",
+          "url": "",
+          "location": "",
+          "detail": "Our associate programme"
+        }
+      },
+      "last_checked": "2026-05-11T10:55:33.854421",
+      "has_no_jobs_indicator": false
+    },
+    "Kantar": {
+      "url": "https://www.kantar.com/careers",
+      "page_hash": "2acd27ecb57fa104452bf6248f465309b28e1da524270c1261b49a588b7ecad6",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:44.832766",
+      "has_no_jobs_indicator": false
+    },
+    "YFM Equity Partners": {
+      "url": "https://yfmep.com/careers",
+      "page_hash": "7fe7f805e457a503f00ad2404f6a5806575cd5258081a67c57bf62ee10e93540",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:48.820072",
+      "has_no_jobs_indicator": false
+    },
+    "Frontier Development Capital": {
+      "url": "https://www.frontierdevelopmentcapital.com/careers/",
+      "page_hash": "bc412a31103eddfb2c6d0a033ddda2c3ebdd3d29070f9b940fdd1eda4a9a6f18",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:53.463920",
+      "has_no_jobs_indicator": false
+    },
+    "GII": {
+      "url": "https://gii.ae/careers/",
+      "page_hash": "c41dffb79c1109caa61ab14f50aca50417ffcdc84c0eea41359b375086599bee",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:55:56.570255",
+      "has_no_jobs_indicator": false
+    },
+    "Sofina Group": {
+      "url": "https://www.sofinagroup.com/the-team/careers/",
+      "page_hash": "da692154c8aeac860d62c2f320744da78aab76f144d5c817b0d1feb56d4fa046",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:56:00.790474",
+      "has_no_jobs_indicator": false
+    },
+    "Cobepa": {
+      "url": "https://www.cobepa.com/en/careers",
+      "page_hash": "2a6143c6007277ec9e8caa40809636930a319e3aaa178f2377fdf895229adbec",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:56:04.933359",
+      "has_no_jobs_indicator": false
+    },
+    "Elvaston": {
+      "url": "https://www.elvaston.com/en/careers",
+      "page_hash": "65b42fc7166431d60058988f623b3fdf95859fbfb30c446a3a99c2536b4bd729",
+      "job_keys": {
+        "c418b690e7b6c8d364fe39ffe8fd9b59": {
+          "title": "ApproachPortfolioInvestorsOur storyTeamCareersNewsContact© Elvaston All rights reserved.SFDR DisclosurePrivacy PolicyLegal NoticeCookies Settings",
+          "url": "https://www.elvaston.com/en",
+          "location": "",
+          "detail": "Approach Portfolio Investors Our story Team Careers News Contact © Elvaston All rights reserved. SFDR Disclosure Privacy Policy Legal Notice Cookies Settings"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:08.665143",
+      "has_no_jobs_indicator": false
+    },
+    "Odewald KMU": {
+      "url": "https://odewaldkmu.com/karriere/",
+      "page_hash": "02c0b79fda1bc20a2c95001dbddac0f5a2b4e01528849cf31d3d960b0a3772d3",
+      "job_keys": {
+        "477e6877cd53ac461a03e953bd41c3f3": {
+          "title": "Praktikant (w/m/d) im Investmentteam",
+          "url": "https://odewaldkmu.com/stellen/praktikant-w-m-d-im-investmentteam-in-berlin/",
+          "location": "",
+          "detail": "Praktikant (w/m/d) im Investmentteam"
+        },
+        "ee21882ea5e0a64e0e72bf9669016d63": {
+          "title": "Odewald KMU. Arbeitgeber mit Anstand.",
+          "url": "",
+          "location": "bern",
+          "detail": "Odewald KMU. Arbeitgeber mit Anstand. Odewald KMU ist ein Arbeitgeber der sich als Partner und Förderer seiner Teammitglieder versteht. Selbstständiges Arbeiten in einem anspruchsvollem Arbeitsumfeld und Kooperation in Arbeitsgruppen mit Kollegen sowie Mentoring durch Senior-Experten gehört zu unser"
+        },
+        "90fe44f9534d93b55953ef9c1e5ad22f": {
+          "title": "Sie möchten mehr erfahren?",
+          "url": "",
+          "location": "",
+          "detail": "Sie möchten mehr erfahren? Wir sind für Sie da und freuen uns auf den Dialog mit Ihnen! Wählen Sie jetzt den passenden Ansprechpartner und senden Sie uns Ihre Anfrage. Wir melden uns umgehend bei Ihnen."
+        }
+      },
+      "last_checked": "2026-05-11T10:56:13.032773",
+      "has_no_jobs_indicator": false
+    },
+    "Auctus Capital Partners": {
+      "url": "https://auctuscapitalpartnersag-1743583356.teamtailor.com/jobs",
+      "page_hash": "0b3b1e8e8ec04256efd484b7d1a9e4eb1767d80101f8a3027fb47266e32e3478",
+      "job_keys": {
+        "aa1bf7880f8ebccb1380f6d73633ec64": {
+          "title": "OUR CURRENT POSITIONSSearchJob filtersDepartmentsAllDealteam\n (6)Finance\n (1)Portfolio Company\n (13)Portfolio Team\n (2)HRManagementOperations SupportD",
+          "url": "https://careers.auctus.com/jobs/6070771-junior-finance-manager-m-w-d-private-equity",
+          "location": "München",
+          "detail": "OUR CURRENT POSITIONS Search Job filters Departments All Dealteam\n (6) Finance\n (1) Portfolio Company\n (13) Portfolio Team\n (2) HR Management Operations Support Departments Locations All\n (3) AUCTUS Milano\n (1) AUCTUS München\n (13) Berlin\n (1) Lab Supplies Group München\n (1) Munich\n (2) ORARA Düssel"
+        },
+        "1f565710455d0977476c0c659d737a1d": {
+          "title": "22 jobs(Junior) Finance Manager (m/w/d) Private EquityFinance·AUCTUS München·HybridPRIVATE EQUITY PRAKTIKANT (m/w/d)Dealteam·AUCTUS München·HybridPRIV",
+          "url": "https://careers.auctus.com/jobs/6070771-junior-finance-manager-m-w-d-private-equity",
+          "location": "München",
+          "detail": "22 jobs (Junior) Finance Manager (m/w/d) Private Equity Finance · AUCTUS München · Hybrid PRIVATE EQUITY PRAKTIKANT (m/w/d) Dealteam · AUCTUS München · Hybrid PRIVATE EQUITY PRAKTIKANT (m/w/d) KI-Projekte/Data Analytics Portfolio Team · AUCTUS München · Hybrid Investment Director (m/w/d) Real Estate"
+        },
+        "b90871f1239f9b4678f0bf280958a63e": {
+          "title": "(Junior) Finance Manager (m/w/d) Private Equity",
+          "url": "https://careers.auctus.com/jobs/6070771-junior-finance-manager-m-w-d-private-equity",
+          "location": "München",
+          "detail": "(Junior) Finance Manager (m/w/d) Private Equity Finance · AUCTUS München · Hybrid"
+        },
+        "eddc334ff0bf323156e1c60c4064ff0f": {
+          "title": "PRIVATE EQUITY PRAKTIKANT (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6069931-private-equity-praktikant-m-w-d",
+          "location": "München",
+          "detail": "PRIVATE EQUITY PRAKTIKANT (m/w/d) Dealteam · AUCTUS München · Hybrid"
+        },
+        "3c224f7295e66b910a95c96de7c66df5": {
+          "title": "PRIVATE EQUITY PRAKTIKANT (m/w/d) KI-Projekte/Data Analytics",
+          "url": "https://careers.auctus.com/jobs/7695596-private-equity-praktikant-m-w-d-ki-projekte-data-analytics",
+          "location": "München",
+          "detail": "PRIVATE EQUITY PRAKTIKANT (m/w/d) KI-Projekte/Data Analytics Portfolio Team · AUCTUS München · Hybrid"
+        },
+        "8a5b536e441b1c618158b98e1dc19ad8": {
+          "title": "Investment Director (m/w/d) Real Estate",
+          "url": "https://careers.auctus.com/jobs/7557404-investment-director-m-w-d-real-estate",
+          "location": "Berlin",
+          "detail": "Investment Director (m/w/d) Real Estate Dealteam · Berlin, Munich · Hybrid"
+        },
+        "3c8d35cf06d871ff49f39b35e0912dd3": {
+          "title": "Head of DAS (m/f/d) Delo Instruments",
+          "url": "https://careers.auctus.com/jobs/7458322-head-of-das-m-f-d-delo-instruments",
+          "location": "",
+          "detail": "Head of DAS (m/f/d) Delo Instruments Portfolio Company · AUCTUS Milano · Hybrid"
+        },
+        "f978b0162d9ed9c36888e1818e5a353c": {
+          "title": "Data &amp; IT Integration Manager (m/w/d) Private Equity",
+          "url": "https://careers.auctus.com/jobs/7330874-data-it-integration-manager-m-w-d-private-equity",
+          "location": "Munich",
+          "detail": "Data &amp; IT Integration Manager (m/w/d) Private Equity Portfolio Company · Munich · Hybrid"
+        },
+        "e6084c6d7bc52df671ea4ec8b3275fbe": {
+          "title": "PRIVATE EQUITY WERKSTUDENT (m/w/d) im Dealteam",
+          "url": "https://careers.auctus.com/jobs/6318557-private-equity-werkstudent-m-w-d-im-dealteam",
+          "location": "München",
+          "detail": "PRIVATE EQUITY WERKSTUDENT (m/w/d) im Dealteam Dealteam · AUCTUS München · Hybrid"
+        },
+        "185b54eb2fef2e6720f3a0b1fafa2d1c": {
+          "title": "Gründer/Geschäftsführer (m/w/d) KI-gestützte Onkologie",
+          "url": "https://careers.auctus.com/jobs/6840789-gruender-geschaeftsfuehrer-m-w-d-ki-gestuetzte-onkologie",
+          "location": "Frankfurt",
+          "detail": "Gründer/Geschäftsführer (m/w/d) KI-gestützte Onkologie Portfolio Company · Frankfurt am Main · Hybrid"
+        },
+        "25facae215d5e33e7e96ad27d45110f4": {
+          "title": "Junior CFO (m/w/d) Wellness- &amp; Fitnessunternehmen",
+          "url": "https://careers.auctus.com/jobs/6716869-junior-cfo-m-w-d-wellness-fitnessunternehmen",
+          "location": "",
+          "detail": "Junior CFO (m/w/d) Wellness- &amp; Fitnessunternehmen Portfolio Company · Düsseldorf · Hybrid"
+        },
+        "5721908b2ef7a7c87c45304121ed9254": {
+          "title": "Portfolio Analyst Private Equity (m/w/d) mit MINT-Hintergrund",
+          "url": "https://careers.auctus.com/jobs/6408185-portfolio-analyst-private-equity-m-w-d-mit-mint-hintergrund",
+          "location": "Frankfurt",
+          "detail": "Portfolio Analyst Private Equity (m/w/d) mit MINT-Hintergrund Portfolio Company · Frankfurt am Main · Hybrid"
+        },
+        "5fd27e7817af91cf961a5097f594946e": {
+          "title": "M&amp;A Manager (m/w/d) Private Equity",
+          "url": "https://careers.auctus.com/jobs/6268114-m-a-manager-m-w-d-private-equity",
+          "location": "",
+          "detail": "M&amp;A Manager (m/w/d) Private Equity Portfolio Company · ORARA Düsseldorf · Hybrid"
+        },
+        "7ee2f179ffdfd9b9d6572863df8ace00": {
+          "title": "CFO (m/w/d) Labor- und Medizintechnik",
+          "url": "https://careers.auctus.com/jobs/6165958-cfo-m-w-d-labor-und-medizintechnik",
+          "location": "München",
+          "detail": "CFO (m/w/d) Labor- und Medizintechnik Portfolio Company · Lab Supplies Group München · Hybrid"
+        },
+        "0a761e047cc8f4b3a6c77136f3d63b2d": {
+          "title": "(Senior) Finance Manager (m/w/d) in der ORARA-Holding",
+          "url": "https://careers.auctus.com/jobs/6165894-senior-finance-manager-m-w-d-in-der-orara-holding",
+          "location": "",
+          "detail": "(Senior) Finance Manager (m/w/d) in der ORARA-Holding Portfolio Company · ORARA Düsseldorf · Hybrid"
+        },
+        "fdcb03838667f930091cced3a809c7c4": {
+          "title": "PORTFOLIO PARTNER (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6071006-portfolio-partner-m-w-d",
+          "location": "München",
+          "detail": "PORTFOLIO PARTNER (m/w/d) Portfolio Team · AUCTUS München · Hybrid"
+        },
+        "79afd2752da0a78da7fe3c25d4edc4e2": {
+          "title": "JUNIOR CFO (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6070935-junior-cfo-m-w-d",
+          "location": "München",
+          "detail": "JUNIOR CFO (m/w/d) Portfolio Company · AUCTUS München · Hybrid"
+        },
+        "fa371bea517935f9430d05a56005f7d2": {
+          "title": "PORTFOLIO ANALYST (m/w/d) Private Equity",
+          "url": "https://careers.auctus.com/jobs/6070876-portfolio-analyst-m-w-d-private-equity",
+          "location": "München",
+          "detail": "PORTFOLIO ANALYST (m/w/d) Private Equity Portfolio Company · AUCTUS München · Hybrid"
+        },
+        "ed1457c157c3d911354dd102a4ba6131": {
+          "title": "PRIVATE EQUITY ANALYST (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6070853-private-equity-analyst-m-w-d",
+          "location": "München",
+          "detail": "PRIVATE EQUITY ANALYST (m/w/d) Dealteam · AUCTUS München · Hybrid"
+        },
+        "1a445ee8499c6882dc887ccbd418f78b": {
+          "title": "PRIVATE EQUITY ASSOCIATE (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6070839-private-equity-associate-m-w-d",
+          "location": "München",
+          "detail": "PRIVATE EQUITY ASSOCIATE (m/w/d) Dealteam · AUCTUS München · Hybrid"
+        },
+        "055760e16a29b2821db69397f7383188": {
+          "title": "CFO (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6070831-cfo-m-w-d",
+          "location": "München",
+          "detail": "CFO (m/w/d) Portfolio Company · AUCTUS München · Hybrid"
+        },
+        "d411019b250ef8614936e42268fcdd4f": {
+          "title": "INTERIM CFO (m/w/d)",
+          "url": "https://careers.auctus.com/jobs/6070807-interim-cfo-m-w-d",
+          "location": "München",
+          "detail": "INTERIM CFO (m/w/d) Portfolio Company · AUCTUS München · Hybrid"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:17.116448",
+      "has_no_jobs_indicator": false
+    },
+    "DPE": {
+      "url": "https://www.dpe.de/karriere/",
+      "page_hash": "07363a57ebeffe5c4d7304f3b4d2e21f06137635e61ee3b3bf1e40d66235b17a",
+      "job_keys": {
+        "08bbb570745d90cd7209a07e1e06f284": {
+          "title": "Visionen Wirklichkeit werden lassen.Persönlichkeiten mit Engagement.",
+          "url": "",
+          "location": "",
+          "detail": "Visionen Wirklichkeit werden lassen. Persönlichkeiten mit Engagement."
+        },
+        "cb2c4e25b81da38b7ff0046479f69770": {
+          "title": "Wir bieten Dir noch viel mehr",
+          "url": "",
+          "location": "",
+          "detail": "Wir bieten Dir noch viel mehr"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:26.264467",
+      "has_no_jobs_indicator": false
+    },
+    "Paragon": {
+      "url": "https://www.paragon.de/karriere/",
+      "page_hash": "2d64fc8ac923fed531ad44c473f4c03949def56760604c12366d67243c6d6c5b",
+      "job_keys": {
+        "c0fa613361425d62436eb2a6f0b2bb30": {
+          "title": "Paragon PartnersPrivate Equity Investment Associate (gn)MünchenPartner- und Teamassistenz (m/w/d)München",
+          "url": "",
+          "location": "München",
+          "detail": "Paragon Partners Private Equity Investment Associate (gn) München Partner- und Teamassistenz (m/w/d) München"
+        },
+        "5d1aaced29d3ddd7461fd86a58fb6433": {
+          "title": "Sie interessieren sich für einen Einstieg bei Paragon, haben aber keine passende Vakanz gefunden? Treten Sie gerne mit uns in Kontakt. Wir freuen uns",
+          "url": "mailto:recruiting@paragon.de?subject=Initiativbewerbung%20Paragon%20Partners",
+          "location": "",
+          "detail": "Sie interessieren sich für einen Einstieg bei Paragon, haben aber keine passende Vakanz gefunden? Treten Sie gerne mit uns in Kontakt. Wir freuen uns über Ihre Initiativbewerbung. in­i­ti­a­tiv bewerben"
+        },
+        "8b42f06bcceaf48ae824ad6a59784051": {
+          "title": "Mitarbeit bei unseren Portfolio Unternehmen",
+          "url": "mailto:recruiting@paragon.de?subject=Initiativbewerbung%20Portfolio%20Unternehmen",
+          "location": "",
+          "detail": "Mitarbeit bei unseren Portfolio Unternehmen Die Manager und Beiräte unserer Unternehmen machen den Erfolg unserer Portfolio-Unternehmen aus. Daher setzen wir auf ein exzellentes, wachsendes Netzwerk aus erfahrenen Branchenexperten. Für aktuelle und zukünftige Investments suchen wir den Kontakt zu un"
+        },
+        "2a95b600aeb6b5aac8077c097ce8f832": {
+          "title": "Die Manager und Beiräte unserer Unternehmen machen den Erfolg unserer Portfolio-Unternehmen aus. Daher setzen wir auf ein exzellentes, wachsendes Netz",
+          "url": "",
+          "location": "",
+          "detail": "Die Manager und Beiräte unserer Unternehmen machen den Erfolg unserer Portfolio-Unternehmen aus. Daher setzen wir auf ein exzellentes, wachsendes Netzwerk aus erfahrenen Branchenexperten. Für aktuelle und zukünftige Investments suchen wir den Kontakt zu unternehmerischen Führungspersönlichkeiten, di"
+        },
+        "26aa6475b63af536714ae98f02ba915c": {
+          "title": "Sie interessieren sich für einen Einstieg bei unseren Portfolio-Unternehmen, haben aber keine passende Vakanz gefunden? Treten Sie gerne mit uns in Ko",
+          "url": "mailto:recruiting@paragon.de?subject=Initiativbewerbung%20Portfolio%20Unternehmen",
+          "location": "",
+          "detail": "Sie interessieren sich für einen Einstieg bei unseren Portfolio-Unternehmen, haben aber keine passende Vakanz gefunden? Treten Sie gerne mit uns in Kontakt. Wir freuen uns über Ihre Initiativbewerbung. in­i­ti­a­tiv bewerben"
+        },
+        "9c75b3998512722cd851a38c0a2212f8": {
+          "title": "Auf dieser Website werden Cookies verwendet, um die Website und das Nutzererlebnis zu optimieren.Mehr InformationenDatenschutzAlle akzeptierenNur esse",
+          "url": "https://www.paragon.de/karriere/",
+          "location": "",
+          "detail": "Auf dieser Website werden Cookies verwendet, um die Website und das Nutzererlebnis zu optimieren. Mehr Informationen Datenschutz Alle akzeptieren Nur essenzielle Cookies akzeptieren Individuelle Datenschutzeinstellungen Datenschutzeinstellungen Hier finden Sie eine Übersicht über alle verwendeten Co"
+        },
+        "123634877cc8e1a4cec69c2dcedd6a0a": {
+          "title": "Mitarbeit bei unseren Portfolio Unternehmen",
+          "url": "",
+          "location": "",
+          "detail": "Mitarbeit bei unseren Portfolio Unternehmen"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:32.711223",
+      "has_no_jobs_indicator": false
+    },
+    "Afinum": {
+      "url": "https://afinum.de/jobs/",
+      "page_hash": "39794d1ea06f3a4f4d1926b5f5b64ee5d28749f07c13e7de1fcf9276ff5189f3",
+      "job_keys": {
+        "1d56f1567b8be50c35c1d8d950e704aa": {
+          "title": "Team Assistant - München (m/w/d)Praktikum im Investment Team - München (m/w/d)Praktikum im Investment Team - Zürich (m/w/d)Analyst - Zürich (m/w/d)",
+          "url": "https://afinum.de/job/team-assistant-muenchen-m-w-d/",
+          "location": "München",
+          "detail": "Team Assistant - München (m/w/d) Praktikum im Investment Team - München (m/w/d) Praktikum im Investment Team - Zürich (m/w/d) Analyst - Zürich (m/w/d)"
+        },
+        "3bbf572498ab39130d0e02718f84c50c": {
+          "title": "Team Assistant - München (m/w/d)",
+          "url": "https://afinum.de/job/team-assistant-muenchen-m-w-d/",
+          "location": "München",
+          "detail": "Team Assistant - München (m/w/d)"
+        },
+        "65c7c5d3aebd2246d11bebdc913cf3e8": {
+          "title": "Team Assistant - München (m/w/d)",
+          "url": "",
+          "location": "München",
+          "detail": "Team Assistant - München (m/w/d)"
+        },
+        "6b0714a052d6dee24649010362e4ddb3": {
+          "title": "Praktikum im Investment Team - München (m/w/d)",
+          "url": "https://afinum.de/job/praktikum-im-investment-team-muenchen/",
+          "location": "München",
+          "detail": "Praktikum im Investment Team - München (m/w/d)"
+        },
+        "bc505d8f8ddbb92e196925cead8fa9cc": {
+          "title": "Praktikum im Investment Team - München (m/w/d)",
+          "url": "",
+          "location": "München",
+          "detail": "Praktikum im Investment Team - München (m/w/d)"
+        },
+        "a4c9f9386777bb9cfdad70dfa7405e41": {
+          "title": "Praktikum im Investment Team - Zürich (m/w/d)",
+          "url": "https://afinum.de/job/praktikum-im-investment-team-zuerich-m-w-d/",
+          "location": "Zürich",
+          "detail": "Praktikum im Investment Team - Zürich (m/w/d)"
+        },
+        "d48063438a693e17e047023b6c00277c": {
+          "title": "Praktikum im Investment Team - Zürich (m/w/d)",
+          "url": "",
+          "location": "Zürich",
+          "detail": "Praktikum im Investment Team - Zürich (m/w/d)"
+        },
+        "094e702671373132c1c2d806f078a290": {
+          "title": "Analyst - Zürich (m/w/d)",
+          "url": "https://afinum.de/job/analyst-zurich/",
+          "location": "Zürich",
+          "detail": "Analyst - Zürich (m/w/d)"
+        },
+        "bdaa6db6143d3b5dffc7dfc30509b365": {
+          "title": "Analyst - Zürich (m/w/d)",
+          "url": "",
+          "location": "Zürich",
+          "detail": "Analyst - Zürich (m/w/d)"
+        },
+        "7b1f59856e7ab21f211fe08b2b2841d8": {
+          "title": "Analyst:innen &amp; Associates",
+          "url": "",
+          "location": "",
+          "detail": "Analyst:innen &amp; Associates Der persönliche Faktor ist entscheidend für unseren Erfolg und unsere Philosophie ist es, aus dem Unternehmen heraus zu wachsen und uns nachhaltig mit jedem Teammitglied weiterzuentwickeln. Neue Teammitglieder holen wir nur auf Analyst- und Associate-Level an Bord, mit dem"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:43.226379",
+      "has_no_jobs_indicator": false
+    },
+    "Maxburg": {
+      "url": "https://maxburg.com/en/jobs",
+      "page_hash": "effb657d0d2edadeec6b46968dcc39c819f9ddd42261ad3b96e8432d140fe780",
+      "job_keys": {
+        "125378f8d5dd85478d125bb1773e1061": {
+          "title": "Investment Manager/Director",
+          "url": "",
+          "location": "",
+          "detail": "Candidate Profile A Investment Manager/Director See Job details"
+        },
+        "6ddda377226e16522fc4782977db6855": {
+          "title": "Intern (flexible timing)",
+          "url": "",
+          "location": "",
+          "detail": "Candidate Profile B Intern (flexible timing) See Job details"
+        },
+        "bb220ca176a8c64dedf9855942690a6d": {
+          "title": "Investment Manager / Director",
+          "url": "https://maxburg.com/en/jobs/investment-manager-director/",
+          "location": "",
+          "detail": "Investment Manager / Director"
+        },
+        "a97699201c61901131194e632cc9d5d6": {
+          "title": "Investment Manager/Director",
+          "url": "https://maxburg.com/en/jobs/investment-manager-director/",
+          "location": "",
+          "detail": "Candidate Profile A Investment Manager/Director See Job details"
+        },
+        "beeb1f94cba1cd265131b78434d51a5b": {
+          "title": "Intern (flexible timing)",
+          "url": "https://maxburg.com/en/intern-flexible-timing/",
+          "location": "",
+          "detail": "Candidate Profile B Intern (flexible timing) See Job details"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:47.660928",
+      "has_no_jobs_indicator": false
+    },
+    "Callista PE": {
+      "url": "https://www.callista-pe.de/karriere/",
+      "page_hash": "fe40f6ac3a9395abccb6fceacf88b0224b318e0606eccb9093946b30778dc34c",
+      "job_keys": {
+        "42a8d51c2a72982add31a22cdaa3fac4": {
+          "title": "Kaufmännischer Leiter (m/w/d) in Portfoliogesellschaft",
+          "url": "",
+          "location": "",
+          "detail": "Kaufmännischer Leiter (m/w/d) in Portfoliogesellschaft"
+        },
+        "d26d1b59394f7872859e6bf3186eaf8b": {
+          "title": "Kaufmännischer Leiter Beteiligungs­gesellschaft (m/w/d)",
+          "url": "",
+          "location": "zug",
+          "detail": "Wir suchen zum nächstmöglichen Zeitpunkt eine(n) Kaufmännischer Leiter Beteiligungs­gesellschaft (m/w/d) innerhalb der Callista Gruppe.\n\nSie suchen ein verantwortungsvolles, herausforderndes sowie vielseitiges Aufgabengebiet mit perspektivischen Entwicklungspotentialen bis hin zur kaufmännischen Ges"
+        },
+        "4706ddcb8ad5c9fa715dac178a69381c": {
+          "title": "Praktikant (m/w/d) im M&amp;A / Transactions Team",
+          "url": "",
+          "location": "",
+          "detail": "Praktikant (m/w/d) im M&amp;A / Transactions Team"
+        }
+      },
+      "last_checked": "2026-05-11T10:56:53.532426",
+      "has_no_jobs_indicator": false
+    },
+    "Emeram": {
+      "url": "https://emeram.com/de/karriere",
+      "page_hash": "5c6838984387cea5c2a47a5fcd7a0d5476b09ebb1f14599ea0cf012df53a659e",
+      "job_keys": {
+        "bfcfde0130015b71c42d9e429afcf821": {
+          "title": "Nachhaltigkeit und Digitalisierung",
+          "url": "",
+          "location": "",
+          "detail": "Nachhaltigkeit und Digitalisierung Gemeinsam mit unseren Portfoliounternehmen verfolgen wir langfristige Ziele und handeln nachhaltig.Die Digitalisierung macht unsere Arbeit flexibler und mindert unseren CO2-Fußabdruck."
+        },
+        "e78d92f37093a188f10fe8fc6694f22d": {
+          "title": "Director People &amp; Culture",
+          "url": "mailto:theresia.grafenstein@emeram.com",
+          "location": "",
+          "detail": "Theresia von Grafenstein Director People &amp; Culture +49 (0)89 41 999 67-24 Kontaktieren"
+        }
+      },
+      "last_checked": "2026-05-11T10:57:12.986638",
+      "has_no_jobs_indicator": false
+    },
+    "Armira Beteiligungen": {
+      "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/",
+      "page_hash": "71dd1b3bbb5eacb49f3af7c396d75bb00446c0aa169d1cc589107aed3dea89e6",
+      "job_keys": {
+        "ec36b6d58d3194835f393970c4142124": {
+          "title": "Manager Accounting (m/w/d)",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/2531589",
+          "location": "Munich",
+          "detail": "Manager Accounting (m/w/d) Munich Vollzeit Festanstellung"
+        },
+        "fe35671961aac25a54cb56b8c3277d74": {
+          "title": "Manager Accounting (m/w/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Manager Accounting (m/w/d) Munich Vollzeit Festanstellung"
+        },
+        "e55cda76be50dc80b0fb85a4d64463ed": {
+          "title": "Intern / Student- 4 positions",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/2573726",
+          "location": "Munich",
+          "detail": "Intern / Student - 4 positions 4 Investor Relations Intern / Working Student (m/w/d) |  Immediate Start Munich Full or part-time Intern / Student Mittelstand Intern (m/w/d) | October 1 - December 31, 2026 Munich Full-time Intern / Student Origination Intern (m/w/d) | Starting from June 1, 2026 Munic"
+        },
+        "e146e469cc988803c4735f21f65c9f47": {
+          "title": "Intern / Student- 4 positions",
+          "url": "",
+          "location": "",
+          "detail": "Intern / Student - 4 positions 4"
+        },
+        "9b93f83834b950cb240268cd0ff9ad59": {
+          "title": "MunichFull or part-timeIntern / Student",
+          "url": "",
+          "location": "Munich",
+          "detail": "Munich Full or part-time Intern / Student"
+        },
+        "529c5d63f15abe6ec349cc70f9be9693": {
+          "title": "Full or part-time",
+          "url": "",
+          "location": "",
+          "detail": "Full or part-time"
+        },
+        "c655561fc28142d2d9cd03569b0e769d": {
+          "title": "Intern / Student",
+          "url": "",
+          "location": "",
+          "detail": "Intern / Student"
+        },
+        "8e405641b1c9b516c34c27460d20eff0": {
+          "title": "MunichFull-timeIntern / Student",
+          "url": "",
+          "location": "Munich",
+          "detail": "Munich Full-time Intern / Student"
+        },
+        "e14cc083c2fecbc0eeadefd32bc48408": {
+          "title": "Data and AI Engineering Specialist / Manager (m/w/d)",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/2574856",
+          "location": "Munich",
+          "detail": "Data and AI Engineering Specialist / Manager (m/w/d) Munich Full-time Permanent employee Mittelstand Investment Analyst (m/w/d) Munich Full-time Permanent employee Mittelstand Investment Associate  (m/w/d) Munich Full-time Permanent employee Valuation &amp; Investment Controlling Specialist (m/w/d) Muni"
+        },
+        "d46cad49621568e3c95f8d25672e8731": {
+          "title": "Data and AI Engineering Specialist / Manager (m/w/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Data and AI Engineering Specialist / Manager (m/w/d) Munich Full-time Permanent employee"
+        },
+        "ffc2b67def1c795df2e0a848a50c37f2": {
+          "title": "MunichFull-timePermanent employee",
+          "url": "",
+          "location": "Munich",
+          "detail": "Munich Full-time Permanent employee"
+        },
+        "3e81bd4e733188c8bcaa177716a7a17e": {
+          "title": "Mittelstand Investment Analyst (m/w/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Mittelstand Investment Analyst (m/w/d) Munich Full-time Permanent employee"
+        },
+        "4fa2cc718e10819587bf42ea210aff4e": {
+          "title": "Mittelstand Investment Associate  (m/w/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Mittelstand Investment Associate  (m/w/d) Munich Full-time Permanent employee"
+        },
+        "64726c4b94601bd967ee079cb3ae6302": {
+          "title": "Valuation &amp; Investment Controlling Specialist (m/w/d)",
+          "url": "",
+          "location": "Munich",
+          "detail": "Valuation &amp; Investment Controlling Specialist (m/w/d) Munich Full-time Permanent employee"
+        },
+        "404a0b7d8475e1f38cecef51cb779e55": {
+          "title": "Mittelstand Investment Analyst (m/w/d)",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/2532210",
+          "location": "Munich",
+          "detail": "Mittelstand Investment Analyst (m/w/d) Munich Full-time Permanent employee"
+        },
+        "41a896683fdf67a2439e9dec9d44db2e": {
+          "title": "Mittelstand Investment Associate  (m/w/d)",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/1901516",
+          "location": "Munich",
+          "detail": "Mittelstand Investment Associate  (m/w/d) Munich Full-time Permanent employee"
+        },
+        "8d1b39307249d95a0ff345cc10ae0b7a": {
+          "title": "Valuation &amp; Investment Controlling Specialist (m/w/d)",
+          "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/job/2301638",
+          "location": "Munich",
+          "detail": "Valuation &amp; Investment Controlling Specialist (m/w/d) Munich Full-time Permanent employee"
+        }
+      },
+      "last_checked": "2026-05-11T10:57:17.096879",
+      "has_no_jobs_indicator": false
+    },
+    "Pinova Capital": {
+      "url": "https://www.pinovacapital.com/karriere/#positions",
+      "page_hash": "25df7bdc30408cb7909d87ae30b960d91a8f1100deebcad46c7dbe0dd450d97c",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:57:24.222051",
+      "has_no_jobs_indicator": false
+    },
+    "MTIP": {
+      "url": "https://www.mtip.ch/about-us#career",
+      "page_hash": "4abfc7b8cd8b29792fe9aa798da6f3d6242cd0aaaf1cc5eddc16b1b7ef7c10bd",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:57:32.943394",
+      "has_no_jobs_indicator": false
+    },
+    "SHS Capital": {
+      "url": "https://www.shs-capital.eu/career/",
+      "page_hash": "124e9612d354796482b0e927fc3359c3a9282a531aa4460e97672d65a5c84277",
+      "job_keys": {
+        "d614f8afd8f3e8db2cb1e7b1564039d9": {
+          "title": "Current vacancieswithin our portfolio companies",
+          "url": "https://www.shs-capital.eu/",
+          "location": "",
+          "detail": "Home Career Current vacancies at SHS Would you like to experience the challenging and exciting everyday work in a private equity company? Then we look forward to meet you. Current vacancies within our portfolio companies Exciting challenges await you in our numerous portfolio companies. Apprenticesh"
+        },
+        "c527d25c3799dafea4200284bdb54945": {
+          "title": "Ausbildung Kauffrau/Kaufmann für Büromanagement (m/w/d)",
+          "url": "",
+          "location": "",
+          "detail": "SHS Capital, Tübingen Ausbildung Kauffrau/Kaufmann für Büromanagement (m/w/d)"
+        },
+        "a9f4bbc1d065b0e2c431722762623b49": {
+          "title": "3-month short-term private equity internship (m/f/d)",
+          "url": "",
+          "location": "",
+          "detail": "SHS, Tuebingen 3-month short-term private equity internship (m/f/d)"
+        },
+        "fb34f9bc0ec2642dc5e539023f58c787": {
+          "title": "6-month private equity internship (m/f/d)",
+          "url": "",
+          "location": "",
+          "detail": "SHS, Tübingen 6-month private equity internship (m/f/d)"
+        },
+        "be6e3a324d37545e9f75b6658f927cbf": {
+          "title": "Ausbildung Kauffrau/Kaufmann für Büromanagement (m/w/d)",
+          "url": "https://www.shs-capital.eu/career/ausbildung-kauffrau-kaufmann-fur-buromanagement-m-w-d/",
+          "location": "",
+          "detail": "SHS Capital, Tübingen Ausbildung Kauffrau/Kaufmann für Büromanagement (m/w/d) More details"
+        },
+        "82ec4559e779bf2b12628231834d3c99": {
+          "title": "3-month short-term private equity internship (m/f/d)",
+          "url": "https://www.shs-capital.eu/career/private-equity-internship-m-f-d/",
+          "location": "",
+          "detail": "SHS, Tuebingen 3-month short-term private equity internship (m/f/d) More details SHS, Tübingen 6-month private equity internship (m/f/d) More details"
+        },
+        "7b419a18a3c9e94f5109b4441b5d6908": {
+          "title": "3-month short-term private equity internship (m/f/d)",
+          "url": "https://www.shs-capital.eu/career/6-month-private-equity-internship-m-f-d/",
+          "location": "",
+          "detail": "SHS, Tuebingen 3-month short-term private equity internship (m/f/d) More details SHS, Tübingen 6-month private equity internship (m/f/d) More details"
+        }
+      },
+      "last_checked": "2026-05-11T10:57:37.750228",
+      "has_no_jobs_indicator": false
+    },
+    "MBG BW": {
+      "url": "https://mbg-bw.ermoeglicher.de/de/ueber-uns/profil/jobs-karriere/",
+      "page_hash": "7c8558b2dc2af925430369c0e131c28d4422c2d164fb7060c0063c943ff3fe5d",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:57:42.811233",
+      "has_no_jobs_indicator": false
+    },
+    "LEA Partners": {
+      "url": "https://leapartners.jobs.personio.com/",
+      "page_hash": "3f0f215c0e746d0d77f0c95ceef2cd79b5bc2183096c50fdcf81c845d5c55c90",
+      "job_keys": {
+        "65ab61909b54b1f8b380560bb3df39af": {
+          "title": "Praktikanten- 2 Positionen",
+          "url": "https://leapartners.jobs.personio.com/job/2053244",
+          "location": "",
+          "detail": "Praktikanten - 2 Positionen 2 Praktikant (m/w/d) Venture Capital Karlsruhe Vollzeit Praktikum/Werkstudium Praktikum Private Equity (m/w/d) | B2B Software &amp; AI Karlsruhe Vollzeit Praktikum/Werkstudium"
+        },
+        "bd53e4afa6f248088b7ba21473f1dbd4": {
+          "title": "Praktikanten- 2 Positionen",
+          "url": "",
+          "location": "",
+          "detail": "Praktikanten - 2 Positionen 2"
+        },
+        "0f0d8b1d8b9dfa98f8f3be56360a36b6": {
+          "title": "Praktikant (m/w/d) Venture Capital",
+          "url": "https://leapartners.jobs.personio.com/job/2053244",
+          "location": "",
+          "detail": "Praktikant (m/w/d) Venture Capital Karlsruhe Vollzeit Praktikum/Werkstudium Praktikum Private Equity (m/w/d) | B2B Software &amp; AI Karlsruhe Vollzeit Praktikum/Werkstudium"
+        },
+        "e638d3f6e97f338ba3eef6dcd13d7d1f": {
+          "title": "Praktikant (m/w/d) Venture Capital",
+          "url": "",
+          "location": "",
+          "detail": "Praktikant (m/w/d) Venture Capital Karlsruhe Vollzeit Praktikum/Werkstudium"
+        }
+      },
+      "last_checked": "2026-05-11T10:57:46.993922",
+      "has_no_jobs_indicator": false
+    },
+    "Lafayette Mittelstand Capital": {
+      "url": "https://lafayettemittelstandcapital.com/careers",
+      "page_hash": "5a210d9822aaf9a1f30a6ea9d7456e9cd40805a3a90a6ec4d7714c6033fd32e3",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:57:51.642623",
+      "has_no_jobs_indicator": false
+    },
+    "Cipio Partners": {
+      "url": "https://www.cipiopartners.com/jobs.html",
+      "page_hash": "850ff6926856f51599619d597b5cca76970ae777248d6f235000c345b5f03272",
+      "job_keys": {
+        "042930ff760fc97f7931bb6a4036cc8b": {
+          "title": "Student Investment AnalystMunich, BavariaStudent Worker (m/f/d)",
+          "url": "https://www.cipiopartners.com/content/student_investment_analys_80.pdf",
+          "location": "Munich",
+          "detail": "Student Investment Analyst Munich, Bavaria Student Worker (m/f/d)"
+        },
+        "7abd99ffe0f8f32aa0c04d3c314f906d": {
+          "title": "Fund ControllerLuxembourgFull Time (m/f/d)",
+          "url": "https://www.cipiopartners.com/content/fund_controller_79.pdf",
+          "location": "",
+          "detail": "Fund Controller Luxembourg Full Time (m/f/d)"
+        }
+      },
+      "last_checked": "2026-05-11T10:57:56.805593",
+      "has_no_jobs_indicator": false
+    },
+    "Lansdowne Partners": {
+      "url": "https://www.lansdownepartners.com/london/careers/",
+      "page_hash": "b5a6a4540477d625eea002b81948fa9810866c12e0b8ad5792d228e318b3b4c9",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:58:01.474314",
+      "has_no_jobs_indicator": false
+    },
+    "BID Equity": {
+      "url": "https://bidequity.de/careers",
+      "page_hash": "2d38913641eb64ed9c83db5c34512116f8e3980af082c3969b676c1bc22e99bb",
+      "job_keys": {
+        "18314dd041363a5ffa54367e90408a13": {
+          "title": "Rolle im Portfolio",
+          "url": "",
+          "location": "",
+          "detail": "Rolle im Portfolio – Positionen direkt in unseren Beteiligungen – Sales, Marketing, Tech, Finance – Mittelstand mit Wachstumsambitionen – Gestaltungsspielraum vom ersten Tag an"
+        }
+      },
+      "last_checked": "2026-05-11T10:58:06.311295",
+      "has_no_jobs_indicator": false
+    },
+    "Bamboo Capital Partners": {
+      "url": "https://bamboocp.com/careers/",
+      "page_hash": "960843e7a3b8b5ceca6155b5cfdf3afb0bdbb9f364a06a1513241a9df65cb14f",
+      "job_keys": {
+        "0d17e7d67d677ee05eaf427dbf0b78ba": {
+          "title": "—Career opportunityFebruary 21, 2025Legal Intern",
+          "url": "https://bamboocp.com/legal-intern/",
+          "location": "",
+          "detail": "— Career opportunity February 21, 2025 Legal Intern"
+        }
+      },
+      "last_checked": "2026-05-11T10:58:13.076006",
+      "has_no_jobs_indicator": false
+    },
+    "Castik Capital": {
+      "url": "https://www.castik.com/career",
+      "page_hash": "28a78aa52710a15883d45e023d57e95705c7190bffca27eda9d10506858064a3",
+      "job_keys": {},
+      "last_checked": "2026-05-11T10:58:17.249695",
+      "has_no_jobs_indicator": false
+    },
+    "HQ Capital": {
+      "url": "https://hqcapital.com/de/karriere",
+      "page_hash": "865db8c9b2a25b1b5a76605048595986466ba7e1f68e50094a00bd78813991e8",
+      "job_keys": {
+        "b11ba26ab042eafdfd24a63ec6f52316": {
+          "title": "Private Equity Investment Team Internship Opportunities 2026",
+          "url": "https://hqcapital.com/de/karriere/modules/jobs/investment-team-internship-m-f-d",
+          "location": "",
+          "detail": "Private Equity Investment Team Internship Opportunities 2026"
+        },
+        "ebfe95f9848ce69d6d6e88d749cabf25": {
+          "title": "Private Equity Investment Team Internship Opportunities 2026",
+          "url": "",
+          "location": "",
+          "detail": "Private Equity Investment Team Internship Opportunities 2026"
+        },
+        "48ec22fa1da669b342d08fa47873979f": {
+          "title": "KontaktHuman ResourcesJobs@hqcapital.comBitte nennen Sie in dem Betreff Ihrer Bewerbung die Position, für die Sie sich bewerben möchten. Bitte beachte",
+          "url": "mailto:Jobs@hqcapital.com",
+          "location": "Deutschland",
+          "detail": "Kontakt Human Resources Jobs@hqcapital.com Bitte nennen Sie in dem Betreff Ihrer Bewerbung die Position, für die Sie sich bewerben möchten. Bitte beachten Sie: Bewerbende müssen mindestens fließend Englisch sprechen und bei Standort in Deutschland auch fließend Deutsch können. Darüber hinaus müssen "
+        },
+        "dd3b214c2845687ee3fdab24fcad2776": {
+          "title": "Human ResourcesJobs@hqcapital.comBitte nennen Sie in dem Betreff Ihrer Bewerbung die Position, für die Sie sich bewerben möchten. Bitte beachten Sie:",
+          "url": "mailto:Jobs@hqcapital.com",
+          "location": "Deutschland",
+          "detail": "Human Resources Jobs@hqcapital.com Bitte nennen Sie in dem Betreff Ihrer Bewerbung die Position, für die Sie sich bewerben möchten. Bitte beachten Sie: Bewerbende müssen mindestens fließend Englisch sprechen und bei Standort in Deutschland auch fließend Deutsch können. Darüber hinaus müssen alle Bew"
+        }
+      },
+      "last_checked": "2026-05-11T10:58:21.690349",
+      "has_no_jobs_indicator": false
+    },
+    "Nordic Capital": {
+      "url": "https://career.nordiccapital.com/jobs",
+      "page_hash": "928581cb2ebc93db4431767be1a5587ffdc2e8751ca2c8418fe827d7e80a7d01",
+      "job_keys": {
+        "3d5dc29ffa390b9f2e8c93a71c6d5334": {
+          "title": "Career menuStartJobsOperations Manager ProgramInternship ProgramEmployeeLog in as employeeCandidateLog in to ConnectHomepagenordiccapital.comShare pag",
+          "url": "https://career.nordiccapital.com/",
+          "location": "",
+          "detail": "Career menu Start Jobs Operations Manager Program Internship Program Employee Log in as employee Candidate Log in to Connect Homepage nordiccapital.com Share page Facebook X LinkedIn"
+        },
+        "7c140186565229a518614761a158b6bd": {
+          "title": "StartJobsOperations Manager ProgramInternship ProgramEmployeeLog in as employeeCandidateLog in to ConnectHomepagenordiccapital.com",
+          "url": "https://career.nordiccapital.com/",
+          "location": "",
+          "detail": "Start Jobs Operations Manager Program Internship Program Employee Log in as employee Candidate Log in to Connect Homepage nordiccapital.com"
+        },
+        "b6546934e3cb8a2af33f0e9a54ec5e99": {
+          "title": "Operations Manager Program",
+          "url": "https://career.nordiccapital.com/pages/operation-smanager-program",
+          "location": "",
+          "detail": "Operations Manager Program"
+        }
+      },
+      "last_checked": "2026-05-11T10:58:25.396079",
+      "has_no_jobs_indicator": false
+    },
+    "Palladio Partners": {
+      "url": "https://www.palladio-partners.com/de/karriere/",
+      "page_hash": "43e660c56efa6353f038cdec9a438f3013c6f3326fc873dbe2991763a3fdb42e",
+      "job_keys": {
+        "a177e44e7b03f5f52bceaa81185fd7a2": {
+          "title": "Praktikant/in Infrastructure Private Equity – Direktinvestments (m/w/d)",
+          "url": "https://www.palladio-partners.com/fileadmin/Stellenanzeigen/2509_Praktikanten_Direkt_Investment_Stellenanzeige_final.pdf",
+          "location": "Frankfurt",
+          "detail": "Praktikant/in Infrastructure Private Equity – Direktinvestments (m/w/d) Zur Unterstützung unseres Investment Teams am Standort Frankfurt am Main suchen wir mit flexiblem Start-Datum eine/n Praktikant/in Infrastructure Private Equity (m/w/d) für einen Zeitraum von drei bis sechs Monaten. Jetzt bewerb"
+        },
+        "e28d9d907531bf390b3775e352831e8e": {
+          "title": "Werkstudent/in Portfolio Management (m/w/d)",
+          "url": "https://www.palladio-partners.com/fileadmin/Stellenanzeigen/2511_Werkstudent_Portfolio_Management_-_Palladio__Luxembourg__S.%C3%A0_r.l_.pdf",
+          "location": "",
+          "detail": "Werkstudent/in Portfolio Management (m/w/d) Zur Unterstützung unseres Teams „Portfolio Management“ am Standort Luxemburg suchen wir ab sofort eine/n Werkstudent/in (m/w/d). Der Tätigkeitsumfang beträgt ca. 15 Stunden pro Woche. Während der Semesterferien ist auch eine Vollzeitbeschäftigung (und ggf."
+        },
+        "83a76b0f74dd529cdf0606611bddb016": {
+          "title": "Nachhaltigkeit im Team",
+          "url": "",
+          "location": "",
+          "detail": "Nachhaltigkeit im Team Nachhaltig denken. Nachhaltig handeln."
+        }
+      },
+      "last_checked": "2026-05-11T10:58:30.631947",
+      "has_no_jobs_indicator": false
+    },
+    "MPEP": {
+      "url": "https://mpep.jobs.personio.com/",
+      "page_hash": "646273e6872d3d0c05579e4a53ce4107b887acffdb5e980855c15e1a7cd7b652",
+      "job_keys": {
+        "88c9f38c57b7ef933e331aeac13272d2": {
+          "title": "Investment Advisory- 1 Position",
+          "url": "https://mpep.jobs.personio.com/job/1167706",
+          "location": "",
+          "detail": "Investment Advisory - 1 Position 1 Werkstudent Portfolio Management / Working Student Private Equity (w/m/d)* Oberhaching Teilzeit Werkstudierende"
+        },
+        "e2565d875da22b38aa281aab378387fe": {
+          "title": "Investment Advisory- 1 Position",
+          "url": "",
+          "location": "",
+          "detail": "Investment Advisory - 1 Position 1"
+        },
+        "776e78cd31dbe7503b690c8678fbe760": {
+          "title": "Werkstudent Portfolio Management / Working Student Private Equity (w/m/d)*",
+          "url": "https://mpep.jobs.personio.com/job/1167706",
+          "location": "",
+          "detail": "Werkstudent Portfolio Management / Working Student Private Equity (w/m/d)* Oberhaching Teilzeit Werkstudierende"
+        },
+        "ef70e64abd02a1df5dbb896b06a454ca": {
+          "title": "Werkstudent Portfolio Management / Working Student Private Equity (w/m/d)*",
+          "url": "",
+          "location": "",
+          "detail": "Werkstudent Portfolio Management / Working Student Private Equity (w/m/d)* Oberhaching Teilzeit Werkstudierende"
+        }
+      },
+      "last_checked": "2026-05-11T10:58:34.969839",
       "has_no_jobs_indicator": false
     }
   },
-  "last_run": "2026-05-10T09:11:04.029878"
+  "last_run": "2026-05-11T10:58:35.047010"
 }
