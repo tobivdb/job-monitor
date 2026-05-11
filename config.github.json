@@ -13,12 +13,12 @@
     },
     {
       "name": "BU Partners",
-      "url": "https://www.bu-partners.ch/karriere/",
+      "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
       "exclude_patterns": ["Initiativbewerbung"]
     },
     {
       "name": "Patrimonium",
-      "url": "https://www.patrimonium.ch/de/careers",
+      "url": "https://www.patrimonium.ch/careers2",
       "exclude_patterns": ["Spontanbewerbung"]
     },
     {
@@ -264,6 +264,456 @@
       "name": "Rianta Capital (LinkedIn)",
       "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
       "notes": "LinkedIn job board - requires authentication"
+    },
+    {
+      "name": "ACE & Company",
+      "url": "https://aceandcompany.breezy.hr/",
+      "notes": "Breezy HR job board"
+    },
+    {
+      "name": "Alpina Partners",
+      "url": "https://alpinapartners.com/career/"
+    },
+    {
+      "name": "Beyond Capital Partners",
+      "url": "https://beyondcapital-partners.com/karriere/"
+    },
+    {
+      "name": "Mutares",
+      "url": "https://career.mutares.de/"
+    },
+    {
+      "name": "Cinven",
+      "url": "https://cinven.pinpointhq.com/en#js-careers-jobs-block",
+      "notes": "Pinpoint HQ job board"
+    },
+    {
+      "name": "DUB AG",
+      "url": "https://dubag.eu/careers/"
+    },
+    {
+      "name": "Gilde Healthcare",
+      "url": "https://gildehealthcare.com/career-opportunities/"
+    },
+    {
+      "name": "BlueOrchard",
+      "url": "https://www.blueorchard.com/careers/"
+    },
+    {
+      "name": "HPE Growth",
+      "url": "https://www.hpegrowth.com/careers"
+    },
+    {
+      "name": "Nord Holding",
+      "url": "https://www.nordholding.de/stellenangebote"
+    },
+    {
+      "name": "Gimv",
+      "url": "https://www.gimv.com/en/vacancies-gimv"
+    },
+    {
+      "name": "EKBQ Careers",
+      "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
+      "notes": "Oracle HCM job board"
+    },
+    {
+      "name": "SUSI Partners",
+      "url": "https://www.susi-partners.com/en/careers/"
+    },
+    {
+      "name": "UCP",
+      "url": "https://ucp.ch/en/career/"
+    },
+    {
+      "name": "Wille Finance",
+      "url": "https://www.willefinance.com/careers/"
+    },
+    {
+      "name": "Invision AG",
+      "url": "https://invision-ag.jobs.personio.de/",
+      "notes": "Personio job board"
+    },
+    {
+      "name": "Capvis",
+      "url": "https://www.capvis.com/en/en/jobs.html"
+    },
+    {
+      "name": "Novastone",
+      "url": "https://novastone-ca.careers/"
+    },
+    {
+      "name": "Blue Earth Capital",
+      "url": "https://blueearthcapitalag.recruitee.com/",
+      "notes": "Recruitee job board"
+    },
+    {
+      "name": "BM|T",
+      "url": "https://www.bm-t.de/careers/"
+    },
+    {
+      "name": "41 Group",
+      "url": "https://41group.ch/en/careers"
+    },
+    {
+      "name": "Main Capital Partners",
+      "url": "https://main.nl/vacancies/"
+    },
+    {
+      "name": "CVC DIF",
+      "url": "https://www.cvcdif.com/careers"
+    },
+    {
+      "name": "Waterland PE",
+      "url": "https://www.waterlandpe.com/careers/"
+    },
+    {
+      "name": "Karmijn Kapitaal",
+      "url": "https://jobs.karmijnkapitaal.nl/jobs"
+    },
+    {
+      "name": "Vortex Capital Partners",
+      "url": "https://vortexcp.com/careers/"
+    },
+    {
+      "name": "Pride Capital",
+      "url": "https://www.pridecapital.nl/vacancies"
+    },
+    {
+      "name": "Egeria Group",
+      "url": "https://egeriagroup.com/career/"
+    },
+    {
+      "name": "Avedon Capital",
+      "url": "https://avedoncapital.com/career/internship-amsterdam/"
+    },
+    {
+      "name": "Bolster Investments",
+      "url": "https://bolsterinvestments.nl/werken-bij/"
+    },
+    {
+      "name": "Holland Capital",
+      "url": "https://hollandcapital.nl/vacatures-investeringsmaatschappij/"
+    },
+    {
+      "name": "Goodwell",
+      "url": "https://goodwell.nl/careers/"
+    },
+    {
+      "name": "TMF Group",
+      "url": "https://www.tmf-group.com/en/careers/"
+    },
+    {
+      "name": "Committed Capital",
+      "url": "https://committedcapital.nl/over-ons/werken-bij/"
+    },
+    {
+      "name": "HF Opportunities",
+      "url": "https://hf-opportunities.de/karriere/"
+    },
+    {
+      "name": "DBAG",
+      "url": "https://dbag.careers.hibob.com/jobs",
+      "notes": "HiBob job board"
+    },
+    {
+      "name": "MRH Trowe",
+      "url": "https://www.mrh-trowe.com/service/jobs/"
+    },
+    {
+      "name": "VREP",
+      "url": "https://www.vrep.de/ueber-uns/karriere/"
+    },
+    {
+      "name": "Halder",
+      "url": "https://www.halder.eu/job-opportunities"
+    },
+    {
+      "name": "Yttrium",
+      "url": "https://yttrium.com/careers/"
+    },
+    {
+      "name": "DTCP",
+      "url": "https://www.dtcp.capital/about-us/careers/"
+    },
+    {
+      "name": "Zeno Partners",
+      "url": "https://www.zenopartners.com/careers/"
+    },
+    {
+      "name": "Vendis Capital",
+      "url": "https://www.vendiscapital.com/careers/"
+    },
+    {
+      "name": "Saffelberg",
+      "url": "https://www.saffelberg.com/careers"
+    },
+    {
+      "name": "D2E",
+      "url": "https://www.d2e.be/jobs/"
+    },
+    {
+      "name": "Luxempart",
+      "url": "https://www.luxempart.lu/our-people/careers/"
+    },
+    {
+      "name": "Apax",
+      "url": "https://www.apax.com/people/careers/"
+    },
+    {
+      "name": "LDC",
+      "url": "https://ldc.co.uk/careers"
+    },
+    {
+      "name": "IK Partners",
+      "url": "https://ikpartners.com/careers/"
+    },
+    {
+      "name": "Vespa Capital",
+      "url": "http://vespacapital.com/careers"
+    },
+    {
+      "name": "Aurelius Group",
+      "url": "https://career.aurelius-group.com/"
+    },
+    {
+      "name": "Metric Capital",
+      "url": "https://metric-capital.com/careers"
+    },
+    {
+      "name": "Platina Partners",
+      "url": "https://www.platinapartners.com/work-with-us/"
+    },
+    {
+      "name": "Hayfin",
+      "url": "https://www.hayfin.com/people/working-at-hayfin/"
+    },
+    {
+      "name": "Limerston Capital",
+      "url": "https://www.limerstoncap.com/careers"
+    },
+    {
+      "name": "Connection Capital",
+      "url": "https://www.connectioncapital.co.uk/careers/"
+    },
+    {
+      "name": "Trispan",
+      "url": "https://www.trispanllp.com/career/"
+    },
+    {
+      "name": "CAIN International",
+      "url": "https://cainint.com/career-oportunities/"
+    },
+    {
+      "name": "Bridgepoint",
+      "url": "https://www.bridgepointgroup.com/careers"
+    },
+    {
+      "name": "Freshstream",
+      "url": "https://freshstream.com/career/"
+    },
+    {
+      "name": "Columna Capital",
+      "url": "https://www.columnacapital.com/careers"
+    },
+    {
+      "name": "Tenzing PE",
+      "url": "https://tenzing.pe/careers/"
+    },
+    {
+      "name": "Scaleup Capital",
+      "url": "https://careershub.scaleupcapital.com/jobs"
+    },
+    {
+      "name": "Sun European Partners",
+      "url": "https://suneuropeanpartners.com/careers/"
+    },
+    {
+      "name": "Henley Investment Management",
+      "url": "https://www.henleyim.com/careers"
+    },
+    {
+      "name": "DPI",
+      "url": "https://www.dpi-llp.com/our-firm/careers/"
+    },
+    {
+      "name": "Foresight Group",
+      "url": "https://foresight.group/other-information/careers/"
+    },
+    {
+      "name": "Henderson Park",
+      "url": "https://hendersonpark.com/careers"
+    },
+    {
+      "name": "Bridges Fund Management",
+      "url": "https://www.bridgesfundmanagement.com/about-us/careers/"
+    },
+    {
+      "name": "True Global",
+      "url": "https://www.true.global/careers/"
+    },
+    {
+      "name": "Claret Capital",
+      "url": "https://www.claret-capital.com/join-us/"
+    },
+    {
+      "name": "Zouk Capital",
+      "url": "https://zouk.com/careers"
+    },
+    {
+      "name": "PIDG",
+      "url": "https://pidg.org/about-us/careers/"
+    },
+    {
+      "name": "Everfield",
+      "url": "https://everfield.com/careers"
+    },
+    {
+      "name": "Quinbrook",
+      "url": "https://www.quinbrook.com/careers/"
+    },
+    {
+      "name": "AgDevCo",
+      "url": "http://agdevco.com/about-us/careers/"
+    },
+    {
+      "name": "Northstar VC",
+      "url": "https://northstar.vc/careers"
+    },
+    {
+      "name": "IRCP",
+      "url": "https://www.ircp.com/talent/job-vacancies/"
+    },
+    {
+      "name": "ACT",
+      "url": "https://www.act.is/people/careers/"
+    },
+    {
+      "name": "Kantar",
+      "url": "https://www.kantar.com/careers"
+    },
+    {
+      "name": "YFM Equity Partners",
+      "url": "https://yfmep.com/careers"
+    },
+    {
+      "name": "Frontier Development Capital",
+      "url": "https://www.frontierdevelopmentcapital.com/careers/"
+    },
+    {
+      "name": "GII",
+      "url": "https://gii.ae/careers/"
+    },
+    {
+      "name": "Sofina Group",
+      "url": "https://www.sofinagroup.com/the-team/careers/"
+    },
+    {
+      "name": "Cobepa",
+      "url": "https://www.cobepa.com/en/careers"
+    },
+    {
+      "name": "Elvaston",
+      "url": "https://www.elvaston.com/en/careers"
+    },
+    {
+      "name": "Odewald KMU",
+      "url": "https://odewaldkmu.com/karriere/"
+    },
+    {
+      "name": "Auctus Capital Partners",
+      "url": "https://auctuscapitalpartnersag-1743583356.teamtailor.com/jobs",
+      "notes": "Teamtailor job board"
+    },
+    {
+      "name": "DPE",
+      "url": "https://www.dpe.de/karriere/"
+    },
+    {
+      "name": "Paragon",
+      "url": "https://www.paragon.de/karriere/"
+    },
+    {
+      "name": "Afinum",
+      "url": "https://afinum.de/jobs/"
+    },
+    {
+      "name": "Maxburg",
+      "url": "https://maxburg.com/en/jobs"
+    },
+    {
+      "name": "Callista PE",
+      "url": "https://www.callista-pe.de/karriere/"
+    },
+    {
+      "name": "Emeram",
+      "url": "https://emeram.com/de/karriere"
+    },
+    {
+      "name": "Armira Beteiligungen",
+      "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/",
+      "notes": "Personio job board"
+    },
+    {
+      "name": "Pinova Capital",
+      "url": "https://www.pinovacapital.com/karriere/#positions"
+    },
+    {
+      "name": "MTIP",
+      "url": "https://www.mtip.ch/about-us#career"
+    },
+    {
+      "name": "SHS Capital",
+      "url": "https://www.shs-capital.eu/career/"
+    },
+    {
+      "name": "MBG BW",
+      "url": "https://mbg-bw.ermoeglicher.de/de/ueber-uns/profil/jobs-karriere/"
+    },
+    {
+      "name": "LEA Partners",
+      "url": "https://leapartners.jobs.personio.com/",
+      "notes": "Personio job board"
+    },
+    {
+      "name": "Lafayette Mittelstand Capital",
+      "url": "https://lafayettemittelstandcapital.com/careers"
+    },
+    {
+      "name": "Cipio Partners",
+      "url": "https://www.cipiopartners.com/jobs.html"
+    },
+    {
+      "name": "Lansdowne Partners",
+      "url": "https://www.lansdownepartners.com/london/careers/"
+    },
+    {
+      "name": "BID Equity",
+      "url": "https://bidequity.de/careers"
+    },
+    {
+      "name": "Bamboo Capital Partners",
+      "url": "https://bamboocp.com/careers/"
+    },
+    {
+      "name": "Castik Capital",
+      "url": "https://www.castik.com/career"
+    },
+    {
+      "name": "HQ Capital",
+      "url": "https://hqcapital.com/de/karriere"
+    },
+    {
+      "name": "Nordic Capital",
+      "url": "https://career.nordiccapital.com/jobs"
+    },
+    {
+      "name": "Palladio Partners",
+      "url": "https://www.palladio-partners.com/de/karriere/"
+    },
+    {
+      "name": "MPEP",
+      "url": "https://mpep.jobs.personio.com/",
+      "notes": "Personio job board"
     }
   ]
 }

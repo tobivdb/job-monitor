@@ -61,6 +61,12 @@ NOISE_TITLES = {
 # Pattern to detect date-like strings (events, not jobs)
 DATE_PATTERN = re.compile(r"^\d{2}\.\d{2}\.\d{4}")
 
+# Keywords that trigger the per-company summary in email notifications
+EMAIL_SUMMARY_KEYWORDS = re.compile(
+    r"(private\s+equity|associate|investment\s+manager)",
+    re.IGNORECASE,
+)
+
 # PE-relevant keywords — only LinkedIn jobs matching these are included
 PE_RELEVANT_KEYWORDS = re.compile(
     r"(private\s+equity|direct\s+investm|associate|investment\s+manager|"
@@ -569,7 +575,22 @@ def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
         section += '<p><span class="badge badge-first">FIRST SCAN</span> Baseline established.</p>'
         if diff.new_jobs:
             section += f"<p>Found {len(diff.new_jobs)} existing position(s):</p>"
-            for job in diff.new_jobs:
+            pe_jobs = [j for j in diff.new_jobs if is_pe_relevant(j.title, j.detail)]
+            other_jobs = [j for j in diff.new_jobs if not is_pe_relevant(j.title, j.detail)]
+            if pe_jobs and other_jobs:
+                section += '<p class="pe-label"><span class="badge badge-pe">Investment Team</span></p>'
+            for job in pe_jobs:
+                section += '<div class="new-job">'
+                if job.url:
+                    section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
+                else:
+                    section += f'<div class="job-title">{job.title}</div>'
+                if job.location:
+                    section += f'<div class="job-detail">Location: {job.location}</div>'
+                section += '</div>'
+            if pe_jobs and other_jobs:
+                section += '<hr class="jobs-divider"><p class="pe-label">Other Positions</p>'
+            for job in other_jobs:
                 section += '<div class="new-job">'
                 if job.url:
                     section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
@@ -593,7 +614,24 @@ def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
         site_has_changes = True
         change_summary = f"{diff.name}: {len(diff.new_jobs)} new"
         section += f'<p><span class="badge badge-new">NEW</span> {len(diff.new_jobs)} new position(s):</p>'
-        for job in diff.new_jobs:
+        pe_jobs = [j for j in diff.new_jobs if is_pe_relevant(j.title, j.detail)]
+        other_jobs = [j for j in diff.new_jobs if not is_pe_relevant(j.title, j.detail)]
+        if pe_jobs and other_jobs:
+            section += '<p class="pe-label"><span class="badge badge-pe">Investment Team</span></p>'
+        for job in pe_jobs:
+            section += '<div class="new-job">'
+            if job.url:
+                section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
+            else:
+                section += f'<div class="job-title">{job.title}</div>'
+            if job.location:
+                section += f'<div class="job-detail">Location: {job.location}</div>'
+            if job.detail and job.detail != job.title:
+                section += f'<div class="job-detail">{job.detail[:200]}</div>'
+            section += '</div>'
+        if pe_jobs and other_jobs:
+            section += '<hr class="jobs-divider"><p class="pe-label">Other Positions</p>'
+        for job in other_jobs:
             section += '<div class="new-job">'
             if job.url:
                 section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
@@ -654,6 +692,14 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
             .badge-new {{ background: #27ae60; color: white; }}
             .badge-removed {{ background: #e74c3c; color: white; }}
             .badge-first {{ background: #3498db; color: white; }}
+            .badge-pe {{ background: #6c3483; color: white; }}
+            .pe-label {{ color: #6c3483; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; margin: 10px 0 4px; }}
+            .jobs-divider {{ border: none; border-top: 1px dashed #ccc; margin: 12px 0; }}
+            .summary-section {{ background: #fffde7; border-left: 4px solid #f9a825; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }}
+            .summary-section h2 {{ color: #e65100; margin-top: 0; }}
+            .summary-section h3 {{ color: #2c3e50; margin: 12px 0 4px; }}
+            .summary-section ul {{ margin: 4px 0 12px 18px; padding: 0; }}
+            .summary-section li {{ margin: 4px 0; }}
         </style>
     </head>
     <body>
@@ -661,12 +707,40 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
         <p>Scan completed: {timestamp}</p>
     """
 
+    # --- Summary: per-company relevant new jobs (not first-run) ---
+    relevant_by_company = []
+    for diff in diffs:
+        if diff.is_first_run or diff.error:
+            continue
+        relevant_new = [
+            j for j in diff.new_jobs
+            if EMAIL_SUMMARY_KEYWORDS.search(f"{j.title} {j.detail}")
+        ]
+        if relevant_new:
+            relevant_by_company.append((diff, relevant_new))
+
+    if relevant_by_company:
+        html += '<div class="summary-section"><h2>New Relevant Positions</h2>'
+        for diff, jobs in relevant_by_company:
+            html += f'<h3><a href="{diff.url}">{diff.name}</a></h3><ul>'
+            for job in jobs:
+                if job.url:
+                    html += f'<li><a href="{job.url}">{job.title}</a>'
+                else:
+                    html += f'<li>{job.title}'
+                if job.location:
+                    html += f' &mdash; {job.location}'
+                html += '</li>'
+            html += '</ul>'
+        html += '</div>'
+
     # Render all sections and categorize them
-    sections_with_jobs = []     # new/removed jobs detected
-    sections_page_changed = []  # page changed but no specific jobs
-    sections_no_change = []     # nothing changed
-    sections_error = []         # errors
-    sections_first_run = []     # first scan
+    sections_pe_jobs = []        # new jobs including PE/investment team roles
+    sections_with_jobs = []      # new/removed jobs (non-PE only)
+    sections_page_changed = []   # page changed but no specific jobs
+    sections_no_change = []      # nothing changed
+    sections_error = []          # errors
+    sections_first_run = []      # first scan
 
     has_changes = False
     changes_summary = []
@@ -682,7 +756,11 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
                 changes_summary.append(summary)
         elif has_job_changes:
             has_changes = True
-            sections_with_jobs.append(section_html)
+            has_pe = any(is_pe_relevant(j.title, j.detail) for j in diff.new_jobs)
+            if has_pe:
+                sections_pe_jobs.append(section_html)
+            else:
+                sections_with_jobs.append(section_html)
             if summary:
                 changes_summary.append(summary)
         elif diff.page_changed:
@@ -691,8 +769,8 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
         else:
             sections_no_change.append(section_html)
 
-    # Output in priority order: jobs → page changes → first runs → no changes → errors
-    for section in sections_with_jobs + sections_page_changed + sections_first_run + sections_no_change + sections_error:
+    # Output in priority order: PE jobs → other jobs → page changes → first runs → no changes → errors
+    for section in sections_pe_jobs + sections_with_jobs + sections_page_changed + sections_first_run + sections_no_change + sections_error:
         html += section
 
     html += f"""
