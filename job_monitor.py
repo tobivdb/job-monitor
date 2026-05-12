@@ -39,11 +39,22 @@ CONFIG_FILE = BASE_DIR / "config.json"
 STATE_FILE = BASE_DIR / "state.json"
 LOG_FILE = BASE_DIR / "job_monitor.log"
 
-# Patterns to always exclude (generic unsolicited application links)
+# Patterns to always exclude (generic unsolicited application links and irrelevant roles)
 DEFAULT_EXCLUDE = [
     "initiativbewerbung", "spontanbewerbung", "blindbewerbung",
     "unsolicited application", "open application",
+    "werkstudent", "praktikant", "praktikum", "internship", "intern ",
+    "fund controller", "marketing",
 ]
+
+# Regex to collapse runs of whitespace and strip location/seniority suffixes
+# that get concatenated when HTML elements have no separator text
+_TITLE_TRIM = re.compile(r"\s{2,}")
+
+
+def clean_title(raw: str) -> str:
+    """Collapse whitespace runs and trim trailing location fragments."""
+    return _TITLE_TRIM.sub(" ", raw).strip()
 
 # Titles that are definitely NOT job postings (navigation, section headers, etc.)
 NOISE_TITLES = {
@@ -360,7 +371,7 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
     jobs_found: dict[str, JobEntry] = {}  # key -> JobEntry
 
     def add_job(title: str, link: str = "", location: str = "", detail: str = ""):
-        title = title.strip()
+        title = clean_title(title)
         if not title or is_noise_title(title) or is_excluded(title):
             return
         if not looks_like_job_title(title):
@@ -391,9 +402,9 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
             # Look for a heading or strong text inside
             heading = el.find(["h2", "h3", "h4", "h5", "strong"])
             if heading:
-                title = heading.get_text(strip=True)
+                title = heading.get_text(separator=" ", strip=True)
             else:
-                title = el.get_text(strip=True)[:150]
+                title = el.get_text(separator=" ", strip=True)[:150]
 
             link = ""
             link_el = el.find("a", href=True)
@@ -409,7 +420,7 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
     # --- Strategy 3: Heading-based extraction ---
     # Look for h2/h3/h4 that look like job titles
     for heading in body.find_all(["h2", "h3", "h4"]):
-        title = heading.get_text(strip=True)
+        title = heading.get_text(separator=" ", strip=True)
 
         # Check the parent or sibling for more context
         parent = heading.parent
@@ -452,14 +463,14 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
                 # Look for a heading in the same container
                 heading = parent.find(["h2", "h3", "h4", "h5", "strong"])
                 if heading and heading != link_el:
-                    title = heading.get_text(strip=True)
+                    title = heading.get_text(separator=" ", strip=True)
                 else:
                     # Go up one more level
                     grandparent = parent.parent
                     if grandparent:
                         heading = grandparent.find(["h2", "h3", "h4", "h5", "strong"])
                         if heading:
-                            title = heading.get_text(strip=True)
+                            title = heading.get_text(separator=" ", strip=True)
                         else:
                             title = link_text
                     else:
@@ -643,14 +654,6 @@ def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
                 section += f'<div class="job-detail">{job.detail[:200]}</div>'
             section += '</div>'
 
-    if diff.removed_jobs:
-        site_has_changes = True
-        section += f'<p><span class="badge badge-removed">REMOVED</span> {len(diff.removed_jobs)} position(s) no longer listed:</p>'
-        for job in diff.removed_jobs:
-            section += '<div class="removed-job">'
-            section += f'<div class="job-title">{job.title}</div>'
-            section += '</div>'
-
     if diff.page_changed and not site_has_changes:
         section += '<div class="page-changed">Page content changed (but no specific new job listings detected).</div>'
 
@@ -665,7 +668,7 @@ def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
 
 def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
     """Build a nicely formatted HTML email. Sites are sorted:
-    1. Sites with new/removed jobs (top)
+    1. Sites with new jobs (top)
     2. Sites with page changes (middle)
     3. Sites with no changes (bottom)
     """
@@ -736,7 +739,7 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
 
     # Render all sections and categorize them
     sections_pe_jobs = []        # new jobs including PE/investment team roles
-    sections_with_jobs = []      # new/removed jobs (non-PE only)
+    sections_with_jobs = []      # new jobs (non-PE only)
     sections_page_changed = []   # page changed but no specific jobs
     sections_no_change = []      # nothing changed
     sections_error = []          # errors
