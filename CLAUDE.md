@@ -70,6 +70,26 @@ far below Gmail's 102 KB clipping limit):
 | `no_jobs_indicators` | Strings that, if found on page, mean no open roles (skips extraction) |
 | `exclude_patterns` | Job titles containing these strings are ignored (e.g. `Initiativbewerbung`) |
 | `notes` | Informational only, not used by the scraper |
+| `tier` | Priority tier from the PE Funds Tracker (A/B/C/D/E/ZH/EU). A/B get a badge in the email and sort first; they also gate the CV-pipeline feed. |
+
+## CV-pipeline feed
+
+Top-level `tracker_feed` config block (`enabled`, `tiers`, default `["A","B"]`). When a
+non-first-run scan finds a new investment-team role at a fund whose `tier` is in
+`tiers`, the monitor scrapes the job ad text and appends a row to the
+**Job Ad Overview V2** Google Sheet (the daily CV pipeline's input in the CVs Drive
+folder): Website = job URL, Description = scraped ad text, Status empty → the next
+06:00 CV run generates the application automatically. Scrapes under 800 chars are
+parked as `Status=NEEDS_REVIEW` instead so no application is ever generated from a
+garbage description. Fed job keys are remembered in `state.json` (`tracker_fed`) to
+prevent duplicates; the dedup key is only written after a successful sheet append.
+
+Requires GitHub secrets (same values as the Job-Tracker-Update repo):
+`GOOGLE_OAUTH_CLIENT_JSON` + `GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN` (or
+`GOOGLE_SERVICE_ACCOUNT_JSON`) and `GOOGLE_DRIVE_CV_FOLDER_ID`. Without them the feed
+logs one info line and is skipped. Queued roles appear in the email under
+"Queued for the CV pipeline". A LinkedIn cookie-expiry warning banner is shown in the
+email whenever LinkedIn authentication fails.
 
 ## Git / branch requirements
 

@@ -516,6 +516,13 @@ class SiteDiff:
     is_first_run: bool = False
     has_no_jobs_indicator: bool = False
     error: Optional[str] = None
+    tier: str = ""  # priority tier from the PE Funds Tracker (A/B/C/D/E/EU), "" if unmapped
+
+
+def tier_rank(tier: str) -> int:
+    """Sort key: A first, unmapped last."""
+    order = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "ZH": 5, "EU": 6}
+    return order.get((tier or "").upper(), 9)
 
 
 def compute_diff(result: SiteResult, state: dict) -> SiteDiff:
@@ -568,19 +575,157 @@ def update_state(state: dict, result: SiteResult):
 
 
 # ---------------------------------------------------------------------------
+# CV-pipeline feed (Job Ad Overview V2 Google Sheet)
+# ---------------------------------------------------------------------------
+
+TRACKER_SHEET_NAME = "Job Ad Overview V2"
+TRACKER_COLUMNS = 9  # Website..Claude Comment, must match the CV pipeline's CSV_FIELDS
+
+
+def google_sheets_available() -> bool:
+    """Feed is active only when the CV pipeline's Google credentials are configured."""
+    has_oauth = bool(os.environ.get("GOOGLE_OAUTH_CLIENT_JSON") and os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN"))
+    has_sa = bool(os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON"))
+    return bool(os.environ.get("GOOGLE_DRIVE_CV_FOLDER_ID")) and (has_oauth or has_sa)
+
+
+def _google_services():
+    """Build Drive + Sheets clients from the same env credentials the CV pipeline uses."""
+    from google.oauth2 import service_account
+    from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
+
+    scopes = ["https://www.googleapis.com/auth/drive"]
+    client_json = os.environ.get("GOOGLE_OAUTH_CLIENT_JSON")
+    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN")
+    if client_json and refresh_token:
+        data = json.loads(client_json)
+        cfg = data.get("installed") or data.get("web") or data
+        creds = Credentials(
+            token=None,
+            refresh_token=refresh_token,
+            token_uri=cfg.get("token_uri", "https://oauth2.googleapis.com/token"),
+            client_id=cfg["client_id"],
+            client_secret=cfg["client_secret"],
+            scopes=scopes,
+        )
+    else:
+        info = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"])
+        creds = service_account.Credentials.from_service_account_info(info, scopes=scopes)
+    drive = build("drive", "v3", credentials=creds, cache_discovery=False)
+    sheets = build("sheets", "v4", credentials=creds, cache_discovery=False)
+    return drive, sheets
+
+
+def _find_tracker_sheet_id(drive) -> str:
+    folder_id = os.environ["GOOGLE_DRIVE_CV_FOLDER_ID"]
+    resp = drive.files().list(
+        q=(
+            f"'{folder_id}' in parents and trashed=false and "
+            f"name='{TRACKER_SHEET_NAME}' and mimeType='application/vnd.google-apps.spreadsheet'"
+        ),
+        fields="files(id, name)",
+        supportsAllDrives=True,
+        includeItemsFromAllDrives=True,
+    ).execute()
+    files = resp.get("files", [])
+    if not files:
+        raise RuntimeError(f"Tracker sheet '{TRACKER_SHEET_NAME}' not found in CV folder.")
+    return files[0]["id"]
+
+
+def scrape_job_description(job: JobEntry, site_url: str, context) -> str:
+    """Fetch the job posting page and return its readable text (the CV pipeline's Description)."""
+    target = job.url or site_url
+    try:
+        html = fetch_page(target, context)
+    except Exception as e:
+        log.warning(f"Tracker feed: could not fetch job page {target}: {e}")
+        return ""
+    soup = BeautifulSoup(html, "html.parser")
+    for tag in soup(["script", "style", "nav", "header", "footer", "noscript"]):
+        tag.decompose()
+    text = re.sub(r"\n{3,}", "\n\n", soup.get_text(separator="\n")).strip()
+    return text[:12000]
+
+
+def feed_tracker(candidates: list[dict], state: dict) -> list[dict]:
+    """Append newly found investment-team roles to the Job Ad Overview V2 sheet.
+
+    Each candidate: {"job": JobEntry, "site": SiteDiff-like, "description": str}.
+    Rows with a substantive scraped ad get an empty Status so the nightly CV run picks
+    them up; thin scrapes are parked as NEEDS_REVIEW so the pipeline never generates an
+    application from a garbage description. Fed job keys are remembered in state.json.
+    Returns a report list for the email: {"company", "title", "status"}.
+    """
+    if not candidates:
+        return []
+    min_chars = 800
+    fed_state = state.setdefault("tracker_fed", {})
+    drive, sheets = _google_services()
+    sheet_id = _find_tracker_sheet_id(drive)
+
+    stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+    report = []
+    rows = []
+    for cand in candidates:
+        job, site, desc = cand["job"], cand["site"], cand["description"]
+        substantive = len(desc) >= min_chars
+        description = desc if desc else (
+            f"{job.title} at {site.name}. (Job ad text could not be scraped automatically - "
+            f"open {job.url or site.url} and paste the ad here.)"
+        )
+        status = "" if substantive else "NEEDS_REVIEW"
+        rows.append([
+            job.url or site.url,            # Website
+            description,                    # Description
+            site.name,                      # Company (pipeline refines)
+            job.title,                      # Job Position (pipeline refines)
+            status,                         # Status
+            "",                             # Date (pipeline stamps on processing)
+            "",                             # My Comment (operator-only)
+            "",                             # Fit Probability
+            f"Auto-added by job-monitor on {stamp} from {site.name} ({site.url}).",
+        ])
+        report.append({"company": site.name, "title": job.title, "key": job.key,
+                       "status": "queued" if substantive else "needs_review"})
+
+    sheets.spreadsheets().values().append(
+        spreadsheetId=sheet_id,
+        range="A1",
+        valueInputOption="RAW",
+        insertDataOption="INSERT_ROWS",
+        body={"values": rows},
+    ).execute()
+    # Mark as fed only after the append succeeded, so a failed append never
+    # poisons the dedup state.
+    for cand, rep in zip(candidates, report):
+        fed_state[cand["job"].key] = {"title": rep["title"], "company": rep["company"], "date": stamp}
+    log.info(f"Tracker feed: appended {len(rows)} row(s) to '{TRACKER_SHEET_NAME}'.")
+    return report
+
+
+# ---------------------------------------------------------------------------
 # Email notification
 # ---------------------------------------------------------------------------
 
-def _job_card(job: JobEntry, company: str, company_url: str, accent: str = "#166534", bg: str = "#f0fdf4") -> str:
+def _job_card(job: JobEntry, company: str, company_url: str, accent: str = "#166534", bg: str = "#f0fdf4", tier: str = "") -> str:
     """One compact job card, fully inline-styled (Gmail-safe)."""
     title_html = f'<a href="{job.url}" style="color:#111827;text-decoration:none;">{job.title}</a>' if job.url else job.title
+    tier_badge = ""
+    if (tier or "").upper() in ("A", "B"):
+        tier_badge = (
+            f'<span style="display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;'
+            f'background:#fef3c7;color:#92400e;font-size:11px;line-height:15px;font-weight:700;'
+            f'vertical-align:middle;">Tier {tier.upper()}</span>'
+        )
     meta_bits = [f'<a href="{company_url}" style="color:#6b7280;text-decoration:none;">{company}</a>']
     if job.location:
         meta_bits.append(job.location)
     meta = " &middot; ".join(meta_bits)
     return (
         f'<div style="background:{bg};border-left:4px solid {accent};border-radius:4px;padding:10px 12px;margin:0 0 8px 0;">'
-        f'<div style="font-size:15px;line-height:20px;font-weight:700;">{title_html}</div>'
+        f'<div style="font-size:15px;line-height:20px;font-weight:700;">{title_html}{tier_badge}</div>'
         f'<div style="font-size:12px;line-height:17px;color:#6b7280;margin-top:2px;">{meta}</div>'
         f'</div>'
     )
@@ -603,7 +748,11 @@ def _compact_line_list(items: list[str]) -> str:
     return f'<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 12px;">{rows}</div>'
 
 
-def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
+def build_email_html(
+    diffs: list[SiteDiff],
+    linkedin_auth_failed: bool = False,
+    tracker_fed: Optional[list[dict]] = None,
+) -> tuple[str, bool, list[str]]:
     """Build a compact, summary-first HTML email.
 
     Design goals (learned from the previous format being unreadable):
@@ -643,6 +792,10 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
             else:
                 unchanged += 1
 
+    # Tier A/B funds first within each section
+    pe_new.sort(key=lambda pair: (tier_rank(pair[0].tier), pair[0].name))
+    other_new.sort(key=lambda pair: (tier_rank(pair[0].tier), pair[0].name))
+
     has_changes = bool(pe_new or other_new or removed or page_changed)
     new_counts: dict[str, int] = {}
     for d, jobs in pe_new + other_new:
@@ -678,17 +831,35 @@ def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
 </tr></table>
 """
 
+    if linkedin_auth_failed:
+        body += (
+            '<div style="margin:14px 0 0 0;padding:11px 14px;border-left:4px solid #d97706;'
+            'background:#fffbeb;border-radius:4px;font-size:13px;line-height:19px;color:#92400e;">'
+            '<strong>LinkedIn session expired or missing.</strong> LinkedIn job boards were scanned '
+            'without authentication and may show limited or no content. Re-run '
+            '<code>export_linkedin_cookies.py</code> locally and update the <code>LINKEDIN_COOKIES</code> '
+            'GitHub secret.</div>'
+        )
+
     if pe_new:
         body += _section_header("New investment-team roles", n_pe, "#166534")
         for diff, jobs in pe_new:
             for job in jobs:
-                body += _job_card(job, diff.name, diff.url, accent="#166534", bg="#f0fdf4")
+                body += _job_card(job, diff.name, diff.url, accent="#166534", bg="#f0fdf4", tier=diff.tier)
 
     if other_new:
         body += _section_header("Other new roles", n_other, "#1e40af")
         for diff, jobs in other_new:
             for job in jobs:
-                body += _job_card(job, diff.name, diff.url, accent="#1e40af", bg="#eff6ff")
+                body += _job_card(job, diff.name, diff.url, accent="#1e40af", bg="#eff6ff", tier=diff.tier)
+
+    if tracker_fed:
+        body += _section_header("Queued for the CV pipeline", len(tracker_fed), "#6d28d9")
+        body += _compact_line_list([
+            f'{f["company"]} &mdash; {f["title"]} '
+            f'<span style="color:#9ca3af;">({"ready for tonight&#39;s run" if f["status"] == "queued" else "added as NEEDS_REVIEW - ad text too thin"})</span>'
+            for f in tracker_fed
+        ])
 
     if removed:
         body += _section_header("Removed or filled since last scan", n_removed, "#92400e")
@@ -820,6 +991,11 @@ def main():
 
     results = []
     diffs = []
+    feed_cfg = config.get("tracker_feed", {})
+    feed_enabled = feed_cfg.get("enabled", True) and google_sheets_available()
+    feed_tiers = {t.upper() for t in feed_cfg.get("tiers", ["A", "B"])}
+    feed_candidates: list[dict] = []
+    linkedin_auth_failed = False
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
@@ -835,6 +1011,7 @@ def main():
             if load_linkedin_cookies(context):
                 linkedin_ok = verify_linkedin_session(context)
             if not linkedin_ok:
+                linkedin_auth_failed = True
                 log.warning("LinkedIn auth failed — LinkedIn pages may show limited content.")
 
         for site_cfg in config["sites"]:
@@ -863,7 +1040,22 @@ def main():
 
             results.append(result)
             diff = compute_diff(result, state)
+            diff.tier = site_cfg.get("tier", "")
             diffs.append(diff)
+
+            # Queue new investment-team roles at priority-tier funds for the CV pipeline.
+            # Scraping the ad text must happen here, while the browser context is alive.
+            if (
+                feed_enabled
+                and not diff.is_first_run
+                and diff.tier.upper() in feed_tiers
+            ):
+                fed_keys = state.get("tracker_fed", {})
+                for job in diff.new_jobs:
+                    if job.key in fed_keys or not is_pe_relevant(job.title, job.detail):
+                        continue
+                    description = scrape_job_description(job, diff.url, context)
+                    feed_candidates.append({"job": job, "site": diff, "description": description})
 
             # Update state immediately
             if not result.error:
@@ -871,10 +1063,24 @@ def main():
 
         browser.close()
 
+    tracker_fed_report: list[dict] = []
+    if feed_candidates:
+        try:
+            tracker_fed_report = feed_tracker(feed_candidates, state)
+        except Exception as e:
+            log.error(
+                f"Tracker feed failed — roles NOT queued in the sheet, but they are listed "
+                f"in this email's new-roles section; add them manually if wanted: {e}"
+            )
+    elif config.get("tracker_feed", {}).get("enabled", True) and not google_sheets_available():
+        log.info("Tracker feed inactive: Google credentials / GOOGLE_DRIVE_CV_FOLDER_ID not configured.")
+
     save_state(state)
 
     # --- Build and send report ---
-    html_body, has_changes, changes_summary = build_email_html(diffs)
+    html_body, has_changes, changes_summary = build_email_html(
+        diffs, linkedin_auth_failed=linkedin_auth_failed, tracker_fed=tracker_fed_report
+    )
 
     # Determine if this is the first run
     is_first_run = any(d.is_first_run for d in diffs)
