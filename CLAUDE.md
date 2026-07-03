@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A GitHub Actions-based job monitor that scrapes 167 PE/investment firm career pages daily and sends a Gmail summary email. Everything is fully device-free — config, state, credentials, and schedule all live in GitHub.
+A GitHub Actions-based job monitor that scrapes ~207 PE/investment firm career pages daily and sends a Gmail summary email. Everything is fully device-free — config, state, credentials, and schedule all live in GitHub. The site list is kept in sync with the "PE Funds Tracker" tab of `20260212_PE_Job_Search_Tracker.xlsx` (Drive, CVs root folder); last reconciliation 2026-07-03.
 
 ## Running the monitor
 
@@ -42,19 +42,19 @@ config.github.json → fetch_page() → extract_jobs_from_page() → compute_dif
 ## Email structure
 
 The daily email always sends (`--always-email`). Subject is either:
-- `Job Monitor - Changes Detected: <summary>` 
+- `Job Monitor - Changes Detected: <up to 3 companies, then "+N more">`
 - `Job Monitor - No Changes`
 
-Email sections in order:
-1. **Yellow summary box** — new jobs matching `EMAIL_SUMMARY_KEYWORDS` (`private equity`, `associate`, `investment manager`) only, grouped by company. First-run scans excluded.
-2. **PE sites with changes** — sites where new jobs include investment team roles (`is_pe_relevant`)
-3. **Other sites with changes** — sites with new/removed jobs but no PE-relevant roles
-4. **Page changed** — hash changed but no structured jobs detected
-5. **First-run scans** — baseline establishment
-6. **No changes**
-7. **Errors**
-
-Within each site section, PE/investment team jobs appear first with a purple "Investment Team" badge, separated by a dashed line from other positions.
+The email is compact and summary-first (all styles inline for Gmail; total size stays
+far below Gmail's 102 KB clipping limit):
+1. **Header** — headline counts of investment-team and other new roles
+2. **Stat chips** — investment team / other new / removed / pages changed / errors
+3. **New investment-team roles** (`is_pe_relevant`) — one green card per job with company and location
+4. **Other new roles** — blue cards
+5. **Removed or filled since last scan** — one-line list (signal that a posting closed)
+6. **Page changed, no structured roles** — one-line list of site links
+7. **First scan** / **Errors** — one-line lists
+8. **Footer** — count of unchanged sites (unchanged sites are never listed individually)
 
 ## Two keyword sets
 

@@ -4,7 +4,10 @@
     {
       "name": "CGS Management",
       "url": "https://www.cgs-management.com/karriere",
-      "no_jobs_indicators": ["keine offenen Stellen", "Derzeit haben wir keine"]
+      "no_jobs_indicators": [
+        "keine offenen Stellen",
+        "Derzeit haben wir keine"
+      ]
     },
     {
       "name": "Evocope",
@@ -14,22 +17,32 @@
     {
       "name": "BU Partners",
       "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
-      "exclude_patterns": ["Initiativbewerbung"]
+      "exclude_patterns": [
+        "Initiativbewerbung"
+      ]
     },
     {
       "name": "Patrimonium",
       "url": "https://www.patrimonium.ch/careers2",
-      "exclude_patterns": ["Spontanbewerbung"]
+      "exclude_patterns": [
+        "Spontanbewerbung"
+      ]
     },
     {
       "name": "Helvetica Capital",
       "url": "https://www.helvetica-capital.ch/karriere/",
-      "no_jobs_indicators": ["keine offenen Stellen", "Momentan verfügen wir"]
+      "no_jobs_indicators": [
+        "keine offenen Stellen",
+        "Momentan verfügen wir"
+      ]
     },
     {
       "name": "Argos Fund",
       "url": "https://argos.fund/de/karriere-schweiz/",
-      "no_jobs_indicators": ["keine Stellen verfügbar", "Zurzeit sind keine"]
+      "no_jobs_indicators": [
+        "keine Stellen verfügbar",
+        "Zurzeit sind keine"
+      ]
     },
     {
       "name": "Wineus",
@@ -714,6 +727,210 @@
       "name": "MPEP",
       "url": "https://mpep.jobs.personio.com/",
       "notes": "Personio job board"
+    },
+    {
+      "name": "Bregal Unternehmerkapital",
+      "url": "https://www.bu-partners.com/careers/",
+      "notes": "career page - firm rebranded to 'BU' in 2025, current domain is bu-partners (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Co-Investor AG",
+      "url": "https://co-investor.com/en/ueberuns/index.htm",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Cross Equity Partners",
+      "url": "https://crossequity.ch/en/team-2/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Apaneo Capital Partners",
+      "url": "https://www.apaneo.com/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Brera Partners",
+      "url": "https://www.brerapartners.com/contact",
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Edmond de Rothschild PE",
+      "url": "https://evht.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_7001/jobs",
+      "notes": "external job board (Oracle Cloud Recruiting) - group-wide EdR job search incl (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "RIVE Private Investment",
+      "url": "https://www.rive-investment.com/en/team/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Müller-Möhl Group",
+      "url": "https://www.mm-grp.com/en/content/team",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Muzinich & Co.",
+      "url": "https://muzinich.wd5.myworkdayjobs.com/muzinichcareers",
+      "notes": "external job board (Workday) - lists all Muzinich openings incl (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "HarbourVest Partners",
+      "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
+      "notes": "external job board (Workday) - global openings, filter for Zurich (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "3TS Capital Partners",
+      "url": "https://www.3tscapital.com/about",
+      "notes": "team/about page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Aravis SA",
+      "url": "https://www.aravis.ch/contact",
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "BPE Unternehmensbeteiligungen",
+      "url": "https://www.bpe.de/en/bpe-team/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "BWK GmbH",
+      "url": "https://www.bwk.de/jobs/",
+      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "COI Partners",
+      "url": "https://coi-partners.com/en/learn-about-us/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "ECM Equity Capital Management",
+      "url": "https://www.ecm-pe.de/en/team/career",
+      "notes": "career page - speculative-application style page ('always interested in strengthening our team', applications to recruitment@ecm-pe (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Findos Investor",
+      "url": "https://www.findos.com/ueber-uns",
+      "notes": "team page (Ueber uns) - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Limestone Capital",
+      "url": "https://www.limestone-capital.com/team",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Energy Infrastructure Partners",
+      "url": "https://energy-infrastructure-partners-ag.jobs.personio.com/",
+      "notes": "external job board (Personio) - EIP's ATS listing all openings (added from PE Funds Tracker, 2026-07-03)",
+      "no_jobs_indicators": [
+        "There are currently no open positions",
+        "Derzeit gibt es keine offenen Stellen"
+      ]
+    },
+    {
+      "name": "Perusa Partners",
+      "url": "https://www.perusa.de/en/team/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "QCP Quantum Capital Partners",
+      "url": "https://quantum.capital/en/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Quadriga Capital",
+      "url": "https://quadriga-capital.de/team",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Storm Global",
+      "url": "https://www.stormglobal.com/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "coinIX",
+      "url": "https://coinix.capital/en/team/",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Adiuva Capital",
+      "url": "https://adiuvacapital.de/karriere/",
+      "notes": "career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Apricum",
+      "url": "https://apricum-group.com/careers/",
+      "notes": "career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Arenit Industries",
+      "url": "https://arenit.de/en/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Berlin Technologie Holding",
+      "url": "https://www.berlinholding.com/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Bridgemaker",
+      "url": "https://bridgemaker.com/career",
+      "notes": "career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "CMP Capital Management-Partners",
+      "url": "https://www.cm-p.de/karriere/",
+      "notes": "career page (German) (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Capcellence",
+      "url": "https://www.capcellence.de/menschen/karriere/",
+      "notes": "career page (under 'Menschen' section (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Gaius Capital",
+      "url": "https://www.gaiuscapital.com/en",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "H.I.G. Capital",
+      "url": "https://higcapital.wd5.myworkdayjobs.com/LinkedIn",
+      "notes": "career page (Workday job board, global incl (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Hypax",
+      "url": "https://www.hypax.com/about/",
+      "notes": "team page - monitors for career section appearing (about page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "IBB Ventures",
+      "url": "https://www.ibbventures.de/en/career",
+      "notes": "career page ('Join our team!') for IBB Ventures' own roles (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "KKA Partners",
+      "url": "https://www.kkapartners.com/en/team",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "QVM Privatkapital",
+      "url": "https://qvm-privatkapital.de/",
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Vaering",
+      "url": "https://www.vaering.de/team",
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Vorsprung Management",
+      "url": "https://www.vorsprungpartners.com/info",
+      "notes": "team page ('Team | Vorsprung Partners') - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+    },
+    {
+      "name": "Corecam Capital Partners",
+      "url": "https://join.com/companies/corecamcapital",
+      "notes": "join.com job board (added from PE Funds Tracker, 2026-07-03)"
     }
   ]
 }

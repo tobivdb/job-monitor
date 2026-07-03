@@ -571,221 +571,161 @@ def update_state(state: dict, result: SiteResult):
 # Email notification
 # ---------------------------------------------------------------------------
 
-def _render_site_section(diff: SiteDiff) -> tuple[str, bool, Optional[str]]:
-    """Render a single site section. Returns (html, has_job_changes, change_summary)."""
-    section = f'<div class="site-section">'
-    section += f'<h2><a href="{diff.url}">{diff.name}</a></h2>'
+def _job_card(job: JobEntry, company: str, company_url: str, accent: str = "#166534", bg: str = "#f0fdf4") -> str:
+    """One compact job card, fully inline-styled (Gmail-safe)."""
+    title_html = f'<a href="{job.url}" style="color:#111827;text-decoration:none;">{job.title}</a>' if job.url else job.title
+    meta_bits = [f'<a href="{company_url}" style="color:#6b7280;text-decoration:none;">{company}</a>']
+    if job.location:
+        meta_bits.append(job.location)
+    meta = " &middot; ".join(meta_bits)
+    return (
+        f'<div style="background:{bg};border-left:4px solid {accent};border-radius:4px;padding:10px 12px;margin:0 0 8px 0;">'
+        f'<div style="font-size:15px;line-height:20px;font-weight:700;">{title_html}</div>'
+        f'<div style="font-size:12px;line-height:17px;color:#6b7280;margin-top:2px;">{meta}</div>'
+        f'</div>'
+    )
 
-    if diff.error:
-        section += f'<div class="error">Error checking this site: {diff.error}</div>'
-        section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
-        section += '</div>'
-        return section, False, None
 
-    if diff.is_first_run:
-        section += '<p><span class="badge badge-first">FIRST SCAN</span> Baseline established.</p>'
-        if diff.new_jobs:
-            section += f"<p>Found {len(diff.new_jobs)} existing position(s):</p>"
-            pe_jobs = [j for j in diff.new_jobs if is_pe_relevant(j.title, j.detail)]
-            other_jobs = [j for j in diff.new_jobs if not is_pe_relevant(j.title, j.detail)]
-            if pe_jobs and other_jobs:
-                section += '<p class="pe-label"><span class="badge badge-pe">Investment Team</span></p>'
-            for job in pe_jobs:
-                section += '<div class="new-job">'
-                if job.url:
-                    section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-                else:
-                    section += f'<div class="job-title">{job.title}</div>'
-                if job.location:
-                    section += f'<div class="job-detail">Location: {job.location}</div>'
-                section += '</div>'
-            if pe_jobs and other_jobs:
-                section += '<hr class="jobs-divider"><p class="pe-label">Other Positions</p>'
-            for job in other_jobs:
-                section += '<div class="new-job">'
-                if job.url:
-                    section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-                else:
-                    section += f'<div class="job-title">{job.title}</div>'
-                if job.location:
-                    section += f'<div class="job-detail">Location: {job.location}</div>'
-                section += '</div>'
-        elif diff.has_no_jobs_indicator:
-            section += '<p class="no-change">No open positions currently listed.</p>'
-        else:
-            section += '<p class="no-change">No job listings found. Page will be monitored for changes.</p>'
-        section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
-        section += '</div>'
-        return section, bool(diff.new_jobs), f"{diff.name}: {len(diff.new_jobs)} initial" if diff.new_jobs else None
+def _section_header(title: str, count: int, color: str) -> str:
+    return (
+        f'<h2 style="font-size:15px;line-height:20px;margin:22px 0 8px 0;color:{color};'
+        f'text-transform:uppercase;letter-spacing:0.04em;">{title} '
+        f'<span style="color:#9ca3af;font-weight:400;">({count})</span></h2>'
+    )
 
-    site_has_changes = False
-    change_summary = None
 
-    if diff.new_jobs:
-        site_has_changes = True
-        change_summary = f"{diff.name}: {len(diff.new_jobs)} new"
-        section += f'<p><span class="badge badge-new">NEW</span> {len(diff.new_jobs)} new position(s):</p>'
-        pe_jobs = [j for j in diff.new_jobs if is_pe_relevant(j.title, j.detail)]
-        other_jobs = [j for j in diff.new_jobs if not is_pe_relevant(j.title, j.detail)]
-        if pe_jobs and other_jobs:
-            section += '<p class="pe-label"><span class="badge badge-pe">Investment Team</span></p>'
-        for job in pe_jobs:
-            section += '<div class="new-job">'
-            if job.url:
-                section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-            else:
-                section += f'<div class="job-title">{job.title}</div>'
-            if job.location:
-                section += f'<div class="job-detail">Location: {job.location}</div>'
-            if job.detail and job.detail != job.title:
-                section += f'<div class="job-detail">{job.detail[:200]}</div>'
-            section += '</div>'
-        if pe_jobs and other_jobs:
-            section += '<hr class="jobs-divider"><p class="pe-label">Other Positions</p>'
-        for job in other_jobs:
-            section += '<div class="new-job">'
-            if job.url:
-                section += f'<div class="job-title"><a href="{job.url}">{job.title}</a></div>'
-            else:
-                section += f'<div class="job-title">{job.title}</div>'
-            if job.location:
-                section += f'<div class="job-detail">Location: {job.location}</div>'
-            if job.detail and job.detail != job.title:
-                section += f'<div class="job-detail">{job.detail[:200]}</div>'
-            section += '</div>'
-
-    if diff.page_changed and not site_has_changes:
-        section += '<div class="page-changed">Page content changed (but no specific new job listings detected).</div>'
-
-    if not site_has_changes and not diff.page_changed:
-        section += '<p class="no-change">No changes detected.</p>'
-
-    section += f'<p><a href="{diff.url}">Open career page &rarr;</a></p>'
-    section += '</div>'
-
-    return section, site_has_changes, change_summary
+def _compact_line_list(items: list[str]) -> str:
+    rows = "".join(
+        f'<div style="font-size:13px;line-height:19px;color:#374151;padding:3px 0;'
+        f'border-bottom:1px solid #f3f4f6;">{item}</div>'
+        for item in items
+    )
+    return f'<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;padding:8px 12px;">{rows}</div>'
 
 
 def build_email_html(diffs: list[SiteDiff]) -> tuple[str, bool, list[str]]:
-    """Build a nicely formatted HTML email. Sites are sorted:
-    1. Sites with new jobs (top)
-    2. Sites with page changes (middle)
-    3. Sites with no changes (bottom)
+    """Build a compact, summary-first HTML email.
+
+    Design goals (learned from the previous format being unreadable):
+    - Everything actionable is in the first screen: stat chips + investment-team roles.
+    - Unchanged sites are ONE line (a count), never 150 individual sections.
+    - All styling is inline so Gmail/Outlook render it correctly, and the total size
+      stays far below Gmail's 102 KB clipping limit even with 160+ monitored sites.
     """
     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M")
 
-    html = f"""
-    <html>
-    <head>
-        <style>
-            body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; max-width: 700px; margin: 0 auto; padding: 20px; }}
-            h1 {{ color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px; }}
-            h2 {{ color: #2c3e50; margin-top: 30px; }}
-            .site-section {{ background: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; margin: 15px 0; border-radius: 4px; }}
-            .new-job {{ background: #e8f5e9; border-left: 4px solid #27ae60; padding: 12px; margin: 10px 0; border-radius: 4px; }}
-            .removed-job {{ background: #fce4ec; border-left: 4px solid #e74c3c; padding: 12px; margin: 10px 0; border-radius: 4px; }}
-            .no-change {{ color: #888; font-style: italic; }}
-            .page-changed {{ background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px; margin: 10px 0; border-radius: 4px; }}
-            .error {{ background: #ffebee; border-left: 4px solid #f44336; padding: 12px; margin: 10px 0; border-radius: 4px; }}
-            a {{ color: #2980b9; }}
-            .job-title {{ font-weight: bold; font-size: 1.1em; }}
-            .job-detail {{ color: #666; font-size: 0.9em; margin-top: 5px; }}
-            .footer {{ margin-top: 40px; padding-top: 15px; border-top: 1px solid #ddd; color: #999; font-size: 0.85em; }}
-            .badge {{ display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }}
-            .badge-new {{ background: #27ae60; color: white; }}
-            .badge-removed {{ background: #e74c3c; color: white; }}
-            .badge-first {{ background: #3498db; color: white; }}
-            .badge-pe {{ background: #6c3483; color: white; }}
-            .pe-label {{ color: #6c3483; font-weight: bold; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; margin: 10px 0 4px; }}
-            .jobs-divider {{ border: none; border-top: 1px dashed #ccc; margin: 12px 0; }}
-            .summary-section {{ background: #fffde7; border-left: 4px solid #f9a825; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }}
-            .summary-section h2 {{ color: #e65100; margin-top: 0; }}
-            .summary-section h3 {{ color: #2c3e50; margin: 12px 0 4px; }}
-            .summary-section ul {{ margin: 4px 0 12px 18px; padding: 0; }}
-            .summary-section li {{ margin: 4px 0; }}
-        </style>
-    </head>
-    <body>
-        <h1>Job Monitor Report</h1>
-        <p>Scan completed: {timestamp}</p>
-    """
-
-    # --- Summary: per-company relevant new jobs (not first-run) ---
-    relevant_by_company = []
-    for diff in diffs:
-        if diff.is_first_run or diff.error:
-            continue
-        relevant_new = [
-            j for j in diff.new_jobs
-            if EMAIL_SUMMARY_KEYWORDS.search(f"{j.title} {j.detail}")
-        ]
-        if relevant_new:
-            relevant_by_company.append((diff, relevant_new))
-
-    if relevant_by_company:
-        html += '<div class="summary-section"><h2>New Relevant Positions</h2>'
-        for diff, jobs in relevant_by_company:
-            html += f'<h3><a href="{diff.url}">{diff.name}</a></h3><ul>'
-            for job in jobs:
-                if job.url:
-                    html += f'<li><a href="{job.url}">{job.title}</a>'
-                else:
-                    html += f'<li>{job.title}'
-                if job.location:
-                    html += f' &mdash; {job.location}'
-                html += '</li>'
-            html += '</ul>'
-        html += '</div>'
-
-    # Render all sections and categorize them
-    sections_pe_jobs = []        # new jobs including PE/investment team roles
-    sections_with_jobs = []      # new jobs (non-PE only)
-    sections_page_changed = []   # page changed but no specific jobs
-    sections_no_change = []      # nothing changed
-    sections_error = []          # errors
-    sections_first_run = []      # first scan
-
-    has_changes = False
-    changes_summary = []
+    pe_new: list[tuple[SiteDiff, list[JobEntry]]] = []
+    other_new: list[tuple[SiteDiff, list[JobEntry]]] = []
+    removed: list[tuple[SiteDiff, list[JobEntry]]] = []
+    page_changed: list[SiteDiff] = []
+    first_runs: list[SiteDiff] = []
+    errors: list[SiteDiff] = []
+    unchanged = 0
 
     for diff in diffs:
-        section_html, has_job_changes, summary = _render_site_section(diff)
-
         if diff.error:
-            sections_error.append(section_html)
-        elif diff.is_first_run:
-            sections_first_run.append(section_html)
-            if summary:
-                changes_summary.append(summary)
-        elif has_job_changes:
-            has_changes = True
-            has_pe = any(is_pe_relevant(j.title, j.detail) for j in diff.new_jobs)
-            if has_pe:
-                sections_pe_jobs.append(section_html)
+            errors.append(diff)
+            continue
+        if diff.is_first_run:
+            first_runs.append(diff)
+            continue
+        pe_jobs = [j for j in diff.new_jobs if is_pe_relevant(j.title, j.detail)]
+        other_jobs = [j for j in diff.new_jobs if not is_pe_relevant(j.title, j.detail)]
+        if pe_jobs:
+            pe_new.append((diff, pe_jobs))
+        if other_jobs:
+            other_new.append((diff, other_jobs))
+        if diff.removed_jobs:
+            removed.append((diff, diff.removed_jobs))
+        if not diff.new_jobs and not diff.removed_jobs:
+            if diff.page_changed:
+                page_changed.append(diff)
             else:
-                sections_with_jobs.append(section_html)
-            if summary:
-                changes_summary.append(summary)
-        elif diff.page_changed:
-            has_changes = True
-            sections_page_changed.append(section_html)
-        else:
-            sections_no_change.append(section_html)
+                unchanged += 1
 
-    # Output in priority order: PE jobs → other jobs → page changes → first runs → no changes → errors
-    for section in sections_pe_jobs + sections_with_jobs + sections_page_changed + sections_first_run + sections_no_change + sections_error:
-        html += section
+    has_changes = bool(pe_new or other_new or removed or page_changed)
+    new_counts: dict[str, int] = {}
+    for d, jobs in pe_new + other_new:
+        new_counts[d.name] = new_counts.get(d.name, 0) + len(jobs)
+    changes_summary = [f"{name}: {n} new" for name, n in new_counts.items()]
 
-    html += f"""
-        <div class="footer">
-            <p>Job Monitor | Monitoring {len(diffs)} career pages</p>
-        </div>
-    </body>
-    </html>
-    """
+    n_pe = sum(len(j) for _, j in pe_new)
+    n_other = sum(len(j) for _, j in other_new)
+    n_removed = sum(len(j) for _, j in removed)
 
-    return html, has_changes, changes_summary
+    def chip(value: int, label: str, fg: str) -> str:
+        return (
+            f'<td style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:6px;background:#ffffff;text-align:center;">'
+            f'<div style="font-size:22px;line-height:26px;font-weight:700;color:{fg};">{value}</div>'
+            f'<div style="font-size:11px;line-height:15px;color:#6b7280;">{label}</div></td>'
+        )
 
+    body = f"""<!doctype html>
+<html><body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#111827;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:20px 0;"><tr><td align="center">
+<table role="presentation" width="640" cellspacing="0" cellpadding="0" style="width:640px;max-width:96%;">
+<tr><td style="background:#111827;color:#ffffff;border-radius:8px 8px 0 0;padding:18px 22px;">
+  <div style="font-size:12px;line-height:16px;color:#9ca3af;">Job Monitor &middot; {timestamp}</div>
+  <div style="font-size:20px;line-height:26px;font-weight:700;margin-top:2px;">{n_pe} investment-team role(s), {n_other} other new role(s)</div>
+</td></tr>
+<tr><td style="background:#ffffff;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;padding:18px 22px;">
+<table role="presentation" width="100%" cellspacing="6" cellpadding="0"><tr>
+{chip(n_pe, "Investment team", "#166534")}
+{chip(n_other, "Other new", "#1e40af")}
+{chip(n_removed, "Removed / filled", "#92400e")}
+{chip(len(page_changed), "Pages changed", "#6b7280")}
+{chip(len(errors), "Errors", "#991b1b" if errors else "#6b7280")}
+</tr></table>
+"""
+
+    if pe_new:
+        body += _section_header("New investment-team roles", n_pe, "#166534")
+        for diff, jobs in pe_new:
+            for job in jobs:
+                body += _job_card(job, diff.name, diff.url, accent="#166534", bg="#f0fdf4")
+
+    if other_new:
+        body += _section_header("Other new roles", n_other, "#1e40af")
+        for diff, jobs in other_new:
+            for job in jobs:
+                body += _job_card(job, diff.name, diff.url, accent="#1e40af", bg="#eff6ff")
+
+    if removed:
+        body += _section_header("Removed or filled since last scan", n_removed, "#92400e")
+        body += _compact_line_list([
+            f'<a href="{d.url}" style="color:#374151;">{d.name}</a> &mdash; {j.title}'
+            for d, jobs in removed for j in jobs
+        ])
+
+    if page_changed:
+        body += _section_header("Page changed, no structured roles detected", len(page_changed), "#6b7280")
+        body += _compact_line_list([
+            f'<a href="{d.url}" style="color:#374151;">{d.name}</a>' for d in page_changed
+        ])
+
+    if first_runs:
+        body += _section_header("First scan (baseline established)", len(first_runs), "#6b7280")
+        body += _compact_line_list([
+            f'<a href="{d.url}" style="color:#374151;">{d.name}</a>'
+            + (f' &mdash; {len(d.new_jobs)} existing role(s) recorded' if d.new_jobs else '')
+            for d in first_runs
+        ])
+
+    if errors:
+        body += _section_header("Errors", len(errors), "#991b1b")
+        body += _compact_line_list([
+            f'<a href="{d.url}" style="color:#991b1b;">{d.name}</a> &mdash; '
+            f'<span style="color:#6b7280;">{html_module.escape((d.error or "")[:120])}</span>'
+            for d in errors
+        ])
+
+    body += f"""
+<div style="margin-top:20px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:12px;line-height:17px;color:#9ca3af;">
+{unchanged} site(s) unchanged &middot; {len(diffs)} career pages monitored
+</div>
+</td></tr></table></td></tr></table></body></html>"""
+
+    return body, has_changes, changes_summary
 
 def send_email(config: dict, subject: str, html_body: str):
     """Send email notification via SMTP.
@@ -943,9 +883,12 @@ def main():
         subject = "Job Monitor - Initial Scan Complete"
         log.info("First run completed. Baseline established.")
     elif has_changes:
-        summary = ", ".join(changes_summary)
-        subject = f"Job Monitor - Changes Detected: {summary}"
-        log.info(f"Changes detected: {summary}")
+        # Cap the subject at three companies so it stays scannable in the inbox
+        summary = ", ".join(changes_summary[:3])
+        if len(changes_summary) > 3:
+            summary += f" +{len(changes_summary) - 3} more"
+        subject = f"Job Monitor - Changes Detected: {summary}" if summary else "Job Monitor - Changes Detected"
+        log.info(f"Changes detected: {summary or 'page-level changes'}")
     else:
         subject = "Job Monitor - No Changes"
         log.info("No changes detected.")
