@@ -7,26 +7,30 @@
       "no_jobs_indicators": [
         "keine offenen Stellen",
         "Derzeit haben wir keine"
-      ]
+      ],
+      "tier": "A"
     },
     {
       "name": "Evocope",
       "url": "https://evocope.com/de/people",
-      "notes": "Team page - monitors for job/career sections appearing"
+      "notes": "Team page - monitors for job/career sections appearing",
+      "tier": "A"
     },
     {
       "name": "BU Partners",
       "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
       "exclude_patterns": [
         "Initiativbewerbung"
-      ]
+      ],
+      "tier": "EU"
     },
     {
       "name": "Patrimonium",
       "url": "https://www.patrimonium.ch/careers2",
       "exclude_patterns": [
         "Spontanbewerbung"
-      ]
+      ],
+      "tier": "A"
     },
     {
       "name": "Helvetica Capital",
@@ -34,7 +38,8 @@
       "no_jobs_indicators": [
         "keine offenen Stellen",
         "Momentan verfügen wir"
-      ]
+      ],
+      "tier": "A"
     },
     {
       "name": "Argos Fund",
@@ -42,150 +47,182 @@
       "no_jobs_indicators": [
         "keine Stellen verfügbar",
         "Zurzeit sind keine"
-      ]
+      ],
+      "tier": "A"
     },
     {
       "name": "Wineus",
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
-      "notes": "JS-heavy page, uses full page content comparison"
+      "notes": "JS-heavy page, uses full page content comparison",
+      "tier": "B"
     },
     {
       "name": "Eevolve Partners",
       "url": "https://www.eevolve.partners/en/contact",
-      "notes": "Contact page - monitors for career section appearing"
+      "notes": "Contact page - monitors for career section appearing",
+      "tier": "A"
     },
     {
       "name": "Ufenau Capital Partners",
       "url": "https://ufenau-capital-partners.jobs.personio.com/?language=en&display=undefined",
-      "notes": "Personio job board"
+      "notes": "Personio job board",
+      "tier": "EU"
     },
     {
       "name": "Invision",
-      "url": "https://www.invision.ch/uber-uns/arbeiten-mit-invision/"
+      "url": "https://www.invision.ch/uber-uns/arbeiten-mit-invision/",
+      "tier": "EU"
     },
     {
       "name": "Kowema",
       "url": "https://join.com/companies/kowema",
-      "notes": "join.com job board"
+      "notes": "join.com job board",
+      "tier": "B"
     },
     {
       "name": "Kharis Capital",
       "url": "https://khariscapital.com/team",
-      "notes": "Team page - monitors for career section appearing"
+      "notes": "Team page - monitors for career section appearing",
+      "tier": "B"
     },
     {
       "name": "Gyrus Capital",
       "url": "https://www.gyruscapital.com/",
-      "notes": "No career page - monitors homepage for changes"
+      "notes": "No career page - monitors homepage for changes",
+      "tier": "B"
     },
     {
       "name": "HBM Partners",
       "url": "https://www.hbmpartners.com/en/about-us/team/",
-      "notes": "Team page - monitors for career section appearing"
+      "notes": "Team page - monitors for career section appearing",
+      "tier": "EU"
     },
     {
       "name": "Mill Reef Capital",
-      "url": "https://www.millreefcap.com/careers"
+      "url": "https://www.millreefcap.com/careers",
+      "tier": "B"
     },
     {
       "name": "Rosedge Capital",
       "url": "https://rosedgecapital.com/de/kontakt/",
-      "notes": "Contact page - monitors for career section appearing"
+      "notes": "Contact page - monitors for career section appearing",
+      "tier": "B"
     },
     {
       "name": "Soleal",
-      "url": "https://soleal.ch/stellenangebote/"
+      "url": "https://soleal.ch/stellenangebote/",
+      "tier": "B"
     },
     {
       "name": "Artemon",
-      "url": "https://www.artemon.ch/karriere"
+      "url": "https://www.artemon.ch/karriere",
+      "tier": "B"
     },
     {
       "name": "Jacobs Foundation",
-      "url": "https://jacobsfoundation.org/work-with-us/"
+      "url": "https://jacobsfoundation.org/work-with-us/",
+      "tier": "C"
     },
     {
       "name": "Armada",
       "url": "https://www.armada.com/#contact",
-      "notes": "Contact page - monitors for career section appearing"
+      "notes": "Contact page - monitors for career section appearing",
+      "tier": "C"
     },
     {
       "name": "Gaydoul Group",
       "url": "https://www.gaydoul-group.ch/de/kontakt/",
-      "notes": "Contact page - monitors for career section appearing"
+      "notes": "Contact page - monitors for career section appearing",
+      "tier": "C"
     },
     {
       "name": "Calibrium",
       "url": "https://www.clbrm.com/",
-      "notes": "No career page - monitors homepage for changes"
+      "notes": "No career page - monitors homepage for changes",
+      "tier": "C"
     },
     {
       "name": "Verium",
-      "url": "https://verium.ch/jobs/"
+      "url": "https://verium.ch/jobs/",
+      "tier": "C"
     },
     {
       "name": "Petiole Asset Management",
       "url": "https://petiole.com/de/contact-us",
-      "notes": "Contact page - monitors for career section appearing"
+      "notes": "Contact page - monitors for career section appearing",
+      "tier": "C"
     },
     {
       "name": "Quilvest",
-      "url": "https://quilvest.ch/career/"
+      "url": "https://quilvest.ch/career/",
+      "tier": "EU"
     },
     {
       "name": "EGS Beteiligungen",
       "url": "https://www.egs-beteiligungen.ch/team",
-      "notes": "Team page - monitors for career section appearing"
+      "notes": "Team page - monitors for career section appearing",
+      "tier": "C"
     },
     {
       "name": "Rianta Capital",
       "url": "https://www.riantacapital.com/",
-      "notes": "No career page - monitors homepage for changes"
+      "notes": "No career page - monitors homepage for changes",
+      "tier": "C"
     },
     {
       "name": "Preon Capital",
-      "url": "https://www.preoncapital.com/jobs/"
+      "url": "https://www.preoncapital.com/jobs/",
+      "tier": "C"
     },
     {
       "name": "EQT Group",
-      "url": "https://eqtgroup.com/about/careers"
+      "url": "https://eqtgroup.com/about/careers",
+      "tier": "D"
     },
     {
       "name": "Ardian",
-      "url": "https://www.ardian.com/join-us?field_department_term_eref%5B466%5D=466&&start_date=&end_date=&op=Search&form_build_id=form-54kox35ERvlUhJTugL5eINOpTJvlpNkMVkduHTX1qNE&form_id=opening_paragraphs_filter"
+      "url": "https://www.ardian.com/join-us?field_department_term_eref%5B466%5D=466&&start_date=&end_date=&op=Search&form_build_id=form-54kox35ERvlUhJTugL5eINOpTJvlpNkMVkduHTX1qNE&form_id=opening_paragraphs_filter",
+      "tier": "D"
     },
     {
       "name": "ICG",
       "url": "https://icg.wd3.myworkdayjobs.com/external_careers",
-      "notes": "Workday job board"
+      "notes": "Workday job board",
+      "tier": "D"
     },
     {
       "name": "Equistone Partners",
       "url": "https://www.equistonepe.com/team",
-      "notes": "Team page - monitors for career section appearing"
+      "notes": "Team page - monitors for career section appearing",
+      "tier": "D"
     },
     {
       "name": "Rivean Capital",
-      "url": "https://riveancapital.com/working-with-us/"
+      "url": "https://riveancapital.com/working-with-us/",
+      "tier": "EU"
     },
     {
       "name": "Genui",
       "url": "https://www.genui.de/",
-      "notes": "No career page - monitors homepage for changes"
+      "notes": "No career page - monitors homepage for changes",
+      "tier": "D"
     },
     {
       "name": "LGT Capital Partners",
       "url": "https://lgtcp.wd502.myworkdayjobs.com/lgtcpcurrentvacancies?workerSubType=8e79cea3a59c01010c834ff8eac70002",
-      "notes": "Workday job board"
+      "notes": "Workday job board",
+      "tier": "E"
     },
     {
       "name": "Capital Dynamics",
-      "url": "https://www.capdyn.com/about-us/careers/"
+      "url": "https://www.capdyn.com/about-us/careers/",
+      "tier": "E"
     },
     {
       "name": "Montana Capital Partners",
       "url": "https://montana-capital-partners.jobs.personio.com/",
-      "notes": "Personio job board"
+      "notes": "Personio job board",
+      "tier": "E"
     },
     {
       "name": "Partners Group",
@@ -193,523 +230,648 @@
     },
     {
       "name": "Alpha Associates",
-      "url": "https://alpha-associates.ch/en/about-us/career"
+      "url": "https://alpha-associates.ch/en/about-us/career",
+      "tier": "E"
     },
     {
       "name": "Flexstone Partners",
-      "url": "https://www.flexstonepartners.com/careers/"
+      "url": "https://www.flexstonepartners.com/careers/",
+      "tier": "E"
     },
     {
       "name": "Unigestion",
-      "url": "https://unigestion.intranet.digital/external/en/companies/9e7138ed-f512-4a5f-b7ea-58944b508bce/jobs"
+      "url": "https://unigestion.intranet.digital/external/en/companies/9e7138ed-f512-4a5f-b7ea-58944b508bce/jobs",
+      "tier": "EU"
     },
     {
       "name": "Banque Pictet",
       "url": "https://career012.successfactors.eu/career?company=banquepict&career%5fns=job%5flisting%5fsummary&navBarLevel=JOB%5fSEARCH&_s.crb=goWcBV6ydpoUR8QXwrTYwBURPdodsHnsugNByRmQ73w%3d",
-      "notes": "SuccessFactors job board"
+      "notes": "SuccessFactors job board",
+      "tier": "E"
     },
     {
       "name": "Permira",
-      "url": "https://www.permira.com/people/life-at-permira"
+      "url": "https://www.permira.com/people/life-at-permira",
+      "tier": "EU"
     },
     {
       "name": "Coller Capital",
       "url": "https://collercapital-1660725598.teamtailor.com/jobs",
-      "notes": "Teamtailor job board"
+      "notes": "Teamtailor job board",
+      "tier": "EU"
     },
     {
       "name": "Maven Capital Partners",
-      "url": "https://www.mavencp.com/maven-careers"
+      "url": "https://www.mavencp.com/maven-careers",
+      "tier": "EU"
     },
     {
       "name": "BC Partners",
-      "url": "https://www.bcpartners.com/about/life-at-bc/"
+      "url": "https://www.bcpartners.com/about/life-at-bc/",
+      "tier": "EU"
     },
     {
       "name": "Inflexion",
       "url": "https://www.inflexion.com/people/",
-      "notes": "People page - monitors for career section appearing"
+      "notes": "People page - monitors for career section appearing",
+      "tier": "EU"
     },
     {
       "name": "Capiton",
-      "url": "https://capiton.de/karriere/"
+      "url": "https://capiton.de/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Triton Partners",
       "url": "https://tritonpartners.wd3.myworkdayjobs.com/External",
-      "notes": "Workday job board"
+      "notes": "Workday job board",
+      "tier": "EU"
     },
     {
       "name": "Montagu",
-      "url": "https://montagu.com/investment-team-opportunities/"
+      "url": "https://montagu.com/investment-team-opportunities/",
+      "tier": "EU"
     },
     {
       "name": "Calibrium (LinkedIn)",
       "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "C"
     },
     {
       "name": "Equistone Partners (LinkedIn)",
       "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "C"
     },
     {
       "name": "Genui (LinkedIn)",
       "url": "https://www.linkedin.com/company/genui/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "D"
     },
     {
       "name": "Gyrus Capital (LinkedIn)",
       "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "B"
     },
     {
       "name": "HBM Partners (LinkedIn)",
       "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "EU"
     },
     {
       "name": "Inflexion (LinkedIn)",
       "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "EU"
     },
     {
       "name": "Rianta Capital (LinkedIn)",
       "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
-      "notes": "LinkedIn job board - requires authentication"
+      "notes": "LinkedIn job board - requires authentication",
+      "tier": "C"
     },
     {
       "name": "ACE & Company",
       "url": "https://aceandcompany.breezy.hr/",
-      "notes": "Breezy HR job board"
+      "notes": "Breezy HR job board",
+      "tier": "EU"
     },
     {
       "name": "Alpina Partners",
-      "url": "https://alpinapartners.com/career/"
+      "url": "https://alpinapartners.com/career/",
+      "tier": "EU"
     },
     {
       "name": "Beyond Capital Partners",
-      "url": "https://beyondcapital-partners.com/karriere/"
+      "url": "https://beyondcapital-partners.com/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Mutares",
-      "url": "https://career.mutares.de/"
+      "url": "https://career.mutares.de/",
+      "tier": "EU"
     },
     {
       "name": "Cinven",
       "url": "https://cinven.pinpointhq.com/en#js-careers-jobs-block",
-      "notes": "Pinpoint HQ job board"
+      "notes": "Pinpoint HQ job board",
+      "tier": "EU"
     },
     {
       "name": "DUB AG",
-      "url": "https://dubag.eu/careers/"
+      "url": "https://dubag.eu/careers/",
+      "tier": "EU"
     },
     {
       "name": "Gilde Healthcare",
-      "url": "https://gildehealthcare.com/career-opportunities/"
+      "url": "https://gildehealthcare.com/career-opportunities/",
+      "tier": "EU"
     },
     {
       "name": "BlueOrchard",
-      "url": "https://www.blueorchard.com/careers/"
+      "url": "https://www.blueorchard.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "HPE Growth",
-      "url": "https://www.hpegrowth.com/careers"
+      "url": "https://www.hpegrowth.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Nord Holding",
-      "url": "https://www.nordholding.de/stellenangebote"
+      "url": "https://www.nordholding.de/stellenangebote",
+      "tier": "EU"
     },
     {
       "name": "Gimv",
-      "url": "https://www.gimv.com/en/vacancies-gimv"
+      "url": "https://www.gimv.com/en/vacancies-gimv",
+      "tier": "EU"
     },
     {
       "name": "EKBQ Careers",
       "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
-      "notes": "Oracle HCM job board"
+      "notes": "Oracle HCM job board",
+      "tier": "E"
     },
     {
       "name": "SUSI Partners",
-      "url": "https://www.susi-partners.com/en/careers/"
+      "url": "https://www.susi-partners.com/en/careers/",
+      "tier": "EU"
     },
     {
       "name": "UCP",
-      "url": "https://ucp.ch/en/career/"
+      "url": "https://ucp.ch/en/career/",
+      "tier": "EU"
     },
     {
       "name": "Wille Finance",
-      "url": "https://www.willefinance.com/careers/"
+      "url": "https://www.willefinance.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Invision AG",
       "url": "https://invision-ag.jobs.personio.de/",
-      "notes": "Personio job board"
+      "notes": "Personio job board",
+      "tier": "EU"
     },
     {
       "name": "Capvis",
-      "url": "https://www.capvis.com/en/en/jobs.html"
+      "url": "https://www.capvis.com/en/en/jobs.html",
+      "tier": "EU"
     },
     {
       "name": "Novastone",
-      "url": "https://novastone-ca.careers/"
+      "url": "https://novastone-ca.careers/",
+      "tier": "B"
     },
     {
       "name": "Blue Earth Capital",
       "url": "https://blueearthcapitalag.recruitee.com/",
-      "notes": "Recruitee job board"
+      "notes": "Recruitee job board",
+      "tier": "EU"
     },
     {
       "name": "BM|T",
-      "url": "https://www.bm-t.de/careers/"
+      "url": "https://www.bm-t.de/careers/",
+      "tier": "EU"
     },
     {
       "name": "41 Group",
-      "url": "https://41group.ch/en/careers"
+      "url": "https://41group.ch/en/careers",
+      "tier": "EU"
     },
     {
       "name": "Main Capital Partners",
-      "url": "https://main.nl/vacancies/"
+      "url": "https://main.nl/vacancies/",
+      "tier": "EU"
     },
     {
       "name": "CVC DIF",
-      "url": "https://www.cvcdif.com/careers"
+      "url": "https://www.cvcdif.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Waterland PE",
-      "url": "https://www.waterlandpe.com/careers/"
+      "url": "https://www.waterlandpe.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Karmijn Kapitaal",
-      "url": "https://jobs.karmijnkapitaal.nl/jobs"
+      "url": "https://jobs.karmijnkapitaal.nl/jobs",
+      "tier": "EU"
     },
     {
       "name": "Vortex Capital Partners",
-      "url": "https://vortexcp.com/careers/"
+      "url": "https://vortexcp.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Pride Capital",
-      "url": "https://www.pridecapital.nl/vacancies"
+      "url": "https://www.pridecapital.nl/vacancies",
+      "tier": "EU"
     },
     {
       "name": "Egeria Group",
-      "url": "https://egeriagroup.com/career/"
+      "url": "https://egeriagroup.com/career/",
+      "tier": "EU"
     },
     {
       "name": "Avedon Capital",
-      "url": "https://avedoncapital.com/career/internship-amsterdam/"
+      "url": "https://avedoncapital.com/career/internship-amsterdam/",
+      "tier": "EU"
     },
     {
       "name": "Bolster Investments",
-      "url": "https://bolsterinvestments.nl/werken-bij/"
+      "url": "https://bolsterinvestments.nl/werken-bij/",
+      "tier": "EU"
     },
     {
       "name": "Holland Capital",
-      "url": "https://hollandcapital.nl/vacatures-investeringsmaatschappij/"
+      "url": "https://hollandcapital.nl/vacatures-investeringsmaatschappij/",
+      "tier": "EU"
     },
     {
       "name": "Goodwell",
-      "url": "https://goodwell.nl/careers/"
+      "url": "https://goodwell.nl/careers/",
+      "tier": "EU"
     },
     {
       "name": "TMF Group",
-      "url": "https://www.tmf-group.com/en/careers/"
+      "url": "https://www.tmf-group.com/en/careers/",
+      "tier": "EU"
     },
     {
       "name": "Committed Capital",
-      "url": "https://committedcapital.nl/over-ons/werken-bij/"
+      "url": "https://committedcapital.nl/over-ons/werken-bij/",
+      "tier": "EU"
     },
     {
       "name": "HF Opportunities",
-      "url": "https://hf-opportunities.de/karriere/"
+      "url": "https://hf-opportunities.de/karriere/",
+      "tier": "EU"
     },
     {
       "name": "DBAG",
       "url": "https://dbag.careers.hibob.com/jobs",
-      "notes": "HiBob job board"
+      "notes": "HiBob job board",
+      "tier": "EU"
     },
     {
       "name": "MRH Trowe",
-      "url": "https://www.mrh-trowe.com/service/jobs/"
+      "url": "https://www.mrh-trowe.com/service/jobs/",
+      "tier": "EU"
     },
     {
       "name": "VREP",
-      "url": "https://www.vrep.de/ueber-uns/karriere/"
+      "url": "https://www.vrep.de/ueber-uns/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Halder",
-      "url": "https://www.halder.eu/job-opportunities"
+      "url": "https://www.halder.eu/job-opportunities",
+      "tier": "EU"
     },
     {
       "name": "Yttrium",
-      "url": "https://yttrium.com/careers/"
+      "url": "https://yttrium.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "DTCP",
-      "url": "https://www.dtcp.capital/about-us/careers/"
+      "url": "https://www.dtcp.capital/about-us/careers/",
+      "tier": "EU"
     },
     {
       "name": "Zeno Partners",
-      "url": "https://www.zenopartners.com/careers/"
+      "url": "https://www.zenopartners.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Vendis Capital",
-      "url": "https://www.vendiscapital.com/careers/"
+      "url": "https://www.vendiscapital.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Saffelberg",
-      "url": "https://www.saffelberg.com/careers"
+      "url": "https://www.saffelberg.com/careers",
+      "tier": "EU"
     },
     {
       "name": "D2E",
-      "url": "https://www.d2e.be/jobs/"
+      "url": "https://www.d2e.be/jobs/",
+      "tier": "EU"
     },
     {
       "name": "Luxempart",
-      "url": "https://www.luxempart.lu/our-people/careers/"
+      "url": "https://www.luxempart.lu/our-people/careers/",
+      "tier": "EU"
     },
     {
       "name": "Apax",
-      "url": "https://www.apax.com/people/careers/"
+      "url": "https://www.apax.com/people/careers/",
+      "tier": "EU"
     },
     {
       "name": "LDC",
-      "url": "https://ldc.co.uk/careers"
+      "url": "https://ldc.co.uk/careers",
+      "tier": "EU"
     },
     {
       "name": "IK Partners",
-      "url": "https://ikpartners.com/careers/"
+      "url": "https://ikpartners.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Vespa Capital",
-      "url": "http://vespacapital.com/careers"
+      "url": "http://vespacapital.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Aurelius Group",
-      "url": "https://career.aurelius-group.com/"
+      "url": "https://career.aurelius-group.com/",
+      "tier": "EU"
     },
     {
       "name": "Metric Capital",
-      "url": "https://metric-capital.com/careers"
+      "url": "https://metric-capital.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Platina Partners",
-      "url": "https://www.platinapartners.com/work-with-us/"
+      "url": "https://www.platinapartners.com/work-with-us/",
+      "tier": "EU"
     },
     {
       "name": "Hayfin",
-      "url": "https://www.hayfin.com/people/working-at-hayfin/"
+      "url": "https://www.hayfin.com/people/working-at-hayfin/",
+      "tier": "EU"
     },
     {
       "name": "Limerston Capital",
-      "url": "https://www.limerstoncap.com/careers"
+      "url": "https://www.limerstoncap.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Connection Capital",
-      "url": "https://www.connectioncapital.co.uk/careers/"
+      "url": "https://www.connectioncapital.co.uk/careers/",
+      "tier": "EU"
     },
     {
       "name": "Trispan",
-      "url": "https://www.trispanllp.com/career/"
+      "url": "https://www.trispanllp.com/career/",
+      "tier": "EU"
     },
     {
       "name": "CAIN International",
-      "url": "https://cainint.com/career-oportunities/"
+      "url": "https://cainint.com/career-oportunities/",
+      "tier": "EU"
     },
     {
       "name": "Bridgepoint",
-      "url": "https://www.bridgepointgroup.com/careers"
+      "url": "https://www.bridgepointgroup.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Freshstream",
-      "url": "https://freshstream.com/career/"
+      "url": "https://freshstream.com/career/",
+      "tier": "EU"
     },
     {
       "name": "Columna Capital",
-      "url": "https://www.columnacapital.com/careers"
+      "url": "https://www.columnacapital.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Tenzing PE",
-      "url": "https://tenzing.pe/careers/"
+      "url": "https://tenzing.pe/careers/",
+      "tier": "EU"
     },
     {
       "name": "Scaleup Capital",
-      "url": "https://careershub.scaleupcapital.com/jobs"
+      "url": "https://careershub.scaleupcapital.com/jobs",
+      "tier": "EU"
     },
     {
       "name": "Sun European Partners",
-      "url": "https://suneuropeanpartners.com/careers/"
+      "url": "https://suneuropeanpartners.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Henley Investment Management",
-      "url": "https://www.henleyim.com/careers"
+      "url": "https://www.henleyim.com/careers",
+      "tier": "EU"
     },
     {
       "name": "DPI",
-      "url": "https://www.dpi-llp.com/our-firm/careers/"
+      "url": "https://www.dpi-llp.com/our-firm/careers/",
+      "tier": "EU"
     },
     {
       "name": "Foresight Group",
-      "url": "https://foresight.group/other-information/careers/"
+      "url": "https://foresight.group/other-information/careers/",
+      "tier": "EU"
     },
     {
       "name": "Henderson Park",
-      "url": "https://hendersonpark.com/careers"
+      "url": "https://hendersonpark.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Bridges Fund Management",
-      "url": "https://www.bridgesfundmanagement.com/about-us/careers/"
+      "url": "https://www.bridgesfundmanagement.com/about-us/careers/",
+      "tier": "EU"
     },
     {
       "name": "True Global",
-      "url": "https://www.true.global/careers/"
+      "url": "https://www.true.global/careers/",
+      "tier": "EU"
     },
     {
       "name": "Claret Capital",
-      "url": "https://www.claret-capital.com/join-us/"
+      "url": "https://www.claret-capital.com/join-us/",
+      "tier": "EU"
     },
     {
       "name": "Zouk Capital",
-      "url": "https://zouk.com/careers"
+      "url": "https://zouk.com/careers",
+      "tier": "EU"
     },
     {
       "name": "PIDG",
-      "url": "https://pidg.org/about-us/careers/"
+      "url": "https://pidg.org/about-us/careers/",
+      "tier": "EU"
     },
     {
       "name": "Everfield",
-      "url": "https://everfield.com/careers"
+      "url": "https://everfield.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Quinbrook",
-      "url": "https://www.quinbrook.com/careers/"
+      "url": "https://www.quinbrook.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "AgDevCo",
-      "url": "http://agdevco.com/about-us/careers/"
+      "url": "http://agdevco.com/about-us/careers/",
+      "tier": "EU"
     },
     {
       "name": "Northstar VC",
-      "url": "https://northstar.vc/careers"
+      "url": "https://northstar.vc/careers",
+      "tier": "EU"
     },
     {
       "name": "IRCP",
-      "url": "https://www.ircp.com/talent/job-vacancies/"
+      "url": "https://www.ircp.com/talent/job-vacancies/",
+      "tier": "EU"
     },
     {
       "name": "ACT",
-      "url": "https://www.act.is/people/careers/"
+      "url": "https://www.act.is/people/careers/",
+      "tier": "EU"
     },
     {
       "name": "Kantar",
-      "url": "https://www.kantar.com/careers"
+      "url": "https://www.kantar.com/careers",
+      "tier": "EU"
     },
     {
       "name": "YFM Equity Partners",
-      "url": "https://yfmep.com/careers"
+      "url": "https://yfmep.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Frontier Development Capital",
-      "url": "https://www.frontierdevelopmentcapital.com/careers/"
+      "url": "https://www.frontierdevelopmentcapital.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "GII",
-      "url": "https://gii.ae/careers/"
+      "url": "https://gii.ae/careers/",
+      "tier": "EU"
     },
     {
       "name": "Sofina Group",
-      "url": "https://www.sofinagroup.com/the-team/careers/"
+      "url": "https://www.sofinagroup.com/the-team/careers/",
+      "tier": "EU"
     },
     {
       "name": "Cobepa",
-      "url": "https://www.cobepa.com/en/careers"
+      "url": "https://www.cobepa.com/en/careers",
+      "tier": "EU"
     },
     {
       "name": "Elvaston",
-      "url": "https://www.elvaston.com/en/careers"
+      "url": "https://www.elvaston.com/en/careers",
+      "tier": "EU"
     },
     {
       "name": "Odewald KMU",
-      "url": "https://odewaldkmu.com/karriere/"
+      "url": "https://odewaldkmu.com/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Auctus Capital Partners",
       "url": "https://auctuscapitalpartnersag-1743583356.teamtailor.com/jobs",
-      "notes": "Teamtailor job board"
+      "notes": "Teamtailor job board",
+      "tier": "EU"
     },
     {
       "name": "DPE",
-      "url": "https://www.dpe.de/karriere/"
+      "url": "https://www.dpe.de/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Paragon",
-      "url": "https://www.paragon.de/karriere/"
+      "url": "https://www.paragon.de/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Afinum",
-      "url": "https://afinum.de/jobs/"
+      "url": "https://afinum.de/jobs/",
+      "tier": "D"
     },
     {
       "name": "Maxburg",
-      "url": "https://maxburg.com/en/jobs"
+      "url": "https://maxburg.com/en/jobs",
+      "tier": "EU"
     },
     {
       "name": "Callista PE",
-      "url": "https://www.callista-pe.de/karriere/"
+      "url": "https://www.callista-pe.de/karriere/",
+      "tier": "EU"
     },
     {
       "name": "Emeram",
-      "url": "https://emeram.com/de/karriere"
+      "url": "https://emeram.com/de/karriere",
+      "tier": "EU"
     },
     {
       "name": "Armira Beteiligungen",
       "url": "https://armira-beteiligungen-gmbh-co-kg.jobs.personio.de/",
-      "notes": "Personio job board"
+      "notes": "Personio job board",
+      "tier": "EU"
     },
     {
       "name": "Pinova Capital",
-      "url": "https://www.pinovacapital.com/karriere/#positions"
+      "url": "https://www.pinovacapital.com/karriere/#positions",
+      "tier": "EU"
     },
     {
       "name": "MTIP",
-      "url": "https://www.mtip.ch/about-us#career"
+      "url": "https://www.mtip.ch/about-us#career",
+      "tier": "EU"
     },
     {
       "name": "SHS Capital",
-      "url": "https://www.shs-capital.eu/career/"
+      "url": "https://www.shs-capital.eu/career/",
+      "tier": "EU"
     },
     {
       "name": "MBG BW",
-      "url": "https://mbg-bw.ermoeglicher.de/de/ueber-uns/profil/jobs-karriere/"
+      "url": "https://mbg-bw.ermoeglicher.de/de/ueber-uns/profil/jobs-karriere/",
+      "tier": "EU"
     },
     {
       "name": "LEA Partners",
       "url": "https://leapartners.jobs.personio.com/",
-      "notes": "Personio job board"
+      "notes": "Personio job board",
+      "tier": "EU"
     },
     {
       "name": "Lafayette Mittelstand Capital",
-      "url": "https://lafayettemittelstandcapital.com/careers"
+      "url": "https://lafayettemittelstandcapital.com/careers",
+      "tier": "EU"
     },
     {
       "name": "Cipio Partners",
-      "url": "https://www.cipiopartners.com/jobs.html"
+      "url": "https://www.cipiopartners.com/jobs.html",
+      "tier": "EU"
     },
     {
       "name": "Lansdowne Partners",
-      "url": "https://www.lansdownepartners.com/london/careers/"
+      "url": "https://www.lansdownepartners.com/london/careers/",
+      "tier": "EU"
     },
     {
       "name": "BID Equity",
-      "url": "https://bidequity.de/careers"
+      "url": "https://bidequity.de/careers",
+      "tier": "EU"
     },
     {
       "name": "Bamboo Capital Partners",
-      "url": "https://bamboocp.com/careers/"
+      "url": "https://bamboocp.com/careers/",
+      "tier": "EU"
     },
     {
       "name": "Castik Capital",
-      "url": "https://www.castik.com/career"
+      "url": "https://www.castik.com/career",
+      "tier": "EU"
     },
     {
       "name": "HQ Capital",
@@ -731,37 +893,44 @@
     {
       "name": "Bregal Unternehmerkapital",
       "url": "https://www.bu-partners.com/careers/",
-      "notes": "career page - firm rebranded to 'BU' in 2025, current domain is bu-partners (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "career page - firm rebranded to 'BU' in 2025, current domain is bu-partners (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "A"
     },
     {
       "name": "Co-Investor AG",
       "url": "https://co-investor.com/en/ueberuns/index.htm",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "A"
     },
     {
       "name": "Cross Equity Partners",
       "url": "https://crossequity.ch/en/team-2/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "A"
     },
     {
       "name": "Apaneo Capital Partners",
       "url": "https://www.apaneo.com/",
-      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "B"
     },
     {
       "name": "Brera Partners",
       "url": "https://www.brerapartners.com/contact",
-      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "B"
     },
     {
       "name": "Edmond de Rothschild PE",
       "url": "https://evht.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_7001/jobs",
-      "notes": "external job board (Oracle Cloud Recruiting) - group-wide EdR job search incl (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "external job board (Oracle Cloud Recruiting) - group-wide EdR job search incl (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "RIVE Private Investment",
       "url": "https://www.rive-investment.com/en/team/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "B"
     },
     {
       "name": "Müller-Möhl Group",
@@ -771,52 +940,62 @@
     {
       "name": "Muzinich & Co.",
       "url": "https://muzinich.wd5.myworkdayjobs.com/muzinichcareers",
-      "notes": "external job board (Workday) - lists all Muzinich openings incl (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "external job board (Workday) - lists all Muzinich openings incl (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "D"
     },
     {
       "name": "HarbourVest Partners",
       "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
-      "notes": "external job board (Workday) - global openings, filter for Zurich (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "external job board (Workday) - global openings, filter for Zurich (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "E"
     },
     {
       "name": "3TS Capital Partners",
       "url": "https://www.3tscapital.com/about",
-      "notes": "team/about page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team/about page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Aravis SA",
       "url": "https://www.aravis.ch/contact",
-      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "BPE Unternehmensbeteiligungen",
       "url": "https://www.bpe.de/en/bpe-team/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "BWK GmbH",
       "url": "https://www.bwk.de/jobs/",
-      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "COI Partners",
       "url": "https://coi-partners.com/en/learn-about-us/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "ECM Equity Capital Management",
       "url": "https://www.ecm-pe.de/en/team/career",
-      "notes": "career page - speculative-application style page ('always interested in strengthening our team', applications to recruitment@ecm-pe (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "career page - speculative-application style page ('always interested in strengthening our team', applications to recruitment@ecm-pe (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Findos Investor",
       "url": "https://www.findos.com/ueber-uns",
-      "notes": "team page (Ueber uns) - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page (Ueber uns) - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Limestone Capital",
       "url": "https://www.limestone-capital.com/team",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Energy Infrastructure Partners",
@@ -825,32 +1004,38 @@
       "no_jobs_indicators": [
         "There are currently no open positions",
         "Derzeit gibt es keine offenen Stellen"
-      ]
+      ],
+      "tier": "ZH"
     },
     {
       "name": "Perusa Partners",
       "url": "https://www.perusa.de/en/team/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "QCP Quantum Capital Partners",
       "url": "https://quantum.capital/en/",
-      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Quadriga Capital",
       "url": "https://quadriga-capital.de/team",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Storm Global",
       "url": "https://www.stormglobal.com/",
-      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "coinIX",
       "url": "https://coinix.capital/en/team/",
-      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "EU"
     },
     {
       "name": "Adiuva Capital",
@@ -930,7 +1115,16 @@
     {
       "name": "Corecam Capital Partners",
       "url": "https://join.com/companies/corecamcapital",
-      "notes": "join.com job board (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "join.com job board (added from PE Funds Tracker, 2026-07-03)",
+      "tier": "C"
     }
-  ]
+  ],
+  "tracker_feed": {
+    "enabled": true,
+    "tiers": [
+      "A",
+      "B"
+    ],
+    "_comment": "New investment-team roles at these tiers are auto-appended to the Job Ad Overview V2 sheet for the nightly CV run. Requires GOOGLE_* secrets in the workflow."
+  }
 }
