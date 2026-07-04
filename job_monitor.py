@@ -584,9 +584,9 @@ TRACKER_COLUMNS = 9  # Website..Claude Comment, must match the CV pipeline's CSV
 
 def google_sheets_available() -> bool:
     """Feed is active only when the CV pipeline's Google credentials are configured."""
-    has_oauth = bool(os.environ.get("GOOGLE_OAUTH_CLIENT_JSON") and os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN"))
-    has_sa = bool(os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON"))
-    return bool(os.environ.get("GOOGLE_DRIVE_CV_FOLDER_ID")) and (has_oauth or has_sa)
+    has_oauth = bool(os.environ.get("GOOGLE_OAUTH_CLIENT_JSON", "").strip() and os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN", "").strip())
+    has_sa = bool(os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON", "").strip())
+    return bool(os.environ.get("GOOGLE_DRIVE_CV_FOLDER_ID", "").strip()) and (has_oauth or has_sa)
 
 
 def _google_services():
@@ -596,8 +596,10 @@ def _google_services():
     from googleapiclient.discovery import build
 
     scopes = ["https://www.googleapis.com/auth/drive"]
-    client_json = os.environ.get("GOOGLE_OAUTH_CLIENT_JSON")
-    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN")
+    # .strip() everywhere: a stray leading/trailing whitespace in a pasted GitHub
+    # secret would otherwise produce an opaque invalid_grant at the first real feed.
+    client_json = os.environ.get("GOOGLE_OAUTH_CLIENT_JSON", "").strip()
+    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN", "").strip()
     if client_json and refresh_token:
         data = json.loads(client_json)
         cfg = data.get("installed") or data.get("web") or data
@@ -1074,6 +1076,8 @@ def main():
             )
     elif config.get("tracker_feed", {}).get("enabled", True) and not google_sheets_available():
         log.info("Tracker feed inactive: Google credentials / GOOGLE_DRIVE_CV_FOLDER_ID not configured.")
+    elif feed_enabled:
+        log.info(f"Tracker feed active (tiers: {', '.join(sorted(feed_tiers))}); no new roles to queue this run.")
 
     save_state(state)
 

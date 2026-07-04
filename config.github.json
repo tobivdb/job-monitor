@@ -910,8 +910,8 @@
     },
     {
       "name": "Apaneo Capital Partners",
-      "url": "https://www.apaneo.com/",
-      "notes": "homepage - no career page (added from PE Funds Tracker, 2026-07-03)",
+      "url": "https://apaneo.com/",
+      "notes": "homepage - no career page; www subdomain has broken SSL (ERR_SSL_PROTOCOL_ERROR on 2026-07-04), apex domain used instead (added from PE Funds Tracker, 2026-07-03)",
       "tier": "B"
     },
     {
