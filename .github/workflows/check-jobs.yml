@@ -47,16 +47,6 @@ jobs:
           python -m py_compile job_monitor.py
           python -m unittest discover -s tests -v
 
-      # Temporary same-repository PR smoke test. This step is removed before merge.
-      - name: Send SMTP smoke-test email
-        env:
-          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
-          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
-          SMTP_SERVER: smtp.gmail.com
-          SMTP_PORT: 587
-        run: python job_monitor.py --config config.github.json --email-test
-
   check-jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
