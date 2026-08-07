@@ -19,6 +19,7 @@ import os
 import smtplib
 import sys
 import re
+import time
 from pathlib import Path
 from datetime import datetime
 from email.mime.text import MIMEText
@@ -199,28 +200,25 @@ def verify_linkedin_session(context) -> bool:
         page.close()
 
 
-def fetch_page(url: str, playwright_context, timeout: int = 30000) -> str:
-    """Fetch a page using Playwright (headless Chromium). Returns rendered HTML."""
+def fetch_page(url: str, playwright_context, timeout: int = 20000) -> str:
+    """Fetch rendered HTML with a bounded navigation time.
+
+    Waiting for networkidle is a poor fit for modern career sites because
+    analytics and long-polling requests may never become idle. Waiting for the
+    DOM plus a short rendering window keeps each site bounded to roughly the
+    configured timeout plus three seconds.
+    """
     page = playwright_context.new_page()
     try:
-        # Try networkidle first, fall back to domcontentloaded on timeout
-        try:
-            page.goto(url, wait_until="networkidle", timeout=timeout)
-        except Exception:
-            log.info(f"  networkidle timed out for {url}, retrying with domcontentloaded...")
-            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-            page.wait_for_timeout(5000)  # Give JS time to render
-
-        # Extra wait for lazy-loaded content
-        page.wait_for_timeout(2000)
+        page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+        page.wait_for_timeout(3000)  # Give client-rendered job boards time to populate.
 
         # Check if LinkedIn redirected to login wall
         if is_linkedin_url(url) and "login" in page.url.lower():
             log.warning(f"  LinkedIn login wall hit for {url}")
             raise Exception("LinkedIn login wall - not authenticated")
 
-        html = page.content()
-        return html
+        return page.content()
     except Exception as e:
         log.warning(f"Error fetching {url}: {e}")
         raise
@@ -900,38 +898,68 @@ def build_email_html(
 
     return body, has_changes, changes_summary
 
-def send_email(config: dict, subject: str, html_body: str):
-    """Send email notification via SMTP.
-
-    Email credentials can come from environment variables (for GitHub Actions)
-    or from config.json (for local runs). Env vars take priority.
-    """
+def _email_settings(config: dict) -> tuple[str, int, str, str, str]:
+    """Resolve SMTP settings without ever logging credential values."""
     email_cfg = config.get("email", {})
-
     smtp_server = os.environ.get("SMTP_SERVER", email_cfg.get("smtp_server", "smtp.gmail.com"))
     smtp_port = int(os.environ.get("SMTP_PORT", email_cfg.get("smtp_port", 587)))
     sender_email = os.environ.get("SENDER_EMAIL", email_cfg.get("sender_email", ""))
     sender_password = os.environ.get("SENDER_PASSWORD", email_cfg.get("sender_password", ""))
     recipient_email = os.environ.get("RECIPIENT_EMAIL", email_cfg.get("recipient_email", ""))
+    return smtp_server, smtp_port, sender_email, sender_password, recipient_email
 
-    if not sender_email or not sender_password or not recipient_email:
-        raise ValueError("Email credentials not configured. Set env vars or config.json.")
+
+def validate_email_config(config: dict) -> tuple[str, int, str, str, str]:
+    """Fail early when required mail settings are missing."""
+    settings = _email_settings(config)
+    smtp_server, smtp_port, sender_email, sender_password, recipient_email = settings
+    missing = [
+        name
+        for name, value in (
+            ("SENDER_EMAIL", sender_email),
+            ("SENDER_PASSWORD", sender_password),
+            ("RECIPIENT_EMAIL", recipient_email),
+        )
+        if not value
+    ]
+    if missing:
+        raise ValueError(f"Email configuration missing: {', '.join(missing)}")
+    log.info(
+        "Email configuration validated (SMTP %s:%s; sender, password and recipient present).",
+        smtp_server,
+        smtp_port,
+    )
+    return settings
+
+
+def send_email(config: dict, subject: str, html_body: str):
+    """Send an email and require positive SMTP acceptance.
+
+    Email credentials can come from environment variables (for GitHub Actions)
+    or from config.json (for local runs). Env vars take priority.
+    """
+    smtp_server, smtp_port, sender_email, sender_password, recipient_email = validate_email_config(config)
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = sender_email
     msg["To"] = recipient_email
 
-    # Plain text fallback
     plain = "Job Monitor has detected changes. View this email in HTML for details."
     msg.attach(MIMEText(plain, "plain"))
     msg.attach(MIMEText(html_body, "html"))
 
-    with smtplib.SMTP(smtp_server, smtp_port) as server:
+    log.info("Attempting SMTP delivery via %s:%s.", smtp_server, smtp_port)
+    with smtplib.SMTP(smtp_server, smtp_port, timeout=30) as server:
+        server.ehlo()
         server.starttls()
+        server.ehlo()
         server.login(sender_email, sender_password)
-        server.sendmail(sender_email, recipient_email, msg.as_string())
-    log.info(f"Email sent to {recipient_email}")
+        refused = server.sendmail(sender_email, recipient_email, msg.as_string())
+
+    if refused:
+        raise RuntimeError(f"SMTP server refused {len(refused)} recipient(s)")
+    log.info("Email delivery accepted by SMTP server.")
 
 
 # ---------------------------------------------------------------------------
@@ -944,6 +972,7 @@ def main():
     parser.add_argument("--reset", action="store_true", help="Clear saved state")
     parser.add_argument("--list", action="store_true", help="Show currently tracked jobs")
     parser.add_argument("--always-email", action="store_true", help="Send email even if no changes")
+    parser.add_argument("--email-test", action="store_true", help="Send a fast SMTP test without scanning sites")
     parser.add_argument("--config", type=str, default=str(CONFIG_FILE), help="Path to config file")
     args = parser.parse_args()
 
@@ -953,6 +982,18 @@ def main():
         sys.exit(1)
 
     config = json.loads(config_path.read_text())
+
+    if args.email_test:
+        test_timestamp = datetime.now().strftime("%d.%m.%Y %H:%M")
+        test_body = (
+            "<html><body><h2>Job Monitor email test</h2>"
+            f"<p>SMTP delivery test completed at {test_timestamp}.</p>"
+            "<p>No career sites were scanned and state.json was not changed.</p>"
+            "</body></html>"
+        )
+        send_email(config, "Job Monitor - Email Test", test_body)
+        log.info("Email test completed successfully.")
+        return
 
     if args.reset:
         if STATE_FILE.exists():
@@ -988,6 +1029,10 @@ def main():
         print(f"Last run: {state.get('last_run', 'never')}")
         return
 
+    if not args.dry_run:
+        # Validate before spending up to 90 minutes scanning sites.
+        validate_email_config(config)
+
     # --- Run the monitor ---
     log.info(f"Starting job monitor scan for {len(config['sites'])} sites...")
 
@@ -1019,6 +1064,7 @@ def main():
         for site_cfg in config["sites"]:
             name = site_cfg["name"]
             site_url = site_cfg["url"]
+            site_started = time.monotonic()
             log.info(f"Checking: {name} ({site_url})")
 
             try:
@@ -1039,6 +1085,8 @@ def main():
             except Exception as e:
                 log.error(f"  [{name}] Error: {e}")
                 result = SiteResult(name=name, url=site_url, error=str(e))
+            finally:
+                log.info(f"  [{name}] Finished in {time.monotonic() - site_started:.1f}s")
 
             results.append(result)
             diff = compute_diff(result, state)
@@ -1115,10 +1163,11 @@ def main():
                 send_email(config, subject, html_body)
             except Exception as e:
                 log.error(f"Failed to send email: {e}")
-                # Save report locally as fallback
+                # Preserve the report for local debugging, then fail the Actions job.
                 report_path = BASE_DIR / "last_report.html"
                 report_path.write_text(html_body)
                 log.info(f"Report saved locally to {report_path}")
+                raise RuntimeError("Email delivery failed; state was not committed.") from e
         else:
             log.info("No changes - email not sent (use --always-email to override)")
 
