@@ -97,8 +97,8 @@ class JobAllowlistTests(unittest.TestCase):
     def test_job_title_region_does_not_override_european_office(self):
         html = """
         <html><body>
-          <a href="https://example.wd5.myworkdayjobs.com/HVP/job/London/Head-of-Americas_R5">
-            Head of Americas
+          <a href="https://example.wd5.myworkdayjobs.com/HVP/job/London/Investment-Associate-United-States-Coverage_R5">
+            Investment Associate, United States Coverage
           </a>
         </body></html>
         """
@@ -110,7 +110,10 @@ class JobAllowlistTests(unittest.TestCase):
 
         result = job_monitor.extract_jobs_from_page(html, config)
 
-        self.assertEqual([job.title for job in result.jobs], ["Head of Americas"])
+        self.assertEqual(
+            [job.title for job in result.jobs],
+            ["Investment Associate, United States Coverage"],
+        )
 
 
 if __name__ == "__main__":
