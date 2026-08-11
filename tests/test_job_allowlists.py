@@ -55,6 +55,63 @@ class JobAllowlistTests(unittest.TestCase):
 
         self.assertEqual(len(result.jobs), 4)
 
+    def test_global_filter_rejects_explicit_non_european_workday_locations(self):
+        config = {
+            "name": "Global Workday",
+            "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
+            "global_excluded_location_patterns": ["Boston", "Singapore"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(self.HTML, config)
+
+        self.assertEqual(
+            {job.title for job in result.jobs},
+            {
+                "Associate, Infrastructure and Real Assets",
+                "Director, Fund Oversight",
+            },
+        )
+
+    def test_oracle_location_labels_are_filtered(self):
+        html = """
+        <html><body>
+          <a href="https://example.oraclecloud.com/sites/CX_2/job/1853">
+            Client Director - Wealth, Hong Kong Locations Hong Kong Posting Date 08/06/2026
+          </a>
+          <a href="https://example.oraclecloud.com/sites/CX_2/job/1854">
+            Investment Associate Locations Paris Posting Date 08/06/2026
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "Global Oracle",
+            "url": "https://example.oraclecloud.com/sites/CX_2/jobs",
+            "global_excluded_location_patterns": ["Hong Kong", "Singapore"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual(len(result.jobs), 1)
+        self.assertIn("Paris", result.jobs[0].title)
+
+    def test_job_title_region_does_not_override_european_office(self):
+        html = """
+        <html><body>
+          <a href="https://example.wd5.myworkdayjobs.com/HVP/job/London/Head-of-Americas_R5">
+            Head of Americas
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "Global Workday",
+            "url": "https://example.wd5.myworkdayjobs.com/HVP",
+            "global_excluded_location_patterns": ["Americas", "United States"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual([job.title for job in result.jobs], ["Head of Americas"])
+
 
 if __name__ == "__main__":
     unittest.main()
