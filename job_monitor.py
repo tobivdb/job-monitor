@@ -362,15 +362,27 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
     exclude_patterns = [p.lower() for p in site_config.get("exclude_patterns", [])] + [
         p.lower() for p in DEFAULT_EXCLUDE
     ]
+    include_job_patterns = [
+        p.lower() for p in site_config.get("include_job_patterns", [])
+    ]
 
     def is_excluded(text: str) -> bool:
         return any(excl in text.lower() for excl in exclude_patterns)
+
+    def is_included(title: str, link: str, location: str, detail: str) -> bool:
+        """Apply an optional per-site allowlist across all job fields."""
+        if not include_job_patterns:
+            return True
+        searchable = " ".join((title, link, location, detail)).lower()
+        return any(pattern in searchable for pattern in include_job_patterns)
 
     jobs_found: dict[str, JobEntry] = {}  # key -> JobEntry
 
     def add_job(title: str, link: str = "", location: str = "", detail: str = ""):
         title = clean_title(title)
         if not title or is_noise_title(title) or is_excluded(title):
+            return
+        if not is_included(title, link, location, detail):
             return
         if not looks_like_job_title(title):
             return
@@ -482,6 +494,10 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
             add_job(title, full_url, location, parent_text)
 
     result.jobs = list(jobs_found.values())
+    if include_job_patterns:
+        log.info(
+            f"  [{name}] Location/content allowlist active; kept {len(result.jobs)} matching job(s)."
+        )
     return result
 
 

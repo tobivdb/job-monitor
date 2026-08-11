@@ -69,6 +69,7 @@ far below Gmail's 102 KB clipping limit):
 | `url` | Career page URL |
 | `no_jobs_indicators` | Strings that, if found on page, mean no open roles (skips extraction) |
 | `exclude_patterns` | Job titles containing these strings are ignored (e.g. `Initiativbewerbung`) |
+| `include_job_patterns` | Optional allowlist matched case-insensitively across title, URL, location, and detail. When set, only matching jobs are retained; useful for location segments in global Workday URLs. |
 | `notes` | Informational only, not used by the scraper |
 | `tier` | Priority tier from the PE Funds Tracker (A/B/C/D/E/ZH/EU). A/B get a badge in the email and sort first; they also gate the CV-pipeline feed. |
 

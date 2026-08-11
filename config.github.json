@@ -946,7 +946,14 @@
     {
       "name": "HarbourVest Partners",
       "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
-      "notes": "external job board (Workday) - global openings, filter for Zurich (added from PE Funds Tracker, 2026-07-03)",
+      "include_job_patterns": [
+        "/job/london/",
+        "/job/dublin/",
+        "/job/frankfurt/",
+        "/job/zurich/",
+        "/job/z%c3%bcrich/"
+      ],
+      "notes": "external Workday board - global openings; allowlisted to European offices in London, Dublin, Frankfurt, and Zürich",
       "tier": "E"
     },
     {
