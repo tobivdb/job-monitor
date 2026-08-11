@@ -379,10 +379,12 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
         if not excluded_location_patterns:
             return False
         decoded_link = unquote(link)
-        job_location = re.search(r"/job/([^/?#]+)/", decoded_link, re.IGNORECASE)
+        job_location = None
+        if "myworkdayjobs.com" in decoded_link.casefold():
+            job_location = re.search(r"/job/([^/?#]+)/", decoded_link, re.IGNORECASE)
         # Workday encodes the office in the path segment immediately after /job/.
-        # Do not scan the whole URL: the later title slug may name a region that is
-        # unrelated to the physical office.
+        # Do not scan ordinary /job/<title>/ URLs or the later Workday title slug:
+        # either may name a region unrelated to the physical office.
         parts = [job_location.group(1) if job_location else "", location]
         # Oracle and similar boards sometimes embed location in the displayed title.
         if re.search(r"\blocations?\b", title, re.IGNORECASE):
