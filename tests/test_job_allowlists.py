@@ -115,6 +115,27 @@ class JobAllowlistTests(unittest.TestCase):
             ["Investment Associate, United States Coverage"],
         )
 
+    def test_ordinary_job_title_slug_is_not_treated_as_a_location(self):
+        html = """
+        <html><body>
+          <a href="https://example.com/job/investment-associate-united-states-coverage/">
+            Investment Associate, United States Coverage
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "European Firm",
+            "url": "https://example.com/careers",
+            "global_excluded_location_patterns": ["United States"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual(
+            [job.title for job in result.jobs],
+            ["Investment Associate, United States Coverage"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
