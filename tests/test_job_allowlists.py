@@ -55,6 +55,87 @@ class JobAllowlistTests(unittest.TestCase):
 
         self.assertEqual(len(result.jobs), 4)
 
+    def test_global_filter_rejects_explicit_non_european_workday_locations(self):
+        config = {
+            "name": "Global Workday",
+            "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
+            "global_excluded_location_patterns": ["Boston", "Singapore"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(self.HTML, config)
+
+        self.assertEqual(
+            {job.title for job in result.jobs},
+            {
+                "Associate, Infrastructure and Real Assets",
+                "Director, Fund Oversight",
+            },
+        )
+
+    def test_oracle_location_labels_are_filtered(self):
+        html = """
+        <html><body>
+          <a href="https://example.oraclecloud.com/sites/CX_2/job/1853">
+            Client Director - Wealth, Hong Kong Locations Hong Kong Posting Date 08/06/2026
+          </a>
+          <a href="https://example.oraclecloud.com/sites/CX_2/job/1854">
+            Investment Associate Locations Paris Posting Date 08/06/2026
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "Global Oracle",
+            "url": "https://example.oraclecloud.com/sites/CX_2/jobs",
+            "global_excluded_location_patterns": ["Hong Kong", "Singapore"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual(len(result.jobs), 1)
+        self.assertIn("Paris", result.jobs[0].title)
+
+    def test_job_title_region_does_not_override_european_office(self):
+        html = """
+        <html><body>
+          <a href="https://example.wd5.myworkdayjobs.com/HVP/job/London/Investment-Associate-United-States-Coverage_R5">
+            Investment Associate, United States Coverage
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "Global Workday",
+            "url": "https://example.wd5.myworkdayjobs.com/HVP",
+            "global_excluded_location_patterns": ["Americas", "United States"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual(
+            [job.title for job in result.jobs],
+            ["Investment Associate, United States Coverage"],
+        )
+
+    def test_ordinary_job_title_slug_is_not_treated_as_a_location(self):
+        html = """
+        <html><body>
+          <a href="https://example.com/job/investment-associate-united-states-coverage/">
+            Investment Associate, United States Coverage
+          </a>
+        </body></html>
+        """
+        config = {
+            "name": "European Firm",
+            "url": "https://example.com/careers",
+            "global_excluded_location_patterns": ["United States"],
+        }
+
+        result = job_monitor.extract_jobs_from_page(html, config)
+
+        self.assertEqual(
+            [job.title for job in result.jobs],
+            ["Investment Associate, United States Coverage"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

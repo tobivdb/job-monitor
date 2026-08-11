@@ -61,6 +61,16 @@ far below Gmail's 102 KB clipping limit):
 - **`EMAIL_SUMMARY_KEYWORDS`** (narrow): `private equity | associate | investment manager` — controls the top summary box and the "Investment Team" label within site sections
 - **`PE_RELEVANT_KEYWORDS`** (broad): ~20 patterns including portfolio, buyout, LBO, fundraising, etc. — controls LinkedIn filtering and site-level sorting in the email
 
+## Europe-only location filtering
+
+Top-level `global_excluded_location_patterns` is applied to every site's structured
+job location before diffing, emailing, or feeding the CV pipeline. Workday office
+segments such as `/job/Boston/` and Oracle-style titles such as
+`Locations Hong Kong` are matched case-insensitively. Jobs with an explicit blocked
+location are discarded. Jobs whose board supplies no reliable location are retained
+to avoid silently losing valid European roles. Use per-site `include_job_patterns`
+for strict allowlisting of a particularly noisy global board.
+
 ## config.github.json site fields
 
 | Field | Purpose |
