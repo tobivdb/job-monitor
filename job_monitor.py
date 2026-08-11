@@ -24,7 +24,7 @@ from pathlib import Path
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from urllib.parse import urljoin
+from urllib.parse import urljoin, unquote
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -365,9 +365,26 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
     include_job_patterns = [
         p.lower() for p in site_config.get("include_job_patterns", [])
     ]
+    excluded_location_patterns = [
+        re.sub(r"[^\w]+", " ", p.casefold()).strip()
+        for p in site_config.get("global_excluded_location_patterns", [])
+        if p.strip()
+    ]
 
     def is_excluded(text: str) -> bool:
         return any(excl in text.lower() for excl in exclude_patterns)
+
+    def is_location_excluded(title: str, link: str, location: str) -> bool:
+        """Reject jobs whose structured fields explicitly name a blocked location."""
+        if not excluded_location_patterns:
+            return False
+        parts = [unquote(link), location]
+        # Oracle and similar boards sometimes embed location in the displayed title.
+        if re.search(r"\blocations?\b", title, re.IGNORECASE):
+            parts.append(title)
+        searchable = re.sub(r"[^\w]+", " ", " ".join(parts).casefold()).strip()
+        padded = f" {searchable} "
+        return any(f" {pattern} " in padded for pattern in excluded_location_patterns)
 
     def is_included(title: str, link: str, location: str, detail: str) -> bool:
         """Apply an optional per-site allowlist across all job fields."""
@@ -377,10 +394,14 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
         return any(pattern in searchable for pattern in include_job_patterns)
 
     jobs_found: dict[str, JobEntry] = {}  # key -> JobEntry
+    location_excluded: set[str] = set()
 
     def add_job(title: str, link: str = "", location: str = "", detail: str = ""):
         title = clean_title(title)
         if not title or is_noise_title(title) or is_excluded(title):
+            return
+        if is_location_excluded(title, link, location):
+            location_excluded.add(f"{title.casefold()}|{link.casefold()}")
             return
         if not is_included(title, link, location, detail):
             return
@@ -494,6 +515,11 @@ def extract_jobs_from_page(html: str, site_config: dict) -> SiteResult:
             add_job(title, full_url, location, parent_text)
 
     result.jobs = list(jobs_found.values())
+    if location_excluded:
+        log.info(
+            f"  [{name}] Europe-only filter removed {len(location_excluded)} explicitly "
+            "non-European job(s)."
+        )
     if include_job_patterns:
         log.info(
             f"  [{name}] Location/content allowlist active; kept {len(result.jobs)} matching job(s)."
@@ -1051,6 +1077,7 @@ def main():
 
     # --- Run the monitor ---
     log.info(f"Starting job monitor scan for {len(config['sites'])} sites...")
+    global_excluded_locations = config.get("global_excluded_location_patterns", [])
 
     results = []
     diffs = []
@@ -1085,7 +1112,11 @@ def main():
 
             try:
                 html = fetch_page(site_url, context)
-                result = extract_jobs_from_page(html, site_cfg)
+                effective_site_cfg = {
+                    **site_cfg,
+                    "global_excluded_location_patterns": global_excluded_locations,
+                }
+                result = extract_jobs_from_page(html, effective_site_cfg)
 
                 # Filter LinkedIn jobs to PE-relevant roles only
                 if is_linkedin_url(site_url) and result.jobs:
