@@ -4,5 +4,6 @@ __pycache__/
 config.json
 *.log
 last_report.html
+scan_results.json
 com.jobmonitor.daily.plist
 linkedin_cookies.json

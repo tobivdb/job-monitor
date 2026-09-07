@@ -39,7 +39,9 @@ echo "======================================"
 echo "  Configuration"
 echo "======================================"
 
-if grep -q "YOUR_EMAIL" config.json; then
+if [ ! -f config.json ]; then
+    echo "  Using config.github.json; supply SMTP credentials through environment variables for live runs."
+elif grep -q "YOUR_EMAIL" config.json; then
     echo ""
     echo "⚠️  You need to configure your email settings in config.json!"
     echo ""

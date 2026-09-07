@@ -27,12 +27,13 @@ class EmailDeliveryTests(unittest.TestCase):
         smtp.sendmail.return_value = {}
         smtp_cls.return_value = smtp
 
-        with patch.dict(os.environ, self.env, clear=True):
+        with patch.dict(os.environ, self.env):
             job_monitor.send_email({}, "Subject", "<p>Body</p>")
 
         smtp_cls.assert_called_once_with("smtp.example.test", 587, timeout=30)
         smtp.ehlo.assert_called()
         smtp.starttls.assert_called_once()
+        self.assertTrue(smtp.starttls.call_args.kwargs["context"].check_hostname)
         smtp.login.assert_called_once_with("sender@example.test", "app-password")
         smtp.sendmail.assert_called_once()
 
@@ -43,7 +44,7 @@ class EmailDeliveryTests(unittest.TestCase):
         smtp.sendmail.return_value = {"recipient@example.test": (550, b"rejected")}
         smtp_cls.return_value = smtp
 
-        with patch.dict(os.environ, self.env, clear=True):
+        with patch.dict(os.environ, self.env):
             with self.assertRaisesRegex(RuntimeError, "refused 1 recipient"):
                 job_monitor.send_email({}, "Subject", "<p>Body</p>")
 
