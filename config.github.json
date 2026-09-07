@@ -241,6 +241,7 @@
     {
       "name": "Unigestion",
       "url": "https://unigestion.intranet.digital/external/en/companies/9e7138ed-f512-4a5f-b7ea-58944b508bce/jobs",
+      "job_button_selector": "button.list-group-item:has(.job-opening-title)",
       "tier": "EU"
     },
     {

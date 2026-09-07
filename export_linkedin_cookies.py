@@ -10,6 +10,7 @@ Usage:
 """
 
 import json
+from urllib.parse import urlsplit
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -34,10 +35,8 @@ def main():
         while True:
             page.wait_for_timeout(2000)
             url = page.url
-            if "feed" in url or "mynetwork" in url or "/in/" in url:
-                break
-            if "login" not in url and "checkpoint" not in url and "challenge" not in url:
-                # Might be logged in via some other redirect
+            parts = urlsplit(url)
+            if parts.hostname in {"www.linkedin.com", "linkedin.com"} and parts.path.rstrip("/") in {"/feed", "/mynetwork"}:
                 break
 
         print(f"Logged in! Current URL: {page.url}")
@@ -46,10 +45,10 @@ def main():
         cookies = context.cookies()
 
         # Filter to LinkedIn cookies only
-        linkedin_cookies = [c for c in cookies if "linkedin.com" in c.get("domain", "")]
+        linkedin_cookies = [c for c in cookies if c.get("domain", "").lstrip(".") in {"linkedin.com", "www.linkedin.com"}]
 
         # Save to file
-        COOKIES_FILE.write_text(json.dumps(linkedin_cookies, indent=2))
+        COOKIES_FILE.write_text(json.dumps(linkedin_cookies, indent=2), encoding="utf-8")
         print(f"\nExported {len(linkedin_cookies)} LinkedIn cookies to: {COOKIES_FILE}")
         print("\nYou can now close this browser window.")
 

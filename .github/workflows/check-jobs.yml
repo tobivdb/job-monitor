@@ -15,6 +15,9 @@ on:
     paths:
       - '.github/workflows/check-jobs.yml'
       - 'job_monitor.py'
+      - 'job_sources.py'
+      - 'config.github.json'
+      - 'requirements.txt'
       - 'tests/**'
 
 permissions:
@@ -44,7 +47,7 @@ jobs:
 
       - name: Validate Python and run regression tests
         run: |
-          python -m py_compile job_monitor.py
+          python -m py_compile job_monitor.py job_sources.py export_linkedin_cookies.py
           python -m unittest discover -s tests -v
 
   check-jobs:
@@ -91,12 +94,14 @@ jobs:
             python job_monitor.py --config config.github.json --always-email
           fi
 
-      - name: Upload fallback report
-        if: failure()
+      - name: Upload scan report and verification results
+        if: always() && env.EMAIL_TEST != 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: job-monitor-fallback-report
-          path: last_report.html
+          name: job-monitor-scan-report
+          path: |
+            last_report.html
+            scan_results.json
           if-no-files-found: ignore
           retention-days: 7
 
