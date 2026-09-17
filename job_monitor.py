@@ -21,13 +21,17 @@ import ssl
 import sys
 import re
 import time
+import math
+import subprocess
+import tempfile
 from pathlib import Path
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Optional
 
+from scan_process import run_bounded
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from job_sources import (
@@ -947,6 +951,72 @@ def send_email(config: dict, subject: str, html_body: str):
 # Main
 # ---------------------------------------------------------------------------
 
+def scan_site_worker(site_cfg: dict) -> SiteResult:
+    """Own all browser operations in a disposable child process."""
+    name, site_url = site_cfg["name"], site_cfg["url"]
+    try:
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                locale="de-CH",
+            )
+            if is_linkedin_url(site_url):
+                if not load_linkedin_cookies(context) or not verify_linkedin_session(context):
+                    raise ValueError("LinkedIn authentication unavailable; previous results retained")
+            html, final_url = fetch_page(site_url, context, with_url=True,
+                                         job_button_selector=site_cfg.get("job_button_selector", ""))
+            result = extract_jobs_from_page(html, site_cfg, final_url)
+
+            # Filter LinkedIn jobs to PE-relevant roles only
+            if is_linkedin_url(site_url) and result.jobs:
+                before = len(result.jobs)
+                result.jobs = [j for j in result.jobs if is_pe_relevant(j.title, j.detail)]
+                filtered = before - len(result.jobs)
+                if filtered:
+                    log.info(f"  [{name}] Filtered out {filtered} non-PE jobs, kept {len(result.jobs)}")
+
+            validate_jobs(result, site_cfg, context)
+            browser.close()
+        return result
+    except Exception as exc:
+        return SiteResult(name=name, url=site_url, error=str(exc))
+
+
+def scan_site(site_cfg: dict, timeout: float) -> SiteResult:
+    """Include startup, extraction, verification and cleanup in one deadline."""
+    try:
+        with tempfile.TemporaryDirectory(prefix="job-monitor-site-") as folder:
+            config_path = Path(folder) / "site.json"
+            result_path = Path(folder) / "result.json"
+            config_path.write_text(json.dumps(site_cfg), encoding="utf-8")
+            returncode = run_bounded(
+                [sys.executable, str(Path(__file__).resolve()), "--scan-site-worker",
+                 str(config_path), str(result_path)], timeout,
+            )
+            if returncode != 0:
+                raise RuntimeError(f"Browser worker exited with status {returncode}")
+            data = json.loads(result_path.read_text(encoding="utf-8"))
+            data["jobs"] = [JobEntry(**job) for job in data["jobs"]]
+            return SiteResult(**data)
+    except subprocess.TimeoutExpired:
+        error = f"Site scan exceeded {timeout:.0f}s; browser worker stopped; previous results retained"
+    except Exception as exc:
+        error = f"Site worker failed ({type(exc).__name__}); previous results retained"
+    return SiteResult(name=site_cfg["name"], url=site_cfg["url"], error=error)
+
+
+def write_scan_audit(results):
+    """Checkpoint evidence without advancing the notification/state baseline."""
+    audit = [{"name": r.name, "url": r.url, "error": r.error, "warnings": r.warnings,
+              "verified_jobs": [{"title": j.title, "url": j.url, "location": j.location} for j in r.jobs]}
+             for r in results]
+    path = BASE_DIR / "scan_results.json"
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
+    temporary.replace(path)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Job Monitor - Track career pages for new postings")
     parser.add_argument("--dry-run", action="store_true", help="Read-only scan; no email, tracker writes or saved state changes")
@@ -955,7 +1025,13 @@ def main():
     parser.add_argument("--always-email", action="store_true", help="Send email even if no changes")
     parser.add_argument("--email-test", action="store_true", help="Send a fast SMTP test without scanning sites")
     parser.add_argument("--config", type=str, default=str(CONFIG_FILE), help="Path to config file")
+    parser.add_argument("--scan-site-worker", nargs=2, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.scan_site_worker:
+        site_path, result_path = map(Path, args.scan_site_worker)
+        result = scan_site_worker(json.loads(site_path.read_text(encoding="utf-8")))
+        result_path.write_text(json.dumps(asdict(result)), encoding="utf-8")
+        return
     if args.dry_run and (args.email_test or args.reset):
         parser.error("--dry-run cannot be combined with --email-test or --reset")
 
@@ -1015,6 +1091,14 @@ def main():
         print(f"Last run: {state.get('last_run', 'never')}")
         return
 
+    try:
+        site_timeout = float(config.get("site_timeout_seconds", 180))
+        scan_timeout = float(config.get("scan_timeout_seconds", 75 * 60))
+        if not all(math.isfinite(value) and value > 0 for value in (site_timeout, scan_timeout)):
+            raise ValueError
+    except (TypeError, ValueError):
+        parser.error("Scan timeouts must be finite positive numbers")
+
     if not args.dry_run:
         # Validate before spending up to 90 minutes scanning sites.
         validate_email_config(config)
@@ -1031,85 +1115,57 @@ def main():
     feed_candidates: list[dict] = []
     linkedin_auth_failed = False
 
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            locale="de-CH",
-        )
-
-        # Load LinkedIn cookies if any sites use LinkedIn URLs
-        has_linkedin_sites = any(is_linkedin_url(s["url"]) for s in config["sites"])
-        linkedin_ok = False
-        if has_linkedin_sites:
-            if load_linkedin_cookies(context):
-                linkedin_ok = verify_linkedin_session(context)
-            if not linkedin_ok:
+    scan_deadline = time.monotonic() + scan_timeout
+    for site_cfg in config["sites"]:
+        name, site_url = site_cfg["name"], site_cfg["url"]
+        site_started = time.monotonic()
+        remaining = scan_deadline - site_started
+        log.info(f"Checking: {name} ({site_url})")
+        if remaining <= 0:
+            result = SiteResult(name=name, url=site_url,
+                                error="Not scanned: total scan time budget exhausted; previous results retained")
+        else:
+            result = scan_site(site_cfg, min(site_timeout, remaining))
+        if result.error:
+            log.error(f"  [{name}] Error: {result.error}")
+            if is_linkedin_url(site_url) and "LinkedIn authentication unavailable" in result.error:
                 linkedin_auth_failed = True
-                log.warning("LinkedIn auth failed — LinkedIn boards will be skipped.")
+        else:
+            log.info(f"  [{name}] Verified {len(result.jobs)} job(s), no_jobs_indicator={result.has_no_jobs_indicator}")
+            for warning in result.warnings:
+                log.warning(f"  [{name}] {warning}")
+            for job in result.jobs:
+                log.info(f"    -> {job.title}")
+        log.info(f"  [{name}] Finished in {time.monotonic() - site_started:.1f}s")
+        results.append(result)
+        diff = compute_diff(result, state)
+        diff.tier = site_cfg.get("tier", "")
+        diffs.append(diff)
 
-        for site_cfg in config["sites"]:
-            name = site_cfg["name"]
-            site_url = site_cfg["url"]
-            site_started = time.monotonic()
-            log.info(f"Checking: {name} ({site_url})")
+        # Queue new investment-team roles at priority-tier funds for the CV pipeline.
+        # Verified ad text comes back with the isolated worker result.
+        if (
+            feed_requested
+            and not diff.is_first_run
+            and diff.tier.upper() in feed_tiers
+        ):
+            fed_keys = state.get("tracker_fed", {})
+            pending = state.setdefault("tracker_pending", {})
+            new_keys = {j.key for j in diff.new_jobs}
+            for job in result.jobs:
+                if job.key not in new_keys and job.key not in pending:
+                    continue
+                if job.key in fed_keys or not is_pe_relevant(job.title, job.detail):
+                    continue
+                pending[job.key] = {"company": name, "url": job.url, "title": job.title}
+                description = result.descriptions.get(job.key, "")
+                feed_candidates.append({"job": job, "site": diff, "description": description})
 
-            try:
-                if is_linkedin_url(site_url) and not linkedin_ok:
-                    raise ValueError("LinkedIn authentication unavailable; previous results retained")
-                html, final_url = fetch_page(site_url, context, with_url=True,
-                                             job_button_selector=site_cfg.get("job_button_selector", ""))
-                result = extract_jobs_from_page(html, site_cfg, final_url)
+        # Update only the in-memory state; persist after successful delivery.
+        if not result.error:
+            update_state(state, result)
 
-                # Filter LinkedIn jobs to PE-relevant roles only
-                if is_linkedin_url(site_url) and result.jobs:
-                    before = len(result.jobs)
-                    result.jobs = [j for j in result.jobs if is_pe_relevant(j.title, j.detail)]
-                    filtered = before - len(result.jobs)
-                    if filtered:
-                        log.info(f"  [{name}] Filtered out {filtered} non-PE jobs, kept {len(result.jobs)}")
-
-                validate_jobs(result, site_cfg, context)
-                log.info(f"  [{name}] Verified {len(result.jobs)} job(s), no_jobs_indicator={result.has_no_jobs_indicator}")
-                for warning in result.warnings:
-                    log.warning(f"  [{name}] {warning}")
-                for j in result.jobs:
-                    log.info(f"    -> {j.title}")
-            except Exception as e:
-                log.error(f"  [{name}] Error: {e}")
-                result = SiteResult(name=name, url=site_url, error=str(e))
-            finally:
-                log.info(f"  [{name}] Finished in {time.monotonic() - site_started:.1f}s")
-
-            results.append(result)
-            diff = compute_diff(result, state)
-            diff.tier = site_cfg.get("tier", "")
-            diffs.append(diff)
-
-            # Queue new investment-team roles at priority-tier funds for the CV pipeline.
-            # Scraping the ad text must happen here, while the browser context is alive.
-            if (
-                feed_requested
-                and not diff.is_first_run
-                and diff.tier.upper() in feed_tiers
-            ):
-                fed_keys = state.get("tracker_fed", {})
-                pending = state.setdefault("tracker_pending", {})
-                new_keys = {j.key for j in diff.new_jobs}
-                for job in result.jobs:
-                    if job.key not in new_keys and job.key not in pending:
-                        continue
-                    if job.key in fed_keys or not is_pe_relevant(job.title, job.detail):
-                        continue
-                    pending[job.key] = {"company": name, "url": job.url, "title": job.title}
-                    description = result.descriptions.get(job.key, "")
-                    feed_candidates.append({"job": job, "site": diff, "description": description})
-
-            # Update state immediately
-            if not result.error:
-                update_state(state, result)
-
-        browser.close()
+        write_scan_audit(results)
 
     tracker_fed_report: list[dict] = []
     tracker_error = ""
@@ -1160,10 +1216,7 @@ def main():
     # Keep auditable artifacts on successful runs as well as failures.
     report_path = BASE_DIR / "last_report.html"
     report_path.write_text(html_body, encoding="utf-8")
-    audit = [{"name": r.name, "url": r.url, "error": r.error, "warnings": r.warnings,
-              "verified_jobs": [{"title": j.title, "url": j.url, "location": j.location} for j in r.jobs]}
-             for r in results]
-    (BASE_DIR / "scan_results.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_scan_audit(results)
     if args.dry_run:
         # Save HTML report to file for inspection
         report_path = BASE_DIR / "last_report.html"

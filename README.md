@@ -43,6 +43,20 @@ Other custom button-only boards need a tested adapter; no URLs are guessed.
 Text PDFs are checked for the title and vacancy evidence (bounded to 10 MB and
 20 pages); scans without extractable text require manual review.
 
+Each source runs in a separate browser worker with a 180-second wall-clock
+deadline covering startup, navigation, detail verification and browser cleanup.
+The supervisor stops timed-out workers and their browser descendants, reports a
+source error and continues. Existing jobs for that source are retained. This
+prevents a navigation/cleanup hang, such as the UCP failure, from blocking the
+whole digest. LinkedIn authentication is checked inside each LinkedIn worker.
+
+The complete scan has a 75-minute budget, leaving time before the Actions
+90-minute limit for delivery and state persistence. Sources not reached within
+that budget are explicitly reported as not scanned. JSON evidence is saved
+atomically after every source; the notification baseline is still committed only
+after SMTP acceptance. Optional top-level `site_timeout_seconds` and
+`scan_timeout_seconds` configure these positive, finite budgets.
+
 ## State and delivery
 
 `state.json` stores canonical job identities, page hashes, per-site parser version,

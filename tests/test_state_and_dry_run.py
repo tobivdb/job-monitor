@@ -62,8 +62,7 @@ class StateTests(unittest.TestCase):
             before = state_path.read_bytes()
             with (patch.object(monitor, "BASE_DIR", base), patch.object(monitor, "STATE_FILE", state_path),
                   patch("sys.argv", ["job_monitor", "--config", str(config)] + args),
-                  patch.object(monitor, "sync_playwright"), patch.object(monitor, "fetch_page", return_value=('<a href="/job/123">Investment Associate</a>', self.result.url)),
-                  patch.object(monitor, "validate_jobs"),
+                  patch.object(monitor, "scan_site", return_value=self.result),
                   patch.object(monitor, "google_sheets_available", return_value=True),
                   patch.object(monitor, "validate_email_config"), patch.object(monitor, "feed_tracker") as feed,
                   patch.object(monitor, "send_email", side_effect=RuntimeError("SMTP unavailable") if mail_error else None) as send):
