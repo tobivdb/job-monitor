@@ -1,4 +1,5 @@
 playwright>=1.40.0
+psutil>=5.9,<8
 beautifulsoup4>=4.12.0
 lxml>=4.9.0
 pypdf>=5.0,<7

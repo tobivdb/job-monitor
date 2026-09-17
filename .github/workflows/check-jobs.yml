@@ -16,6 +16,7 @@ on:
       - '.github/workflows/check-jobs.yml'
       - 'job_monitor.py'
       - 'job_sources.py'
+      - 'scan_process.py'
       - 'config.github.json'
       - 'requirements.txt'
       - 'tests/**'
@@ -47,7 +48,7 @@ jobs:
 
       - name: Validate Python and run regression tests
         run: |
-          python -m py_compile job_monitor.py job_sources.py export_linkedin_cookies.py
+          python -m py_compile job_monitor.py job_sources.py scan_process.py export_linkedin_cookies.py
           python -m unittest discover -s tests -v
 
   check-jobs:
