@@ -11,7 +11,7 @@ from job_sources import canonical_url, is_detail_url, BLOCKED_TEXT, ROLE_WORDS
 
 CAREER = re.compile(r'career|karriere|vacanc|offene.stellen|stellenangebote|current.opportunit|open.positions|jobs|join.us', re.I)
 ATS = re.compile(r'(?:myworkdayjobs\.com|jobs\.personio\.(?:de|com)|recruitee\.com|workable\.com|avature\.net|successfactors\.(?:eu|com)|oraclecloud\.(?:com|eu)|salesforce-sites\.com)$', re.I)
-NEXT = re.compile(r'^(?:next(?: page(?: url)?)?|next\s*[>»]|nächste(?: seite)?|weiter|suivant|volgende|load more(?: jobs)?|show more(?: jobs)?|mehr laden)$', re.I)
+NEXT = re.compile(r'^(?:Go to Next Page, Number \d+|next(?: page(?: url)?)?|next\s*[>»]|nächste(?: seite)?|weiter|suivant|volgende|load more(?: jobs)?|show more(?: jobs)?|mehr laden)$', re.I)
 
 @dataclass
 class Crawl:
@@ -54,11 +54,11 @@ def career_links(html, base):
                 continue
         host = parts.hostname or ''
         label = anchor.get_text(' ', strip=True)
-        if is_detail_url(url) and ROLE_WORDS.search(label):
+        if is_detail_url(url) and not re.search(r'/(?:careers?|karriere|vacancies|jobs|opportunities|current-opportunities|open-positions)/?$', parts.path, re.I):
             continue
         path = urlsplit(url).path
         if (host == origin and CAREER.search(label + ' ' + path)) or (ATS.search(host) and (CAREER.search(label + ' ' + url) or anchor.name == 'iframe')):
-            if not re.search(r'privacy|datenschutz|login|sign.in|jobalert|job.alert|linkedin|facebook', url, re.I):
+            if not re.search(r'privacy|datenschutz|login|sign.in|register|jobalert|job.alert|linkedin|facebook', url, re.I):
                 links.append(url)
     return list(dict.fromkeys(links))
 

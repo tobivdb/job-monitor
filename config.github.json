@@ -511,8 +511,9 @@
     },
     {
       "name": "TMF Group",
-      "url": "https://www.tmf-group.com/en/careers/",
-      "tier": "EU"
+      "url": "https://tmf.avature.net/careersmarketplace/SearchJobs",
+      "tier": "EU",
+      "site_timeout_seconds": 900
     },
     {
       "name": "Committed Capital",
@@ -844,6 +845,10 @@
       "career_urls": [
         "https://www.pinovacapital.com/en/career/analyst/",
         "https://www.pinovacapital.com/en/career/associate/"
+      ],
+      "self_posting_paths": [
+        "/en/career/analyst/",
+        "/en/career/associate/"
       ]
     },
     {

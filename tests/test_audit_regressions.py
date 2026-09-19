@@ -41,7 +41,7 @@ class AuditRegressionTests(unittest.TestCase):
 
     def test_pinova_individual_career_page_can_be_its_own_candidate(self):
         url = 'https://www.pinovacapital.com/en/career/associate/'
-        result = list(candidates(BeautifulSoup('<h1>Associate</h1><p>Application</p>', 'lxml'), {'name':'Pinova','url':url}, url))
+        result = list(candidates(BeautifulSoup('<h1>Associate</h1><p>Application</p>', 'lxml'), {'name':'Pinova','url':url,'self_posting_paths':['/en/career/associate/']}, url))
         self.assertEqual(result[0][1], url)
 
     def test_partial_pagination_never_removes_previous_jobs(self):
@@ -81,6 +81,24 @@ class AuditRegressionTests(unittest.TestCase):
     def test_language_and_department_filters_are_not_extra_boards(self):
         html='<a href="/de/karriere/">Karriere</a><a href="/en/careers?department=Debt">Jobs</a>'
         self.assertEqual(career_links(html,'https://fund.test/en/careers'),[])
+
+    def test_generic_career_subpage_heading_is_not_a_self_posting(self):
+        url='https://fund.test/careers/investment/'
+        result=list(candidates(BeautifulSoup('<h1>Investment</h1><p>Apply to our company</p>','lxml'),{'name':'Fund','url':url},url))
+        self.assertEqual(result,[])
+
+    def test_template_links_and_avature_search_are_not_ads(self):
+        from job_sources import canonical_url
+        self.assertEqual(canonical_url('[', 'https://fund.test/careers/'),'')
+        self.assertFalse(is_detail_url('https://tmf.avature.net/careersmarketplace/SearchJobs?jobId=36971'))
+        self.assertTrue(is_detail_url('https://tmf.avature.net/careersmarketplace/JobDetail/Transaction-Manager/36971'))
+
+    def test_avature_title_outside_main_is_verified(self):
+        url='https://tmf.avature.net/careersmarketplace/JobDetail/Transaction-Manager/36971'
+        page=MagicMock();page.url=url;page.goto.return_value.status=200;page.goto.return_value.headers={}
+        page.content.return_value='<h2>Transaction Manager</h2><main>'+('Responsibilities and requirements. '*30)+'Apply</main>'
+        verified,_=verify_detail(page,monitor.JobEntry('Transaction Manager',url),{'name':'TMF','url':'https://tmf.avature.net/careersmarketplace/SearchJobs'})
+        self.assertEqual(verified,url)
 
     def test_page_counter_change_alone_is_not_new_content(self):
         a='<span>Page 1</span><a href="/job/1">Associate</a>'

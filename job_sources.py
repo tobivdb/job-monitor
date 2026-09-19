@@ -54,7 +54,7 @@ def is_linkedin(url):
 def canonical_url(value, base=""):
     """Resolve against the final document URL; retain functional query fields."""
     value = html.unescape(str(value or "")).strip()
-    if not value or value.startswith("#"):
+    if not value or value.startswith(("#", "[", "{")):
         return ""
     try:
         parts = urlsplit(urljoin(base, value))
@@ -90,6 +90,8 @@ def is_detail_url(url):
     query = dict(parse_qsl(parts.query))
     if is_linkedin(url):
         return bool(re.fullmatch(r"/jobs/view/\d+", path))
+    if re.search(r"/(?:searchjobs|register)/?$", path):
+        return False
     if any(query.get(k) for k in ("career_job_req_id", "gh_jid", "jobId", "jobid", "requisitionId", "vacancyNo")):
         return True
     if re.search(r"-j\d+\.html$", path):
@@ -194,7 +196,7 @@ def candidates(soup, config, final_url):
                 locations.extend(str(address.get(k, "")) for k in ("addressLocality", "addressCountry"))
         yield plain(posting.get("title")), link, " ".join(locations).strip(), plain(posting.get("description"))
 
-    if is_detail_url(final_url) or config.get("inline_vacancies"):
+    if urlsplit(final_url).path in config.get("self_posting_paths", []) or config.get("inline_vacancies"):
         headings = soup.select("h1")
         if config.get("inline_vacancies"):
             headings = soup.select(config["inline_vacancies"])
@@ -324,7 +326,7 @@ def verify_detail(page, job, config):
         raise ValueError("Job detail says the vacancy is closed or unavailable")
     if BLOCKED_TEXT.search(text[:2000]):
         raise ValueError("Job detail blocked by access protection")
-    headings = content.find_all(["h1", "h2", "h3"])
+    headings = (soup if is_detail_url(final) else content).find_all(["h1", "h2", "h3"])
     if not any(title_matches(job.title, h.get_text(" ", strip=True), job.location) for h in headings):
         raise ValueError("Job title not confirmed on the detail page")
     if not employer_matches(content, config):
