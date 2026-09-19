@@ -850,7 +850,8 @@
       "self_posting_paths": [
         "/en/career/analyst/",
         "/en/career/associate/"
-      ]
+      ],
+      "navigation_wait_until": "commit"
     },
     {
       "name": "MTIP",

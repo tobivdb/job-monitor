@@ -199,7 +199,7 @@ def crawl_careers(context, config, fetch_page, deadline):
         page = context.new_page()
         start = len(crawl.documents)
         try:
-            response = page.goto(url, wait_until='domcontentloaded', timeout=20000)
+            response = page.goto(url, wait_until=config.get('navigation_wait_until', 'domcontentloaded'), timeout=20000)
             if response is None or response.status >= 400:
                 raise ValueError(f'HTTP {response.status if response else "no response"}')
             page.wait_for_timeout(1500)

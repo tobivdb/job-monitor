@@ -275,7 +275,7 @@ def verify_detail(page, job, config):
             return canonical_url(response.url), text[:12000]
         finally:
             response.dispose()
-    response = page.goto(job.url, wait_until="domcontentloaded", timeout=20000)
+    response = page.goto(job.url, wait_until=config.get("navigation_wait_until", "domcontentloaded"), timeout=20000)
     if response is not None and response.status == 429:
         # Respect Retry-After with a bounded single retry; never hammer a blocked board.
         delay = response.headers.get("retry-after", "5")
@@ -283,7 +283,7 @@ def verify_detail(page, job, config):
         if delay > 30:
             raise RateLimited("Retry-After exceeds the bounded wait; defer this source")
         page.wait_for_timeout(delay * 1000)
-        response = page.goto(job.url, wait_until="domcontentloaded", timeout=20000)
+        response = page.goto(job.url, wait_until=config.get("navigation_wait_until", "domcontentloaded"), timeout=20000)
         if response is not None and response.status == 429:
             raise RateLimited("Source rate limit persists after Retry-After; remaining details deferred")
     if response is None or response.status >= 400:
