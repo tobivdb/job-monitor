@@ -58,7 +58,7 @@ def career_links(html, base):
             continue
         path = urlsplit(url).path
         if (host == origin and CAREER.search(label + ' ' + path)) or (ATS.search(host) and (CAREER.search(label + ' ' + url) or anchor.name == 'iframe')):
-            if not re.search(r'privacy|datenschutz|login|sign.in|register|jobalert|job.alert|linkedin|facebook', url, re.I):
+            if not re.search(r'privacy|datenschutz|login|sign.in|register|talentcommunity|recommendationmethods|jobalert|job.alert|linkedin|facebook', url, re.I):
                 links.append(url)
     return list(dict.fromkeys(links))
 
