@@ -34,9 +34,11 @@ from typing import Optional
 from scan_process import run_bounded
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
+from site_crawl import crawl_careers
+from concurrent.futures import ThreadPoolExecutor
 from job_sources import (
     EXTRACTOR_VERSION, NON_JOB_TEXT, canonical_url, candidates, is_linkedin,
-    verify_detail,
+    verify_detail, ROLE_WORDS, RateLimited, vacancy_identity,
 )
 
 # ---------------------------------------------------------------------------
@@ -55,7 +57,7 @@ DEFAULT_EXCLUDE = [
     "initiativbewerbung", "spontanbewerbung", "blindbewerbung",
     "unsolicited application", "open application",
     "werkstudent", "praktikant", "praktikum", "internship", "intern ",
-    "fund controller", "marketing",
+    "fund controller", "marketing", "stagiair", "stagiaire", "stage ",
 ]
 
 # Regex to collapse runs of whitespace and strip location/seniority suffixes
@@ -99,7 +101,7 @@ LOCATION_PATTERN = re.compile(
     r"(Zürich|Zurich|Zug|Basel|Bern|Geneva|Genf|Genève|Lausanne|Crissier|"
     r"Luzern|Lucerne|St\.?\s*Gallen|Winterthur|Lugano|Biel|Thun|"
     r"Munich|München|Frankfurt|Berlin|Hamburg|Wien|Vienna|Schweiz|Switzerland|"
-    r"Deutschland|Germany|Österreich|Austria)",
+    r"Deutschland|Germany|Österreich|Austria|Amsterdam|London|New York|Dublin|Warsaw|Singapore|Singapur|Tokyo)",
     re.IGNORECASE,
 )
 
@@ -130,7 +132,7 @@ class JobEntry:
     @property
     def key(self) -> str:
         """Stable identifier for deduplication."""
-        raw = canonical_url(self.url) or html_module.unescape(self.title).strip().casefold()
+        raw = vacancy_identity(self.url) or html_module.unescape(self.title).strip().casefold()
         return hashlib.md5(raw.encode()).hexdigest()
 
 
@@ -145,6 +147,9 @@ class SiteResult:
     warnings: list[str] = field(default_factory=list)
     unverified_urls: list[str] = field(default_factory=list)
     descriptions: dict[str, str] = field(default_factory=dict)
+    coverage_complete: bool = True
+    coverage: dict = field(default_factory=dict)
+    evidence: list = field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
@@ -290,7 +295,7 @@ def is_noise_title(title: str) -> bool:
         return True
 
     # Looks like a metadata fragment (e.g., "Zug|Werkstudent|Teilzeit")
-    if "|" in t and len(t.split("|")) >= 2:
+    if "|" in t and not ROLE_WORDS.search(t):
         return True
 
     # Contains only a person's name pattern (First Last or First LastFirst Last)
@@ -303,7 +308,7 @@ def is_noise_title(title: str) -> bool:
                           "assistant", "coordinator", "intern", "werkstudent", "praktikant",
                           "senior", "junior", "head", "chief", "lead", "officer",
                           "(w/m/d)", "(m/w/d)", "(m/f/d)", "(w/m)", "(m/w)"]
-        if not any(ind in t for ind in job_indicators):
+        if not ROLE_WORDS.search(t) and not any(ind in t for ind in job_indicators):
             return True
 
     return False
@@ -390,12 +395,20 @@ def validate_jobs(result: SiteResult, config: dict, context):
         return
     verified = {}
     for job in result.jobs:
+        if time.monotonic() >= config.get("_deadline", float("inf")):
+            result.coverage_complete = False
+            result.warnings.append("Detail verification reached the source time budget; remaining ads are unverified.")
+            break
         page = context.new_page()
         try:
             final_url, description = verify_detail(page, job, config)
             job.url = final_url
             verified[job.key] = job
             result.descriptions[job.key] = description
+        except RateLimited:
+            result.coverage_complete = False
+            result.warnings.append("Source rate limited; remaining details deferred and previous jobs retained.")
+            break
         except Exception as exc:
             result.unverified_urls.append(canonical_url(job.url))
             result.warnings.append(f"{job.title}: link/ad not verified ({type(exc).__name__}: {str(exc)[:160]}).")
@@ -478,7 +491,7 @@ def compute_diff(result: SiteResult, state: dict) -> SiteDiff:
     for key in old_keys:
         old = old_jobs[key]
         # Parser cleanup and blocked detail pages are not evidence a role was filled.
-        if (not legacy and key not in new_keys
+        if (result.coverage_complete and not legacy and key not in new_keys
                 and canonical_url(old.url) not in result.unverified_urls
                 and (result.has_no_jobs_indicator or result.jobs)
                 and missing.get(key, 0) >= 1):
@@ -497,12 +510,12 @@ def update_state(state: dict, result: SiteResult):
     current = {j.key: {"title": j.title, "url": j.url, "location": j.location, "detail": j.detail}
                for j in result.jobs}
     missing = {}
-    if old_state.get("extractor_version") == EXTRACTOR_VERSION:
+    if old_state.get("extractor_version") == EXTRACTOR_VERSION or not result.coverage_complete:
         for data in old_state.get("job_keys", {}).values():
             job = JobEntry(**data)
             if job.key in current:
                 continue
-            uncertain = (canonical_url(job.url) in result.unverified_urls
+            uncertain = (not result.coverage_complete or canonical_url(job.url) in result.unverified_urls
                          or not result.jobs and not result.has_no_jobs_indicator)
             count = old_state.get("missing_counts", {}).get(job.key, 0) + (0 if uncertain else 1)
             if uncertain or count < 2:
@@ -516,6 +529,7 @@ def update_state(state: dict, result: SiteResult):
         "missing_counts": missing,
         "last_checked": datetime.now().isoformat(),
         "has_no_jobs_indicator": result.has_no_jobs_indicator,
+        "coverage_complete": result.coverage_complete,
     }
 
 
@@ -964,9 +978,36 @@ def scan_site_worker(site_cfg: dict) -> SiteResult:
             if is_linkedin_url(site_url):
                 if not load_linkedin_cookies(context) or not verify_linkedin_session(context):
                     raise ValueError("LinkedIn authentication unavailable; previous results retained")
-            html, final_url = fetch_page(site_url, context, with_url=True,
-                                         job_button_selector=site_cfg.get("job_button_selector", ""))
-            result = extract_jobs_from_page(html, site_cfg, final_url)
+            site_cfg = dict(site_cfg)
+            site_cfg["_deadline"] = time.monotonic() + float(site_cfg.get("_soft_timeout", 160))
+            crawl = crawl_careers(context, site_cfg, fetch_page, site_cfg["_deadline"])
+            result = SiteResult(name=name, url=site_url, coverage_complete=not crawl.warnings)
+            result.warnings.extend(crawl.warnings)
+            unique, hashes = {}, []
+            zero_signals = []
+            for document in crawl.documents:
+                parsed = extract_jobs_from_page(document["html"], site_cfg, document["url"])
+                unique.update({job.key: job for job in parsed.jobs})
+                hashes.append(parsed.page_hash)
+                zero_signals.append(parsed.has_no_jobs_indicator)
+                if parsed.error:
+                    result.warnings.append(parsed.error)
+                # Public career-page evidence only; never browser cookies or credentials.
+                evidence_soup = BeautifulSoup(document["html"], "lxml")
+                for tag in evidence_soup.select("script, style, nav, footer, header, input"):
+                    tag.decompose()
+                result.evidence.append({"url": document["url"],
+                    "text": evidence_soup.get_text(" ", strip=True)[:18000],
+                    "links": [{"title": a.get_text(" ", strip=True)[:180],
+                               "url": canonical_url(a["href"], document["url"])}
+                              for a in evidence_soup.select("a[href]")][:300]})
+            result.jobs = list(unique.values())
+            result.page_hash = hashlib.sha256("".join(hashes).encode()).hexdigest()
+            result.has_no_jobs_indicator = bool(zero_signals) and all(zero_signals) and not result.jobs
+            if not result.jobs and not result.has_no_jobs_indicator:
+                result.warnings.append("No verifiable vacancy links extracted; inspect the career page manually.")
+            result.coverage = {"career_pages": crawl.visited, "listing_pages": len(crawl.documents),
+                               "candidates": len(result.jobs)}
 
             # Filter LinkedIn jobs to PE-relevant roles only
             if is_linkedin_url(site_url) and result.jobs:
@@ -977,6 +1018,9 @@ def scan_site_worker(site_cfg: dict) -> SiteResult:
                     log.info(f"  [{name}] Filtered out {filtered} non-PE jobs, kept {len(result.jobs)}")
 
             validate_jobs(result, site_cfg, context)
+            result.coverage_complete = result.coverage_complete and not result.warnings
+            result.coverage.update({"status": "checked" if result.coverage_complete else "needs_review",
+                                    "verified": len(result.jobs), "unverified": len(result.unverified_urls)})
             browser.close()
         return result
     except Exception as exc:
@@ -989,7 +1033,7 @@ def scan_site(site_cfg: dict, timeout: float) -> SiteResult:
         with tempfile.TemporaryDirectory(prefix="job-monitor-site-") as folder:
             config_path = Path(folder) / "site.json"
             result_path = Path(folder) / "result.json"
-            config_path.write_text(json.dumps(site_cfg), encoding="utf-8")
+            config_path.write_text(json.dumps(dict(site_cfg, _soft_timeout=max(1, timeout - 30))), encoding="utf-8")
             returncode = run_bounded(
                 [sys.executable, str(Path(__file__).resolve()), "--scan-site-worker",
                  str(config_path), str(result_path)], timeout,
@@ -1006,15 +1050,38 @@ def scan_site(site_cfg: dict, timeout: float) -> SiteResult:
     return SiteResult(name=site_cfg["name"], url=site_cfg["url"], error=error)
 
 
+def scan_many(sites, default_timeout, scan_timeout, workers=1):
+    """Browser processes stay isolated; results/state are handled in config order."""
+    deadline = time.monotonic() + scan_timeout
+    def run(site):
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return SiteResult(name=site["name"], url=site["url"],
+                              error="Not scanned: total scan time budget exhausted; previous results retained")
+        timeout = float(site.get("site_timeout_seconds", default_timeout))
+        if not math.isfinite(timeout) or timeout <= 0:
+            return SiteResult(name=site["name"], url=site["url"], error="Invalid per-source timeout")
+        return scan_site(site, min(timeout, remaining))
+    if int(workers) == 1:
+        for site in sites:
+            yield site, run(site)
+        return
+    with ThreadPoolExecutor(max_workers=max(1, min(int(workers), 4))) as pool:
+        yield from zip(sites, pool.map(run, sites))
+
+
 def write_scan_audit(results):
     """Checkpoint evidence without advancing the notification/state baseline."""
     audit = [{"name": r.name, "url": r.url, "error": r.error, "warnings": r.warnings,
+              "coverage_complete": r.coverage_complete and not r.error, "coverage": r.coverage,
               "verified_jobs": [{"title": j.title, "url": j.url, "location": j.location} for j in r.jobs]}
              for r in results]
     path = BASE_DIR / "scan_results.json"
     temporary = path.with_suffix(".tmp")
     temporary.write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
     temporary.replace(path)
+    (BASE_DIR / "scan_evidence.json").write_text(json.dumps(
+        [{"name": r.name, "documents": r.evidence} for r in results], ensure_ascii=False), encoding="utf-8")
 
 
 def main():
@@ -1066,6 +1133,7 @@ def main():
         return
 
     state = load_state()
+    old_health = state.get("source_health", {})
 
     if args.list:
         if not state["sites"]:
@@ -1115,17 +1183,10 @@ def main():
     feed_candidates: list[dict] = []
     linkedin_auth_failed = False
 
-    scan_deadline = time.monotonic() + scan_timeout
-    for site_cfg in config["sites"]:
+    for site_cfg, result in scan_many(config["sites"], site_timeout, scan_timeout, config.get("scan_workers", 1)):
         name, site_url = site_cfg["name"], site_cfg["url"]
         site_started = time.monotonic()
-        remaining = scan_deadline - site_started
         log.info(f"Checking: {name} ({site_url})")
-        if remaining <= 0:
-            result = SiteResult(name=name, url=site_url,
-                                error="Not scanned: total scan time budget exhausted; previous results retained")
-        else:
-            result = scan_site(site_cfg, min(site_timeout, remaining))
         if result.error:
             log.error(f"  [{name}] Error: {result.error}")
             if is_linkedin_url(site_url) and "LinkedIn authentication unavailable" in result.error:
@@ -1136,7 +1197,7 @@ def main():
                 log.warning(f"  [{name}] {warning}")
             for job in result.jobs:
                 log.info(f"    -> {job.title}")
-        log.info(f"  [{name}] Finished in {time.monotonic() - site_started:.1f}s")
+        log.info(f"  [{name}] Scan result recorded")
         results.append(result)
         diff = compute_diff(result, state)
         diff.tier = site_cfg.get("tier", "")
@@ -1196,6 +1257,12 @@ def main():
         tracker_error=tracker_error,
     )
 
+    health = {r.name: {"error": r.error, "warnings": sorted(set(r.warnings)),
+                       "coverage_complete": r.coverage_complete and not bool(r.error)} for r in results}
+    health_changed = health != old_health
+    actionable = any(d.new_jobs or d.removed_jobs for d in diffs) or health_changed or bool(tracker_error)
+    state["source_health"] = health
+
     # Determine if this is the first run
     is_first_run = any(d.is_first_run for d in diffs)
 
@@ -1224,7 +1291,7 @@ def main():
         log.info(f"Dry run - report saved to {report_path}")
         print(f"\nDry run complete. Report saved to: {report_path}")
     else:
-        if has_changes or is_first_run or args.always_email:
+        if actionable or is_first_run or args.always_email:
             try:
                 send_email(config, subject, html_body)
             except Exception as e:
@@ -1241,3 +1308,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -7,3 +7,11 @@ last_report.html
 scan_results.json
 com.jobmonitor.daily.plist
 linkedin_cookies.json
+
+.venv/
+.packages/
+.browsers/
+.tmp/
+scan_evidence.json
+quality_report.json
+ai_audit.json

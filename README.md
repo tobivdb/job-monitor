@@ -86,3 +86,51 @@ against the individual job's fields, never the entire board. A no-jobs indicator
 does not override actual vacancy candidates (many boards have hidden templates).
 Names must be unique. Existing priority tiers, sources and daily schedule are
 preserved by the September 2026 correction.
+
+
+## September 2026 coverage audit
+
+The daily schedule runs on GitHub-hosted Ubuntu runners. No laptop is required.
+`OPENAI_API_KEY` must be a secret in **this** repository. A secret in
+`Job-Tracker-Update` is not inherited. Never put a key in a config file or report.
+The optional Responses API review defaults to `gpt-5-mini`; override using the
+repository variable `OPENAI_AUDIT_MODEL`. Missing keys are explicitly reported as
+`skipped_missing_key`. The scanner itself does not require an OpenAI key.
+
+`site_crawl.py` traverses observed career links and linked ATS portals (two levels,
+12 career pages by default), preserves configured filters, and reads subsequent
+rendered listing pages (60 by default). Workday numbered pages, visible Next/Load
+More controls, Pictet page size and Oracle scrolling have bounded handling. A
+stuck or capped traversal is incomplete. Known changed URLs and official portals
+are configured explicitly. Four isolated browser workers may scan sources in
+parallel; state processing remains in configured order.
+
+Coverage is recorded per source in `scan_results.json`. `checked` means the
+observed documents and extracted candidates were processed successfully, not
+that all jobs on every possible subsite have been proven discovered. Unexplained
+zero results require review. Incomplete scans preserve previously verified jobs,
+including during parser migration. An HTTP error or incomplete pagination fails
+the separate coverage check even if the scanner process completed successfully.
+
+`python verify_scan.py --live` runs a read-only regression sample against Pinova,
+Afinum, Egeria and ICG. Pull requests run unit tests and this live sample in
+separate jobs without repository secrets. A full read-only scan can be dispatched
+on a branch using `dry_run`; production scans and state commits require main.
+The fixed source sample can legitimately fail if all a company's adverts close;
+inspect the evidence rather than weakening the gate without review.
+
+The optional AI review samples up to 12 sources daily and 40 on Sundays, including
+a rotating sample of apparently healthy sources. Each request is bounded to three
+page excerpts, 180 observed links, 1,800 output tokens and a 60-second timeout;
+there are no automatic retries. This is a cost-bounded second opinion, not an
+independent full crawl or a completeness guarantee. Suggestions must reference
+observed link IDs and remain review-only in `ai_audit.json`. They never enter the
+CV queue or modify source health. Requests contain only public career-page data,
+use `store=false`, and have no tools. Authentication/rate-limit failures are
+reported without response bodies or credentials. See the official
+[Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).
+
+Daily emails are sent for job changes or changed source health. Repeated unchanged
+warnings no longer force an email. All sources and current warnings remain in the
+HTML/JSON artifacts (seven-day retention). API findings appear in the artifact and
+Actions summary; they do not send an additional email.
