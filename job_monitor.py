@@ -401,6 +401,8 @@ def validate_jobs(result: SiteResult, config: dict, context):
             break
         page = context.new_page()
         try:
+            if config.get("request_delay_seconds"):
+                page.wait_for_timeout(min(10, float(config["request_delay_seconds"])) * 1000)
             final_url, description = verify_detail(page, job, config)
             job.url = final_url
             verified[job.key] = job
@@ -619,16 +621,16 @@ def feed_tracker(candidates: list[dict], state: dict) -> list[dict]:
     existing = sheets.spreadsheets().values().get(
         spreadsheetId=sheet_id, range="A:A"
     ).execute().get("values", [])
-    known_urls = {canonical_url(row[0]) for row in existing if row}
+    known_urls = {vacancy_identity(row[0]) for row in existing if row}
     unique = []
     for cand in candidates:
         job = cand["job"]
         if not job.url:
             continue
-        if canonical_url(job.url) in known_urls:
+        if vacancy_identity(job.url) in known_urls:
             fed_state[job.key] = {"title": job.title, "company": cand["site"].name, "date": "already in sheet"}
             continue
-        known_urls.add(canonical_url(job.url))
+        known_urls.add(vacancy_identity(job.url))
         unique.append(cand)
     candidates = unique
     if not candidates:

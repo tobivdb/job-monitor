@@ -92,10 +92,17 @@ def next_control(page, page_number):
 
 def wait_changed(page, previous, timeout=12):
     deadline = time.monotonic() + timeout
+    stable, stable_since = '', 0
     while time.monotonic() < deadline:
         html = page.content()
-        if vacancy_urls(html, page.url) and fingerprint(html, page.url) != previous:
-            return html
+        current = fingerprint(html, page.url)
+        if vacancy_urls(html, page.url) and current != previous:
+            if current != stable:
+                stable, stable_since = current, time.monotonic()
+            elif time.monotonic() - stable_since >= 0.5:
+                return html
+        else:
+            stable = ''
         page.wait_for_timeout(250)
     raise ValueError('Pagination did not expose different vacancy links')
 
@@ -120,7 +127,7 @@ def check_declared_count(documents):
     return ''
 
 
-def collect_board(page, crawl, max_pages, deadline):
+def collect_board(page, crawl, max_pages, deadline, request_delay=0):
     """Capture each rendered page once; unknown or stuck pagination is incomplete."""
     try:
         selector = page.get_by_role('combobox', name='Items per page').first
@@ -154,6 +161,8 @@ def collect_board(page, crawl, max_pages, deadline):
                 crawl.warnings.append('Pagination reached the configured page limit before the last page.')
                 return
             try:
+                if request_delay:
+                    page.wait_for_timeout(request_delay * 1000)
                 control.click(timeout=8000)
                 wait_changed(page, signature)
             except Exception:
@@ -206,7 +215,7 @@ def crawl_careers(context, config, fetch_page, deadline):
                 html, final = fetch_page(url, context, with_url=True, job_button_selector=config['job_button_selector'])
                 crawl.documents.append({'url': final, 'html': html})
             else:
-                collect_board(page, crawl, max_pages, deadline)
+                collect_board(page, crawl, max_pages, deadline, min(10, float(config.get("request_delay_seconds", 0))))
             mismatch = check_declared_count(crawl.documents[start:])
             if mismatch:
                 crawl.warnings.append(mismatch)

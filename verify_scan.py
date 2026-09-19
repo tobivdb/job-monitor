@@ -14,7 +14,7 @@ def assess(results, expected_names):
         if result.get('error'):
             issues.append(result['name'] + ': source failed')
         for warning in result.get('warnings', []):
-            if any(token in warning.lower() for token in ('pagination', 'next page', 'time budget', 'unvisited', 'configured page limit')):
+            if any(token in warning.lower() for token in ('pagination', 'next page', 'time budget', 'unvisited', 'configured page limit', 'rate limited', 'could not be read')):
                 issues.append(result['name'] + ': ' + warning)
     return issues
 

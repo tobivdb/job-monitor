@@ -229,7 +229,8 @@
     {
       "name": "Partners Group",
       "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group",
-      "site_timeout_seconds": 600
+      "site_timeout_seconds": 900,
+      "request_delay_seconds": 3
     },
     {
       "name": "Alpha Associates",

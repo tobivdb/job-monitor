@@ -279,7 +279,9 @@ def verify_detail(page, job, config):
     if response is not None and response.status == 429:
         # Respect Retry-After with a bounded single retry; never hammer a blocked board.
         delay = response.headers.get("retry-after", "5")
-        delay = min(30, max(5, int(delay))) if str(delay).isdigit() else 5
+        delay = max(5, int(delay)) if str(delay).isdigit() else 5
+        if delay > 30:
+            raise RateLimited("Retry-After exceeds the bounded wait; defer this source")
         page.wait_for_timeout(delay * 1000)
         response = page.goto(job.url, wait_until="domcontentloaded", timeout=20000)
         if response is not None and response.status == 429:

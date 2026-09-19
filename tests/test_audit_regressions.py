@@ -100,6 +100,13 @@ class AuditRegressionTests(unittest.TestCase):
         verified,_=verify_detail(page,monitor.JobEntry('Transaction Manager',url),{'name':'TMF','url':'https://tmf.avature.net/careersmarketplace/SearchJobs'})
         self.assertEqual(verified,url)
 
+    def test_long_retry_after_defers_without_early_retry(self):
+        from job_sources import RateLimited
+        page=MagicMock();page.goto.return_value.status=429;page.goto.return_value.headers={'retry-after':'120'}
+        with self.assertRaises(RateLimited):
+            verify_detail(page,monitor.JobEntry('Associate','https://fund.test/job/1'),{'name':'Fund','url':'https://fund.test/jobs'})
+        self.assertEqual(page.goto.call_count,1)
+
     def test_page_counter_change_alone_is_not_new_content(self):
         a='<span>Page 1</span><a href="/job/1">Associate</a>'
         b='<span>Page 2</span><a href="/job/1">Associate</a>'
