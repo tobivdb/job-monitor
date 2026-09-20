@@ -70,8 +70,9 @@
     },
     {
       "name": "Invision",
-      "url": "https://www.invision.ch/uber-uns/arbeiten-mit-invision/",
-      "tier": "EU"
+      "url": "https://invision-ag.jobs.personio.de/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.invision.ch/uber-uns/arbeiten-mit-invision/"
     },
     {
       "name": "Kowema",
@@ -93,8 +94,8 @@
     },
     {
       "name": "HBM Partners",
-      "url": "https://www.hbmpartners.com/en/about-us/team/",
-      "notes": "Team page - monitors for career section appearing",
+      "url": "https://www.hbmpartners.com/",
+      "notes": "Team page - monitors for career section appearing Official source rechecked 2026-09-20; previous URL: https://www.hbmpartners.com/en/about-us/team/",
       "tier": "EU"
     },
     {
@@ -188,7 +189,8 @@
       "name": "ICG",
       "url": "https://icg.wd3.myworkdayjobs.com/external_careers",
       "notes": "Workday job board",
-      "tier": "D"
+      "tier": "D",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Equistone Partners",
@@ -211,7 +213,8 @@
       "name": "LGT Capital Partners",
       "url": "https://lgtcp.wd502.myworkdayjobs.com/lgtcpcurrentvacancies?workerSubType=8e79cea3a59c01010c834ff8eac70002",
       "notes": "Workday job board",
-      "tier": "E"
+      "tier": "E",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Capital Dynamics",
@@ -226,12 +229,15 @@
     },
     {
       "name": "Partners Group",
-      "url": "https://www.partnersgroup.com/en/careers/open-positions"
+      "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group",
+      "site_timeout_seconds": 1200,
+      "request_delay_seconds": 10
     },
     {
       "name": "Alpha Associates",
-      "url": "https://alpha-associates.ch/en/about-us/career",
-      "tier": "E"
+      "url": "https://alpha-associates.ch/en/careers",
+      "tier": "E",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://alpha-associates.ch/en/about-us/career"
     },
     {
       "name": "Flexstone Partners",
@@ -248,7 +254,8 @@
       "name": "Banque Pictet",
       "url": "https://career012.successfactors.eu/career?company=banquepict&career%5fns=job%5flisting%5fsummary&navBarLevel=JOB%5fSEARCH&_s.crb=goWcBV6ydpoUR8QXwrTYwBURPdodsHnsugNByRmQ73w%3d",
       "notes": "SuccessFactors job board",
-      "tier": "E"
+      "tier": "E",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Permira",
@@ -286,7 +293,8 @@
       "name": "Triton Partners",
       "url": "https://tritonpartners.wd3.myworkdayjobs.com/External",
       "notes": "Workday job board",
-      "tier": "EU"
+      "tier": "EU",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Montagu",
@@ -353,8 +361,10 @@
     },
     {
       "name": "Mutares",
-      "url": "https://career.mutares.de/",
-      "tier": "EU"
+      "url": "https://career.mutares.com/jobs",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://career.mutares.de/",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Cinven",
@@ -396,7 +406,8 @@
       "name": "EKBQ Careers",
       "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
       "notes": "Oracle HCM job board",
-      "tier": "E"
+      "tier": "E",
+      "site_timeout_seconds": 600
     },
     {
       "name": "SUSI Partners",
@@ -405,8 +416,10 @@
     },
     {
       "name": "UCP",
-      "url": "https://ucp.ch/en/career/",
-      "tier": "EU"
+      "url": "https://ufenau-capital-partners.jobs.personio.com/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://ucp.ch/en/career/",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Wille Finance",
@@ -427,7 +440,8 @@
     {
       "name": "Novastone",
       "url": "https://novastone-ca.careers/",
-      "tier": "B"
+      "tier": "B",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Blue Earth Capital",
@@ -437,8 +451,9 @@
     },
     {
       "name": "BM|T",
-      "url": "https://www.bm-t.de/careers/",
-      "tier": "EU"
+      "url": "https://www.bm-t.de/team-vc-investoren-beteiligungsexperten-in-thueringen/stellenangebote/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.bm-t.de/careers/"
     },
     {
       "name": "41 Group",
@@ -478,12 +493,16 @@
     {
       "name": "Egeria Group",
       "url": "https://egeriagroup.com/career/",
-      "tier": "EU"
+      "tier": "EU",
+      "career_urls": [
+        "https://egeria.recruitee.com/"
+      ]
     },
     {
       "name": "Avedon Capital",
-      "url": "https://avedoncapital.com/career/internship-amsterdam/",
-      "tier": "EU"
+      "url": "https://avedoncapital.com/our-people/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://avedoncapital.com/career/internship-amsterdam/"
     },
     {
       "name": "Bolster Investments",
@@ -502,8 +521,9 @@
     },
     {
       "name": "TMF Group",
-      "url": "https://www.tmf-group.com/en/careers/",
-      "tier": "EU"
+      "url": "https://tmf.avature.net/careersmarketplace/SearchJobs",
+      "tier": "EU",
+      "site_timeout_seconds": 900
     },
     {
       "name": "Committed Capital",
@@ -523,7 +543,7 @@
     },
     {
       "name": "MRH Trowe",
-      "url": "https://www.mrh-trowe.com/service/jobs/",
+      "url": "https://jobs.mrh-trowe.com/stellenangebote.html",
       "tier": "EU"
     },
     {
@@ -533,8 +553,9 @@
     },
     {
       "name": "Halder",
-      "url": "https://www.halder.eu/job-opportunities",
-      "tier": "EU"
+      "url": "https://www.halder.eu/en/about/careers/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.halder.eu/job-opportunities"
     },
     {
       "name": "Yttrium",
@@ -609,7 +630,10 @@
     {
       "name": "Hayfin",
       "url": "https://www.hayfin.com/people/working-at-hayfin/",
-      "tier": "EU"
+      "tier": "EU",
+      "career_urls": [
+        "https://www.hayfin.com/people/working-at-hayfin/current-opportunities/"
+      ]
     },
     {
       "name": "Limerston Capital",
@@ -649,7 +673,10 @@
     {
       "name": "Tenzing PE",
       "url": "https://tenzing.pe/careers/",
-      "tier": "EU"
+      "tier": "EU",
+      "career_urls": [
+        "https://tenzingprivateequity.careers.hibob.com/"
+      ]
     },
     {
       "name": "Scaleup Capital",
@@ -658,8 +685,9 @@
     },
     {
       "name": "Sun European Partners",
-      "url": "https://suneuropeanpartners.com/careers/",
-      "tier": "EU"
+      "url": "https://suneuropeanpartners.com/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://suneuropeanpartners.com/careers/"
     },
     {
       "name": "Henley Investment Management",
@@ -723,8 +751,9 @@
     },
     {
       "name": "Northstar VC",
-      "url": "https://northstar.vc/careers",
-      "tier": "EU"
+      "url": "https://www.northstar.vc/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://northstar.vc/careers"
     },
     {
       "name": "IRCP",
@@ -795,12 +824,16 @@
     {
       "name": "Afinum",
       "url": "https://afinum.de/jobs/",
-      "tier": "D"
+      "tier": "D",
+      "career_urls": [
+        "https://afinum-management-gmbh.jobs.personio.de/"
+      ]
     },
     {
       "name": "Maxburg",
-      "url": "https://maxburg.com/en/jobs",
-      "tier": "EU"
+      "url": "https://maxburg.com/karriere.html",
+      "tier": "EU",
+      "inline_vacancies": "h2"
     },
     {
       "name": "Callista PE",
@@ -810,7 +843,10 @@
     {
       "name": "Emeram",
       "url": "https://emeram.com/de/karriere",
-      "tier": "EU"
+      "tier": "EU",
+      "career_urls": [
+        "https://emeram-capital-partners-gmbh.jobs.personio.com/"
+      ]
     },
     {
       "name": "Armira Beteiligungen",
@@ -820,8 +856,17 @@
     },
     {
       "name": "Pinova Capital",
-      "url": "https://www.pinovacapital.com/karriere/#positions",
-      "tier": "EU"
+      "url": "https://www.pinovacapital.com/en/career/",
+      "tier": "EU",
+      "career_urls": [
+        "https://www.pinovacapital.com/en/career/analyst/",
+        "https://www.pinovacapital.com/en/career/associate/"
+      ],
+      "self_posting_paths": [
+        "/en/career/analyst/",
+        "/en/career/associate/"
+      ],
+      "navigation_wait_until": "commit"
     },
     {
       "name": "MTIP",
@@ -876,7 +921,10 @@
     },
     {
       "name": "HQ Capital",
-      "url": "https://hqcapital.com/de/karriere"
+      "url": "https://hqcapital.com/de/karriere",
+      "career_urls": [
+        "https://hq-capital-deutschland-gmbh.jobs.personio.de/"
+      ]
     },
     {
       "name": "Nordic Capital",
@@ -925,7 +973,8 @@
       "name": "Edmond de Rothschild PE",
       "url": "https://evht.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_7001/jobs",
       "notes": "external job board (Oracle Cloud Recruiting) - group-wide EdR job search incl (added from PE Funds Tracker, 2026-07-03)",
-      "tier": "EU"
+      "tier": "EU",
+      "site_timeout_seconds": 600
     },
     {
       "name": "RIVE Private Investment",
@@ -942,7 +991,8 @@
       "name": "Muzinich & Co.",
       "url": "https://muzinich.wd5.myworkdayjobs.com/muzinichcareers",
       "notes": "external job board (Workday) - lists all Muzinich openings incl (added from PE Funds Tracker, 2026-07-03)",
-      "tier": "D"
+      "tier": "D",
+      "site_timeout_seconds": 600
     },
     {
       "name": "HarbourVest Partners",
@@ -955,7 +1005,8 @@
         "/job/z%c3%bcrich/"
       ],
       "notes": "external Workday board - global openings; allowlisted to European offices in London, Dublin, Frankfurt, and Zürich",
-      "tier": "E"
+      "tier": "E",
+      "site_timeout_seconds": 600
     },
     {
       "name": "3TS Capital Partners",
@@ -965,8 +1016,8 @@
     },
     {
       "name": "Aravis SA",
-      "url": "https://www.aravis.ch/contact",
-      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "url": "https://www.aravis.ch/",
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.aravis.ch/contact",
       "tier": "EU"
     },
     {
@@ -977,8 +1028,8 @@
     },
     {
       "name": "BWK GmbH",
-      "url": "https://www.bwk.de/jobs/",
-      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03)",
+      "url": "https://www.bwk.de/",
+      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.bwk.de/jobs/",
       "tier": "EU"
     },
     {
@@ -1077,8 +1128,8 @@
     },
     {
       "name": "Capcellence",
-      "url": "https://www.capcellence.de/menschen/karriere/",
-      "notes": "career page (under 'Menschen' section (added from PE Funds Tracker, 2026-07-03)"
+      "url": "https://www.capcellence.de/menschen/#karriere",
+      "notes": "career page (under 'Menschen' section (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.capcellence.de/menschen/karriere/"
     },
     {
       "name": "Gaius Capital",
@@ -1088,7 +1139,8 @@
     {
       "name": "H.I.G. Capital",
       "url": "https://higcapital.wd5.myworkdayjobs.com/LinkedIn",
-      "notes": "career page (Workday job board, global incl (added from PE Funds Tracker, 2026-07-03)"
+      "notes": "career page (Workday job board, global incl (added from PE Funds Tracker, 2026-07-03)",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Hypax",
@@ -1134,5 +1186,8 @@
       "B"
     ],
     "_comment": "New investment-team roles at these tiers are auto-appended to the Job Ad Overview V2 sheet for the nightly CV run. Requires GOOGLE_* secrets in the workflow."
-  }
+  },
+  "site_timeout_seconds": 240,
+  "scan_timeout_seconds": 4500,
+  "scan_workers": 4
 }

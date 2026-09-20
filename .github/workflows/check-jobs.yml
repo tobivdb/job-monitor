@@ -2,27 +2,29 @@ name: Check Job Postings
 
 on:
   schedule:
-    # Runs at 07:00 UTC = 09:00 CEST / 08:00 CET every day
     - cron: '0 7 * * *'
   workflow_dispatch:
     inputs:
       email_test:
-        description: Send a fast SMTP test without scanning career sites
+        description: Send an SMTP test without scanning career sites
         required: false
         default: false
+        type: boolean
+      dry_run:
+        description: Read-only full scan (no email, tracker or saved state)
+        required: false
+        default: true
         type: boolean
   pull_request:
     paths:
       - '.github/workflows/check-jobs.yml'
-      - 'job_monitor.py'
-      - 'job_sources.py'
-      - 'scan_process.py'
+      - '*.py'
       - 'config.github.json'
       - 'requirements.txt'
       - 'tests/**'
 
 permissions:
-  contents: write  # Needed to commit state.json back
+  contents: read
 
 concurrency:
   group: job-monitor-${{ github.ref }}
@@ -33,49 +35,57 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python -m compileall -q job_monitor.py job_sources.py site_crawl.py scan_process.py ai_audit.py verify_scan.py export_linkedin_cookies.py
+      - run: python -m unittest discover -s tests -v
 
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt
-
-      - name: Validate Python and run regression tests
-        run: |
-          python -m py_compile job_monitor.py job_sources.py scan_process.py export_linkedin_cookies.py
-          python -m unittest discover -s tests -v
+  live-regressions:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: playwright install --with-deps chromium
+      - name: Verify public career sources without side effects
+        run: python verify_scan.py --live
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-regression-evidence
+          path: |
+            scan_results.json
+            quality_report.json
+            scan_evidence.json
+          retention-days: 7
 
   check-jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 100
+    permissions:
+      contents: write
     env:
       EMAIL_TEST: ${{ github.event_name == 'workflow_dispatch' && inputs.email_test || false }}
-
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          if [ "$EMAIL_TEST" != "true" ]; then
-            playwright install chromium
-            playwright install-deps chromium
-          fi
-
+      - run: pip install -r requirements.txt
+      - if: env.EMAIL_TEST != 'true'
+        run: playwright install --with-deps chromium
       - name: Run job monitor
+        id: scan
         env:
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
@@ -83,7 +93,6 @@ jobs:
           SMTP_SERVER: smtp.gmail.com
           SMTP_PORT: 587
           LINKEDIN_COOKIES: ${{ secrets.LINKEDIN_COOKIES }}
-          # CV-pipeline feed (optional): same secrets as the Job-Tracker-Update repo.
           GOOGLE_OAUTH_CLIENT_JSON: ${{ secrets.GOOGLE_OAUTH_CLIENT_JSON }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN || secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
@@ -91,11 +100,38 @@ jobs:
         run: |
           if [ "$EMAIL_TEST" = "true" ]; then
             python job_monitor.py --config config.github.json --email-test
+          elif [ "$DRY_RUN" = "true" ]; then
+            python job_monitor.py --config config.github.json --dry-run
+          elif [ "$GITHUB_REF" = "refs/heads/main" ]; then
+            python job_monitor.py --config config.github.json
           else
-            python job_monitor.py --config config.github.json --always-email
+            echo 'Production scans are restricted to main. Select dry_run for branch testing.'
+            exit 1
           fi
-
-      - name: Upload scan report and verification results
+      - name: Save delivered state
+        if: env.EMAIL_TEST != 'true' && env.DRY_RUN != 'true' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Update state.json [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Check scan coverage
+        if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
+        run: python verify_scan.py --operational
+      - name: Optional OpenAI second opinion
+        if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_AUDIT_MODEL: ${{ vars.OPENAI_AUDIT_MODEL || 'gpt-5-mini' }}
+        run: |
+          limit=12
+          if [ "$(date -u +%u)" = "7" ]; then limit=40; fi
+          python ai_audit.py --limit "$limit"
+      - name: Upload scan evidence
         if: always() && env.EMAIL_TEST != 'true'
         uses: actions/upload-artifact@v4
         with:
@@ -103,17 +139,8 @@ jobs:
           path: |
             last_report.html
             scan_results.json
-          if-no-files-found: ignore
+            scan_evidence.json
+            quality_report.json
+            ai_audit.json
           retention-days: 7
-
-      - name: Save state
-        if: env.EMAIL_TEST != 'true'
-        run: |
-          git config user.name "Job Monitor Bot"
-          git config user.email "bot@job-monitor"
-          git add state.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update state.json [skip ci]"
-            git pull --rebase origin main
-            git push
-          fi
+          if-no-files-found: warn

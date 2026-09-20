@@ -14,7 +14,7 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
 
-EXTRACTOR_VERSION = 2
+EXTRACTOR_VERSION = 3
 TRACKING_PARAMS = {
     "trk", "trackingid", "refid", "origin", "originalsubdomain", "source",
     "_s.crb", "browsertimezone", "selected_lang", "rcm_site_locale",
@@ -23,20 +23,21 @@ TRACKING_PARAMS = {
 NON_JOB_TEXT = re.compile(
     r"(?:\b(?:talent|associate)\s+(?:pool|community)|speculative|unsolicited|"
     r"initiativbewerbung|spontanbewerbung|working\s+student|"
-    r"\b(?:our|meet the|unser)\s+team\b|\b(?:career as|what our|was unsere)\b|"
-    r"\b(?:associate|analyst),?\s+20\d{2}\b)", re.I
+    r"\b(?:our|meet the|unser)\s+team\b|\b(?:career as|what our|was unsere)\b)", re.I
 )
 ROLE_WORDS = re.compile(
     r"\b(?:manager|analyst|specialist|director|associate|engineer|developer|"
     r"consultant|controller|accountant|assistant|coordinator|officer|principal|"
     r"partner|head|lead|professional|executive|investment|investments|"
+    r"vice\s+president|vp|avp|counsel|paralegal|receptionist|architect|dealer|"
+    r"chief|ceo|cfo|credit|finanzbuchhalter|"
     r"referent|buchhalter|assistenz|mitarbeiter|jurist|banquier|affaires)\b|"
     r"\([mfw][/\w -]+\)", re.I
 )
 CLOSED_TEXT = re.compile(
     r"(?:this (?:job|position|vacancy) (?:is no longer|has been)|"
-    r"job (?:is no longer available|not found)|position has been filled|"
-    r"no longer accepting applications|stelle (?:ist nicht mehr|wurde besetzt)|"
+    r"job (?:is no longer (?:available|open)|not found)|position has been filled|"
+    r"no longer accepting applications|vacancy is (?:now )?closed|job is (?:now )?closed|stelle (?:ist nicht mehr|wurde besetzt)|"
     r"stellenangebot (?:ist nicht mehr|nicht gefunden)|vacancy has expired)", re.I
 )
 BLOCKED_TEXT = re.compile(
@@ -53,7 +54,7 @@ def is_linkedin(url):
 def canonical_url(value, base=""):
     """Resolve against the final document URL; retain functional query fields."""
     value = html.unescape(str(value or "")).strip()
-    if not value or value.startswith("#"):
+    if not value or value.startswith(("#", "[", "{")):
         return ""
     try:
         parts = urlsplit(urljoin(base, value))
@@ -71,6 +72,16 @@ def canonical_url(value, base=""):
         return ""
 
 
+def vacancy_identity(url):
+    value = canonical_url(url)
+    parts = urlsplit(value)
+    if re.search(r"\.jobs\.personio\.(de|com)$", parts.hostname or ""):
+        host = re.sub(r"\.com$", ".de", parts.netloc)
+        query = [(k,v) for k,v in parse_qsl(parts.query) if k != "language"]
+        return urlunsplit((parts.scheme, host, parts.path.rstrip('/'), urlencode(query), ''))
+    return value
+
+
 def is_detail_url(url):
     if not canonical_url(url):
         return False
@@ -79,12 +90,18 @@ def is_detail_url(url):
     query = dict(parse_qsl(parts.query))
     if is_linkedin(url):
         return bool(re.fullmatch(r"/jobs/view/\d+", path))
-    if any(query.get(k) for k in ("career_job_req_id", "gh_jid", "jobId", "jobid", "requisitionId")):
+    if re.search(r"/(?:searchjobs|register)/?$", path):
+        return False
+    if any(query.get(k) for k in ("career_job_req_id", "gh_jid", "jobId", "jobid", "requisitionId", "vacancyNo")):
+        return True
+    if re.search(r"-j\d+\.html$", path):
+        return True
+    if parts.hostname == "app.skeeled.com" and re.fullmatch(r"/offer/c/[a-f0-9]{24}", path):
         return True
     if path.endswith(".pdf"):
         return True
     return bool(re.search(
-        r"/(?:jobs?|job-details|stellen?|stellenangebote|careers?|vacanc(?:y|ies)|"
+        r"/(?:jobs?|job-details|jobdetail|stellen?|stellenangebote?|karriere|careers?|vacanc(?:y|ies)|"
         r"positions?|o|p)/(?!(?:search|search-results|categories|locations|teams|"
         r"departments|page|all|open-positions)(?:/|$))[^/]+", path
     ))
@@ -127,7 +144,9 @@ def plain(value):
     return re.sub(r"\s+", " ", BeautifulSoup(str(value or ""), "html.parser").get_text(" ", strip=True)).strip()
 
 
-def title_matches(title, text):
+def title_matches(title, text, location=""):
+    if location:
+        title = re.sub(r"[\s,|()\-]+" + re.escape(location) + r"\s*$", "", title, flags=re.I)
     # Some ATS listings append employment terms that the ad heading omits.
     title = re.sub(r"\s+-\s+(?:Permanent Contract|Fixed.term Contract)\b.*$", "", title, flags=re.I)
     def words(value):
@@ -179,6 +198,15 @@ def candidates(soup, config, final_url):
                 locations.extend(str(address.get(k, "")) for k in ("addressLocality", "addressCountry"))
         yield plain(posting.get("title")), link, " ".join(locations).strip(), plain(posting.get("description"))
 
+    if urlsplit(final_url).path in config.get("self_posting_paths", []) or config.get("inline_vacancies"):
+        headings = soup.select("h1")
+        if config.get("inline_vacancies"):
+            headings = soup.select(config["inline_vacancies"])
+        for heading in headings:
+            title = heading.get_text(" ", strip=True)
+            if ROLE_WORDS.search(title) and not NON_JOB_TEXT.search(title):
+                yield title, canonical_url(final_url), "", heading.parent.get_text(" ", strip=True)[:2000]
+
     for anchor in soup.find_all("a", href=True):
         if anchor.find_parent(["nav", "header", "footer"]):
             continue
@@ -186,8 +214,19 @@ def candidates(soup, config, final_url):
         if not is_detail_url(link) or link == canonical_url(final_url):
             continue
         text = anchor.get_text(" ", strip=True)
+        if not text and anchor.get("aria-labelledby"):
+            labels = [soup.find(id=identifier) for identifier in anchor["aria-labelledby"].split()]
+            pieces = []
+            for label in labels:
+                if label is not None:
+                    title_label = label.select_one(".job-tile__title") or label
+                    pieces.append(title_label.get_text(" ", strip=True))
+            text = " ".join(pieces)
+        text = text or anchor.get("aria-label", "")
         # Prefer a title inside the actual link, never an unrelated sibling heading.
         heading = anchor.find(["h2", "h3", "h4", "h5", "strong"])
+        if urlsplit(link).hostname == "app.skeeled.com":
+            heading = anchor.select_one(".v-card-title") or heading
         title = heading.get_text(" ", strip=True) if heading else text
         container = anchor
         if not ROLE_WORDS.search(title) or title.lower() in {"details", "apply", "apply now", "mehr erfahren", "read more"}:
@@ -214,6 +253,10 @@ def candidates(soup, config, final_url):
             yield title, link, "", container.get_text(" ", strip=True)
 
 
+class RateLimited(ValueError):
+    """The origin asked us to slow down; retain prior evidence and stop this source."""
+
+
 def verify_detail(page, job, config):
     """Fail closed on blocked, closed, redirected-to-listing or mismatched pages.
 
@@ -229,26 +272,41 @@ def verify_detail(page, job, config):
                 raise ValueError("PDF vacancy exceeds the verification size limit")
             reader = PdfReader(io.BytesIO(data))
             text = " ".join(p.extract_text() or "" for p in reader.pages[:20])
-            if CLOSED_TEXT.search(text) or not title_matches(job.title, text) or len(text) < 300:
+            if CLOSED_TEXT.search(text) or not title_matches(job.title, text, job.location) or len(text) < 300:
                 raise ValueError("PDF title/content not verified")
             if not re.search(r"\b(apply|application|responsibilities|requirements|qualifications|bewerben|bewerbung|aufgaben|profil)\b", text, re.I):
                 raise ValueError("PDF has no vacancy/application evidence")
             return canonical_url(response.url), text[:12000]
         finally:
             response.dispose()
-    response = page.goto(job.url, wait_until="domcontentloaded", timeout=20000)
+    response = page.goto(job.url, wait_until=config.get("navigation_wait_until", "domcontentloaded"), timeout=20000)
+    if response is not None and response.status == 429:
+        # Respect Retry-After with a bounded single retry; never hammer a blocked board.
+        delay = response.headers.get("retry-after", "5")
+        delay = max(5, int(delay)) if str(delay).isdigit() else 5
+        if delay > 30:
+            raise RateLimited("Retry-After exceeds the bounded wait; defer this source")
+        page.wait_for_timeout(delay * 1000)
+        response = page.goto(job.url, wait_until=config.get("navigation_wait_until", "domcontentloaded"), timeout=20000)
+        if response is not None and response.status == 429:
+            raise RateLimited("Source rate limit persists after Retry-After; remaining details deferred")
     if response is None or response.status >= 400:
         raise ValueError(f"Job detail HTTP {response.status if response else 'no response'}")
     final = canonical_url(page.url)
-    if not final or final == canonical_url(config["url"]) and not is_detail_url(final):
+    if not final or final == canonical_url(config["url"]) and not is_detail_url(final) and not config.get("inline_vacancies"):
         raise ValueError("Job link redirects to the career overview")
     if is_linkedin(job.url) and not is_detail_url(final):
         raise ValueError("LinkedIn job link redirects to search or login")
     if "application/pdf" in response.headers.get("content-type", ""):
         raise ValueError("PDF vacancy requires manual verification")
-    page.wait_for_timeout(1500)
     try:
-        page.locator("h1, h2, h3").filter(has_text=job.title).first.wait_for(state="attached", timeout=8000)
+        expected_title = re.sub(r"\s+-\s+(?:Permanent Contract|Fixed.term Contract)\b.*$", "", job.title, flags=re.I)
+        if job.location:
+            expected_title = re.sub(r"[\s,|()\-]+" + re.escape(job.location) + r"\s*$", "", expected_title, flags=re.I)
+        title_selector = "h1, h2, h3"
+        if urlsplit(job.url).hostname == "app.skeeled.com":
+            title_selector += ", .text-display-large"
+        page.locator(title_selector).filter(has_text=re.compile(re.escape(expected_title), re.I)).first.wait_for(state="attached", timeout=8000)
     except Exception:
         pass  # JSON-LD can supply evidence even without a rendered heading.
     soup = BeautifulSoup(page.content(), "lxml")
@@ -259,7 +317,7 @@ def verify_detail(page, job, config):
         raise ValueError("Job detail is closed or blocked")
     postings = list(job_postings(soup))
     for posting in postings:
-        if title_matches(job.title, plain(posting.get("title"))):
+        if title_matches(job.title, plain(posting.get("title")), job.location):
             if expired(posting):
                 raise ValueError("JobPosting has expired")
             if not employer_matches(soup, config, posting):
@@ -277,8 +335,10 @@ def verify_detail(page, job, config):
         raise ValueError("Job detail says the vacancy is closed or unavailable")
     if BLOCKED_TEXT.search(text[:2000]):
         raise ValueError("Job detail blocked by access protection")
-    headings = content.find_all(["h1", "h2", "h3"])
-    if not any(title_matches(job.title, h.get_text(" ", strip=True)) for h in headings):
+    headings = (soup if is_detail_url(final) else content).find_all(["h1", "h2", "h3"])
+    if urlsplit(final).hostname == "app.skeeled.com":
+        headings += soup.select(".text-display-large")
+    if not any(title_matches(job.title, h.get_text(" ", strip=True), job.location) for h in headings):
         raise ValueError("Job title not confirmed on the detail page")
     if not employer_matches(content, config):
         raise ValueError("LinkedIn employer does not match monitored company")
@@ -291,3 +351,4 @@ def verify_detail(page, job, config):
     if not is_detail_url(final) and len(postings) > 1:
         raise ValueError("Link resolves to a multi-job overview")
     return final, text[:12000]
+
