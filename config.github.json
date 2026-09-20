@@ -70,8 +70,9 @@
     },
     {
       "name": "Invision",
-      "url": "https://www.invision.ch/uber-uns/arbeiten-mit-invision/",
-      "tier": "EU"
+      "url": "https://invision-ag.jobs.personio.de/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.invision.ch/uber-uns/arbeiten-mit-invision/"
     },
     {
       "name": "Kowema",
@@ -93,8 +94,8 @@
     },
     {
       "name": "HBM Partners",
-      "url": "https://www.hbmpartners.com/en/about-us/team/",
-      "notes": "Team page - monitors for career section appearing",
+      "url": "https://www.hbmpartners.com/",
+      "notes": "Team page - monitors for career section appearing Official source rechecked 2026-09-20; previous URL: https://www.hbmpartners.com/en/about-us/team/",
       "tier": "EU"
     },
     {
@@ -234,8 +235,9 @@
     },
     {
       "name": "Alpha Associates",
-      "url": "https://alpha-associates.ch/en/about-us/career",
-      "tier": "E"
+      "url": "https://alpha-associates.ch/en/careers",
+      "tier": "E",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://alpha-associates.ch/en/about-us/career"
     },
     {
       "name": "Flexstone Partners",
@@ -359,8 +361,10 @@
     },
     {
       "name": "Mutares",
-      "url": "https://career.mutares.de/",
-      "tier": "EU"
+      "url": "https://career.mutares.com/jobs",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://career.mutares.de/",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Cinven",
@@ -412,8 +416,10 @@
     },
     {
       "name": "UCP",
-      "url": "https://ucp.ch/en/career/",
-      "tier": "EU"
+      "url": "https://ufenau-capital-partners.jobs.personio.com/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://ucp.ch/en/career/",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Wille Finance",
@@ -434,7 +440,8 @@
     {
       "name": "Novastone",
       "url": "https://novastone-ca.careers/",
-      "tier": "B"
+      "tier": "B",
+      "site_timeout_seconds": 600
     },
     {
       "name": "Blue Earth Capital",
@@ -444,8 +451,9 @@
     },
     {
       "name": "BM|T",
-      "url": "https://www.bm-t.de/careers/",
-      "tier": "EU"
+      "url": "https://www.bm-t.de/team-vc-investoren-beteiligungsexperten-in-thueringen/stellenangebote/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.bm-t.de/careers/"
     },
     {
       "name": "41 Group",
@@ -492,8 +500,9 @@
     },
     {
       "name": "Avedon Capital",
-      "url": "https://avedoncapital.com/career/internship-amsterdam/",
-      "tier": "EU"
+      "url": "https://avedoncapital.com/our-people/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://avedoncapital.com/career/internship-amsterdam/"
     },
     {
       "name": "Bolster Investments",
@@ -544,8 +553,9 @@
     },
     {
       "name": "Halder",
-      "url": "https://www.halder.eu/job-opportunities",
-      "tier": "EU"
+      "url": "https://www.halder.eu/en/about/careers/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://www.halder.eu/job-opportunities"
     },
     {
       "name": "Yttrium",
@@ -663,7 +673,10 @@
     {
       "name": "Tenzing PE",
       "url": "https://tenzing.pe/careers/",
-      "tier": "EU"
+      "tier": "EU",
+      "career_urls": [
+        "https://tenzingprivateequity.careers.hibob.com/"
+      ]
     },
     {
       "name": "Scaleup Capital",
@@ -672,8 +685,9 @@
     },
     {
       "name": "Sun European Partners",
-      "url": "https://suneuropeanpartners.com/careers/",
-      "tier": "EU"
+      "url": "https://suneuropeanpartners.com/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://suneuropeanpartners.com/careers/"
     },
     {
       "name": "Henley Investment Management",
@@ -737,8 +751,9 @@
     },
     {
       "name": "Northstar VC",
-      "url": "https://northstar.vc/careers",
-      "tier": "EU"
+      "url": "https://www.northstar.vc/",
+      "tier": "EU",
+      "notes": "Official source rechecked 2026-09-20; previous URL: https://northstar.vc/careers"
     },
     {
       "name": "IRCP",
@@ -1001,8 +1016,8 @@
     },
     {
       "name": "Aravis SA",
-      "url": "https://www.aravis.ch/contact",
-      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
+      "url": "https://www.aravis.ch/",
+      "notes": "contact page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.aravis.ch/contact",
       "tier": "EU"
     },
     {
@@ -1013,8 +1028,8 @@
     },
     {
       "name": "BWK GmbH",
-      "url": "https://www.bwk.de/jobs/",
-      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03)",
+      "url": "https://www.bwk.de/",
+      "notes": "career page - dedicated jobs page on bwk (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.bwk.de/jobs/",
       "tier": "EU"
     },
     {
@@ -1113,8 +1128,8 @@
     },
     {
       "name": "Capcellence",
-      "url": "https://www.capcellence.de/menschen/karriere/",
-      "notes": "career page (under 'Menschen' section (added from PE Funds Tracker, 2026-07-03)"
+      "url": "https://www.capcellence.de/menschen/#karriere",
+      "notes": "career page (under 'Menschen' section (added from PE Funds Tracker, 2026-07-03) Official source rechecked 2026-09-20; previous URL: https://www.capcellence.de/menschen/karriere/"
     },
     {
       "name": "Gaius Capital",

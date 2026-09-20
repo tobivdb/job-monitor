@@ -11,7 +11,7 @@ from job_sources import canonical_url, is_detail_url, BLOCKED_TEXT, ROLE_WORDS
 
 CAREER = re.compile(r'career|karriere|vacanc|offene.stellen|stellenangebote|current.opportunit|open.positions|jobs|join.us', re.I)
 ATS = re.compile(r'(?:myworkdayjobs\.com|jobs\.personio\.(?:de|com)|recruitee\.com|workable\.com|avature\.net|successfactors\.(?:eu|com)|oraclecloud\.(?:com|eu)|salesforce-sites\.com)$', re.I)
-NEXT = re.compile(r'^(?:Go to Next Page, Number \d+|next(?: page(?: url)?)?|next\s*[>»]|nächste(?: seite)?|weiter|suivant|volgende|load more(?: jobs)?|show more(?: jobs)?|mehr laden)$', re.I)
+NEXT = re.compile(r'^(?:Go to Next Page, Number \d+|next(?: page(?: url)?)?|next\s*[>»]|nächste(?: seite)?|weiter|suivant|volgende|load more(?: jobs)?|show more(?: jobs)?|show \d+ more(?: jobs)?|mehr laden)$', re.I)
 
 @dataclass
 class Crawl:
@@ -34,11 +34,12 @@ def public_url(url):
 def career_links(html, base):
     """Follow only links actually published by a career source, never guessed paths."""
     soup = BeautifulSoup(html, 'lxml')
-    for tag in soup.select('nav, header, footer'):
-        tag.decompose()
     links = []
     origin = urlsplit(base).hostname
     for anchor in soup.select('a[href], iframe[src]'):
+        # Career navigation is often the only published path to the job board.
+        if anchor.find_parent(['nav', 'header', 'footer']) and not CAREER.search(anchor.get_text(' ', strip=True)):
+            continue
         url = canonical_url(anchor.get('href') or anchor.get('src'), base)
         if not url or not public_url(url) or url == canonical_url(base):
             continue
@@ -66,7 +67,7 @@ def career_links(html, base):
 def vacancy_urls(html, base):
     soup = BeautifulSoup(html, 'lxml')
     return sorted({canonical_url(a['href'], base) for a in soup.select('a[href]')
-                   if is_detail_url(canonical_url(a['href'], base))})
+                   if not a.find_parent(['nav', 'header', 'footer']) and is_detail_url(canonical_url(a['href'], base))})
 
 
 def fingerprint(html, base):
@@ -108,7 +109,12 @@ def wait_changed(page, previous, timeout=12):
 
 
 def declared_job_count(html):
-    text = BeautifulSoup(html, 'lxml').get_text(' ', strip=True)
+    soup = BeautifulSoup(html, 'lxml')
+    for heading in soup.find_all(['h1', 'h2', 'h3']):
+        match = re.fullmatch(r'(\d+)\s+jobs', heading.get_text(' ', strip=True), re.I)
+        if match:
+            return int(match[1])
+    text = soup.get_text(' ', strip=True)
     for pattern in (r"\bof\s+(\d+)\s+(?:jobs|results)", r"\b(\d+)\s+(?:JOBS FOUND|jobs found|Jobs Found)"):
         match = re.search(pattern, text)
         if match:
@@ -155,7 +161,9 @@ def collect_board(page, crawl, max_pages, deadline, request_delay=0):
         if time.monotonic() >= deadline:
             crawl.warnings.append('Career traversal reached the source time budget.')
             return
-        control = next_control(page, number)
+        # Employee directories also have Next/Load More controls. Only paginate
+        # when the current document contains actual individual vacancy links.
+        control = next_control(page, number) if vacancy_urls(html, url) else None
         if control is not None:
             if number == max_pages:
                 crawl.warnings.append('Pagination reached the configured page limit before the last page.')
@@ -229,7 +237,8 @@ def crawl_careers(context, config, fetch_page, deadline):
                     else:
                         crawl.warnings.append('Additional career subpage exceeds traversal depth: ' + linked)
         except Exception as exc:
-            crawl.warnings.append(f'Career page could not be read: {url} ({type(exc).__name__}).')
+            status = str(exc) if isinstance(exc, ValueError) and str(exc).startswith('HTTP ') else type(exc).__name__
+            crawl.warnings.append(f'Career page could not be read: {url} ({status}).')
         finally:
             page.close()
     return crawl

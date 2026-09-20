@@ -96,6 +96,8 @@ def is_detail_url(url):
         return True
     if re.search(r"-j\d+\.html$", path):
         return True
+    if parts.hostname == "app.skeeled.com" and re.fullmatch(r"/offer/c/[a-f0-9]{24}", path):
+        return True
     if path.endswith(".pdf"):
         return True
     return bool(re.search(
@@ -223,6 +225,8 @@ def candidates(soup, config, final_url):
         text = text or anchor.get("aria-label", "")
         # Prefer a title inside the actual link, never an unrelated sibling heading.
         heading = anchor.find(["h2", "h3", "h4", "h5", "strong"])
+        if urlsplit(link).hostname == "app.skeeled.com":
+            heading = anchor.select_one(".v-card-title") or heading
         title = heading.get_text(" ", strip=True) if heading else text
         container = anchor
         if not ROLE_WORDS.search(title) or title.lower() in {"details", "apply", "apply now", "mehr erfahren", "read more"}:
@@ -299,7 +303,10 @@ def verify_detail(page, job, config):
         expected_title = re.sub(r"\s+-\s+(?:Permanent Contract|Fixed.term Contract)\b.*$", "", job.title, flags=re.I)
         if job.location:
             expected_title = re.sub(r"[\s,|()\-]+" + re.escape(job.location) + r"\s*$", "", expected_title, flags=re.I)
-        page.locator("h1, h2, h3").filter(has_text=re.compile(re.escape(expected_title), re.I)).first.wait_for(state="attached", timeout=8000)
+        title_selector = "h1, h2, h3"
+        if urlsplit(job.url).hostname == "app.skeeled.com":
+            title_selector += ", .text-display-large"
+        page.locator(title_selector).filter(has_text=re.compile(re.escape(expected_title), re.I)).first.wait_for(state="attached", timeout=8000)
     except Exception:
         pass  # JSON-LD can supply evidence even without a rendered heading.
     soup = BeautifulSoup(page.content(), "lxml")
@@ -329,6 +336,8 @@ def verify_detail(page, job, config):
     if BLOCKED_TEXT.search(text[:2000]):
         raise ValueError("Job detail blocked by access protection")
     headings = (soup if is_detail_url(final) else content).find_all(["h1", "h2", "h3"])
+    if urlsplit(final).hostname == "app.skeeled.com":
+        headings += soup.select(".text-display-large")
     if not any(title_matches(job.title, h.get_text(" ", strip=True), job.location) for h in headings):
         raise ValueError("Job title not confirmed on the detail page")
     if not employer_matches(content, config):

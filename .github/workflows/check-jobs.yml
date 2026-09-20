@@ -121,7 +121,7 @@ jobs:
           fi
       - name: Check scan coverage
         if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
-        run: python verify_scan.py
+        run: python verify_scan.py --operational
       - name: Optional OpenAI second opinion
         if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
         env:

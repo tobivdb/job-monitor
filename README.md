@@ -110,8 +110,14 @@ Coverage is recorded per source in `scan_results.json`. `checked` means the
 observed documents and extracted candidates were processed successfully, not
 that all jobs on every possible subsite have been proven discovered. Unexplained
 zero results require review. Incomplete scans preserve previously verified jobs,
-including during parser migration. An HTTP error or incomplete pagination fails
-the separate coverage check even if the scanner process completed successfully.
+including during parser migration. The default `python verify_scan.py` command fails on unreadable pages or
+incomplete pagination, even if the scanner process completed successfully.
+Scheduled and manual full runs use `--operational`: broken source inventories,
+invalid output, unexpected worker failures and a scan with no verified adverts
+still fail the workflow. Individual site outages and coverage gaps remain explicit
+GitHub warnings and `coverage_status: needs_review` in the quality report. A green
+execution status is not a complete-coverage claim. The strict live regression
+sample is unchanged; `--live --operational` is rejected.
 
 `python verify_scan.py --live` runs a read-only regression sample against Pinova,
 Afinum, Egeria and ICG. Pull requests run unit tests and this live sample in
