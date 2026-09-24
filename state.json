@@ -6,7 +6,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:10.887287",
+      "last_checked": "2026-09-24T12:40:18.252321",
       "has_no_jobs_indicator": true,
       "coverage_complete": true
     },
@@ -16,17 +16,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:13.302346",
+      "last_checked": "2026-09-24T12:40:19.158909",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "BU Partners": {
       "url": "https://www.bu-partners.ch/kontakt/?contacttopic=careers",
-      "page_hash": "8f0e9ac150839a465564a4f09a4ccc3e0944c058c2311735666f7de14f380abc",
+      "page_hash": "010f80723fb293d66f1158621dbf23076692feb5fc36340d3aabb9ca7d097e8b",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:18.021316",
+      "last_checked": "2026-09-24T12:40:24.188352",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -85,7 +85,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.488705",
+      "last_checked": "2026-09-24T12:40:58.026931",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -95,7 +95,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.494980",
+      "last_checked": "2026-09-24T12:40:58.035691",
       "has_no_jobs_indicator": true,
       "coverage_complete": true
     },
@@ -105,17 +105,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.497815",
+      "last_checked": "2026-09-24T12:40:58.043675",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Wineus": {
       "url": "https://www.wineus.ch/ueber-wineus/karriere",
-      "page_hash": "4ccf3c17d5347f6e4e696df42d944c721949f5115a75107798a75f303b1aabf3",
+      "page_hash": "38c9796ffa4a4649f305cf16b397b9a4a774961a5dc5c771874503ee9ef4f3b2",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.501360",
+      "last_checked": "2026-09-24T12:40:58.049726",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -125,7 +125,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.506332",
+      "last_checked": "2026-09-24T12:40:58.054651",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -148,7 +148,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.510116",
+      "last_checked": "2026-09-24T12:40:58.076209",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -189,7 +189,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.514408",
+      "last_checked": "2026-09-24T12:40:58.090898",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -199,7 +199,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.520357",
+      "last_checked": "2026-09-24T12:40:58.106458",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -209,27 +209,27 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.523995",
+      "last_checked": "2026-09-24T12:40:58.124754",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Gyrus Capital (LinkedIn)": {
       "url": "https://www.linkedin.com/company/gyrus-capital-s-a/jobs/",
-      "page_hash": "25a6dc184cc84ed46b1d673d31b2d016c969e1975619ebded46958459ba12392",
+      "page_hash": "8f5ca21a2ae129c27adb3465ac9a9f479167b45ccaf29a7c5c4138651b871d2d",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.424491",
+      "last_checked": "2026-09-24T12:58:25.478936",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "HBM Partners (LinkedIn)": {
       "url": "https://www.linkedin.com/company/hbm-partners-ag/jobs/",
-      "page_hash": "96e9f4224ae9566e7f7d50de4f62ce0f832d22402fc8d8f701db7511166ec93c",
+      "page_hash": "bd5ac5aa246774c8df2231f55ee0e4c86948837bc720ec2c17209e8dedde1c80",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.438931",
+      "last_checked": "2026-09-24T12:58:25.509540",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -239,7 +239,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.534525",
+      "last_checked": "2026-09-24T12:40:58.186025",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -249,7 +249,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.670181",
+      "last_checked": "2026-09-24T12:40:58.196286",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -266,7 +266,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:51.406782",
+      "last_checked": "2026-09-24T12:41:00.950555",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -276,7 +276,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:51.418625",
+      "last_checked": "2026-09-24T12:41:00.963761",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -286,7 +286,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:55.374845",
+      "last_checked": "2026-09-24T12:41:01.918733",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -296,7 +296,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:55.394038",
+      "last_checked": "2026-09-24T12:41:06.911379",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -306,17 +306,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:57.067064",
+      "last_checked": "2026-09-24T12:41:06.930639",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Calibrium (LinkedIn)": {
       "url": "https://www.linkedin.com/company/calibrium-ag/jobs/",
-      "page_hash": "eade1fa604b222864b8f5c3926eb0664e8d5df17d12eecdb78ba0497486ff4f4",
+      "page_hash": "6826f493ccaff36102922189bab882a36a95b7fc72727412458c8b50dd338061",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.367414",
+      "last_checked": "2026-09-24T12:58:25.387149",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -326,7 +326,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:01.446530",
+      "last_checked": "2026-09-24T12:41:07.696594",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -336,7 +336,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:01.459346",
+      "last_checked": "2026-09-24T12:41:14.035600",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -346,7 +346,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:06.649378",
+      "last_checked": "2026-09-24T12:41:15.840056",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -356,17 +356,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:06.670825",
+      "last_checked": "2026-09-24T12:41:15.859221",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Rianta Capital (LinkedIn)": {
       "url": "https://www.linkedin.com/company/rianta-capital-limited/jobs/",
-      "page_hash": "1a91fa88a176851703404fc7cb2828ea6a3912a82985e25b8337144c700a3639",
+      "page_hash": "f1e5527dc9e5a9455410cac6a193a3fbfd5f1f524f2765e19cfc8f05b4d00b0b",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.469946",
+      "last_checked": "2026-09-24T12:58:25.569042",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -376,7 +376,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:08.854947",
+      "last_checked": "2026-09-24T12:41:22.985298",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -513,7 +513,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:46.557932",
+      "last_checked": "2026-09-24T12:41:53.523288",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -532,13 +532,13 @@
       "missing_counts": {
         "0880b403c6bf9eca4e4b16594cdb3cc3": 0
       },
-      "last_checked": "2026-09-23T12:43:46.577114",
+      "last_checked": "2026-09-24T12:41:53.543380",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "ICG": {
       "url": "https://icg.wd3.myworkdayjobs.com/external_careers",
-      "page_hash": "3980c12bd7e4d9022fa83490578fbc225fcd638fe4b1e06099df20eed6180fa7",
+      "page_hash": "f8a61f2f31b714b008331e6ba4a229ff25b4639fe8a73228bf821908b05b2480",
       "job_keys": {
         "97ce4551d65c995bb569297233f8acb7": {
           "title": "Associate, CLO Operations",
@@ -615,17 +615,17 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:09.812552",
+      "last_checked": "2026-09-24T12:42:21.536697",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Equistone Partners (LinkedIn)": {
       "url": "https://www.linkedin.com/company/equistone-partners-europe/jobs/",
-      "page_hash": "86a525542ac12fa383e99ec323a82bf69f3ecacf028b4298fae6928fef14a2e8",
+      "page_hash": "07bf281757d486c4e0e2b59661bd6f96894ca2be13f611117ba97a1ce3597c01",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.386237",
+      "last_checked": "2026-09-24T12:58:25.425265",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -635,24 +635,30 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:09.863185",
+      "last_checked": "2026-09-24T12:42:21.552391",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Genui (LinkedIn)": {
       "url": "https://www.linkedin.com/company/genui/jobs/",
-      "page_hash": "3f3ec3afe4f136964583d2f3fd38df97126287434eeaad0294bcfa5dcd3692c3",
+      "page_hash": "c20989260d90c03c09853fdf28efbd76f53633de7a7dd7838463a74794bbacbc",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.408689",
+      "last_checked": "2026-09-24T12:58:25.453500",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "LGT Capital Partners": {
       "url": "https://lgtcp.wd502.myworkdayjobs.com/lgtcpcurrentvacancies?workerSubType=8e79cea3a59c01010c834ff8eac70002",
-      "page_hash": "8d5b36504e1d4120a9f6814c8ea2b0bf85ff54bab20ab0484887bf55de5bc043",
+      "page_hash": "6d96ec3829dc8d039782c8de8df5c71eb01028a9c5e8bd22a99c741f265cf193",
       "job_keys": {
+        "66419d34ab8d259c7bc6106c66e12221": {
+          "title": "Full-Stack Developer (Microsoft & React Stack)",
+          "url": "https://lgtcp.wd502.myworkdayjobs.com/en-US/lgtcpcurrentvacancies/job/Pfffikon-Switzerland/Full-Stack-Developer--Microsoft---React-Stack-_JR1982-1?workerSubType=8e79cea3a59c01010c834ff8eac70002",
+          "location": "",
+          "detail": "Full-Stack Developer (Microsoft & React Stack)"
+        },
         "bda31854aebed7539c55d017393ad3d7": {
           "title": "AML Manager",
           "url": "https://lgtcp.wd502.myworkdayjobs.com/en-US/lgtcpcurrentvacancies/job/Dublin-Ireland/AML-Manager_JR1990-1?workerSubType=8e79cea3a59c01010c834ff8eac70002",
@@ -752,7 +758,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:35.125041",
+      "last_checked": "2026-09-24T12:42:57.386328",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -823,7 +829,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:35.143283",
+      "last_checked": "2026-09-24T12:42:57.410920",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -833,14 +839,20 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:35.157026",
+      "last_checked": "2026-09-24T12:42:57.433231",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Partners Group": {
       "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group",
-      "page_hash": "eee939cd4c0c27b3073630eefde2e2908a35e1fde4399a509bbef7275d1ba9a7",
+      "page_hash": "641993ceb08589c52e06e7932bc5e526a6506a647c9398b591cfce565ffed0f6",
       "job_keys": {
+        "d47b2a8144950f9f566fb8249e08888b": {
+          "title": "(Senior) Group Accountant",
+          "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16610",
+          "location": "",
+          "detail": "(Senior) Group Accountant"
+        },
         "2d85e964e8ee1def87cede62dc2a86fa": {
           "title": "Senior Associate, Private Infra",
           "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16606",
@@ -918,12 +930,6 @@
           "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16583",
           "location": "",
           "detail": "Senior Client Solutions Professional - Private Wealth Europe"
-        },
-        "042211b40aeb6921de1f852a0f17f365": {
-          "title": "Associate - Private Credit Investment",
-          "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16576",
-          "location": "",
-          "detail": "Associate - Private Credit Investment"
         },
         "63f1c1e974758911545ebab27beadd3f": {
           "title": "Lead Oversight Officer, 12 months fixed term contract",
@@ -1201,6 +1207,12 @@
           "location": "",
           "detail": "Senior Oversight Officer"
         },
+        "042211b40aeb6921de1f852a0f17f365": {
+          "title": "Associate - Private Credit Investment",
+          "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16576",
+          "location": "",
+          "detail": "Associate - Private Credit Investment"
+        },
         "9b4f802f168e2f64a25b4d5f9533d5ec": {
           "title": "Junior Portfolio Manager (Real Estate)",
           "url": "https://www.partnersgroup.com/en/careers/open-positions/partners-group/job-details/16565",
@@ -1228,12 +1240,13 @@
       },
       "extractor_version": 3,
       "missing_counts": {
+        "042211b40aeb6921de1f852a0f17f365": 0,
         "9b4f802f168e2f64a25b4d5f9533d5ec": 0,
         "597215488439fb93a4b196284ec458ea": 0,
         "ebf4a624dc40eace7021d385dd33a268": 0,
         "212af7d9dc6c8f0982bc80213a262ba4": 0
       },
-      "last_checked": "2026-09-23T13:00:01.034529",
+      "last_checked": "2026-09-24T12:58:24.639354",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1250,7 +1263,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.081691",
+      "last_checked": "2026-09-24T12:58:24.692188",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1260,7 +1273,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.117448",
+      "last_checked": "2026-09-24T12:58:24.740178",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1277,13 +1290,13 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.157445",
+      "last_checked": "2026-09-24T12:58:24.788411",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Banque Pictet": {
       "url": "https://career012.successfactors.eu/career?company=banquepict&career%5fns=job%5flisting%5fsummary&navBarLevel=JOB%5fSEARCH&_s.crb=goWcBV6ydpoUR8QXwrTYwBURPdodsHnsugNByRmQ73w%3d",
-      "page_hash": "31c10123ac3cad44256feebe7c4f1270c7e2aecb2766d4c7ca91b79106e21707",
+      "page_hash": "3a150dc096010ab4725fe6d9f4e52f83a23d0c4d18a46d23fdc0ce8651a6a393",
       "job_keys": {
         "f2ddf9e1c8bd4fcae9ba9c606fb4ff73": {
           "title": "Investment Specialist",
@@ -1542,19 +1555,11 @@
           "url": "https://career012.successfactors.eu/career?career_job_req_id=123841&career_ns=job_listing&company=banquepict&navBarLevel=JOB_SEARCH",
           "location": "",
           "detail": "DevOps Engineer IAM"
-        },
-        "4840b5f9aa0dcfea1a5001dad43c46bc": {
-          "title": "Asia Operational Risk Lead",
-          "url": "https://career012.successfactors.eu/career?career_job_req_id=124970&career_ns=job_listing&company=banquepict&navBarLevel=JOB_SEARCH",
-          "location": "",
-          "detail": "Asia Operational Risk Lead"
         }
       },
       "extractor_version": 3,
-      "missing_counts": {
-        "4840b5f9aa0dcfea1a5001dad43c46bc": 1
-      },
-      "last_checked": "2026-09-23T13:00:01.229546",
+      "missing_counts": {},
+      "last_checked": "2026-09-24T12:58:24.890760",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1564,7 +1569,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.243696",
+      "last_checked": "2026-09-24T12:58:24.943261",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1583,17 +1588,17 @@
       "missing_counts": {
         "d92b343d03013d8f10d16b58c14fdd10": 0
       },
-      "last_checked": "2026-09-23T13:00:01.264210",
+      "last_checked": "2026-09-24T12:58:24.978434",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Maven Capital Partners": {
       "url": "https://www.mavencp.com/maven-careers",
-      "page_hash": "5009f50c52364a05105fa5a3917bdb2f7aa10bc36bacab0fdde2b39831093622",
+      "page_hash": "8fba7f610206d412f83f10fe65dccb19214a8816bd06b3d05dabdf4dc6621dd5",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.277173",
+      "last_checked": "2026-09-24T12:58:25.049216",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1603,17 +1608,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.290053",
+      "last_checked": "2026-09-24T12:58:25.105219",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Inflexion (LinkedIn)": {
       "url": "https://www.linkedin.com/company/inflexion-private-equity/jobs/",
-      "page_hash": "30921f670bd169f6aab086e33ea65546aaa7b7daf4a4952bdb7f4cebb679ac1c",
+      "page_hash": "5d5bd6a5830b1ed78f8db309b19c86c0c9205cfdbe6556abfbdf1ce4478eb438",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.454320",
+      "last_checked": "2026-09-24T12:58:25.541198",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1623,13 +1628,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.316212",
+      "last_checked": "2026-09-24T12:58:25.233057",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Triton Partners": {
       "url": "https://tritonpartners.wd3.myworkdayjobs.com/External",
-      "page_hash": "89d75d5ba9966b29be429b48003a6cf443c59a57dd8debff04d1a2ac1574a31a",
+      "page_hash": "7b5f30f62d276ea95bca19e672b58acc94fc061d3f526f1160bfbc80c0405969",
       "job_keys": {
         "60a0fe9ad0447419bef86a8be72afd13": {
           "title": "TMM Associate - Frankfurt (German Speaking)",
@@ -1646,7 +1651,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.330069",
+      "last_checked": "2026-09-24T12:58:25.277939",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1656,7 +1661,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.349516",
+      "last_checked": "2026-09-24T12:58:25.344918",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1666,17 +1671,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.531321",
+      "last_checked": "2026-09-24T12:40:58.154281",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Rianta Capital": {
       "url": "https://www.riantacapital.com/",
-      "page_hash": "07402c6f78fdf98977b88b365bf74619fcd6221370132a46ff40bcbb2d0cf9c6",
+      "page_hash": "e76310f2f652df184c3c1fcbdff8fa6ef2c8f57674f4a1ee048337349b482c8e",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:43:07.724759",
+      "last_checked": "2026-09-24T12:41:15.890854",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1686,27 +1691,27 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:09.838544",
+      "last_checked": "2026-09-24T12:42:21.546354",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Genui": {
       "url": "https://www.genui.de/",
-      "page_hash": "402572533221fff9218b73251be5d73c56c71403f304001ed511da100371ac5f",
+      "page_hash": "5f3c7f9ab12cfaf29b79c85828df3a27ab124fc320397e375e0dba8ca1b51a23",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:44:09.883863",
+      "last_checked": "2026-09-24T12:42:21.558584",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Inflexion": {
       "url": "https://www.inflexion.com/people/",
-      "page_hash": "0a189b3d1112ca2f0d2d7f5deb0fce1424d5b3d9787fab6785d24277b7be049a",
+      "page_hash": "1fb5cf9d7707d0765f66e197464d57f3c773522885644f4e5fd428c11f309a24",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.302501",
+      "last_checked": "2026-09-24T12:58:25.161647",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1716,7 +1721,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:46.527688",
+      "last_checked": "2026-09-24T12:40:58.137444",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1726,7 +1731,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T12:42:57.769225",
+      "last_checked": "2026-09-24T12:41:06.942692",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1749,7 +1754,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.486474",
+      "last_checked": "2026-09-24T12:58:25.599810",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1759,17 +1764,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.502097",
+      "last_checked": "2026-09-24T12:58:25.628629",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Beyond Capital Partners": {
       "url": "https://beyondcapital-partners.com/karriere/",
-      "page_hash": "231a019e209bfe015981494835eecd659a03d84c1d61ab56e274e76e78eed8be",
+      "page_hash": "0d3bb7d832dbebd3a0282af1d50ecf4a5e77644501b91e2db69d41d646c18932",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.517519",
+      "last_checked": "2026-09-24T12:58:25.643946",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1918,7 +1923,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.535720",
+      "last_checked": "2026-09-24T12:58:25.671856",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1928,7 +1933,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.555722",
+      "last_checked": "2026-09-24T12:58:25.732206",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1938,17 +1943,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.575810",
+      "last_checked": "2026-09-24T12:58:25.818785",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Gilde Healthcare": {
       "url": "https://gildehealthcare.com/career-opportunities/",
-      "page_hash": "c42e36031dfc30113e5ac5359aa637a0787723af87418d023c6fc64bfdc1f903",
+      "page_hash": "ffecd38c20efae6bdcde2bd16e8cbb78c45562af9fcf42ae8bf2ed3c0cab87b3",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.595413",
+      "last_checked": "2026-09-24T12:58:25.902039",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -1977,7 +1982,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.619283",
+      "last_checked": "2026-09-24T12:58:25.970774",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -1987,7 +1992,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.640261",
+      "last_checked": "2026-09-24T12:58:26.037268",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2010,7 +2015,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.678855",
+      "last_checked": "2026-09-24T12:58:26.081114",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -2020,13 +2025,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.718182",
+      "last_checked": "2026-09-24T12:58:26.148367",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "EKBQ Careers": {
       "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/jobs?keyword=private+equity&mode=job-location",
-      "page_hash": "4b84e7b6d1df5ed78219a21cf6b4677d3784492eed1b98e2e388686af18ef5ae",
+      "page_hash": "1a8462d486d06026b1e99f36fae35a6c3766bfdc4aa1e819defff1b055289bd5",
       "job_keys": {
         "49b5846bc3a25da4a765c63fbc1a5e83": {
           "title": "Legal Counsel, Schroders Capital Private Equity",
@@ -2050,30 +2055,32 @@
           "title": "Investment Analyst",
           "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/2107/?keyword=private+equity&mode=job-location",
           "location": "",
-          "detail": "Investment Analyst Locations Beijing, China Posting Date 09/23/2026 Be the First to Apply"
-        },
-        "f5cb75a69e61d92bccb7497620f90e6c": {
-          "title": "Portfolio Operations Specialist",
-          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/2037/?keyword=private+equity&mode=job-location",
-          "location": "",
-          "detail": "Portfolio Operations Specialist Locations Paris, Ile-de-France, France Posting Date 09/18/2026 Trending"
+          "detail": "Investment Analyst Locations Beijing, China Posting Date 09/23/2026"
         },
         "f3b7fae455b82f49681d30eb5ee298c2": {
           "title": "Client Director - Wealth, Hong Kong",
           "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1853/?keyword=private+equity&mode=job-location",
           "location": "",
           "detail": "Client Director  - Wealth, Hong Kong Locations Hong Kong Posting Date 08/06/2026 Trending"
+        },
+        "f5cb75a69e61d92bccb7497620f90e6c": {
+          "title": "Portfolio Operations Specialist",
+          "url": "https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/2037/?keyword=private+equity&mode=job-location",
+          "location": "",
+          "detail": "Portfolio Operations Specialist Locations Paris, Ile-de-France, France Posting Date 09/18/2026 Trending"
         }
       },
       "extractor_version": 3,
-      "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.767007",
+      "missing_counts": {
+        "f5cb75a69e61d92bccb7497620f90e6c": 1
+      },
+      "last_checked": "2026-09-24T12:58:26.226006",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "SUSI Partners": {
       "url": "https://www.susi-partners.com/en/careers/",
-      "page_hash": "6b96ef5c9a959d53d353d55d77da47f6acdbea029f3d4441bfc2c1ae78129c36",
+      "page_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "job_keys": {
         "cff15a7350e822af484795bd0049f7dc": {
           "title": "Client Relations Associate Singapore",
@@ -2083,8 +2090,10 @@
         }
       },
       "extractor_version": 3,
-      "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.841518",
+      "missing_counts": {
+        "cff15a7350e822af484795bd0049f7dc": 0
+      },
+      "last_checked": "2026-09-24T12:58:26.275090",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2107,7 +2116,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.869506",
+      "last_checked": "2026-09-24T12:58:26.314489",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -2117,7 +2126,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.912605",
+      "last_checked": "2026-09-24T12:58:26.354299",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2158,17 +2167,17 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:01.960126",
+      "last_checked": "2026-09-24T12:58:26.405830",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Capvis": {
       "url": "https://www.capvis.com/en/en/jobs.html",
-      "page_hash": "f47a8aebde6de6cf23b63e1db532f59933a7a01f2d1636a486a8d59a260ca60d",
+      "page_hash": "dd128a812fea66272e47baef324f31ed469eb0558d5de7afba1bcbca5ca4bb0c",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.003236",
+      "last_checked": "2026-09-24T12:58:26.471323",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2257,7 +2266,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.057454",
+      "last_checked": "2026-09-24T12:58:26.558779",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -2286,7 +2295,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.090319",
+      "last_checked": "2026-09-24T12:58:26.635736",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -2296,17 +2305,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.114867",
+      "last_checked": "2026-09-24T12:58:26.701132",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "41 Group": {
       "url": "https://41group.ch/en/careers",
-      "page_hash": "508143b034e24716870b62c2bdba6b5e1f0c11074b7c5c03e495d52e00dadfa7",
+      "page_hash": "e5a0393285b1daf6e77ef755e712c1c886e2652893d2e7b4128c70bf799fc69b",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.151867",
+      "last_checked": "2026-09-24T12:58:26.771361",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2353,17 +2362,17 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.202485",
+      "last_checked": "2026-09-24T12:58:26.843880",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "CVC DIF": {
       "url": "https://www.cvcdif.com/careers",
-      "page_hash": "b1d39e7fa0eb70c74d9b9a212807e04ed7fa835579f877237f1bcf1bc7c8b2cc",
+      "page_hash": "39608c8803dd235f3f9b806f7add4c5c2a589c7c7fd8abb53f72a7e9ad48132c",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.275451",
+      "last_checked": "2026-09-24T12:58:26.910398",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2478,39 +2487,17 @@
           "url": "https://www.waterlandpe.com/dk/career/it-engineer-bussum/",
           "location": "",
           "detail": "Holland IT Engineer (Bussum) As an IT Engineer, you take ownership of the systems that keep Waterland’s IT environment secure, reliable and easy to… Læs mere her"
-        },
-        "bd202fc1e0f5e6af54a697611c30d791": {
-          "title": "Empfangs- & Teamassistenz (m/w/d) München",
-          "url": "https://www.waterlandpe.com/career/empfangs-teamassistenz-m-w-d-muenchen/",
-          "location": "Germany",
-          "detail": "Germany Empfangs- & Teamassistenz (m/w/d) München Was wir suchen Für die Position als Empfangs- und Teamassistenz suchen wir dich – eine souveräne Persönlichkeit mit ausgeprägten Fähigkeiten:… Read more"
-        },
-        "c741be2820cba4a0317f4a9d3eeb8f0e": {
-          "title": "Empfangs- & Teamassistenz (m/w/d) München",
-          "url": "https://www.waterlandpe.com/de/career/empfangs-teamassistenz-m-w-d-muenchen/",
-          "location": "Deutschland",
-          "detail": "Deutschland Empfangs- & Teamassistenz (m/w/d) München Was wir suchen Für die Position als Empfangs- und Teamassistenz suchen wir dich – eine souveräne Persönlichkeit mit ausgeprägten Fähigkeiten:… Lesen Sie mehr"
-        },
-        "b57f09723f4cbae9d60f4611d1e8990c": {
-          "title": "Empfangs- & Teamassistenz (m/w/d) München",
-          "url": "https://www.waterlandpe.com/dk/career/empfangs-teamassistenz-m-w-d-muenchen/",
-          "location": "München",
-          "detail": "Tyskland Empfangs- & Teamassistenz (m/w/d) München Was wir suchen Für die Position als Empfangs- und Teamassistenz suchen wir dich – eine souveräne Persönlichkeit mit ausgeprägten Fähigkeiten:… Læs mere her"
         }
       },
       "extractor_version": 3,
-      "missing_counts": {
-        "bd202fc1e0f5e6af54a697611c30d791": 1,
-        "c741be2820cba4a0317f4a9d3eeb8f0e": 1,
-        "b57f09723f4cbae9d60f4611d1e8990c": 1
-      },
-      "last_checked": "2026-09-23T13:00:02.385279",
+      "missing_counts": {},
+      "last_checked": "2026-09-24T12:58:26.981784",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Karmijn Kapitaal": {
       "url": "https://jobs.karmijnkapitaal.nl/jobs",
-      "page_hash": "1334618034b11190e527f16054339a66ad9ab658477a7ccb5884bc92a5d02ebe",
+      "page_hash": "309c20588f66b1afc3f07152cc6499f43eef1d6e88f70ccfa28a17ef8e0f5a66",
       "job_keys": {
         "16b179fcfb815815969d970a75508301": {
           "title": "Project Engineer",
@@ -2541,6 +2528,12 @@
           "url": "https://jobs.karmijnkapitaal.nl/companies/polspotten-2/jobs/85254170-junior-controller",
           "location": "",
           "detail": "Junior Controller"
+        },
+        "0a8df648890d0345d525c59696faa157": {
+          "title": "Pedagogisch professional BSO",
+          "url": "https://jobs.karmijnkapitaal.nl/companies/unikidz/jobs/83617033-pedagogisch-professional-bso",
+          "location": "",
+          "detail": "Pedagogisch professional BSO"
         },
         "a931c3617254e4bdaad0ac99e6ce21fe": {
           "title": "Operator / Bereider (m/v)",
@@ -2578,12 +2571,6 @@
           "location": "",
           "detail": "Pedagogisch professional BSO"
         },
-        "0a8df648890d0345d525c59696faa157": {
-          "title": "Pedagogisch professional BSO",
-          "url": "https://jobs.karmijnkapitaal.nl/companies/unikidz/jobs/83617033-pedagogisch-professional-bso",
-          "location": "",
-          "detail": "Pedagogisch professional BSO"
-        },
         "51f086833c8fbde15b84bcd0b7436267": {
           "title": "Pedagogisch professional BSO",
           "url": "https://jobs.karmijnkapitaal.nl/companies/unikidz/jobs/66054847-pedagogisch-professional-bso",
@@ -2593,12 +2580,11 @@
       },
       "extractor_version": 3,
       "missing_counts": {
-        "0a8df648890d0345d525c59696faa157": 0,
-        "51f086833c8fbde15b84bcd0b7436267": 0
+        "51f086833c8fbde15b84bcd0b7436267": 1
       },
-      "last_checked": "2026-09-23T13:00:02.499239",
+      "last_checked": "2026-09-24T12:58:27.064703",
       "has_no_jobs_indicator": false,
-      "coverage_complete": false
+      "coverage_complete": true
     },
     "Vortex Capital Partners": {
       "url": "https://vortexcp.com/careers/",
@@ -2606,7 +2592,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.599152",
+      "last_checked": "2026-09-24T12:58:27.173468",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2623,7 +2609,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.697113",
+      "last_checked": "2026-09-24T12:58:27.284651",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -2640,37 +2626,37 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.785073",
+      "last_checked": "2026-09-24T12:58:27.406762",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Avedon Capital": {
       "url": "https://avedoncapital.com/our-people/",
-      "page_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "page_hash": "0f1403ea5a27f5df2d3271e288e7e1c144f39aae2331bebb558ee39cada948bf",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.906693",
+      "last_checked": "2026-09-24T12:58:27.462592",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Bolster Investments": {
       "url": "https://bolsterinvestments.nl/werken-bij/",
-      "page_hash": "a8c4606f00bce49a4518ce890d4e2f8081ad957adc896418784286f7daa599c3",
+      "page_hash": "b7dc3be364db9c8621748b73a31202e42add5497a7df43ff9c0ba964fd8b82ff",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:02.995133",
+      "last_checked": "2026-09-24T12:58:27.525290",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Holland Capital": {
       "url": "https://hollandcapital.nl/vacatures-investeringsmaatschappij/",
-      "page_hash": "c82481c324e578fa3a5cf26a0f6c4f57181d8bf229efe04d723323cf76303e3f",
+      "page_hash": "e44e1b29166abbc13f7a5261b8ef0b83451375495f89ad06bab5d811045728a5",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:03.104897",
+      "last_checked": "2026-09-24T12:58:27.628898",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -2680,13 +2666,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:03.187194",
+      "last_checked": "2026-09-24T12:58:27.706650",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "TMF Group": {
       "url": "https://tmf.avature.net/careersmarketplace/SearchJobs",
-      "page_hash": "a90d211e5fa19530fa6ed328104a9d7e263f5db7440d4f985a5222a179c3d740",
+      "page_hash": "894e183b4fcd8ba854587fd3cc1f1851c9dddfb5e28db9ab234b23a83e8749af",
       "job_keys": {
         "3e49483876b1e1bea9ab87ace5f92302": {
           "title": "WPS IT Engineer",
@@ -2711,6 +2697,12 @@
           "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Test-Manager/36589",
           "location": "",
           "detail": "Test Manager"
+        },
+        "65522abdcee13ee22f7cee78fb1c3782": {
+          "title": "Test Analyst",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Test-Analyst/36591",
+          "location": "",
+          "detail": "Test Analyst"
         },
         "15bd4919ae10b7730022611d1644f3f6": {
           "title": "Test Analyst",
@@ -2789,6 +2781,12 @@
           "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Specialist-Information-Security/36856",
           "location": "",
           "detail": "Specialist, Information Security"
+        },
+        "f5d0365039caa71f0b52f3a03362d5a4": {
+          "title": "Specialist, Accounting & Tax, Chengdu",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Specialist-Accounting-Tax-Chengdu/37440",
+          "location": "",
+          "detail": "Specialist, Accounting & Tax, Chengdu"
         },
         "66f2d6e8819aa455603544f3a78c6595": {
           "title": "Specialist - Internal Control & Compliance",
@@ -2957,6 +2955,24 @@
           "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-Engineer-Global-Technology-Engineering/30620",
           "location": "",
           "detail": "Senior Engineer - Global Technology Engineering"
+        },
+        "3c9a21081bf4cf0237117f29268e4311": {
+          "title": "Senior D365 Test Automation Analyst",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-D365-Test-Automation-Analyst/36153",
+          "location": "",
+          "detail": "Senior D365 Test Automation Analyst"
+        },
+        "1a28a61cf5bcfc4a3a072dc9e3ef59fc": {
+          "title": "Senior D365 Test Automation Analyst",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-D365-Test-Automation-Analyst/36152",
+          "location": "",
+          "detail": "Senior D365 Test Automation Analyst"
+        },
+        "a89b8b6219089b43d9efe80db5fe629d": {
+          "title": "Senior D365 Test Automation Analyst",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-D365-Test-Automation-Analyst/36151",
+          "location": "",
+          "detail": "Senior D365 Test Automation Analyst"
         },
         "b47e4640c7f22ae8c880e3d1b569e26b": {
           "title": "Senior CRM Developer",
@@ -3347,6 +3363,12 @@
           "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Operations-and-Technology-Manager/36840",
           "location": "",
           "detail": "Operations and Technology Manager"
+        },
+        "4748c4e715a7ac0f3e6a495826aa6022": {
+          "title": "O2C Specialist - Billing | Expression of Interest",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/O2C-Specialist-Billing-Expression-of-Interest/38737",
+          "location": "",
+          "detail": "O2C Specialist - Billing | Expression of Interest"
         },
         "ffdc17e1d1d69986eb31d8dad1118849": {
           "title": "O2C Coordinator - Billing",
@@ -3840,12 +3862,6 @@
           "location": "",
           "detail": "CDD Coordinating Associate"
         },
-        "de563398a39b79d89deb1e28ae0a57af": {
-          "title": "Capital Markets & Credit - Assistant Manager - Administration",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Capital-Markets-Credit-Assistant-Manager-Administration/37106",
-          "location": "",
-          "detail": "Capital Markets & Credit - Assistant Manager - Administration"
-        },
         "9ab82a2fa82e9195efea14f15b0fa16c": {
           "title": "Capital Markets & Credit - Administrator",
           "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Capital-Markets-Credit-Administrator/36602",
@@ -4176,46 +4192,18 @@
           "location": "",
           "detail": "[Hybrid] Local Security Officer (LSO)"
         },
-        "2a2c37c52587688f2dc080f734863b1b": {
-          "title": "Senior Legal Officer",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-Legal-Officer/37366",
+        "de563398a39b79d89deb1e28ae0a57af": {
+          "title": "Capital Markets & Credit - Assistant Manager - Administration",
+          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Capital-Markets-Credit-Assistant-Manager-Administration/37106",
           "location": "",
-          "detail": "Senior Legal Officer"
-        },
-        "889bbfceeaa8acfb50bc6eb079553981": {
-          "title": "Senior Accountant",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Senior-Accountant/37019",
-          "location": "",
-          "detail": "Senior Accountant"
-        },
-        "080079e3a72f1a1dd82119610d56eb43": {
-          "title": "Junior Talent Acquisition Specialist",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Junior-Talent-Acquisition-Specialist/37158",
-          "location": "",
-          "detail": "Junior Talent Acquisition Specialist"
-        },
-        "5d7d1332f58e39b67cfe567bca191c6b": {
-          "title": "Assistant - Workplace IT Services",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Assistant-Workplace-IT-Services/36958",
-          "location": "",
-          "detail": "Assistant - Workplace IT Services"
-        },
-        "8b14c91afdbd6cfc34c3a191c5f3603b": {
-          "title": "Accounting Specialist",
-          "url": "https://tmf.avature.net/careersmarketplace/JobDetail/Accounting-Specialist/35091",
-          "location": "",
-          "detail": "Accounting Specialist"
+          "detail": "Capital Markets & Credit - Assistant Manager - Administration"
         }
       },
       "extractor_version": 3,
       "missing_counts": {
-        "2a2c37c52587688f2dc080f734863b1b": 1,
-        "889bbfceeaa8acfb50bc6eb079553981": 1,
-        "080079e3a72f1a1dd82119610d56eb43": 1,
-        "5d7d1332f58e39b67cfe567bca191c6b": 1,
-        "8b14c91afdbd6cfc34c3a191c5f3603b": 1
+        "de563398a39b79d89deb1e28ae0a57af": 1
       },
-      "last_checked": "2026-09-23T13:00:03.368397",
+      "last_checked": "2026-09-24T12:58:28.013085",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -4225,7 +4213,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:03.512864",
+      "last_checked": "2026-09-24T12:58:28.193338",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4235,7 +4223,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:03.698007",
+      "last_checked": "2026-09-24T12:58:28.392512",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4245,13 +4233,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:03.862424",
+      "last_checked": "2026-09-24T12:58:28.518995",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "MRH Trowe": {
       "url": "https://jobs.mrh-trowe.com/stellenangebote.html",
-      "page_hash": "d5f68078588856ccc36b441c3e934de7892c9721d82f1c59b850b7d6fa7acbe8",
+      "page_hash": "45906ed40baa4f076ffea85d5f88d840020c1b44fcf54ba85b9ae26c5c5d4b9d",
       "job_keys": {
         "c0d0b54e25984022f032104c7a9f498d": {
           "title": "AI Solutions Developer (m/w/d) – Strategische Weiterentwicklung & Operations",
@@ -4294,12 +4282,6 @@
           "url": "https://jobs.mrh-trowe.com/Internationaler-Risk-Consultant-wmd-mit-Conversion-Qualita-de-j748.html",
           "location": "",
           "detail": "Internationaler Risk Consultant (w/m/d) mit Conversion-Qualitäten"
-        },
-        "d920f1bac24414a3eea39751d5eb9c2b": {
-          "title": "IT Service Manager – Jira ITSM & Projektmanagement (w/m/d)",
-          "url": "https://jobs.mrh-trowe.com/IT-Service-Manager-Jira-ITSM-Projektmanagement-wmd-de-j868.html",
-          "location": "",
-          "detail": "IT Service Manager – Jira ITSM & Projektmanagement  (w/m/d)"
         },
         "61e27f072970b3d395625d65d79fcb9c": {
           "title": "Junior Consultant / Quereinsteiger bAV (m/w/d)",
@@ -4433,28 +4415,28 @@
           "location": "",
           "detail": "Vertriebsassistent / Kundenberater / Sales Manager (m/w/d) im Innendienst"
         },
-        "3366e8fb4e2e8b13d676fe235f5fd0cc": {
-          "title": "Portfoliomanager (m/w/d)",
-          "url": "https://jobs.mrh-trowe.com/Portfoliomanager-mwd-de-j850.html",
+        "d920f1bac24414a3eea39751d5eb9c2b": {
+          "title": "IT Service Manager – Jira ITSM & Projektmanagement (w/m/d)",
+          "url": "https://jobs.mrh-trowe.com/IT-Service-Manager-Jira-ITSM-Projektmanagement-wmd-de-j868.html",
           "location": "",
-          "detail": "Portfoliomanager (m/w/d)"
+          "detail": "IT Service Manager – Jira ITSM & Projektmanagement  (w/m/d)"
         }
       },
       "extractor_version": 3,
       "missing_counts": {
-        "3366e8fb4e2e8b13d676fe235f5fd0cc": 1
+        "d920f1bac24414a3eea39751d5eb9c2b": 1
       },
-      "last_checked": "2026-09-23T13:00:03.995709",
+      "last_checked": "2026-09-24T12:58:28.657170",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "VREP": {
       "url": "https://www.vrep.de/ueber-uns/karriere/",
-      "page_hash": "a8e57d139742ed394daf4efb4ad2834aeb96a2479257bfe3358a8107153ca4c2",
+      "page_hash": "fb4e0d6f06601317291ca2988149a40d6ec37195eb0f86ded78a5e4afcb417ad",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.067953",
+      "last_checked": "2026-09-24T12:58:28.754836",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4464,13 +4446,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.146856",
+      "last_checked": "2026-09-24T12:58:28.863488",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Yttrium": {
       "url": "https://yttrium.com/careers/",
-      "page_hash": "6e234fd74ed6d29ef34566fae4b9b3b1530b6eea5d55f06823207f729699e4df",
+      "page_hash": "b3f3e1fac439a6426ba0d9de218476de819d9210a2516aea287272ce655c4a7f",
       "job_keys": {
         "d09c752c19823c4e7488e19bc757acf1": {
           "title": "Junior Data & AI Engineer (f/m/x) – Growth Equity Frankfurt",
@@ -4481,7 +4463,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.252027",
+      "last_checked": "2026-09-24T12:58:28.973624",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -4491,7 +4473,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.382382",
+      "last_checked": "2026-09-24T12:58:29.105279",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4501,17 +4483,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.523401",
+      "last_checked": "2026-09-24T12:58:29.251522",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Vendis Capital": {
       "url": "https://www.vendiscapital.com/careers/",
-      "page_hash": "46276c990e7bd00df2e92a88922c8afe9022d07d4033798e73827f7c354d183a",
+      "page_hash": "3e4c4cb33c5096cb4fc2f0007181c80a18092ceb562049132f6985a6a78433a3",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.695994",
+      "last_checked": "2026-09-24T12:58:29.388713",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4521,17 +4503,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:04.870710",
+      "last_checked": "2026-09-24T12:58:29.555579",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "D2E": {
       "url": "https://www.d2e.be/jobs/",
-      "page_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "page_hash": "3e634374ff46e733374a43e9455167a6b1b2e646de1c8a5df3f5cd1eaf4621ec",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.003106",
+      "last_checked": "2026-09-24T12:58:29.723646",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4541,7 +4523,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.147071",
+      "last_checked": "2026-09-24T12:58:29.881123",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4551,7 +4533,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.257949",
+      "last_checked": "2026-09-24T12:58:29.986071",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4561,7 +4543,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.369378",
+      "last_checked": "2026-09-24T12:58:30.104183",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4571,7 +4553,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.475416",
+      "last_checked": "2026-09-24T12:58:30.188444",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4581,14 +4563,20 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.584697",
+      "last_checked": "2026-09-24T12:58:30.276543",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Aurelius Group": {
       "url": "https://career.aurelius-group.com/",
-      "page_hash": "37fe4961db6d9dd4f5e217ff7c461e80463a2e2baf04e9a005c8ea50a163e0b3",
+      "page_hash": "2248d849ac0eb18a2f3f02fbf4ff0f37562330c695925014971b33cea89b7030",
       "job_keys": {
+        "22a825ab1b4bfde343e8d8722f59dbcc": {
+          "title": "Head of People & Organisation (m/w/d)",
+          "url": "https://aureliusinvest.wd3.myworkdayjobs.com/en-US/AURELIUS/job/Munich/Head-of-People---Organisation--m-w-d-_JR100404",
+          "location": "",
+          "detail": "Head of People & Organisation (m/w/d)"
+        },
         "6da2dd49d3d46ca07e759b176b3f61da": {
           "title": "Senior Manager Data & Analytics (m/w/d)",
           "url": "https://aureliusinvest.wd3.myworkdayjobs.com/en-US/AURELIUS/job/Germany/Senior-Manager-Data---Analytics--m-w-d-_JR100416",
@@ -4600,12 +4588,6 @@
           "url": "https://aureliusinvest.wd3.myworkdayjobs.com/en-US/AURELIUS/job/Italy/Managing-Director--m-f-d----Growth-Capital_JR100415",
           "location": "",
           "detail": "Managing Director (m/f/d) - Growth Capital"
-        },
-        "22a825ab1b4bfde343e8d8722f59dbcc": {
-          "title": "Head of People & Organisation (m/w/d)",
-          "url": "https://aureliusinvest.wd3.myworkdayjobs.com/en-US/AURELIUS/job/Munich/Head-of-People---Organisation--m-w-d-_JR100404",
-          "location": "",
-          "detail": "Head of People & Organisation (m/w/d)"
         },
         "9898efa6b95d9e18b70d7f6ebb4532d7": {
           "title": "Treasury & Accounts Receivable Specialist (m/f/d)",
@@ -4778,7 +4760,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.652489",
+      "last_checked": "2026-09-24T12:58:30.358535",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -4788,23 +4770,23 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.693131",
+      "last_checked": "2026-09-24T12:58:30.426837",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Platina Partners": {
       "url": "https://www.platinapartners.com/work-with-us/",
-      "page_hash": "a11d0d1beb472655610084944c475660ea325d338faa516726acf48ba5b68241",
+      "page_hash": "f37173e8bf5bd9b43be03e84531189a07c0c7e238bb6c46eb48517bfb747aba0",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.736228",
+      "last_checked": "2026-09-24T12:58:30.480324",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Hayfin": {
       "url": "https://www.hayfin.com/people/working-at-hayfin/",
-      "page_hash": "4e95ef41859788b6b913b0109b2512a5d29cc5b90626900277f8113e3d83a6ca",
+      "page_hash": "f1893a588ee4d713128c6f45efb7e19df74adceec401a4e7cdbf4768681413d1",
       "job_keys": {
         "4b3e1fdab408fee1c85d1eaa54c561f7": {
           "title": "Senior Software Engineer",
@@ -4821,17 +4803,17 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.771485",
+      "last_checked": "2026-09-24T12:58:30.508954",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Limerston Capital": {
       "url": "https://www.limerstoncap.com/careers",
-      "page_hash": "2907fb19cd178db51fa540645f7aecb2c0513b802b4f5322c85751b7cb45a8dd",
+      "page_hash": "5711c420df98ea6f271ed60eb18f742a5118226da805ba5f9f9a617d18dd398e",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.803320",
+      "last_checked": "2026-09-24T12:58:30.543314",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4841,7 +4823,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.836486",
+      "last_checked": "2026-09-24T12:58:30.596859",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4851,7 +4833,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.881335",
+      "last_checked": "2026-09-24T12:58:30.644515",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4861,7 +4843,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:05.951407",
+      "last_checked": "2026-09-24T12:58:30.750584",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4871,7 +4853,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.026088",
+      "last_checked": "2026-09-24T12:58:30.813584",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4881,7 +4863,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.081019",
+      "last_checked": "2026-09-24T12:58:30.883205",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4891,17 +4873,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.115402",
+      "last_checked": "2026-09-24T12:58:30.944158",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Tenzing PE": {
       "url": "https://tenzing.pe/careers/",
-      "page_hash": "cd372fb85148700fa88095e3492d3f9f5beb43e555e5ff26d95f5a6adc36f8e6",
+      "page_hash": "4c9277947f42ec3f3e50805af00920da7e08bc5a0702fcf5505c2c0f174a60b1",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.184114",
+      "last_checked": "2026-09-24T12:58:31.008296",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4911,7 +4893,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.225538",
+      "last_checked": "2026-09-24T12:58:31.071232",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4921,7 +4903,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.264547",
+      "last_checked": "2026-09-24T12:58:31.168213",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4931,7 +4913,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.299438",
+      "last_checked": "2026-09-24T12:58:31.251727",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4941,7 +4923,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.333212",
+      "last_checked": "2026-09-24T12:58:31.328788",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4951,7 +4933,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.374366",
+      "last_checked": "2026-09-24T12:58:31.396515",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4961,7 +4943,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.412753",
+      "last_checked": "2026-09-24T12:58:31.502179",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4971,7 +4953,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.453147",
+      "last_checked": "2026-09-24T12:58:31.640685",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4981,7 +4963,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.510213",
+      "last_checked": "2026-09-24T12:58:31.776016",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -4991,7 +4973,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.618108",
+      "last_checked": "2026-09-24T12:58:31.890383",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5001,7 +4983,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.734902",
+      "last_checked": "2026-09-24T12:58:32.001166",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5011,7 +4993,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:06.884244",
+      "last_checked": "2026-09-24T12:58:32.102249",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5021,7 +5003,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.014100",
+      "last_checked": "2026-09-24T12:58:32.170081",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5031,7 +5013,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.115484",
+      "last_checked": "2026-09-24T12:58:32.259597",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5041,7 +5023,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.184339",
+      "last_checked": "2026-09-24T12:58:32.341167",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5051,7 +5033,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.235380",
+      "last_checked": "2026-09-24T12:58:32.405677",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5086,7 +5068,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.296480",
+      "last_checked": "2026-09-24T12:58:32.491706",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5096,14 +5078,50 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.367632",
+      "last_checked": "2026-09-24T12:58:32.575450",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Kantar": {
       "url": "https://www.kantar.com/careers",
-      "page_hash": "454772658c20a3f567c5ea5655be1581e2f1540b8c9e95948e2b23a4c401cd2e",
+      "page_hash": "f55efb23460cc0cd622e5a427bf3508d08fc7ab9c5c4cac25ffa5c6d48e75966",
       "job_keys": {
+        "c59b63257ac3ee747808c356c135b9b0": {
+          "title": "KBS India Q2C Head – Job Management, Billing and Collections",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Gurgaon-DLF-Cyber-Park/KBS-India-Q2C-Head---Job-Management--Billing-and-Collections_R102635",
+          "location": "",
+          "detail": "KBS India Q2C Head – Job Management, Billing and Collections"
+        },
+        "2b0665cb245d7f2df5e9c0725630947e": {
+          "title": "Collections Associate",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Mumbai-The-ORB-Building/Collections-Associate_R102479",
+          "location": "",
+          "detail": "Collections Associate"
+        },
+        "78690e90fd4f80d5430cc854f322332a": {
+          "title": "Consultant-1",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Bangalore-Prestige-Technology-Park/Consultant-1_R101254-1",
+          "location": "",
+          "detail": "Consultant-1"
+        },
+        "a232f6bf90b763591fdc4c50d9f3c8bf": {
+          "title": "Lead Engineer",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Bangalore-Prestige-Technology-Park/Lead-Engineer_R101332",
+          "location": "",
+          "detail": "Lead Engineer"
+        },
+        "6013d61f8a8819e5198a4cbaaf91d53d": {
+          "title": "Senior Software Engineer",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Bangalore-Prestige-Technology-Park/Senior-Software-Engineer_R101333",
+          "location": "",
+          "detail": "Senior Software Engineer"
+        },
+        "4b2245c9320d8226ed6726fe040d7695": {
+          "title": "Consultant",
+          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Bangalore-Prestige-Technology-Park/Consultant_R101769-1",
+          "location": "",
+          "detail": "Consultant"
+        },
         "22bd6ef5cebcafbda9b9c9585c34a84b": {
           "title": "Principal Product Manager - Dynamics 365",
           "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/London-South-Bank-Central/Principal-Product-Manager---Dynamics-365_R100280-2",
@@ -5409,19 +5427,11 @@
           "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Bangalore-Prestige-Technology-Park/Consultant-Product-Development---Development-1_R088085",
           "location": "",
           "detail": "Consultant-Product Development & Development-1"
-        },
-        "4be3a44cadb5a4773ba8294eab02e33b": {
-          "title": "Consumer Insights Account Manager",
-          "url": "https://kantar.wd3.myworkdayjobs.com/en-US/KANTAR/job/Nairobi-Matundu-Lane/Account-Manager_R102374-1",
-          "location": "",
-          "detail": "Consumer Insights Account Manager"
         }
       },
       "extractor_version": 3,
-      "missing_counts": {
-        "4be3a44cadb5a4773ba8294eab02e33b": 1
-      },
-      "last_checked": "2026-09-23T13:00:07.413461",
+      "missing_counts": {},
+      "last_checked": "2026-09-24T12:58:32.662024",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5431,7 +5441,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.495847",
+      "last_checked": "2026-09-24T12:58:32.740136",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5441,7 +5451,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.581565",
+      "last_checked": "2026-09-24T12:58:32.817616",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5451,7 +5461,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.658306",
+      "last_checked": "2026-09-24T12:58:32.901295",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5461,7 +5471,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.820495",
+      "last_checked": "2026-09-24T12:58:32.999592",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5471,17 +5481,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.899554",
+      "last_checked": "2026-09-24T12:58:33.131945",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Elvaston": {
       "url": "https://www.elvaston.com/en/careers",
-      "page_hash": "1220c59d4e5ba6a23f33f3f798e93fcb80239240f99a8a205abc5d768f955495",
+      "page_hash": "16bbd82e8e9f4c128d75fcb5b071811cfcd99f2b2c499f169398b25b97804a2e",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:07.973594",
+      "last_checked": "2026-09-24T12:58:33.287381",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5491,13 +5501,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.056085",
+      "last_checked": "2026-09-24T12:58:33.545271",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Auctus Capital Partners": {
       "url": "https://auctuscapitalpartnersag-1743583356.teamtailor.com/jobs",
-      "page_hash": "aa38a4439d619fc67df667f691d5b7e20b5ce1556dd6420cd06fdfd98e2e233f",
+      "page_hash": "a79e0aaea30e8c05941ad3241c689adc4206103640b29c254d3cdd8b4c2bd643",
       "job_keys": {
         "f111d973d82f1d17aabe9c172f32613f": {
           "title": "PRIVATE EQUITY ANALYST (m/w/d)",
@@ -5540,6 +5550,12 @@
           "url": "https://careers.auctus.com/jobs/8116923-portfolio-analyst-m-w-d-amovia-group",
           "location": "Munich",
           "detail": "Portfolio Analyst (m/w/d) Amovia Group Portfolio Company · Meschede, NRW, Munich · Hybrid"
+        },
+        "55449a677c12d3326d962debd91da2ff": {
+          "title": "Projektleiter technische Projektentwicklung (m/w/d) Wohnimmobilien",
+          "url": "https://careers.auctus.com/jobs/8105795-projektleiter-technische-projektentwicklung-m-w-d-wohnimmobilien",
+          "location": "Berlin",
+          "detail": "Projektleiter technische Projektentwicklung (m/w/d) Wohnimmobilien Portfolio Company · Berlin · Hybrid"
         },
         "5ba1bece6c2496196aa65a1569aeec49": {
           "title": "M&A Manager (m/w/d) IT-Services",
@@ -5604,7 +5620,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.155883",
+      "last_checked": "2026-09-24T12:58:33.714490",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5614,7 +5630,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.277108",
+      "last_checked": "2026-09-24T12:58:33.793962",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5624,13 +5640,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.425370",
+      "last_checked": "2026-09-24T12:58:33.874902",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Afinum": {
       "url": "https://afinum.de/jobs/",
-      "page_hash": "8b151fb05072b36046af04114afb4ea5c542e29d23812bd91c31752d923f5809",
+      "page_hash": "f4ce38ab58870bbd466d00cf2ff3f03989107092f4e8925b5186127606333939",
       "job_keys": {
         "38182ef8d7cd334f86eb021522abce32": {
           "title": "Analyst (m/w/d) im Investment Team",
@@ -5659,7 +5675,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.630822",
+      "last_checked": "2026-09-24T12:58:33.953392",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5676,7 +5692,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.773092",
+      "last_checked": "2026-09-24T12:58:34.092490",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5686,7 +5702,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.861466",
+      "last_checked": "2026-09-24T12:58:34.234197",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5715,7 +5731,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:08.951853",
+      "last_checked": "2026-09-24T12:58:34.376356",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5744,13 +5760,13 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.063968",
+      "last_checked": "2026-09-24T12:58:34.592733",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Pinova Capital": {
       "url": "https://www.pinovacapital.com/en/career/",
-      "page_hash": "cf8cedaa37232c4a2c2e1af37dcf95759ee8ddfe1c2135c86fdff6cac6d64eeb",
+      "page_hash": "e29322894a9380fc8a8b480d914e8ae4d98eec35d401d75f111a4ab6ef43fcfd",
       "job_keys": {
         "dc1e0332fb6d3d97c78d95360efefe70": {
           "title": "Analyst",
@@ -5767,7 +5783,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.176870",
+      "last_checked": "2026-09-24T12:58:34.743693",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5777,7 +5793,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.242409",
+      "last_checked": "2026-09-24T12:58:34.894223",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5794,7 +5810,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.331273",
+      "last_checked": "2026-09-24T12:58:35.025486",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5804,7 +5820,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.429399",
+      "last_checked": "2026-09-24T12:58:35.164278",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5821,7 +5837,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.472857",
+      "last_checked": "2026-09-24T12:58:35.364416",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5831,7 +5847,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.514492",
+      "last_checked": "2026-09-24T12:58:35.544564",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5841,7 +5857,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.555149",
+      "last_checked": "2026-09-24T12:58:35.736245",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5851,17 +5867,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.596074",
+      "last_checked": "2026-09-24T12:58:35.932690",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "BID Equity": {
       "url": "https://bidequity.de/careers",
-      "page_hash": "2acf74c8bb901eb92aca4c77d39f14d3e9ab660d03ddf7629cedb898db571fbf",
+      "page_hash": "2576f9ef7b59ed385c4dd7cf996fb3a5fe5ba97e6eefd0c1335b700df971d368",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.638165",
+      "last_checked": "2026-09-24T12:58:36.115851",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5871,7 +5887,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.678986",
+      "last_checked": "2026-09-24T12:58:36.295520",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5881,13 +5897,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.720141",
+      "last_checked": "2026-09-24T12:58:36.423196",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "HQ Capital": {
       "url": "https://hqcapital.com/de/karriere",
-      "page_hash": "32d71512d95523bf74bf3489e522808b03951a17e5be1cb79797f202164656f8",
+      "page_hash": "24be2c5360e7b01ad1be784483dde7a7070aa6b573bd82be08ae4ca68fb28c10",
       "job_keys": {
         "93e15c4183dc2451f62ab1812cfced20": {
           "title": "Fund Accountant (m/f/d) - Private Equity",
@@ -5898,7 +5914,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.760550",
+      "last_checked": "2026-09-24T12:58:36.532578",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -5908,7 +5924,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.802033",
+      "last_checked": "2026-09-24T12:58:36.640748",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5927,14 +5943,20 @@
       "missing_counts": {
         "aeefffa42995633c6ee6238e32e057da": 0
       },
-      "last_checked": "2026-09-23T13:00:09.843310",
+      "last_checked": "2026-09-24T12:58:36.776421",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "MPEP": {
       "url": "https://mpep.jobs.personio.com/",
-      "page_hash": "bb26bcde9946f81986fd78b20bba1bca1890a7c883f6ad7f10963d018b2b4527",
+      "page_hash": "c062b02a99bc8b4d99a0fdcecbcf0943443d397f1f170e1e6340641ade679ed1",
       "job_keys": {
+        "f6fe210d0ff79c58b93e19427f38dc7f": {
+          "title": "Manager / Director – Institutional Sales International (m/f/d)",
+          "url": "https://mpep.jobs.personio.com/job/2786214",
+          "location": "",
+          "detail": "Manager / Director – Institutional Sales International (m/f/d) Oberhaching, Remote Vollzeit Festanstellung"
+        },
         "987a51cac1ccf079b27876f2c15679ea": {
           "title": "Head of Finance (m/f/d)",
           "url": "https://mpep.jobs.personio.com/job/2762971",
@@ -5946,37 +5968,34 @@
           "url": "https://mpep.jobs.personio.com/job/2762853",
           "location": "",
           "detail": "Senior Fund Accountant (m/f/d) Luxembourg, Hybrid Vollzeit Festanstellung"
-        },
-        "f6fe210d0ff79c58b93e19427f38dc7f": {
-          "title": "Manager / Director – Institutional Sales International (m/f/d)",
-          "url": "https://mpep.jobs.personio.com/job/2786214",
-          "location": "",
-          "detail": "Manager / Director – Institutional Sales International (m/f/d) Oberhaching, Remote Vollzeit Festanstellung"
         }
       },
       "extractor_version": 3,
-      "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:09.933638",
+      "missing_counts": {
+        "987a51cac1ccf079b27876f2c15679ea": 1,
+        "39bf28140505161b40461124c2efe276": 1
+      },
+      "last_checked": "2026-09-24T12:58:36.934582",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "Bregal Unternehmerkapital": {
       "url": "https://www.bu-partners.com/careers/",
-      "page_hash": "d96330dfb50729d89d40a4c29e00c4dc98f443fd4bd80d487a5e35324517bca3",
+      "page_hash": "199dbf68cd62234af7fbcd0aec837fca896d08101af1b4f38a7bdb06ee17aa1a",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:10.013974",
+      "last_checked": "2026-09-24T12:58:37.117128",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Co-Investor AG": {
       "url": "https://co-investor.com/en/ueberuns/index.htm",
-      "page_hash": "289970bf5bb4a0cd155fedc6d15adff87643ff41335631f471c4a72bdcd7ccc1",
+      "page_hash": "fcf30da6fd9f03503b11c43d3d84f6c92b0fc6c36c7822cfc30526351aaae978",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:10.065824",
+      "last_checked": "2026-09-24T12:58:37.252687",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5986,7 +6005,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:10.108396",
+      "last_checked": "2026-09-24T12:58:37.409202",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -5996,13 +6015,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:10.241114",
+      "last_checked": "2026-09-24T12:58:37.725664",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Edmond de Rothschild PE": {
       "url": "https://evht.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_7001/jobs",
-      "page_hash": "284ebdc263f677b0a0854aa4e9651d9abcbef4cd8459e6df386a6c18916ca809",
+      "page_hash": "18a3aa513bd42156b4968105dbb343a16a844c06ccde0b99fb0ac77d17f2cec2",
       "job_keys": {
         "f459b3744ab20dff967d0e77104713a1": {
           "title": "SENIOR MARKET DATA SPECIALIST (H/F)",
@@ -6056,7 +6075,7 @@
           "title": "ALTERNATIVE INVESTMENT FUND DEPOSITARY BANK OFFICER (M/F)",
           "url": "https://evht.fa.ocs.oraclecloud.eu/hcmUI/CandidateExperience/en/sites/CX_7001/job/2722",
           "location": "",
-          "detail": "ALTERNATIVE INVESTMENT FUND DEPOSITARY BANK OFFICER (M/F) Locations Luxembourg Posting Date 08/07/2026"
+          "detail": "ALTERNATIVE INVESTMENT FUND DEPOSITARY BANK OFFICER (M/F) Locations Luxembourg Posting Date 08/07/2026 Trending"
         },
         "b5f71609ea31b000abbafa76eeba45d3": {
           "title": "AGENT TRADE PROCESSING - CDD 12 mois (M/F)",
@@ -6103,7 +6122,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:16.981821",
+      "last_checked": "2026-09-24T12:58:41.228636",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6113,7 +6132,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.163250",
+      "last_checked": "2026-09-24T12:58:41.360188",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6123,13 +6142,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.337125",
+      "last_checked": "2026-09-24T12:58:41.537254",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Muzinich & Co.": {
       "url": "https://muzinich.wd5.myworkdayjobs.com/muzinichcareers",
-      "page_hash": "299c92c6c8d52aa056e88f3b66472d4d193ddfd02f885c1b8b21ed5009b48ca4",
+      "page_hash": "de4334215b754771ecfc4d3202fac2f8ca073d065ba310eeeb2598d0cc7eba81",
       "job_keys": {
         "1ddf0ddaf31ecc5df1a0c7acc2222d96": {
           "title": "Head of Fund Accounting, Private Markets",
@@ -6140,13 +6159,13 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.481772",
+      "last_checked": "2026-09-24T12:58:41.668830",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
     "HarbourVest Partners": {
       "url": "https://harbourvest.wd5.myworkdayjobs.com/HVP",
-      "page_hash": "a6bf1862f807ebcf06e6bf4b7e057b217529beeec411f8f15588ba964f8a0503",
+      "page_hash": "6895a389baa05c392872fb4707238a01bda8a41019f74aae851a00f6b7ec834f",
       "job_keys": {
         "14f0936665df4de88d8383387d7dd487": {
           "title": "Associate, Global Private Wealth - Investor Relations",
@@ -6217,7 +6236,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.597075",
+      "last_checked": "2026-09-24T12:58:41.796836",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -6227,7 +6246,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.689561",
+      "last_checked": "2026-09-24T12:58:41.932894",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6237,7 +6256,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.787305",
+      "last_checked": "2026-09-24T12:58:42.080472",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6247,7 +6266,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:17.923620",
+      "last_checked": "2026-09-24T12:58:42.177352",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6257,7 +6276,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.130803",
+      "last_checked": "2026-09-24T12:58:42.270465",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6267,7 +6286,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.291811",
+      "last_checked": "2026-09-24T12:58:42.364444",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6277,7 +6296,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.425257",
+      "last_checked": "2026-09-24T12:58:42.471243",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6287,7 +6306,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.558565",
+      "last_checked": "2026-09-24T12:58:42.622216",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6297,7 +6316,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.692376",
+      "last_checked": "2026-09-24T12:58:42.755309",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6320,7 +6339,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:18.864784",
+      "last_checked": "2026-09-24T12:58:42.856738",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -6330,7 +6349,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:19.012241",
+      "last_checked": "2026-09-24T12:58:42.952265",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6340,7 +6359,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:19.185284",
+      "last_checked": "2026-09-24T12:58:43.044710",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6350,7 +6369,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:22.246279",
+      "last_checked": "2026-09-24T12:58:44.258784",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6360,7 +6379,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:23.159220",
+      "last_checked": "2026-09-24T12:58:46.824340",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6370,7 +6389,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:23.428305",
+      "last_checked": "2026-09-24T12:58:47.454099",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6380,7 +6399,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:33.638456",
+      "last_checked": "2026-09-24T12:58:55.129168",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6390,7 +6409,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:33.693195",
+      "last_checked": "2026-09-24T12:58:55.271192",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6400,7 +6419,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:33.752718",
+      "last_checked": "2026-09-24T12:58:55.359112",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6410,7 +6429,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:33.836144",
+      "last_checked": "2026-09-24T12:58:55.449289",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6420,7 +6439,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:33.924787",
+      "last_checked": "2026-09-24T12:58:56.778689",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6430,7 +6449,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:35.413386",
+      "last_checked": "2026-09-24T12:58:58.575305",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6440,7 +6459,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:37.199366",
+      "last_checked": "2026-09-24T12:59:00.301619",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6450,13 +6469,13 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:40.195200",
+      "last_checked": "2026-09-24T12:59:01.801215",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "H.I.G. Capital": {
       "url": "https://higcapital.wd5.myworkdayjobs.com/LinkedIn",
-      "page_hash": "6b99463aefae31cc3fa35de2c99c3070ad674bc4fab3dc34a62b412584eacc05",
+      "page_hash": "0282ee67bbbb1c4abf9ce00cc580f773bf914a4b2d573ff0bb010dc1680ed142",
       "job_keys": {
         "68551774fe4ba9d46ac04eb3920c09ac": {
           "title": "Analyst, Treasury",
@@ -6497,7 +6516,7 @@
       },
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.469210",
+      "last_checked": "2026-09-24T12:59:22.553453",
       "has_no_jobs_indicator": false,
       "coverage_complete": true
     },
@@ -6507,7 +6526,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.493554",
+      "last_checked": "2026-09-24T12:59:22.578631",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6517,7 +6536,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.523287",
+      "last_checked": "2026-09-24T12:59:22.603229",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6527,7 +6546,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.554815",
+      "last_checked": "2026-09-24T12:59:22.627901",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6537,7 +6556,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.579323",
+      "last_checked": "2026-09-24T12:59:22.652652",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6547,17 +6566,17 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.602250",
+      "last_checked": "2026-09-24T12:59:22.678271",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
     "Vorsprung Management": {
       "url": "https://www.vorsprungpartners.com/info",
-      "page_hash": "3c1b73964137f31a622a6789f4ddfb5fd0c257d71e7964b70f4d944590ddcff3",
+      "page_hash": "277dc7c2fb65463f50dbde3906e81bcf0af805664ebb965159277c7c586e49bc",
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.625094",
+      "last_checked": "2026-09-24T12:59:22.703436",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6567,7 +6586,7 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:01:00.648607",
+      "last_checked": "2026-09-24T12:59:22.728790",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     },
@@ -6577,12 +6596,12 @@
       "job_keys": {},
       "extractor_version": 3,
       "missing_counts": {},
-      "last_checked": "2026-09-23T13:00:10.150863",
+      "last_checked": "2026-09-24T12:58:37.569806",
       "has_no_jobs_indicator": false,
       "coverage_complete": false
     }
   },
-  "last_run": "2026-09-23T13:01:04.799016",
+  "last_run": "2026-09-24T12:59:25.177961",
   "tracker_fed": {
     "50108cc35a740882eb33ad93f01dd8b1": {
       "title": "Commercial Letting Specialist",
@@ -7074,7 +7093,8 @@
     "SUSI Partners": {
       "error": null,
       "warnings": [
-        "Investment Analyst Singapore: link/ad not verified (ValueError: Job detail is closed or blocked)."
+        "Career page could not be read: https://www.susi-partners.com/en/careers/ (TimeoutError).",
+        "No verifiable vacancy links extracted; inspect the career page manually."
       ],
       "coverage_complete": false
     },
@@ -7146,10 +7166,8 @@
     },
     "Karmijn Kapitaal": {
       "error": null,
-      "warnings": [
-        "Pedagogisch professional BSO: link/ad not verified (TimeoutError: Page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://jobs.karmijnkapitaal.nl/companies/unikidz/jobs/83617033-pedagogisch-professional-bso\",)."
-      ],
-      "coverage_complete": false
+      "warnings": [],
+      "coverage_complete": true
     },
     "Vortex Capital Partners": {
       "error": null,
@@ -7171,7 +7189,6 @@
     "Avedon Capital": {
       "error": null,
       "warnings": [
-        "Career page could not be read: https://avedoncapital.com/our-people/ (HTTP 403).",
         "No verifiable vacancy links extracted; inspect the career page manually."
       ],
       "coverage_complete": false
@@ -7278,7 +7295,6 @@
     "D2E": {
       "error": null,
       "warnings": [
-        "Career page could not be read: https://www.d2e.be/jobs/ (HTTP 403).",
         "No verifiable vacancy links extracted; inspect the career page manually."
       ],
       "coverage_complete": false
@@ -7396,7 +7412,6 @@
     "Tenzing PE": {
       "error": null,
       "warnings": [
-        "Career page could not be read: https://tenzing.pe/careers/ (HTTP 403).",
         "No verifiable vacancy links extracted; inspect the career page manually."
       ],
       "coverage_complete": false
