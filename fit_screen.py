@@ -6,6 +6,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 MAX_SCREENINGS = 40
+MAX_SCREEN_SECONDS = 10 * 60  # Leave time for delivery/state within the Actions deadline.
 PREFILTER_TERMS = (
     'intern, praktik, werkstudent, student, trainee, graduate, sales, vertrieb, tax, steuer, '
     'legal, jurist, counsel, compliance, accounting, buchhalt, controller, controlling, fund admin, '

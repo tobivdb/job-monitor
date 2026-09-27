@@ -196,6 +196,16 @@ class FeedTests(unittest.TestCase):
         self.assertTrue(any('40-screening' in error for error in errors))
         self.values.append.assert_not_called()
 
+    def test_stage_budget_reserves_a_full_timeout_and_keeps_overflow_pending(self):
+        other = dict(self.candidate, job=monitor.JobEntry('Investment Manager', 'https://example.test/job/2'))
+        errors = []
+        with patch.object(monitor.time, 'monotonic', side_effect=[0, 0, 541]):
+            self.feed(candidates=[self.candidate, other], errors=errors)
+        self.opener.assert_called_once()
+        self.assertIn(self.job.key, self.state['tracker_fed'])
+        self.assertIn(other['job'].key, self.state['tracker_pending'])
+        self.assertTrue(any('time budget' in error for error in errors))
+
     def test_report_contains_fit_location_reason_screened_out_and_transfer_errors(self):
         fed = self.feed()
         body, changes, _ = monitor.build_email_html([], tracker_fed=fed,

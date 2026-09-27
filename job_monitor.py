@@ -640,6 +640,7 @@ def feed_tracker(candidates: list[dict], state: dict, *, errors=None, screened_o
     rows, report, batch, aliases = [], [], [], []
     batch_urls, batch_titles = set(), set()
     attempts = 0
+    screening_deadline = time.monotonic() + fit_screen.MAX_SCREEN_SECONDS
 
     def duplicate(job, company):
         fed[job.key] = {"title": job.title, "company": company, "date": "already in sheet"}
@@ -669,6 +670,10 @@ def feed_tracker(candidates: list[dict], state: dict, *, errors=None, screened_o
             if attempts >= fit_screen.MAX_SCREENINGS:
                 pending[job.key]["reason"] = "40-screening limit reached"
                 errors.append("40-screening limit reached; remaining candidates stay pending.")
+                continue
+            if time.monotonic() + 60 > screening_deadline:
+                pending[job.key]["reason"] = "Screening time budget exhausted"
+                errors.append("Screening time budget exhausted; remaining candidates stay pending.")
                 continue
             try:
                 # Missing credentials do not consume a paid call, but are still fail-closed.

@@ -85,7 +85,9 @@ Unknown facts remain unknown; site headquarters are not evidence of job location
 Newly verified roles and previously pending roles at eligible sources are screened;
 a site's first successful scan still establishes its baseline without bulk feeding
 historical jobs. At most **40 API attempts per run**, including failed attempts,
-are allowed. Missing `OPENAI_API_KEY`, API failure/incomplete output, exhausted
+are allowed, within a ten-minute screening-stage budget (a full 60-second call
+is reserved before starting another). This keeps slow screenings from using the
+time needed for email/state delivery after the bounded scan. Missing `OPENAI_API_KEY`, API failure/incomplete output, exhausted
 budget, unavailable ad text, or failed Sheet writes leave candidates in
 `tracker_pending`. They are retried only after fresh ad verification. No unscreened
 row is appended. `tracker_screened_out` stores each Low/prefilter decision keyed
