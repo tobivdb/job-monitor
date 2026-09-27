@@ -221,6 +221,7 @@ URL or head office alone does not exclude them. Evidence includes
 [Egeria's German/Swiss careers](https://egeriagroup.com/career/),
 [Avedon's Düsseldorf recruiting](https://avedoncapital.com/our-people/),
 [Gilde's Frankfurt recruiting](https://gildehealthcare.com/de/career-opportunities/),
+[Cinven's 2026 Frankfurt hire](https://www.cinven.com/team/pia-borjans/),
 [Rivean's careers](https://riveancapital.com/working-with-us/) and
 [Frankfurt/Zug offices](https://riveancapital.com/contact/).
 Nordic Capital is enabled based on its official
@@ -234,8 +235,11 @@ Non-DACH-only sources remain in the digest with `feed: false`. Where DACH hiring
 was not established, sources stay digest-only pending review rather than assuming
 eligibility from an investment in a German company. The PR's complete source table
 identifies these conservative classifications; examples are Permira, BC Partners,
-Cinven, Montagu, IK, Apax, Bridgepoint, CVC DIF, Columna and Bamboo. This does not
+Montagu, IK, Apax, Bridgepoint, CVC DIF, Columna and Bamboo. This does not
 assert that they lack DACH offices or never hire there.
+[Müller-Möhl](https://mm-grp.com/en/) remains digest-only: the official description
+establishes multi-asset family-office management, but not a direct-investment
+hiring mandate. Revisit if that mandate is confirmed.
 
 Only TMF Group and Kantar were removed as investment-source exclusions. Duplicate
 Invision AG was merged into Invision (identical URL; retained source-history note).

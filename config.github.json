@@ -425,7 +425,7 @@
       "url": "https://cinven.pinpointhq.com/en#js-careers-jobs-block",
       "notes": "Pinpoint HQ job board",
       "tier": "EU",
-      "feed": false
+      "feed": true
     },
     {
       "name": "DUB AG",
@@ -1133,7 +1133,7 @@
       "name": "Müller-Möhl Group",
       "url": "https://www.mm-grp.com/en/content/team",
       "notes": "team page - monitors for career section appearing (added from PE Funds Tracker, 2026-07-03)",
-      "feed": true
+      "feed": false
     },
     {
       "name": "Muzinich & Co.",
