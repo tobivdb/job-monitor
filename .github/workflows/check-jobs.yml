@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
-      - run: python -m compileall -q job_monitor.py job_sources.py site_crawl.py scan_process.py ai_audit.py verify_scan.py export_linkedin_cookies.py
+      - run: python -m compileall -q job_monitor.py job_sources.py site_crawl.py scan_process.py fit_screen.py tracker_fields.py ai_audit.py verify_scan.py export_linkedin_cookies.py
       - run: python -m unittest discover -s tests -v
 
   live-regressions:
@@ -87,6 +87,8 @@ jobs:
       - name: Run job monitor
         id: scan
         env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_SCREEN_MODEL: ${{ vars.OPENAI_SCREEN_MODEL || 'gpt-5-mini' }}
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
@@ -123,7 +125,7 @@ jobs:
         if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
         run: python verify_scan.py --operational
       - name: Optional OpenAI second opinion
-        if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true'
+        if: always() && steps.scan.outcome == 'success' && env.EMAIL_TEST != 'true' && env.DRY_RUN != 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_AUDIT_MODEL: ${{ vars.OPENAI_AUDIT_MODEL || 'gpt-5-mini' }}
