@@ -13,7 +13,8 @@ python -m unittest discover -s tests -v
 ```
 
 `--dry-run` writes only `last_report.html`, `scan_results.json` and a local log.
-It never sends mail, appends Google Sheet rows or changes `state.json`.
+It never calls the fit API, sends mail, appends Google Sheet rows or changes `state.json`.
+The workflow also skips the optional AI audit in dry-run mode.
 The default config is local `config.json` if present, otherwise `config.github.json`.
 SMTP and Google credentials belong in environment variables / GitHub Secrets.
 
@@ -73,21 +74,74 @@ State is written atomically after SMTP acceptance (or a run requiring no mail).
 Failed delivery leaves the prior baseline intact. Successful and failed scans
 upload HTML/JSON artifacts from GitHub Actions for seven days.
 
-CV transfers use only verified ad text. Failed transfers remain pending and are
-retried only after the ad is verified again. The feed reads existing sheet URLs
-before appending to avoid duplication after a partial run failure. Thin ad text is
-marked `NEEDS_REVIEW`. A Google `invalid_grant` requires renewing the configured
+CV transfers use only verified ad text and require a High or Medium fit from
+`fit_screen.py`. The case-insensitive title pre-filter runs before any API call;
+it uses word boundaries (so `intern` does not reject `International`) plus the
+specified German stems and role-family suffixes. These hard exclusions override
+model judgement. The screening prompt applies Low exclusions first and specific
+Medium lanes (including platform M&A Manager) before overlapping High rules.
+Unknown facts remain unknown; site headquarters are not evidence of job location.
+
+Newly verified roles and previously pending roles at eligible sources are screened;
+a site's first successful scan still establishes its baseline without bulk feeding
+historical jobs. At most **40 API attempts per run**, including failed attempts,
+are allowed, within a ten-minute screening-stage budget (a full 60-second call
+is reserved before starting another). This keeps slow screenings from using the
+time needed for email/state delivery after the bounded scan. Missing `OPENAI_API_KEY`, API failure/incomplete output, exhausted
+budget, unavailable ad text, or failed Sheet writes leave candidates in
+`tracker_pending`. They are retried only after fresh ad verification. No unscreened
+row is appended. `tracker_screened_out` stores each Low/prefilter decision keyed
+by job identity (title, company, fit, date, reason); these are never automatically
+screened again. The email lists fed fits/location/reason, newly screened-out roles,
+and pending candidates with transfer/screening errors. State still commits only
+after successful delivery. A Google `invalid_grant` requires renewing the configured
 Google authorization; code cannot repair an expired/revoked credential.
+
+The feed reads **A:D once per run**, across all statuses, to deduplicate canonical
+URLs and employer/title pairs. Title matching ignores case, punctuation, gender
+markers and known city suffixes; Investment Associate equals Associate Investment
+Team, but seniority is retained. Duplicates are recorded in `tracker_fed` with date
+`already in sheet`. Same-batch duplicates become fed only after a successful append.
+
+The ten-column contract matches the CV pipeline's `CSV_FIELDS`:
+A Website, B Description, C Company, D Job Position, E Status, F Date, G My Comment,
+H Fit Probability, **I Location, J Claude Comment**. Status is `NEW`, or
+`NEEDS_REVIEW` when verified text is under 800 characters. Date uses Europe/Zurich
+(`YYYY-MM-DD HH:MM CEST`, `CET` in winter). Location uses verified ad metadata,
+normalized to City, Country or Remote (Country), empty when unresolved. A single
+JSON-LD job location takes precedence; multiple locations are not guessed.
+Description contains title, employer, location, JSON-LD datePosted (or `unknown`),
+source URL, a blank line and the full extracted verified text with real newlines.
+The comment starts `Career page monitor <date> | Fit: <High|Medium> | ...` and
+contains summary/source/posted date; it never emits another automation's daily marker.
+
+Merge the companion Job-Tracker-Update schema/status PR before enabling this feed:
+https://github.com/tobivdb/Job-Tracker-Update/pull/42. The pipeline must retain
+Location in I, write Claude Comment in J, and process both empty and `NEW` statuses.
 
 ## Configuration
 
-Each site has `name`, `url`, optional `tier`, `exclude_patterns`,
+Each site has `name`, `url`, optional boolean `feed`, `tier`, `exclude_patterns`,
 `include_job_patterns`, and `no_jobs_indicators`. Include patterns are matched
 against the individual job's fields, never the entire board. A no-jobs indicator
 does not override actual vacancy candidates (many boards have hidden templates).
 Names must be unique. Existing priority tiers, sources and daily schedule are
 preserved by the September 2026 correction.
 
+
+Feed precedence: `tracker_feed.enabled: false` disables all transfers. Otherwise,
+an explicit per-site `feed: true/false` takes precedence over the legacy
+`tracker_feed.tiers` list. Only when `feed` is absent is that list consulted;
+without either opt-in the default is false. Tier labels still control digest
+priority and are independent of feed eligibility. Existing role filters apply.
+
+The mandatory gate uses Responses with strict JSON schema, `store=false`, no tools,
+600 output tokens, a 60-second timeout and no retries within a call. Set
+`OPENAI_API_KEY` only as an environment variable/repository secret. The Run job
+monitor step receives it; `OPENAI_SCREEN_MODEL` defaults to `gpt-5-mini` and may be
+overridden by its repository variable. The 40-call fit budget is separate from the
+optional audit budget. An incomplete response fails closed (the 600-token bound
+includes reasoning); the next verified run retries, not an automatic API loop.
 
 ## September 2026 coverage audit
 

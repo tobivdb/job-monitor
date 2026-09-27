@@ -56,7 +56,7 @@ class StateTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             base = Path(folder)
             config = base / "config.json"
-            config.write_text(json.dumps({"sites": [{"name": "Example", "url": self.result.url, "tier": "A"}], "tracker_feed": {"enabled": True}}), encoding="utf-8")
+            config.write_text(json.dumps({"sites": [{"name": "Example", "url": self.result.url, "tier": "A", "feed": True}], "tracker_feed": {"enabled": True}}), encoding="utf-8")
             state_path = base / "state.json"
             state_path.write_text(json.dumps({"sites": {"Example": {"job_keys": {}, "extractor_version": EXTRACTOR_VERSION}}, "last_run": None}), encoding="utf-8")
             before = state_path.read_bytes()
@@ -64,7 +64,8 @@ class StateTests(unittest.TestCase):
                   patch("sys.argv", ["job_monitor", "--config", str(config)] + args),
                   patch.object(monitor, "scan_site", return_value=self.result),
                   patch.object(monitor, "google_sheets_available", return_value=True),
-                  patch.object(monitor, "validate_email_config"), patch.object(monitor, "feed_tracker") as feed,
+                  patch.object(monitor, "validate_email_config"), patch.object(monitor.fit_screen, "urlopen") as api,
+                  patch.object(monitor, "_google_services") as services, patch.object(monitor, "feed_tracker", return_value=[]) as feed,
                   patch.object(monitor, "send_email", side_effect=RuntimeError("SMTP unavailable") if mail_error else None) as send):
                 if mail_error:
                     with self.assertRaisesRegex(RuntimeError, "Email delivery failed"):
@@ -74,6 +75,8 @@ class StateTests(unittest.TestCase):
                 self.assertEqual(state_path.read_bytes(), before)
                 if not mail_error:
                     feed.assert_not_called()
+                    api.assert_not_called()
+                    services.assert_not_called()
                     send.assert_not_called()
                 self.assertTrue((base / "last_report.html").exists())
                 self.assertTrue((base / "scan_results.json").exists())
@@ -105,7 +108,7 @@ class StateTests(unittest.TestCase):
         sheets.spreadsheets().values().get().execute.return_value = {"values": []}
         sheets.spreadsheets().values().append().execute.side_effect = RuntimeError("invalid_grant")
         candidate = {"job": self.job, "site": monitor.SiteDiff("Example", self.result.url), "description": "a" * 900}
-        with patch.object(monitor, "_google_services", return_value=(drive, sheets)), patch.object(monitor, "_find_tracker_sheet_id", return_value="sheet-id"):
+        with patch.object(monitor, "_google_services", return_value=(drive, sheets)), patch.object(monitor, "_find_tracker_sheet_id", return_value="sheet-id"), patch.object(monitor.fit_screen, "screen_job", return_value={"fit": "High", "clean_title": "Investment Associate", "employer": "Example", "summary": "Fits.", "reason": "Fits."}):
             with self.assertRaises(RuntimeError):
                 monitor.feed_tracker([candidate], self.state)
         self.assertNotIn(self.job.key, self.state["tracker_fed"])

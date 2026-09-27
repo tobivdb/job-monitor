@@ -26,6 +26,10 @@ import subprocess
 import tempfile
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+import fit_screen
+from tracker_fields import clean_job_title, employer_title_key, normalize_location, posted_date
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dataclasses import asdict, dataclass, field
@@ -128,6 +132,7 @@ class JobEntry:
     url: str = ""
     location: str = ""
     detail: str = ""
+    date_posted: str = ""
 
     @property
     def key(self) -> str:
@@ -540,7 +545,7 @@ def update_state(state: dict, result: SiteResult):
 # ---------------------------------------------------------------------------
 
 TRACKER_SHEET_NAME = "Job Ad Overview V2"
-TRACKER_COLUMNS = 9  # Website..Claude Comment, must match the CV pipeline's CSV_FIELDS
+TRACKER_COLUMNS = 10  # Website..Fit Probability, Location (I), Claude Comment (J); CV CSV_FIELDS
 
 
 def google_sheets_available() -> bool:
@@ -601,78 +606,131 @@ def _find_tracker_sheet_id(drive) -> str:
 
 
 
-def feed_tracker(candidates: list[dict], state: dict) -> list[dict]:
-    """Append newly found investment-team roles to the Job Ad Overview V2 sheet.
+def site_feed_enabled(site: dict, feed_config: dict) -> bool:
+    """Explicit boolean overrides the legacy tier fallback; neither means disabled."""
+    if "feed" in site:
+        return site["feed"] is True
+    return str(site.get("tier", "")).upper() in {str(t).upper() for t in feed_config.get("tiers", [])}
 
-    Each candidate: {"job": JobEntry, "site": SiteDiff-like, "description": str}.
-    Rows with a substantive scraped ad get an empty Status so the nightly CV run picks
-    them up; thin scrapes are parked as NEEDS_REVIEW so the pipeline never generates an
-    application from a garbage description. Fed job keys are remembered in state.json.
-    Returns a report list for the email: {"company", "title", "status"}.
+
+def feed_tracker(candidates: list[dict], state: dict, *, errors=None, screened_out=None) -> list[dict]:
+    """Deduplicate, screen at most 40 ads, then append only High/Medium fits.
+
+    Failures remain pending. Reports contain only confirmed appends. Low decisions
+    persist with normal delivered state, independently of later append failures.
     """
     if not candidates:
         return []
-    min_chars = 800
-    fed_state = state.setdefault("tracker_fed", {})
+    errors = errors if errors is not None else []
+    screened_out = screened_out if screened_out is not None else []
+    fed = state.setdefault("tracker_fed", {})
+    rejected = state.setdefault("tracker_screened_out", {})
+    pending = state.setdefault("tracker_pending", {})
     drive, sheets = _google_services()
     sheet_id = _find_tracker_sheet_id(drive)
-    # A prior append may have succeeded before email/state persistence failed.
-    # Read back existing URLs so a retry cannot append the same ad twice.
+    # One read, across every status, including already processed and rejected rows.
     existing = sheets.spreadsheets().values().get(
-        spreadsheetId=sheet_id, range="A:A"
+        spreadsheetId=sheet_id, range="A:D"
     ).execute().get("values", [])
-    known_urls = {vacancy_identity(row[0]) for row in existing if row}
-    unique = []
-    for cand in candidates:
-        job = cand["job"]
-        if not job.url:
-            continue
-        if vacancy_identity(job.url) in known_urls:
-            fed_state[job.key] = {"title": job.title, "company": cand["site"].name, "date": "already in sheet"}
-            continue
-        known_urls.add(vacancy_identity(job.url))
-        unique.append(cand)
-    candidates = unique
-    if not candidates:
-        return []
+    known_urls = {vacancy_identity(row[0]) for row in existing if row and canonical_url(row[0])}
+    known_titles = {employer_title_key(row[2], row[3]) for row in existing if len(row) >= 4}
+    known_titles.discard(None)
+    now = datetime.now(ZoneInfo("Europe/Zurich"))
+    stamp, day = now.strftime("%Y-%m-%d %H:%M %Z"), now.strftime("%Y-%m-%d")
+    rows, report, batch, aliases = [], [], [], []
+    batch_urls, batch_titles = set(), set()
+    attempts = 0
+    screening_deadline = time.monotonic() + fit_screen.MAX_SCREEN_SECONDS
 
-    stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-    report = []
-    rows = []
-    for cand in candidates:
-        job, site, desc = cand["job"], cand["site"], cand["description"]
-        substantive = len(desc) >= min_chars
-        description = desc if desc else (
-            f"{job.title} at {site.name}. (Job ad text could not be scraped automatically - "
-            f"open {job.url or site.url} and paste the ad here.)"
-        )
-        status = "" if substantive else "NEEDS_REVIEW"
-        rows.append([
-            job.url or site.url,            # Website
-            description,                    # Description
-            site.name,                      # Company (pipeline refines)
-            job.title,                      # Job Position (pipeline refines)
-            status,                         # Status
-            "",                             # Date (pipeline stamps on processing)
-            "",                             # My Comment (operator-only)
-            "",                             # Fit Probability
-            f"Auto-added by job-monitor on {stamp} from {site.name} ({site.url}).",
-        ])
-        report.append({"company": site.name, "title": job.title, "key": job.key,
-                       "status": "queued" if substantive else "needs_review"})
+    def duplicate(job, company):
+        fed[job.key] = {"title": job.title, "company": company, "date": "already in sheet"}
+        pending.pop(job.key, None)
 
-    sheets.spreadsheets().values().append(
-        spreadsheetId=sheet_id,
-        range="A1",
-        valueInputOption="RAW",
-        insertDataOption="INSERT_ROWS",
-        body={"values": rows},
-    ).execute()
-    # Mark as fed only after the append succeeded, so a failed append never
-    # poisons the dedup state.
-    for cand, rep in zip(candidates, report):
-        fed_state[cand["job"].key] = {"title": rep["title"], "company": rep["company"], "date": stamp}
-    log.info(f"Tracker feed: appended {len(rows)} row(s) to '{TRACKER_SHEET_NAME}'.")
+    for cand in candidates:
+        job, site, desc = cand["job"], cand["site"], cand.get("description", "")
+        if job.key in fed or job.key in rejected:
+            pending.pop(job.key, None)
+            continue
+        pending[job.key] = {"title": job.title, "company": site.name, "url": job.url}
+        url = vacancy_identity(job.url)
+        identity = employer_title_key(site.name, job.title)
+        if url in known_urls or identity in known_titles:
+            duplicate(job, site.name)
+            continue
+        if url in batch_urls or identity in batch_titles:
+            aliases.append((job, site.name))
+            continue
+        if not canonical_url(job.url) or not desc.strip():
+            pending[job.key]["reason"] = "Verified ad URL/text unavailable"
+            errors.append("Verified ad URL/text unavailable; candidate remains pending.")
+            continue
+        reason = fit_screen.prefilter_reason(job.title)
+        result = None
+        if not reason:
+            if attempts >= fit_screen.MAX_SCREENINGS:
+                pending[job.key]["reason"] = "40-screening limit reached"
+                errors.append("40-screening limit reached; remaining candidates stay pending.")
+                continue
+            if time.monotonic() + 60 > screening_deadline:
+                pending[job.key]["reason"] = "Screening time budget exhausted"
+                errors.append("Screening time budget exhausted; remaining candidates stay pending.")
+                continue
+            try:
+                # Missing credentials do not consume a paid call, but are still fail-closed.
+                if os.environ.get("OPENAI_API_KEY", "").strip():
+                    attempts += 1
+                result = fit_screen.screen_job(
+                    title=job.title, company=site.name, tier=site.tier,
+                    notes=cand.get("notes", ""), location=normalize_location(job.location), description=desc,
+                )
+            except fit_screen.ScreenError as exc:
+                pending[job.key]["reason"] = str(exc)
+                errors.append(f"{exc}; candidate remains pending for the next verified scan.")
+                continue
+        if reason or result["fit"] == "Low":
+            entry = {"title": job.title, "company": site.name, "fit": "Low", "date": day,
+                     "reason": reason or result["reason"]}
+            rejected[job.key] = entry
+            pending.pop(job.key, None)
+            screened_out.append(entry)
+            continue
+        title = clean_job_title(result["clean_title"])
+        company = result["employer"].strip()
+        # A model may recognize an employer/title variant not present in the listing.
+        identity = employer_title_key(company, title)
+        if identity in known_titles:
+            duplicate(job, company)
+            continue
+        if identity in batch_titles:
+            aliases.append((job, company))
+            continue
+        location = normalize_location(job.location)  # verified metadata only, never inferred headquarters
+        posted = posted_date(job.date_posted)
+        status = "NEW" if len(desc.strip()) >= 800 else "NEEDS_REVIEW"
+        description = f"{title} · {company} · {location} · Posted {posted} · Source: Career page {job.url}\n\n{desc}"
+        comment = (f"Career page monitor {day} | Fit: {result['fit']} | {result['summary']} | "
+                   f"Source: {site.name} {site.url} | Posted {posted}")
+        # Never allow external text to emit another automation's daily-run marker.
+        comment = re.sub(r"LinkedIn screening", "external screening", comment, flags=re.I)
+        rows.append([job.url, description, company, title, status, stamp, "", result["fit"], location, comment])
+        report.append({"company": company, "title": title, "key": job.key, "status": status,
+                       "fit": result["fit"], "location": location, "reason": result["reason"]})
+        batch.append(job)
+        batch_urls.add(url)
+        batch_titles.add(identity)
+        batch_titles.add(employer_title_key(site.name, job.title))
+    if rows:
+        sheets.spreadsheets().values().append(
+            spreadsheetId=sheet_id, range="A1", valueInputOption="RAW",
+            insertDataOption="INSERT_ROWS", body={"values": rows},
+        ).execute()
+        # Neither aliases nor actual candidates are marked fed until append succeeds.
+        for job, rep in zip(batch, report):
+            fed[job.key] = {"title": rep["title"], "company": rep["company"], "date": stamp}
+            pending.pop(job.key, None)
+        for job, company in aliases:
+            duplicate(job, company)
+        log.info("Tracker feed: appended %s screened row(s).", len(rows))
     return report
 
 
@@ -736,6 +794,8 @@ def build_email_html(
     linkedin_auth_failed: bool = False,
     tracker_fed: Optional[list[dict]] = None,
     tracker_error: str = "",
+    tracker_screened_out: Optional[list[dict]] = None,
+    tracker_pending: Optional[list[dict]] = None,
 ) -> tuple[str, bool, list[str]]:
     """Build a compact, summary-first HTML email.
 
@@ -781,7 +841,7 @@ def build_email_html(
     pe_new.sort(key=lambda pair: (tier_rank(pair[0].tier), pair[0].name))
     other_new.sort(key=lambda pair: (tier_rank(pair[0].tier), pair[0].name))
 
-    has_changes = bool(pe_new or other_new or removed or page_changed or errors or review or tracker_error)
+    has_changes = bool(pe_new or other_new or removed or page_changed or errors or review or tracker_error or tracker_fed or tracker_screened_out)
     new_counts: dict[str, int] = {}
     for d, jobs in pe_new + other_new:
         new_counts[d.name] = new_counts.get(d.name, 0) + len(jobs)
@@ -839,11 +899,28 @@ def build_email_html(
                 body += _job_card(job, diff.name, diff.url, accent="#1e40af", bg="#eff6ff", tier=diff.tier)
 
     if tracker_fed:
-        body += _section_header("Queued for the CV pipeline", len(tracker_fed), "#6d28d9")
+        body += _section_header("Screened roles added to the CV pipeline", len(tracker_fed), "#6d28d9")
         body += _compact_line_list([
             f'{_html_text(f["company"])} &mdash; {_html_text(f["title"])} '
-            f'<span style="color:#9ca3af;">({"ready for tonight&#39;s run" if f["status"] == "queued" else "added as NEEDS_REVIEW - ad text too thin"})</span>'
+            f'{_html_text(f["fit"])} · {_html_text(f["location"] or "Location unknown")} · '
+            f'{_html_text(" ".join(f["reason"].split()))} '
+            f'<span style="color:#9ca3af;">({_html_text(f["status"])})</span>'
             for f in tracker_fed
+        ])
+
+    if tracker_pending:
+        body += _section_header("Pending fit screening / transfer", len(tracker_pending), "#92400e")
+        body += _compact_line_list([
+            f'{_html_text(f["company"])} — {_html_text(f["title"])} · '
+            f'{_html_text(f.get("reason", "Awaiting current verified ad and successful screening/transfer"))}'
+            for f in tracker_pending
+        ])
+
+    if tracker_screened_out:
+        body += _section_header("Screened out", len(tracker_screened_out), "#6b7280")
+        body += _compact_line_list([
+            f'{_html_text(f["company"])} — {_html_text(f["title"])} · Low · '
+            f'{_html_text(" ".join(f["reason"].split()))}' for f in tracker_screened_out
         ])
 
     if removed:
@@ -1181,7 +1258,6 @@ def main():
     feed_cfg = config.get("tracker_feed", {})
     feed_requested = not args.dry_run and feed_cfg.get("enabled", True)
     feed_enabled = feed_requested and google_sheets_available()
-    feed_tiers = {t.upper() for t in feed_cfg.get("tiers", ["A", "B"])}
     feed_candidates: list[dict] = []
     linkedin_auth_failed = False
 
@@ -1205,12 +1281,12 @@ def main():
         diff.tier = site_cfg.get("tier", "")
         diffs.append(diff)
 
-        # Queue new investment-team roles at priority-tier funds for the CV pipeline.
+        # Queue new verified roles at eligible sources; the mandatory fit gate decides suitability.
         # Verified ad text comes back with the isolated worker result.
         if (
             feed_requested
             and not diff.is_first_run
-            and diff.tier.upper() in feed_tiers
+            and site_feed_enabled(site_cfg, feed_cfg)
         ):
             fed_keys = state.get("tracker_fed", {})
             pending = state.setdefault("tracker_pending", {})
@@ -1218,11 +1294,11 @@ def main():
             for job in result.jobs:
                 if job.key not in new_keys and job.key not in pending:
                     continue
-                if job.key in fed_keys or not is_pe_relevant(job.title, job.detail):
+                if job.key in fed_keys or job.key in state.get("tracker_screened_out", {}):
                     continue
                 pending[job.key] = {"company": name, "url": job.url, "title": job.title}
                 description = result.descriptions.get(job.key, "")
-                feed_candidates.append({"job": job, "site": diff, "description": description})
+                feed_candidates.append({"job": job, "site": diff, "description": description, "notes": site_cfg.get("notes", "")})
 
         # Update only the in-memory state; persist after successful delivery.
         if not result.error:
@@ -1232,37 +1308,41 @@ def main():
 
     tracker_fed_report: list[dict] = []
     tracker_error = ""
+    tracker_errors = []
+    screened_out_report = []
     if feed_candidates and feed_enabled:
         try:
-            tracker_fed_report = feed_tracker(feed_candidates, state)
+            tracker_fed_report = feed_tracker(feed_candidates, state, errors=tracker_errors, screened_out=screened_out_report)
         except Exception as e:
             tracker_error = "CV pipeline transfer failed; eligible roles remain pending and will be retried after verification."
             if "invalid_grant" in str(e):
                 tracker_error += " Google authorization must be renewed (invalid_grant)."
             log.error(
                 f"Tracker feed failed — roles NOT queued in the sheet, but they are listed "
-                f"in this email's new-roles section; add them manually if wanted: {e}"
+                f"in this email's new-roles section ({type(e).__name__})."
             )
     elif config.get("tracker_feed", {}).get("enabled", True) and not google_sheets_available():
         log.info("Tracker feed inactive: Google credentials / GOOGLE_DRIVE_CV_FOLDER_ID not configured.")
         if feed_requested and feed_candidates:
             tracker_error = "CV pipeline credentials are missing; verified eligible roles remain pending."
     elif feed_enabled:
-        log.info(f"Tracker feed active (tiers: {', '.join(sorted(feed_tiers))}); no new roles to queue this run.")
+        log.info("Tracker feed active; no new or pending verified roles at eligible sources.")
 
-    for key in state.get("tracker_fed", {}):
+    tracker_error = " ".join(filter(None, [tracker_error, *dict.fromkeys(tracker_errors)]))
+    for key in set(state.get("tracker_fed", {})) | set(state.get("tracker_screened_out", {})):
         state.get("tracker_pending", {}).pop(key, None)
 
     # --- Build and send report ---
     html_body, has_changes, changes_summary = build_email_html(
         diffs, linkedin_auth_failed=linkedin_auth_failed, tracker_fed=tracker_fed_report,
-        tracker_error=tracker_error,
+        tracker_error=tracker_error, tracker_screened_out=screened_out_report,
+        tracker_pending=list(state.get("tracker_pending", {}).values()) if feed_requested else [],
     )
 
     health = {r.name: {"error": r.error, "warnings": sorted(set(r.warnings)),
                        "coverage_complete": r.coverage_complete and not bool(r.error)} for r in results}
     health_changed = health != old_health
-    actionable = any(d.new_jobs or d.removed_jobs for d in diffs) or health_changed or bool(tracker_error)
+    actionable = any(d.new_jobs or d.removed_jobs for d in diffs) or health_changed or bool(tracker_error or tracker_fed_report or screened_out_report)
     state["source_health"] = health
 
     # Determine if this is the first run

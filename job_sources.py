@@ -13,6 +13,7 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
+from tracker_fields import posting_location, posted_date
 
 EXTRACTOR_VERSION = 3
 TRACKING_PARAMS = {
@@ -276,7 +277,7 @@ def verify_detail(page, job, config):
                 raise ValueError("PDF title/content not verified")
             if not re.search(r"\b(apply|application|responsibilities|requirements|qualifications|bewerben|bewerbung|aufgaben|profil)\b", text, re.I):
                 raise ValueError("PDF has no vacancy/application evidence")
-            return canonical_url(response.url), text[:12000]
+            return canonical_url(response.url), text
         finally:
             response.dispose()
     response = page.goto(job.url, wait_until=config.get("navigation_wait_until", "domcontentloaded"), timeout=20000)
@@ -324,7 +325,10 @@ def verify_detail(page, job, config):
                 raise ValueError("LinkedIn employer does not match monitored company")
             description = plain(posting.get("description"))
             if len(description) >= 200:
-                return final, description[:12000]
+                if "jobLocation" in posting or "jobLocationType" in posting:
+                    job.location = posting_location(posting)
+                job.date_posted = posted_date(posting.get("datePosted"))
+                return final, BeautifulSoup(str(posting.get("description", "")), "lxml").get_text("\n", strip=True)
     for tag in soup.find_all(["script", "style", "noscript"]):
         tag.decompose()
     content = soup.find("main") or soup.find("article")
@@ -350,5 +354,5 @@ def verify_detail(page, job, config):
     # Avoid picking the first role from a board that lists many job headings.
     if not is_detail_url(final) and len(postings) > 1:
         raise ValueError("Link resolves to a multi-job overview")
-    return final, text[:12000]
+    return final, content.get_text("\n", strip=True)
 
