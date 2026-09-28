@@ -195,3 +195,56 @@ Daily emails are sent for job changes or changed source health. Repeated unchang
 warnings no longer force an email. All sources and current warnings remain in the
 HTML/JSON artifacts (seven-day retention). API findings appear in the artifact and
 Actions summary; they do not send an additional email.
+
+
+## Feed source configuration (September 27, 2026)
+
+The separate source PR sets an explicit boolean on all **203 retained sources**:
+**140 feed-enabled, 63 digest-only**. Existing priority tiers, retained source names,
+URLs, role filters, timeout settings and the daily schedule are preserved. Eligibility
+is a source-level opt-in, not a finding that every role is suitable. All High/Medium
+requirements and geographic exclusions still apply to individual verified ads.
+
+All A–E/ZH sites and the explicitly requested German/Swiss sources are included.
+That explicit inclusion instruction takes precedence over the narrower generic
+source categories: banks/allocators, VC, advisory and other mixed sources in that
+list remain eligible for screening, while excluded roles cannot enter the sheet.
+Examples requiring review are Banque Pictet, EKBQ, Jacobs Foundation, Muzinich,
+Petiole, LGT Capital Partners, HQ Capital, MPEP, Alpha Associates, Flexstone,
+Montana, HarbourVest, HBM, IBB Ventures, coinIX, Aravis, Apricum and Bridgemaker.
+No investment-business-model reclassification of those firms is implied.
+
+Foreign-headquartered sources may be included when they recruit in DACH; a foreign
+URL or head office alone does not exclude them. Evidence includes
+[Waterland's German roles](https://www.waterlandpe.com/careers/),
+[Main's Düsseldorf recruiting](https://main.nl/de/stellenangebote/),
+[Egeria's German/Swiss careers](https://egeriagroup.com/career/),
+[Avedon's Düsseldorf recruiting](https://avedoncapital.com/our-people/),
+[Gilde's Frankfurt recruiting](https://gildehealthcare.com/de/career-opportunities/),
+[Cinven's 2026 Frankfurt hire](https://www.cinven.com/team/pia-borjans/),
+[Rivean's careers](https://riveancapital.com/working-with-us/) and
+[Frankfurt/Zug offices](https://riveancapital.com/contact/).
+Nordic Capital is enabled based on its official
+[Frankfurt office](https://www.nordiccapital.com/contact/frankfurt/) and
+[recruitment program featuring Frankfurt hires](https://career.nordiccapital.com/pages/internship-program).
+This establishes a DACH hiring footprint, not a current suitable vacancy: the
+[current board](https://career.nordiccapital.com/jobs) showed only a Stockholm
+internship on review. The title/fit gate still rejects internships.
+
+Non-DACH-only sources remain in the digest with `feed: false`. Where DACH hiring
+was not established, sources stay digest-only pending review rather than assuming
+eligibility from an investment in a German company. The PR's complete source table
+identifies these conservative classifications; examples are Permira, BC Partners,
+Montagu, IK, Apax, Bridgepoint, CVC DIF, Columna and Bamboo. This does not
+assert that they lack DACH offices or never hire there.
+[Müller-Möhl](https://mm-grp.com/en/) remains digest-only: the official description
+establishes multi-asset family-office management, but not a direct-investment
+hiring mandate. Revisit if that mandate is confirmed.
+
+Only TMF Group and Kantar were removed as investment-source exclusions. Duplicate
+Invision AG was merged into Invision (identical URL; retained source-history note).
+Ufenau Capital Partners was merged into UCP, retaining UCP's 600-second timeout:
+the URLs differ by `language=en&display=undefined`, but both returned the same six
+job IDs (641217, 675192, 2264527, 2361358, 2700171, 2799873) on review. No other
+sources were deleted, and historic state was not edited. Future removals require
+review of the proposed list in the PR description.
